@@ -13,7 +13,7 @@ public class ScenarioManager : MonoBehaviour
 
     public ScenarioClass[] scenarioTypes;
 
-    public static scenario onGoingScenario;
+    public static Scenario onGoingScenario;
 
     public static bool underAttack;
 
@@ -34,14 +34,14 @@ public class ScenarioManager : MonoBehaviour
         pwdAtkController = GetComponent<PwdAtkController>();
     }
 
-    public (scenario, string) CheckStatus()
+    public (Scenario, string) CheckStatus()
     {
         int index = 0;
         if (!underAttack)
         {
             index = ScenarioRandomizer();
             underAttack = true;
-            onGoingScenario = (scenario) index;
+            onGoingScenario = (Scenario) index;
             return TriggerScenario(index);
         }
         else
@@ -50,12 +50,12 @@ public class ScenarioManager : MonoBehaviour
         }
     }
 
-    public void SetScenarioState(scenario currentScenario, string detail)
+    public void SetScenarioState(Scenario currentScenario, string detail)
     {
-        if (currentScenario != scenario.None && String.IsNullOrEmpty(detail))
+        if (currentScenario != Scenario.None && String.IsNullOrEmpty(detail))
         {
             Debug.Log("Warning, On going scenario but detail is empty");
-            onGoingScenario = scenario.None;
+            onGoingScenario = Scenario.None;
         }
         else
         {
@@ -63,17 +63,17 @@ public class ScenarioManager : MonoBehaviour
         }
         switch (onGoingScenario)
         {
-            case scenario.None:
+            case Scenario.None:
                 underAttack = false;
                 break;
-            case scenario.Password:
+            case Scenario.Password:
                 underAttack = true;
                 PwdAtkController.SetPasswordScenarioState (detail);
                 break;
-            case scenario.Phishing:
+            case Scenario.Phishing:
                 underAttack = true;
                 break;
-            case scenario.Malware:
+            case Scenario.Malware:
                 underAttack = true;
                 break;
             default:
@@ -82,25 +82,25 @@ public class ScenarioManager : MonoBehaviour
         }
     }
 
-    private (scenario, string) UpdateScenarioStatus()
+    private (Scenario, string) UpdateScenarioStatus()
     {
         string detail = null;
-        scenario currentType;
+        Scenario currentType;
         switch (onGoingScenario)
         {
-            case scenario.None:
+            case Scenario.None:
                 underAttack = false;
-                currentType = scenario.None;
+                currentType = Scenario.None;
                 break;
-            case scenario.Password:
+            case Scenario.Password:
                 (underAttack, detail) = pwdAtkController.UpdateScenarioState();
-                currentType = scenario.Password;
+                currentType = Scenario.Password;
                 break;
-            case scenario.Phishing:
-                currentType = scenario.Phishing;
+            case Scenario.Phishing:
+                currentType = Scenario.Phishing;
                 break;
-            case scenario.Malware:
-                currentType = scenario.Malware;
+            case Scenario.Malware:
+                currentType = Scenario.Malware;
                 break;
             default:
                 throw new InvalidOperationException("Error: Unknown scenario index: " +
@@ -118,7 +118,7 @@ public class ScenarioManager : MonoBehaviour
         {
             //DO SOMETHING
             ScenarioFailed (detail);
-            return (scenario.None, null);
+            return (Scenario.None, null);
         }
     }
 
@@ -144,33 +144,45 @@ public class ScenarioManager : MonoBehaviour
         // throw new InvalidOperationException("Error in ScenarioRandomizer, random process failed");
     }
 
-    private (scenario, string) TriggerScenario(int chosenScenario)
+    private (Scenario, string) TriggerScenario(int chosenScenario)
     {
         underAttack = true;
-        switch ((scenario) chosenScenario)
+        switch ((Scenario) chosenScenario)
         {
-            case scenario.None:
+            case Scenario.None:
                 Debug
                     .Log("Warning: Trigger scenario.None - Should not enter this case at all");
-                return (scenario.None, "");
-            case scenario.Password:
+                return (Scenario.None, "");
+            case Scenario.Password:
                 return (
-                    scenario.Password,
+                    Scenario.Password,
                     pwdAtkController.CheckVulnerability()
                 );
-            case scenario.Phishing:
-                return (scenario.Phishing, "");
-            case scenario.Malware:
-                return (scenario.Malware, "");
+            case Scenario.Phishing:
+                int i = TargetRandomizer(true);
+                return (Scenario.Phishing, "");
+            case Scenario.Malware:
+                return (Scenario.Malware, "");
             default:
                 throw new InvalidOperationException("Error: Unknown scenario index: " +
                     chosenScenario);
         }
     }
 
+    private int TargetRandomizer(bool self)
+    {
+        int targetCount = System.Enum.GetValues(typeof (Target)).Length - 1;
+        int i = 0;
+        if (self)
+        {
+            i = 1;
+        }
+        return Random.Range(i, targetCount);
+    }
+
     public static void InvokeScenarioSuccess(string result)
     {
-        onGoingScenario = scenario.None;
+        onGoingScenario = Scenario.None;
         underAttack = false;
         jsonDetail = null;
         ResultController.ShowSuccess (result, onGoingScenario);
@@ -179,7 +191,7 @@ public class ScenarioManager : MonoBehaviour
 
     private static void ScenarioCompleted(string result)
     {
-        onGoingScenario = scenario.None;
+        onGoingScenario = Scenario.None;
         underAttack = false;
         ResultController.ShowSuccess (result, onGoingScenario);
         GameManager.InvokeSaveData();
@@ -188,7 +200,7 @@ public class ScenarioManager : MonoBehaviour
     private static void ScenarioFailed(string result)
     {
         ResultController.ShowFailed (result, onGoingScenario);
-        onGoingScenario = scenario.None;
+        onGoingScenario = Scenario.None;
         underAttack = false;
         GameManager.InvokeSaveData();
     }

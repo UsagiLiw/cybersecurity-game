@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     public static int days;
 
-    public static scenario scenario;
+    public static Scenario scenario;
 
     public static string scenarioDetail;
 
