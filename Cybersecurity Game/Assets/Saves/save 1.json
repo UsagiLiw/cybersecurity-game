@@ -1,0 +1,42 @@
+{
+    "saveid": 1,
+    "day": 9,
+    "budget": 5512100,
+    "reputation": 56,
+    "onGoingScenario": 0,
+    "purchase": [1, 2, 3],
+    "password1": "@CyberSecurity420",
+    "password2": "abcd1234",
+    "email": [1,2,4,5],
+    "pc": [{
+            "name": "player",
+            "software": [1, 2],
+            "infected": false,
+            "malware": []
+        },
+        {
+            "name": "ceo",
+            "software": [1],
+            "infected": true,
+            "malware": [6]
+        },
+        {
+            "name": "employ1",
+            "software": [1, 2],
+            "infected": false,
+            "malware": []
+        },
+        {
+            "name": "employ2",
+            "software": [1, 2],
+            "infected": true,
+            "malware": [6, 9]
+        },
+        {
+            "name": "meeting",
+            "software": [1, 2],
+            "infected": false,
+            "malware": []
+        }
+    ]
+}

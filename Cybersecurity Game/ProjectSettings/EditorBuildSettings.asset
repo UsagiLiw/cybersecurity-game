@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CEO.unity
+    guid: 5e8e23009b60f734aa000db66d66000f
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: cab0f3fe7ea481049bc54a1d7e65aa7d
+  - enabled: 1
+    path: Assets/Scenes/Employee1.unity
+    guid: 2ff468f82443fcf4d893540c2dd09d74
+  - enabled: 1
+    path: Assets/Scenes/Employee2.unity
+    guid: d5da20a8bf4bcc947a2c1da51ebfaa38
+  - enabled: 1
+    path: Assets/Scenes/ITRoom.unity
+    guid: ebf644d6fd366e049b6642dcd4a83f91
+  - enabled: 1
+    path: Assets/Scenes/Meeting.unity
+    guid: e881a4e07a903f449b19d3a541558a58
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 978fe6ff95e1fd949a337c5f28b1d678
+  - enabled: 1
+    path: Assets/Scenes/PCScene.unity
+    guid: a97672bd60670ff4fbff2a8c122d4f82
+  m_configObjects: {}
