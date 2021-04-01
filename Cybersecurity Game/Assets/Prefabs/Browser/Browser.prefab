@@ -5280,7 +5280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5263344841354746495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10600,7 +10600,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5263344842374647020}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5263344840724513540}
+        m_MethodName: GoHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5263344842381263976
 GameObject:
   m_ObjectHideFlags: 0
@@ -13808,6 +13819,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ResetPasswordShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865636273891383083, guid: a9ca37eb5a7bb444789c7d0850286704,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8865636274871195128, guid: a9ca37eb5a7bb444789c7d0850286704,
         type: 3}
