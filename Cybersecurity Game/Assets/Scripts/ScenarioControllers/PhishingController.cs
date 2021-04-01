@@ -23,26 +23,14 @@ public class PhishingController : MonoBehaviour
         public int scenarioIndex;
     }
 
-    public string PhishingTrigger(int chosenTarget)
-    {
-        if (chosenTarget == 0)
-        {
-            TriggerSelf();
-        }
-        else
-        {
-            TriggerNPC();
-        }
-        return "bruh";
-    }
-
-    private void TriggerSelf()
+    public void TriggerSelf()
     {
         int mailIndex = EmailManager.SendPhishingMail();
     }
 
-    private void TriggerNPC()
+    public string TriggerNPC(int index)
     {
         //Both mail and web phishing
+        return "boi";
     }
 }

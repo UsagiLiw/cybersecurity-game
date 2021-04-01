@@ -163,7 +163,15 @@ public class ScenarioManager : MonoBehaviour
                 );
             case Scenario.Phishing:
                 int i = TargetRandomizer(true);
-                return (Scenario.Phishing, "");
+                if (
+                    i == 0 //Self phishing does not need following
+                )
+                {
+                    phishingController.TriggerSelf();
+                    return (Scenario.None, "");
+                }
+
+                return (Scenario.Phishing, phishingController.TriggerNPC(i));
             case Scenario.Malware:
                 return (Scenario.Malware, "");
             default:
@@ -176,7 +184,7 @@ public class ScenarioManager : MonoBehaviour
     {
         int targetCount = System.Enum.GetValues(typeof (Target)).Length - 1;
         int i = 0;
-        if (self)
+        if (!self)
         {
             i = 1;
         }
