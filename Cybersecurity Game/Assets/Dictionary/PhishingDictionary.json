@@ -12,6 +12,27 @@
         "senderMail": "info.shopping@eshop.official.com",
         "topic": "Security alert for itsupporter@itcompany.com",
         "content": "Did you just login through a new device?\nWe have detected that someone just try to sign in to your eShop account. We have blocked the attempt, but you should reset your password regardless."
-    }
+    },
+    {
+        "template": "passwordWarning_email",
+        "senderName": "SafePal Support",
+        "senderMail": "resolvetransport11@outlook.com",
+        "topic": "Your account access has been limited",
+        "content": "Hello Dear Customer,\nrecently we have limited your account access due suspected and illegail usds. Please Check your account as soon as you can by Clicking the button below."
+    },
+    {
+        "template": "passwordWarning_email",
+        "senderName": "TELNET",
+        "senderMail": "notification+zj4628tocfyjc@pausemassagetogether.com",
+        "topic": "Payment declined",
+        "content": "Hi,\nWe attempted to authorize the Amen card you have on file but were unable to do so. We will automatically attempt to charge your card again within 28-48 hours.\nUpdate the expiry date and CVV (card verification value) for your Amen card as soon as possible so you can continue using it with your account."
+    },
+    {
+        "template": "passwordWarning_email",
+        "senderName": "Balance Team",
+        "senderMail": "donoteplay-balance@concepts.nl",
+        "topic": "Deposit Success",
+        "content": "Dear client,\nYour Balance's account has recharged 0.12911 BTC.\nIf this activity is not your own operation, please click here to see transaction. https://www.balance.com/transaction-id"
+    },
     ]
 }
