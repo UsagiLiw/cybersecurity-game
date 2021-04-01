@@ -10,8 +10,6 @@ public class EmailManager : MonoBehaviour
 
     private static EmailObject[] scenarioDict;
 
-    private static EmailObject[] phishingMailDict;
-
     public static List<EmailObject> emailInbox;
 
     public static List<int> indexInbox;
@@ -37,7 +35,6 @@ public class EmailManager : MonoBehaviour
     {
         SetMailDictionary();
         SetScenarioMailDictionary();
-        SetPhishingMailDictionary();
     }
 
     private void SetMailDictionary()
@@ -60,18 +57,6 @@ public class EmailManager : MonoBehaviour
             Application.Quit();
         }
         scenarioDict = JsonHelper.FromJson<EmailObject>(jsonString);
-    }
-
-    private void SetPhishingMailDictionary()
-    {
-        string jsonString =
-            SaveSystem.LoadDictionary("PhishingDictionary.json");
-        if (jsonString == null)
-        {
-            Debug.Log("Error - Unable to find ScenarioEmail.json");
-            Application.Quit();
-        }
-        phishingMailDict = JsonHelper.FromJson<EmailObject>(jsonString);
     }
 
     public void SendRandomMail()
@@ -103,7 +88,13 @@ public class EmailManager : MonoBehaviour
 
     public static int SendPhishingMail()
     {
-        return 0;
+        int templateLength = scenarioDict.Length - 1;
+        int index = Random.Range(2, templateLength);
+
+        emailInbox.Add(scenarioDict[index]);
+        scenarioInbox.Add (index);
+
+        return index;
     }
 
     public static void ClearScenarioMails()

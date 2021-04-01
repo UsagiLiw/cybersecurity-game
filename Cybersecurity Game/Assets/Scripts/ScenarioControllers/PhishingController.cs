@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PhishingController : MonoBehaviour
 {
-    public static PhishingSave phisingSave;
+    public static PhishingSave phishingSave;
 
     public enum AtkTypes
     {
@@ -38,7 +38,7 @@ public class PhishingController : MonoBehaviour
 
     private void TriggerSelf()
     {
-        
+        int mailIndex = EmailManager.SendPhishingMail();
     }
 
     private void TriggerNPC()
