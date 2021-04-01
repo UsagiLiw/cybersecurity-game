@@ -11,6 +11,8 @@ public class ScenarioManager : MonoBehaviour
 
     private PwdAtkController pwdAtkController;
 
+    private PhishingController phishingController;
+
     public ScenarioClass[] scenarioTypes;
 
     public static Scenario onGoingScenario;
@@ -32,6 +34,7 @@ public class ScenarioManager : MonoBehaviour
         GameObject.DontDestroyOnLoad(this.gameObject); // Don't kil me
 
         pwdAtkController = GetComponent<PwdAtkController>();
+        phishingController = GetComponent<PhishingController>();
     }
 
     public (Scenario, string) CheckStatus()

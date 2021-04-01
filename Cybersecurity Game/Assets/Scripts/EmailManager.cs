@@ -8,7 +8,9 @@ public class EmailManager : MonoBehaviour
 {
     private static EmailObject[] emailDict;
 
-    public static EmailObject[] scenarioDict;
+    private static EmailObject[] scenarioDict;
+
+    private static EmailObject[] phishingMailDict;
 
     public static List<EmailObject> emailInbox;
 
@@ -31,7 +33,14 @@ public class EmailManager : MonoBehaviour
         }
     }
 
-    public void SetMailDictionary()
+    public void SetDictionaries()
+    {
+        SetMailDictionary();
+        SetScenarioMailDictionary();
+        SetPhishingMailDictionary();
+    }
+
+    private void SetMailDictionary()
     {
         string jsonString = SaveSystem.LoadDictionary("EmailTemplate.json");
         if (jsonString == null)
@@ -42,7 +51,7 @@ public class EmailManager : MonoBehaviour
         emailDict = JsonHelper.FromJson<EmailObject>(jsonString);
     }
 
-    public void SetScenarioMailDictionary()
+    private void SetScenarioMailDictionary()
     {
         string jsonString = SaveSystem.LoadDictionary("ScenarioEmail.json");
         if (jsonString == null)
@@ -51,6 +60,18 @@ public class EmailManager : MonoBehaviour
             Application.Quit();
         }
         scenarioDict = JsonHelper.FromJson<EmailObject>(jsonString);
+    }
+
+    private void SetPhishingMailDictionary()
+    {
+        string jsonString =
+            SaveSystem.LoadDictionary("PhishingDictionary.json");
+        if (jsonString == null)
+        {
+            Debug.Log("Error - Unable to find ScenarioEmail.json");
+            Application.Quit();
+        }
+        phishingMailDict = JsonHelper.FromJson<EmailObject>(jsonString);
     }
 
     public void SendRandomMail()
@@ -76,11 +97,13 @@ public class EmailManager : MonoBehaviour
             Debug.Log("Error, Send scenario mail index out of range");
             return;
         }
-        else
-        {
-            emailInbox.Add(scenarioDict[index]);
-            scenarioInbox.Add (index);
-        }
+        emailInbox.Add(scenarioDict[index]);
+        scenarioInbox.Add (index);
+    }
+
+    public static int SendPhishingMail()
+    {
+        return 0;
     }
 
     public static void ClearScenarioMails()

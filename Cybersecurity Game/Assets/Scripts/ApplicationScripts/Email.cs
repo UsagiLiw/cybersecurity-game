@@ -115,8 +115,23 @@ public class Email : MonoBehaviour
     private void ShowAllPlayerMails()
     {
         emailInbox = new List<EmailObject>(EmailManager.emailInbox);
-        int i = 0;
-        foreach (EmailObject mail in emailInbox)
+
+        // int i = 0;
+        // foreach (EmailObject mail in emailInbox)
+        // {
+        //     GameObject newMail = Instantiate(mailHeader_prefab) as GameObject;
+        //     newMail.name = gameObject.name + "_" + i;
+        //     newMail.transform.SetParent(emailContent.transform, false);
+        //     Text newMail_sender =
+        //         newMail.transform.GetChild(0).gameObject.GetComponent<Text>();
+        //     newMail_sender.text = mail.senderName;
+        //     Text newMail_topic =
+        //         newMail.transform.GetChild(1).gameObject.GetComponent<Text>();
+        //     newMail_topic.text = mail.topic;
+        //     newMail.GetComponent<Button>().AddEventListener(i, ViewEmail);
+        //     i++;
+        // }
+        for (int i = emailInbox.Count - 1; i >= 0; i--)
         {
             GameObject newMail = Instantiate(mailHeader_prefab) as GameObject;
             newMail.name = gameObject.name + "_" + i;
@@ -124,14 +139,13 @@ public class Email : MonoBehaviour
 
             Text newMail_sender =
                 newMail.transform.GetChild(0).gameObject.GetComponent<Text>();
-            newMail_sender.text = mail.senderName;
+            newMail_sender.text = emailInbox[i].senderName;
 
             Text newMail_topic =
                 newMail.transform.GetChild(1).gameObject.GetComponent<Text>();
-            newMail_topic.text = mail.topic;
+            newMail_topic.text = emailInbox[i].topic;
 
             newMail.GetComponent<Button>().AddEventListener(i, ViewEmail);
-            i++;
         }
     }
 

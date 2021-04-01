@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     private ScenarioManager scenarioManager;
 
-    public static float dayTime = 180f; //Time for 1 day in game (seconds)
+    public static float dayTime = 10f; //Time for 1 day in game (seconds)
 
     public static float currentTimer;
 
@@ -59,8 +59,7 @@ public class GameManager : MonoBehaviour
         currentTimer = 0;
         days = 0;
 
-        emailManager.SetMailDictionary();
-        emailManager.SetScenarioMailDictionary();
+        emailManager.SetDictionaries();
         LoadData();
     }
 
