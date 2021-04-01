@@ -35,6 +35,12 @@ public class Email : MonoBehaviour
 
     private List<EmailObject> emailInbox;
 
+    public GameObject inbox;
+    public GameObject login;
+    public GameObject register;
+    public GameObject resetPassword;
+
+
     public void OnEnable()
     {
         if (PasswordManager.password2 != null)
@@ -162,6 +168,27 @@ public class Email : MonoBehaviour
         {
             emailView.transform.Find("Attachment").gameObject.SetActive(false);
             emailView.transform.Find("Attach link").gameObject.SetActive(false);
+        }
+    }
+
+    /* --------- Controller Section ----------*/
+    public void ResetPasswordPressed()
+    {
+        OpenPage(resetPassword);
+    }
+
+    public void OpenPage(GameObject pageObject)
+    {
+        CloseAllChild();
+        pageObject.SetActive(true);
+    }
+
+    private void CloseAllChild()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+            Debug.Log(child);
         }
     }
 }
