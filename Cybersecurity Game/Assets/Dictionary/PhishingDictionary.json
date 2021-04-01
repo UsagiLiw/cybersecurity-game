@@ -33,6 +33,6 @@
         "senderMail": "donoteplay-balance@concepts.nl",
         "topic": "Deposit Success",
         "content": "Dear client,\nYour Balance's account has recharged 0.12911 BTC.\nIf this activity is not your own operation, please click here to see transaction. https://www.balance.com/transaction-id"
-    },
+    }
     ]
 }
