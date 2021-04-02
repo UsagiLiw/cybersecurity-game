@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private static void SaveData()
+    public static void SaveData()
     {
         int currentBudget = BudgetManager.currentBudget;
         int currentReputation = ReputationManager.currentReputation;

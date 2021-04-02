@@ -110,16 +110,15 @@ public class ScenarioManager : MonoBehaviour
                     onGoingScenario);
         }
 
-        //sceContinue> true = scenario still on and continue, false = player failed the scenario
-        //
+        // true = scenario still on and continue, false = player failed the scenario
         if (underAttack)
         {
-            //DO SOMETHING
+            jsonDetail = detail;
             return (currentType, detail);
         }
         else
         {
-            //DO SOMETHING
+            jsonDetail = detail;
             ScenarioFailed (detail);
             return (Scenario.None, null);
         }
@@ -157,10 +156,8 @@ public class ScenarioManager : MonoBehaviour
                     .Log("Warning: Trigger scenario.None - Should not enter this case at all");
                 return (Scenario.None, "");
             case Scenario.Password:
-                return (
-                    Scenario.Password,
-                    pwdAtkController.CheckVulnerability()
-                );
+                jsonDetail = pwdAtkController.CheckVulnerability();
+                return (Scenario.Password, jsonDetail);
             case Scenario.Phishing:
                 int i = TargetRandomizer(true);
                 if (
@@ -170,7 +167,6 @@ public class ScenarioManager : MonoBehaviour
                     phishingController.TriggerSelf();
                     return (Scenario.None, "");
                 }
-
                 return (Scenario.Phishing, phishingController.TriggerNPC(i));
             case Scenario.Malware:
                 return (Scenario.Malware, "");
@@ -195,8 +191,9 @@ public class ScenarioManager : MonoBehaviour
     {
         onGoingScenario = Scenario.None;
         underAttack = false;
-        jsonDetail = null;
+        EmailManager.ClearScenarioMails();
         ResultController.ShowSuccess (result, onGoingScenario);
+        jsonDetail = null;
         GameManager.InvokeSaveData();
     }
 
@@ -204,7 +201,9 @@ public class ScenarioManager : MonoBehaviour
     {
         onGoingScenario = Scenario.None;
         underAttack = false;
+        EmailManager.ClearScenarioMails();
         ResultController.ShowSuccess (result, onGoingScenario);
+        jsonDetail = null;
         GameManager.InvokeSaveData();
     }
 
@@ -212,7 +211,9 @@ public class ScenarioManager : MonoBehaviour
     {
         ResultController.ShowFailed (result, onGoingScenario);
         onGoingScenario = Scenario.None;
+        EmailManager.ClearScenarioMails();
         underAttack = false;
+        jsonDetail = null;
         GameManager.InvokeSaveData();
     }
 }
