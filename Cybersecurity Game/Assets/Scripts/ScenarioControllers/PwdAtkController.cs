@@ -151,6 +151,19 @@ public class PwdAtkController : MonoBehaviour
             complexity +
             " Target: " +
             target);
+        switch (account)
+        {
+            case Accounts.all:
+                EmailManager.SendScenarioMail(0);
+                EmailManager.SendScenarioMail(1);
+                break;
+            case Accounts.shop:
+                EmailManager.SendScenarioMail(1);
+                break;
+            case Accounts.email:
+                EmailManager.SendScenarioMail(0);
+                break;
+        }
         PwdAtkObject saveObject =
             new PwdAtkObject {
                 dayLeft = dayLeft,
@@ -189,7 +202,7 @@ public class PwdAtkController : MonoBehaviour
                 complexity = complexity
             };
         string saveString = JsonUtility.ToJson(saveObject);
-
+        ScenarioManager.InvokeScenarioSuccess(saveString);
     }
 
     private bool CheckSuccessCondition()

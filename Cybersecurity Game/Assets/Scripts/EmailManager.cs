@@ -8,7 +8,7 @@ public class EmailManager : MonoBehaviour
 {
     private static EmailObject[] emailDict;
 
-    public static EmailObject[] scenarioDict;
+    private static EmailObject[] scenarioDict;
 
     public static List<EmailObject> emailInbox;
 
@@ -31,7 +31,13 @@ public class EmailManager : MonoBehaviour
         }
     }
 
-    public void SetMailDictionary()
+    public void SetDictionaries()
+    {
+        SetMailDictionary();
+        SetScenarioMailDictionary();
+    }
+
+    private void SetMailDictionary()
     {
         string jsonString = SaveSystem.LoadDictionary("EmailTemplate.json");
         if (jsonString == null)
@@ -42,7 +48,7 @@ public class EmailManager : MonoBehaviour
         emailDict = JsonHelper.FromJson<EmailObject>(jsonString);
     }
 
-    public void SetScenarioMailDictionary()
+    private void SetScenarioMailDictionary()
     {
         string jsonString = SaveSystem.LoadDictionary("ScenarioEmail.json");
         if (jsonString == null)
@@ -76,11 +82,19 @@ public class EmailManager : MonoBehaviour
             Debug.Log("Error, Send scenario mail index out of range");
             return;
         }
-        else
-        {
-            emailInbox.Add(scenarioDict[index]);
-            scenarioInbox.Add (index);
-        }
+        emailInbox.Add(scenarioDict[index]);
+        scenarioInbox.Add (index);
+    }
+
+    public static int SendPhishingMail()
+    {
+        int templateLength = scenarioDict.Length - 1;
+        int index = Random.Range(2, templateLength);
+
+        emailInbox.Add(scenarioDict[index]);
+        scenarioInbox.Add (index);
+
+        return index;
     }
 
     public static void ClearScenarioMails()

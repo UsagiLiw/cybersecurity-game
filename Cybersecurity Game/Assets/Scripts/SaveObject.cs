@@ -21,16 +21,26 @@ public class SaveObject
 
     public int[] scenarioMail;
 
-    public scenario scenario;
+    public Scenario scenario;
 
     public string scenarioDetail;
 }
 
-public enum scenario
+public enum Scenario
 {
     None = 0,
     Password = 1,
     Phishing = 2,
     Malware = 3
+}
+
+public enum Target
+{
+    You = 0,
+    CEO = 1,
+    Employee1 = 2,
+    Employee2 = 3,
+    Meeting = 4,
+    IT = 5
 }
 

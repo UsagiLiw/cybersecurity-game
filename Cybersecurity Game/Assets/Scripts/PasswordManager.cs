@@ -12,7 +12,7 @@ public class PasswordManager : MonoBehaviour
 
     public static event PasswordChangeAction PasswordHasChanged;
 
-    public void EditPassword(int num, string newPassword)
+    public static void EditPassword(int num, string newPassword)
     {
         switch (num)
         {
