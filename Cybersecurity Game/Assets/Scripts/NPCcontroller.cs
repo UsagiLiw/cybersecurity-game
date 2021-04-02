@@ -29,7 +29,7 @@ public class NPCcontroller : MonoBehaviour
             case Target.Employee1:
                 NPC_Employee1 = true;
                 break;
-            case Target.Employee1:
+            case Target.Employee2:
                 NPC_Employee2 = true;
                 break;
             case Target.Meeting:
@@ -40,6 +40,7 @@ public class NPCcontroller : MonoBehaviour
                 break;
             default:
                 Debug.Log("Warning - target not an exisitng NPC");
+                break;
         }
     }
 
