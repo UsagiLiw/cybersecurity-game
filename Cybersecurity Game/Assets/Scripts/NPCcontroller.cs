@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class NPCcontroller : MonoBehaviour
 {
-    public static bool NPC_CEO;
+    private static bool NPC_CEO;
 
-    public static bool NPC_Employee1;
+    private static bool NPC_Employee1;
 
-    public static bool NPC_Employee2;
+    private static bool NPC_Employee2;
 
-    public static bool NPC_Meeting;
+    private static bool NPC_Meeting;
 
-    public static bool NPC_IT;
+    private static bool NPC_IT;
 
     private void Start()
     {
@@ -42,6 +42,46 @@ public class NPCcontroller : MonoBehaviour
                 Debug.Log("Warning - target not an exisitng NPC");
                 break;
         }
+    }
+
+    public static bool CheckTargetActive(Target target)
+    {
+        switch (target)
+        {
+            case Target.CEO:
+                if (NPC_CEO)
+                {
+                    return true;
+                }
+                break;
+            case Target.Employee1:
+                if (NPC_Employee1)
+                {
+                    return true;
+                }
+                break;
+            case Target.Employee2:
+                if (NPC_Employee2)
+                {
+                    return true;
+                }
+                break;
+            case Target.Meeting:
+                if (NPC_Meeting)
+                {
+                    return true;
+                }
+                break;
+            case Target.IT:
+                if (NPC_IT)
+                {
+                    return true;
+                }
+                break;
+            default:
+                return false;
+        }
+        return false;
     }
 
     public static void DisableAllNPC()
