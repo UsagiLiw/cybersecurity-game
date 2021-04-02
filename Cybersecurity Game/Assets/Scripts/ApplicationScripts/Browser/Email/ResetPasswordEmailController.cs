@@ -29,6 +29,7 @@ public class ResetPasswordEmailController : MonoBehaviour
         else incorrectPasswordText.SetActive(true);
 
         Debug.Log("current email password is " + PasswordManager.password2);
+        GameManager.InvokeSaveData();
     }
 
     public void BackButtonPressed()
