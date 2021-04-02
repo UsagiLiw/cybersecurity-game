@@ -15,7 +15,7 @@ public class TaskmanagerDashBoardController : MonoBehaviour
 
     private Computer computer;
 
-    private void Start()
+    private void Awake()
     {
         computer = ComputerManager.activeComputer;
     }
@@ -23,7 +23,7 @@ public class TaskmanagerDashBoardController : MonoBehaviour
     // Update is called once per frame
     void OnEnable()
     {
-        StartCoroutine("DoUpdate");
+        StartCoroutine(DoUpdate());
     }
 
     IEnumerator DoUpdate()
