@@ -1838,6 +1838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1872926234}
+  - component: {fileID: 1872926235}
   m_Layer: 0
   m_Name: Quest
   m_TagString: Untagged
@@ -1861,6 +1862,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1872926235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872926233}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3493392, y: 5.0168505, z: 1.6027807}
+  m_Center: {x: -1.5585965, y: 0.3692112, z: -0.51906115}
 --- !u!4 &1884541807 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0c88eedf228c34e48b9704acc3329a49,
