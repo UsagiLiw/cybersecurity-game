@@ -202,6 +202,7 @@ public class PwdAtkController : MonoBehaviour
                 complexity = complexity
             };
         string saveString = JsonUtility.ToJson(saveObject);
+        ScenarioManager.InvokeScenarioSuccess(saveString);
     }
 
     private bool CheckSuccessCondition()
