@@ -19,7 +19,7 @@ public class ResetPasswordEmailController : MonoBehaviour
         incorrectPasswordText.SetActive(false);
     }
 
-    public void EditShopPassword()
+    public void EditEmailPassword()
     {
         if (VerifyEmailPassword(oldPassword.text))
         {
@@ -27,6 +27,8 @@ public class ResetPasswordEmailController : MonoBehaviour
             email.OpenPage(email.inbox);
         }
         else incorrectPasswordText.SetActive(true);
+
+        Debug.Log("current email password is " + PasswordManager.password2);
     }
 
     public void BackButtonPressed()

@@ -40103,6 +40103,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 402222256626882821}
     m_Modifications:
+    - target: {fileID: 3594774686370216262, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EditEmailPassword
+      objectReference: {fileID: 0}
     - target: {fileID: 5263344840724513540, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
       propertyPath: gameManager
