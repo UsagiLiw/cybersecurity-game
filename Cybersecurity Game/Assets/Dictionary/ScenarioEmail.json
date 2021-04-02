@@ -12,6 +12,22 @@
         "senderMail": "info.shopping@eshop.official.com",
         "topic": "Security alert for itsupporter@itcompany.com",
         "content": "Did you just login through a new device?\nWe have detected that someone just try to sign in to your eShop account. We have blocked the attempt, but you should reset your password regardless."
+    },
+    {
+        "template": "phishing_1",
+        "senderName": "eShopping",
+        "senderMail": "info.shop123@coldmail.com",
+        "topic": "Your account has been suspended",
+        "content": "Your account has been suspended from our service due to recent unusual traffic on your account.\nIn order to re-activate your account, we requested that you enter account re-activation request form from the link attached below",
+        "link": 1
+    },
+    {
+        "template": "phishing_2",
+        "senderName": "IRSBank",
+        "senderMail": "irsback.republic@domain.org",
+        "topic": "Claim Your Tax Refund Online",
+        "content": "We identified an error in the calculation of your tax from the last payment, amounting to $899.95. In order for us to return the excess payment, you need to reate a e-refund account after which the funds will be credited to your specified bank account. \nPlease click the link below to claim your refund:",
+        "link": 2
     }
     ]
 }
