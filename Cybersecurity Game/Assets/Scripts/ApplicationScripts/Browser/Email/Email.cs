@@ -35,6 +35,12 @@ public class Email : MonoBehaviour
 
     private List<EmailObject> emailInbox;
 
+    public GameObject inbox;
+    public GameObject login;
+    public GameObject register;
+    public GameObject resetPassword;
+
+
     public void OnEnable()
     {
         if (PasswordManager.password2 != null)
@@ -115,8 +121,23 @@ public class Email : MonoBehaviour
     private void ShowAllPlayerMails()
     {
         emailInbox = new List<EmailObject>(EmailManager.emailInbox);
-        int i = 0;
-        foreach (EmailObject mail in emailInbox)
+
+        // int i = 0;
+        // foreach (EmailObject mail in emailInbox)
+        // {
+        //     GameObject newMail = Instantiate(mailHeader_prefab) as GameObject;
+        //     newMail.name = gameObject.name + "_" + i;
+        //     newMail.transform.SetParent(emailContent.transform, false);
+        //     Text newMail_sender =
+        //         newMail.transform.GetChild(0).gameObject.GetComponent<Text>();
+        //     newMail_sender.text = mail.senderName;
+        //     Text newMail_topic =
+        //         newMail.transform.GetChild(1).gameObject.GetComponent<Text>();
+        //     newMail_topic.text = mail.topic;
+        //     newMail.GetComponent<Button>().AddEventListener(i, ViewEmail);
+        //     i++;
+        // }
+        for (int i = emailInbox.Count - 1; i >= 0; i--)
         {
             GameObject newMail = Instantiate(mailHeader_prefab) as GameObject;
             newMail.name = gameObject.name + "_" + i;
@@ -124,14 +145,13 @@ public class Email : MonoBehaviour
 
             Text newMail_sender =
                 newMail.transform.GetChild(0).gameObject.GetComponent<Text>();
-            newMail_sender.text = mail.senderName;
+            newMail_sender.text = emailInbox[i].senderName;
 
             Text newMail_topic =
                 newMail.transform.GetChild(1).gameObject.GetComponent<Text>();
-            newMail_topic.text = mail.topic;
+            newMail_topic.text = emailInbox[i].topic;
 
             newMail.GetComponent<Button>().AddEventListener(i, ViewEmail);
-            i++;
         }
     }
 
@@ -162,6 +182,27 @@ public class Email : MonoBehaviour
         {
             emailView.transform.Find("Attachment").gameObject.SetActive(false);
             emailView.transform.Find("Attach link").gameObject.SetActive(false);
+        }
+    }
+
+    /* --------- Controller Section ----------*/
+    public void ResetPasswordPressed()
+    {
+        OpenPage(resetPassword);
+    }
+
+    public void OpenPage(GameObject pageObject)
+    {
+        CloseAllChild();
+        pageObject.SetActive(true);
+    }
+
+    private void CloseAllChild()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+            Debug.Log(child);
         }
     }
 }
