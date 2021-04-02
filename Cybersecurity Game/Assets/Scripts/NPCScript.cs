@@ -7,15 +7,16 @@ public class NPCScript : MonoBehaviour
     public Target self;
 
     // public GameObject NPC;
-
     public GameObject questMarker;
+
+    public GameObject NPCmodel;
 
     private Outline outline;
 
     private void Start()
     {
         questMarker.SetActive(false);
-        outline = GetComponent<Outline>();
+        outline = NPCmodel.GetComponent<Outline>();
         outline.enabled = false;
     }
 
@@ -24,19 +25,27 @@ public class NPCScript : MonoBehaviour
         Debug.Log (self);
         if (NPCcontroller.CheckTargetActive(self))
         {
-            Debug.Log("WOW");
+            QuestActive();
         }
     }
 
     private void OnMouseOver()
     {
-        Debug.Log("enable");
         outline.enabled = true;
     }
 
     private void OnMouseExit()
     {
-        Debug.Log("exit");
         outline.enabled = false;
+    }
+
+    private void QuestActive()
+    {
+        questMarker.SetActive(true);
+    }
+
+    private void QuestDeactive()
+    {
+        questMarker.SetActive(false);
     }
 }

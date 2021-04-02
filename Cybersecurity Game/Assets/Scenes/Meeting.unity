@@ -204,11 +204,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestMarker
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 600fc167e18c2f4439fd8a98e5d1f0e0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 600fc167e18c2f4439fd8a98e5d1f0e0, type: 3}
 --- !u!4 &27785208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 600fc167e18c2f4439fd8a98e5d1f0e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 27785207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &27785209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 600fc167e18c2f4439fd8a98e5d1f0e0,
     type: 3}
   m_PrefabInstance: {fileID: 27785207}
   m_PrefabAsset: {fileID: 0}
@@ -1270,6 +1281,30 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 1a1ac0c83459d53488513f1f51180bce, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375a620d6c6c58a4b9134652fcbebc57, type: 3}
+--- !u!1 &1250582475 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 375a620d6c6c58a4b9134652fcbebc57,
+    type: 3}
+  m_PrefabInstance: {fileID: 1250582474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1250582476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250582475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 0, a: 1}
+  outlineWidth: 1
+  precomputeOutline: 1
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &1263513440 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3d56ade8bcc5f2a469ec87c44afca04b,
@@ -1839,6 +1874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1872926234}
   - component: {fileID: 1872926235}
+  - component: {fileID: 1872926236}
   m_Layer: 0
   m_Name: Quest
   m_TagString: Untagged
@@ -1875,6 +1911,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3493392, y: 5.0168505, z: 1.6027807}
   m_Center: {x: -1.5585965, y: 0.3692112, z: -0.51906115}
+--- !u!114 &1872926236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872926233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163550e6f75e1d2428a5bd5d6bf3cd9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: 4
+  questMarker: {fileID: 27785209}
+  NPCmodel: {fileID: 1250582475}
 --- !u!4 &1884541807 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0c88eedf228c34e48b9704acc3329a49,
