@@ -39,12 +39,12 @@ public class ScenarioManager : MonoBehaviour
 
     public (Scenario, string) CheckStatus()
     {
-        int index = 0;
+        Scenario index = 0;
         if (!underAttack)
         {
             index = ScenarioRandomizer();
             underAttack = true;
-            onGoingScenario = (Scenario) index;
+            onGoingScenario = index;
             return TriggerScenario(index);
         }
         else
@@ -59,6 +59,7 @@ public class ScenarioManager : MonoBehaviour
         {
             Debug.Log("Warning, On going scenario but detail is empty");
             onGoingScenario = Scenario.None;
+            underAttack = false;
         }
         else
         {
@@ -124,11 +125,11 @@ public class ScenarioManager : MonoBehaviour
         }
     }
 
-    private int ScenarioRandomizer()
+    private Scenario ScenarioRandomizer()
     {
         int i = Random.Range(0, 100);
         Debug.Log("Sc random result: " + i);
-        for (int j = 0; j < scenarioTypes.Length - 1; j++)
+        for (int j = 0; j < scenarioTypes.Length; j++)
         {
             if (
                 i >= scenarioTypes[j].minProbRange &&
@@ -139,17 +140,17 @@ public class ScenarioManager : MonoBehaviour
                     .Log("Scenario " +
                     scenarioTypes[j].scenarioType +
                     " has occur!");
-                return j + 1;
+                return scenarioTypes[j].scenario;
             }
         }
         return 0;
         // throw new InvalidOperationException("Error in ScenarioRandomizer, random process failed");
     }
 
-    private (Scenario, string) TriggerScenario(int chosenScenario)
+    private (Scenario, string) TriggerScenario(Scenario chosenScenario)
     {
         underAttack = true;
-        switch ((Scenario) chosenScenario)
+        switch (chosenScenario)
         {
             case Scenario.None:
                 Debug
@@ -160,14 +161,14 @@ public class ScenarioManager : MonoBehaviour
                 return (Scenario.Password, jsonDetail);
             case Scenario.Phishing:
                 int i = TargetRandomizer(true);
-                if (
-                    i == 0 //Self phishing does not need following
-                )
+
+                //Self phishing does not need following
+                if (i == 0)
                 {
                     phishingController.TriggerSelf();
                     return (Scenario.None, "");
                 }
-                return (Scenario.Phishing, phishingController.TriggerNPC(i));
+                return (Scenario.None, phishingController.TriggerNPC(i));
             case Scenario.Malware:
                 return (Scenario.Malware, "");
             default:
@@ -222,6 +223,8 @@ public class ScenarioManager : MonoBehaviour
 public class ScenarioClass
 {
     public string scenarioType;
+
+    public Scenario scenario;
 
     public int minProbRange = 0;
 

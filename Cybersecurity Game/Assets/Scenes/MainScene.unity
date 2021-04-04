@@ -8731,10 +8731,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenarioTypes:
   - scenarioType: PasswordAttack
+    scenario: 1
     minProbRange: 0
-    maxProbRange: 100
-  - scenarioType: PasswordAttack
-    minProbRange: 0
+    maxProbRange: 0
+  - scenarioType: Phishing
+    scenario: 2
+    minProbRange: 1
     maxProbRange: 100
 --- !u!4 &1163238640
 Transform:

@@ -14,13 +14,16 @@ public class NPCcontroller : MonoBehaviour
 
     private static bool NPC_IT;
 
+    private static Scenario scenario;
+
     private void Start()
     {
         DisableAllNPC();
     }
 
-    public static void TriggerNPCquest(Target target)
+    public static void TriggerNPCquest(Target target, Scenario type)
     {
+        scenario = type;
         switch (target)
         {
             case Target.CEO:

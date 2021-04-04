@@ -16,7 +16,6 @@ public static class SaveSystem
             Directory.CreateDirectory (SAVE_FOLDER);
             Debug.Log("Save folder not founded - created new");
         }
-        Debug.Log("Save folder founded");
     }
 
     public static void Save(string saveString)

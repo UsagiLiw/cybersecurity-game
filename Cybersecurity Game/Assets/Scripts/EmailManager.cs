@@ -88,8 +88,7 @@ public class EmailManager : MonoBehaviour
 
     public static int SendPhishingMail()
     {
-        int templateLength = scenarioDict.Length - 1;
-        int index = Random.Range(2, templateLength);
+        int index = GetRandomPhishingMail();
 
         emailInbox.Add(scenarioDict[index]);
         scenarioInbox.Add (index);
@@ -97,8 +96,25 @@ public class EmailManager : MonoBehaviour
         return index;
     }
 
+    public static int GetRandomPhishingMail()
+    {
+        int templateLength = scenarioDict.Length - 1;
+        int index = Random.Range(2, templateLength);
+
+        return index;
+    }
+
+    public static EmailObject GetMailFromIndex(int index, bool phishing)
+    {
+        if (phishing)
+        {
+            return scenarioDict[index];
+        }
+        return emailDict[index];
+    }
+
     public static void ClearScenarioMails()
     {
-        scenarioInbox = null;
+        scenarioInbox.Clear();
     }
 }

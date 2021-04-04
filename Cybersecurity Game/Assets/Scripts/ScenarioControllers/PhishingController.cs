@@ -20,7 +20,7 @@ public class PhishingController : MonoBehaviour
 
         public Target questTarget;
 
-        public int scenarioIndex;
+        public int dictIndex;
     }
 
     public void TriggerSelf()
@@ -31,26 +31,39 @@ public class PhishingController : MonoBehaviour
     public string TriggerNPC(int index)
     {
         //Both mail and web phishing
+        Target NPC = (Target) index;
         int rand = Random.Range(0, 1);
         switch (rand)
         {
             case 0:
-                return TriggerEmailCase();
+                return TriggerEmailCase(NPC);
             case 1:
-                return TriggerWebCase();
+                return TriggerEmailCase(NPC);
+            // return TriggerWebCase(NPC);
             default:
                 Debug.Log("WTF - random range 0 to 1 and still fail?");
                 return "";
         }
     }
 
-    private string TriggerEmailCase()
+    private string TriggerEmailCase(Target NPC)
     {
-        return "Boi";
+        NPCcontroller.TriggerNPCquest(NPC, Scenario.Phishing);
+        int index = EmailManager.GetRandomPhishingMail();
+        phishingSave =
+            new PhishingSave {
+                dayLeft = 4,
+                atkType = AtkTypes.Email,
+                questTarget = NPC,
+                dictIndex = index
+            };
+        Debug
+            .Log("Phishing triggered, Target: " + NPC + " dictIndex: " + index);
+        return JsonUtility.ToJson(phishingSave);
     }
 
-    private string TriggerWebCase()
+    private string TriggerWebCase(Target NPC)
     {
-        return "webBOi";
+        return "";
     }
 }
