@@ -52,7 +52,7 @@ public class PhishingController : MonoBehaviour
 
     private string TriggerEmailCase(Target NPC)
     {
-        NPCcontroller.TriggerNPCquest(NPC, Scenario.Phishing);
+        NPCcontroller.TriggerNPCquest(NPC, Scenario.Phishing, "bruh");
         int index = EmailManager.GetRandomPhishingMail();
         phishingSave =
             new PhishingSave {

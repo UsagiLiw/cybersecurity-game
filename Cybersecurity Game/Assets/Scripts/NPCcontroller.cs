@@ -16,14 +16,21 @@ public class NPCcontroller : MonoBehaviour
 
     private static Scenario scenario;
 
+    private static Target currentTarget;
+
+    private static string requestDetail;
+
     private void Start()
     {
         DisableAllNPC();
     }
 
-    public static void TriggerNPCquest(Target target, Scenario type)
+    public static void TriggerNPCquest(Target target, Scenario type, string detail)
     {
         scenario = type;
+        currentTarget = target;
+        requestDetail = detail;
+
         switch (target)
         {
             case Target.CEO:
@@ -94,7 +101,13 @@ public class NPCcontroller : MonoBehaviour
         NPC_Employee2 = false;
         NPC_Meeting = false;
         NPC_IT = false;
+
+        scenario = 0;
+        currentTarget = 0;
     }
 
-
+    public static string GetRequestDetail()
+    {
+        return requestDetail;
+    }
 }
