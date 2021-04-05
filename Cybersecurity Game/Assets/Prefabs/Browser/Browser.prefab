@@ -10449,6 +10449,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5263344841533145400}
     m_Modifications:
+    - target: {fileID: 1982623212682591592, guid: 1b583abd4ca528d438a37023c28827f2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982623212682591592, guid: 1b583abd4ca528d438a37023c28827f2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2942653471359138029}
+    - target: {fileID: 1982623212682591592, guid: 1b583abd4ca528d438a37023c28827f2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982623212682591592, guid: 1b583abd4ca528d438a37023c28827f2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982623212682591592, guid: 1b583abd4ca528d438a37023c28827f2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1982623213573223009, guid: 1b583abd4ca528d438a37023c28827f2,
         type: 3}
       propertyPath: m_Name
@@ -10574,6 +10599,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5263344841533145400}
     m_Modifications:
+    - target: {fileID: 2055464474498022376, guid: 65183c631c695da45a569d92ca0c813f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055464474498022376, guid: 65183c631c695da45a569d92ca0c813f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2942653471359138029}
+    - target: {fileID: 2055464474498022376, guid: 65183c631c695da45a569d92ca0c813f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055464474498022376, guid: 65183c631c695da45a569d92ca0c813f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055464474498022376, guid: 65183c631c695da45a569d92ca0c813f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2055464475422209249, guid: 65183c631c695da45a569d92ca0c813f,
         type: 3}
       propertyPath: m_Name
@@ -11101,6 +11151,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8972543244578472597, guid: b36b854972687184e8a32b009087437d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972543244578472597, guid: b36b854972687184e8a32b009087437d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2942653471359138029}
+    - target: {fileID: 8972543244578472597, guid: b36b854972687184e8a32b009087437d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972543244578472597, guid: b36b854972687184e8a32b009087437d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972543244578472597, guid: b36b854972687184e8a32b009087437d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b36b854972687184e8a32b009087437d, type: 3}
 --- !u!224 &4686038589404821928 stripped
@@ -11116,6 +11191,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5263344841533145400}
     m_Modifications:
+    - target: {fileID: 6214716731468683306, guid: 0a8a6e387ad7526408d43cecc349c9d5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214716731468683306, guid: 0a8a6e387ad7526408d43cecc349c9d5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2942653471359138029}
+    - target: {fileID: 6214716731468683306, guid: 0a8a6e387ad7526408d43cecc349c9d5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214716731468683306, guid: 0a8a6e387ad7526408d43cecc349c9d5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214716731468683306, guid: 0a8a6e387ad7526408d43cecc349c9d5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6214716732658161440, guid: 0a8a6e387ad7526408d43cecc349c9d5,
         type: 3}
       propertyPath: m_Pivot.x
