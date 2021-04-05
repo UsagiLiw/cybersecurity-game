@@ -166,6 +166,7 @@ public class ScenarioManager : MonoBehaviour
                 if (i == 0)
                 {
                     phishingController.TriggerSelf();
+                    Debug.Log("Trigger Self Phishing");
                     return (Scenario.None, "");
                 }
                 return (Scenario.None, phishingController.TriggerNPC(i));

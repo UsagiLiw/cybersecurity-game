@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCScript : MonoBehaviour
 {
@@ -97,6 +98,19 @@ public class NPCScript : MonoBehaviour
 
     private void DisplayRequestScreen()
     {
-        GameObject requestScreen = Instantiate(requestScreen_Prefab) as GameObject;
+        GameObject requestScreen =
+            Instantiate(requestScreen_Prefab) as GameObject;
+
+        NPCRequest npcRequest = requestScreen.GetComponent<NPCRequest>();
+        npcRequest.EnableNPC(self);
+        // Text dialog =
+        //     requestScreen
+        //         .transform
+        //         .GetChild(0)
+        //         .transform
+        //         .GetChild(0)
+        //         .gameObject
+        //         .GetComponent<Text>();
+        // dialog.text = "Im a man";
     }
 }

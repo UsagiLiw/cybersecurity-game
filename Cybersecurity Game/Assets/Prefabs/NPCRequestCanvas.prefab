@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &675976200519039748
 Transform:
   m_ObjectHideFlags: 0
@@ -2695,7 +2695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede806c4ce7ed754d9cb124961de72bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPC1_businessMane: {fileID: 156038744317518270}
+  NPC1_businessMan: {fileID: 156038744317518270}
   NPC2_womanPrehistoric: {fileID: 7841820955439216190}
   NPC3_manNinja: {fileID: 9203543151395690088}
   NPC4_manClown: {fileID: 2178685670298969681}
