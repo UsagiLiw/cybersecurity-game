@@ -4300,6 +4300,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356c0e1ccf380b544b814f0d4ac19616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  email_file: EmailTemplate.json
+  scenario_file: ScenarioEmail.json
+  phishing_file: PhishingDictionary.json
 --- !u!114 &342761647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4370,6 +4373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a4e2147feb004288e53c2f87f0ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requestScreen_Prefab: {fileID: 0}
 --- !u!1 &421703799
 GameObject:
   m_ObjectHideFlags: 0
@@ -8788,6 +8792,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2691f3fb206b6374cbf68daaabcc6071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  email_QuestDetail:
+  - aer+h6aer3h265f1hae20rh654fn2asreth6a54erh2a1erh65a1erh2ae1rh65f4an2ae1r6tg8a4erh21aer6n54aerty2g1a6n54srt2h1a6e58jn4srgt52jn1a6rt58h4a6er5h1a6e5rh16ae5r1h6a5er1h65a1rh65aer1h65ae1rh65ae1rh6a5e1rh6ae5r1h6ae5rh1
+  - Halp me
+  - Dude did I just got scam?
+  - Is this fishing?
+  - 'Fish Finger tasty '
+  web_QuestDetail:
+  - DUDJIKM:OIHJWEOKNO":IHJGN:OIMNijh;oinew;rogijokne;wogijwe;kgn;oihjgwo;in
+  - j;olinwer;ghkln;oijbaseknr ;otihjaboine;rwknt;oaihuertoiwneotrknoibhjjwoekin
+  - 168542165421635135216h51sr6t5h206s5tr4nh3sr2t0h65s4r1tn2sr0tn65sr411t3n2s0rt63n54srt62gh0a6e35h4s5t2er1h6sr84nrs5t1h638a5rt4hns5rt1n6sr5t4n
 --- !u!1 &1174323943
 GameObject:
   m_ObjectHideFlags: 0

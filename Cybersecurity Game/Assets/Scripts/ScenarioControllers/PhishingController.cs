@@ -6,6 +6,10 @@ public class PhishingController : MonoBehaviour
 {
     public static PhishingSave phishingSave;
 
+    public string[] email_QuestDetail;
+
+    public string[] web_QuestDetail;
+
     public enum AtkTypes
     {
         Email = 0,

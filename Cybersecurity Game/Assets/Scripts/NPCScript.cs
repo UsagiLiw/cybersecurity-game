@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NPCScript : MonoBehaviour
 {
+    public GameObject requestScreen_Prefab;
+
     private NPCScript thisNPC;
 
     public Target self;
@@ -30,8 +32,6 @@ public class NPCScript : MonoBehaviour
         outline.enabled = false;
         markerIniPos = questMarker.transform.position;
         QuestDeactive();
-
-        Debug.Log("this gameobject " + name);
         if (NPCcontroller.CheckTargetActive(self))
         {
             selfActive = true;
@@ -58,6 +58,10 @@ public class NPCScript : MonoBehaviour
         {
             QuestActive();
         }
+        else
+        {
+            QuestDeactive();
+        }
     }
 
     private void OnMouseOver()
@@ -72,7 +76,6 @@ public class NPCScript : MonoBehaviour
 
     private void QuestActive()
     {
-        Debug.Log("Quest Active");
         questMarker.SetActive(true);
         selfActive = true;
     }
@@ -88,6 +91,12 @@ public class NPCScript : MonoBehaviour
         if (selfActive)
         {
             Debug.Log("Go to quest");
+            DisplayRequestScreen();
         }
+    }
+
+    private void DisplayRequestScreen()
+    {
+        GameObject requestScreen = Instantiate(requestScreen_Prefab) as GameObject;
     }
 }

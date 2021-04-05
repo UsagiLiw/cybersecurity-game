@@ -95,4 +95,6 @@ public class NPCcontroller : MonoBehaviour
         NPC_Meeting = false;
         NPC_IT = false;
     }
+
+
 }

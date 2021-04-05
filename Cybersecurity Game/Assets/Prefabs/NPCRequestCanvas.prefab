@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &675976200519039748
 Transform:
   m_ObjectHideFlags: 0
@@ -2563,6 +2563,7 @@ GameObject:
   - component: {fileID: 3705197519491370386}
   - component: {fileID: 5238955476671155730}
   - component: {fileID: 2340517432691872299}
+  - component: {fileID: 4784872498828561909}
   m_Layer: 5
   m_Name: NPC Canvas
   m_TagString: Untagged
@@ -2651,6 +2652,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4784872498828561909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635238111872889808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede806c4ce7ed754d9cb124961de72bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPC1_businessMane: {fileID: 156038744317518270}
+  NPC2_womanPrehistoric: {fileID: 7841820955439216190}
+  NPC3_manNinja: {fileID: 9203543151395690088}
+  NPC4_manClown: {fileID: 2178685670298969681}
 --- !u!1 &2639414325236132125
 GameObject:
   m_ObjectHideFlags: 0

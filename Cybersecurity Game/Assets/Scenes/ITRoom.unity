@@ -404,9 +404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163550e6f75e1d2428a5bd5d6bf3cd9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisScript: {fileID: 347326234}
+  requestScreen_Prefab: {fileID: 2635238111872889808, guid: 28bc9ad4901e5574f8fa4e090aef5360,
+    type: 3}
   self: 5
-  selfActive: 0
   questMarker: {fileID: 1389568682}
   NPCmodel: {fileID: 194686291}
 --- !u!1001 &386735412

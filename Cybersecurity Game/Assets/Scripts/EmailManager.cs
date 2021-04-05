@@ -6,9 +6,17 @@ using UnityEngine;
 
 public class EmailManager : MonoBehaviour
 {
+    public string email_file;
+
+    public string scenario_file;
+
+    public string phishing_file;
+
     private static EmailObject[] emailDict;
 
     private static EmailObject[] scenarioDict;
+
+    private static EmailObject[] phishingDict;
 
     public static List<EmailObject> emailInbox;
 
@@ -33,32 +41,44 @@ public class EmailManager : MonoBehaviour
 
     public void SetDictionaries()
     {
-        SetMailDictionary();
-        SetScenarioMailDictionary();
+        // SetMailDictionary();
+        // SetScenarioMailDictionary();
+        emailDict = SetEmailDictionary(email_file);
+        scenarioDict = SetEmailDictionary(scenario_file);
+        phishingDict = SetEmailDictionary(phishing_file);
     }
 
-    private void SetMailDictionary()
+    private EmailObject[] SetEmailDictionary(string fileName)
     {
-        string jsonString = SaveSystem.LoadDictionary("EmailTemplate.json");
+        string jsonString = SaveSystem.LoadDictionary(fileName);
         if (jsonString == null)
         {
-            Debug.Log("Error - Unable to find EmailTemplate.json");
+            Debug.Log("Error - Unable to find " + fileName);
             Application.Quit();
         }
-        emailDict = JsonHelper.FromJson<EmailObject>(jsonString);
+        return JsonHelper.FromJson<EmailObject>(jsonString);
     }
 
-    private void SetScenarioMailDictionary()
-    {
-        string jsonString = SaveSystem.LoadDictionary("ScenarioEmail.json");
-        if (jsonString == null)
-        {
-            Debug.Log("Error - Unable to find ScenarioEmail.json");
-            Application.Quit();
-        }
-        scenarioDict = JsonHelper.FromJson<EmailObject>(jsonString);
-    }
-
+    // private void SetMailDictionary()
+    // {
+    //     string jsonString = SaveSystem.LoadDictionary("EmailTemplate.json");
+    //     if (jsonString == null)
+    //     {
+    //         Debug.Log("Error - Unable to find EmailTemplate.json");
+    //         Application.Quit();
+    //     }
+    //     emailDict = JsonHelper.FromJson<EmailObject>(jsonString);
+    // }
+    // private void SetScenarioMailDictionary()
+    // {
+    //     string jsonString = SaveSystem.LoadDictionary("ScenarioEmail.json");
+    //     if (jsonString == null)
+    //     {
+    //         Debug.Log("Error - Unable to find ScenarioEmail.json");
+    //         Application.Quit();
+    //     }
+    //     scenarioDict = JsonHelper.FromJson<EmailObject>(jsonString);
+    // }
     public void SendRandomMail()
     {
         int templateLength = emailDict.Length - 1;
@@ -90,16 +110,16 @@ public class EmailManager : MonoBehaviour
     {
         int index = GetRandomPhishingMail();
 
-        emailInbox.Add(scenarioDict[index]);
-        scenarioInbox.Add (index);
+        emailInbox.Add(phishingDict[index]);
 
+        // scenarioInbox.Add (index);
         return index;
     }
 
     public static int GetRandomPhishingMail()
     {
-        int templateLength = scenarioDict.Length - 1;
-        int index = Random.Range(2, templateLength);
+        int templateLength = phishingDict.Length - 1;
+        int index = Random.Range(0, templateLength);
 
         return index;
     }
