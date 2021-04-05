@@ -64,6 +64,16 @@ public class PhishingController : MonoBehaviour
 
     private string TriggerWebCase(Target NPC)
     {
-        return "";
+        NPCcontroller.TriggerNPCquest(NPC, Scenario.Phishing);
+        int index = 0;
+        phishingSave =
+            new PhishingSave {
+                dayLeft = 4,
+                atkType = AtkTypes.Email,
+                questTarget = NPC,
+                dictIndex = index
+            };
+        Debug.Log("Phishing triggered, Target: " + NPC + " dictIndex: ");
+        return JsonUtility.ToJson(phishingSave);
     }
 }
