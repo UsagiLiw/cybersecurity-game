@@ -2561,11 +2561,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7615884507976406393}
   - component: {fileID: 3705197519491370386}
+  - component: {fileID: 8039980823567971746}
   - component: {fileID: 5238955476671155730}
   - component: {fileID: 2340517432691872299}
   - component: {fileID: 4784872498828561909}
+  - component: {fileID: 5494726806805768325}
   m_Layer: 5
-  m_Name: NPC Canvas
+  m_Name: NPCRequestCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2613,6 +2615,35 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &8039980823567971746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635238111872889808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: 8a929a65dff93ef43b4d178abbba15ca, type: 2}
+  m_Color: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0.3137255}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &5238955476671155730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2668,6 +2699,14 @@ MonoBehaviour:
   NPC2_womanPrehistoric: {fileID: 7841820955439216190}
   NPC3_manNinja: {fileID: 9203543151395690088}
   NPC4_manClown: {fileID: 2178685670298969681}
+--- !u!222 &5494726806805768325
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2635238111872889808}
+  m_CullTransparentMesh: 0
 --- !u!1 &2639414325236132125
 GameObject:
   m_ObjectHideFlags: 0
