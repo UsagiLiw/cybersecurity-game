@@ -370,10 +370,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede806c4ce7ed754d9cb124961de72bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPC1_businessMane: {fileID: 0}
+  NPC1_businessMan: {fileID: 0}
   NPC2_womanPrehistoric: {fileID: 0}
   NPC3_manNinja: {fileID: 0}
   NPC4_manClown: {fileID: 0}
+  detailField: {fileID: 0}
 --- !u!222 &5494726806805768325
 CanvasRenderer:
   m_ObjectHideFlags: 0
