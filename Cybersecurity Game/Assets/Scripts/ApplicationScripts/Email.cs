@@ -61,6 +61,7 @@ public class Email : MonoBehaviour
             case 1:
                 //Back to Email list page
                 email.transform.Find("Inbox").gameObject.SetActive(true);
+                ShowAllPlayerMails(); //This line is under testing
                 break;
             default:
                 Debug.Log("Index number needed for action");
@@ -135,7 +136,7 @@ public class Email : MonoBehaviour
 
     private void ViewEmail(int i)
     {
-        EmailObject emailContent = emailInbox[i];
+        EmailObject emailDetail = emailInbox[i];
         foreach (Transform child in this.transform)
         {
             child.gameObject.SetActive(false);
@@ -151,12 +152,12 @@ public class Email : MonoBehaviour
         Text view_content =
             emailView.transform.GetChild(4).gameObject.GetComponent<Text>();
 
-        view_senderName.text = emailContent.senderName;
-        view_senderMail.text = emailContent.senderMail;
-        view_topic.text = emailContent.topic;
-        view_content.text = emailContent.content;
+        view_senderName.text = emailDetail.senderName;
+        view_senderMail.text = emailDetail.senderMail;
+        view_topic.text = emailDetail.topic;
+        view_content.text = emailDetail.content;
 
-        if (emailContent.link == null)
+        if (emailDetail.link == null)
         {
             emailView.transform.Find("Attachment").gameObject.SetActive(false);
             emailView.transform.Find("Attach link").gameObject.SetActive(false);

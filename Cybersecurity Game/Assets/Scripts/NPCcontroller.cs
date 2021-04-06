@@ -129,6 +129,9 @@ public class NPCcontroller : MonoBehaviour
 
     public void CreateNPCScreen()
     {
+        Debug.Log("Im runngin");
         GameObject emailScreen_Object = Instantiate(emailScreen_prefab) as GameObject;
+        GameObject gui = GameObject.Find("GUI"); 
+        emailScreen_Object.transform.SetParent(gui.transform, false);
     }
 }

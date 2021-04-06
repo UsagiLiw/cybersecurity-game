@@ -370,10 +370,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede806c4ce7ed754d9cb124961de72bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPC1_businessMane: {fileID: 0}
-  NPC2_womanPrehistoric: {fileID: 0}
-  NPC3_manNinja: {fileID: 0}
-  NPC4_manClown: {fileID: 0}
+  NPC1_businessMan: {fileID: 1136829922430742283}
+  NPC2_womanPrehistoric: {fileID: 6642222736374927892}
+  NPC3_manNinja: {fileID: 2834783620463117562}
+  NPC4_manClown: {fileID: 2360072602068078145}
+  detailField: {fileID: 2332292797817748821}
 --- !u!222 &5494726806805768325
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -574,7 +575,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8857897565013689913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4784872498828561909}
+        m_MethodName: ClickContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4221800238149852937
 GameObject:
   m_ObjectHideFlags: 0

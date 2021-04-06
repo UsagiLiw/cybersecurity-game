@@ -34,17 +34,13 @@ public class NPCScript : MonoBehaviour
         outline.enabled = false;
         markerIniPos = questMarker.transform.position;
         QuestDeactive();
-        NPCcontroller.NewNPCScenario += QuestActive;
-        if (NPCcontroller.CheckTargetActive(self))
-        {
-            selfActive = true;
-            QuestActive();
-        }
+        NPCcontroller.NewNPCScenario += CheckSelfIsActive;
+        CheckSelfIsActive();
     }
 
     private void OnDisable()
     {
-        NPCcontroller.NewNPCScenario -= QuestActive;
+        NPCcontroller.NewNPCScenario -= CheckSelfIsActive;
     }
 
     private void Update()
@@ -56,6 +52,15 @@ public class NPCScript : MonoBehaviour
             markerTempPos.y +=
                 Mathf.Sin(Time.fixedTime * Mathf.PI * speed) * height;
             questMarker.transform.position = markerTempPos;
+        }
+    }
+
+    private void CheckSelfIsActive()
+    {
+        if (NPCcontroller.CheckTargetActive(self))
+        {
+            selfActive = true;
+            QuestActive();
         }
     }
 
@@ -71,7 +76,6 @@ public class NPCScript : MonoBehaviour
     //         QuestDeactive();
     //     }
     // }
-
     private void OnMouseOver()
     {
         if (selfActive) outline.enabled = true;
@@ -111,5 +115,6 @@ public class NPCScript : MonoBehaviour
 
         NPCRequest npcRequest = requestScreen.GetComponent<NPCRequest>();
         npcRequest.EnableNPC();
+        QuestDeactive();
     }
 }
