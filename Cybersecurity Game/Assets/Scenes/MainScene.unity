@@ -3547,8 +3547,8 @@ Transform:
   m_Children:
   - {fileID: 951582197}
   - {fileID: 402222256626882821}
-  - {fileID: 1102256829}
   - {fileID: 1382598437}
+  - {fileID: 1102256829}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4131,7 +4131,7 @@ GameObject:
   - component: {fileID: 342761648}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4373,7 +4373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a4e2147feb004288e53c2f87f0ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requestScreen_Prefab: {fileID: 0}
+  emailScreen_prefab: {fileID: 7603503344962605978, guid: 3f62b71ba4d3ccf42ba9c4ba40a4a596,
+    type: 3}
 --- !u!1 &421703799
 GameObject:
   m_ObjectHideFlags: 0
@@ -10451,7 +10452,7 @@ RectTransform:
   m_Children:
   - {fileID: 803259124}
   m_Father: {fileID: 305857904}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -35888,7 +35889,7 @@ PrefabInstance:
     - target: {fileID: 4648873822480961963, guid: 2c3799d58d653f04c8aacc6ca7c19550,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4648873822480961963, guid: 2c3799d58d653f04c8aacc6ca7c19550,
         type: 3}

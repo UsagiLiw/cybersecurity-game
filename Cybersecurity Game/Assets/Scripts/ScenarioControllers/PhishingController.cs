@@ -52,7 +52,9 @@ public class PhishingController : MonoBehaviour
 
     private string TriggerEmailCase(Target NPC)
     {
-        NPCcontroller.TriggerNPCquest(NPC, Scenario.Phishing);
+        string questDetail =
+            email_QuestDetail[Random.Range(0, email_QuestDetail.Length - 1)];
+        NPCcontroller.TriggerNPCquest(NPC, Scenario.Phishing, questDetail);
         int index = EmailManager.GetRandomPhishingMail();
         phishingSave =
             new PhishingSave {
@@ -68,7 +70,9 @@ public class PhishingController : MonoBehaviour
 
     private string TriggerWebCase(Target NPC)
     {
-        NPCcontroller.TriggerNPCquest(NPC, Scenario.Phishing);
+        string questDetail =
+            web_QuestDetail[Random.Range(0, web_QuestDetail.Length - 1)];
+        NPCcontroller.TriggerNPCquest(NPC, Scenario.Phishing, questDetail);
         int index = 0;
         phishingSave =
             new PhishingSave {
