@@ -24,8 +24,9 @@ public class NPCcontroller : MonoBehaviour
 
     public static event NewNPCScenarioAction NewNPCScenario;
 
-    //Scenario Computer screen prefab  
-    public GameObject emailScreen_prefab;
+    //Scenario Computer screen prefab
+
+    public GameObject phishingScreen_prefab;
 
     private void Start()
     {
@@ -63,7 +64,7 @@ public class NPCcontroller : MonoBehaviour
                 Debug.Log("Warning - target not an exisitng NPC");
                 break;
         }
-        if(NewNPCScenario != null)
+        if (NewNPCScenario != null)
         {
             NewNPCScenario.Invoke();
         }
@@ -130,8 +131,9 @@ public class NPCcontroller : MonoBehaviour
     public void CreateNPCScreen()
     {
         Debug.Log("Im runngin");
-        GameObject emailScreen_Object = Instantiate(emailScreen_prefab) as GameObject;
-        GameObject gui = GameObject.Find("GUI"); 
-        emailScreen_Object.transform.SetParent(gui.transform, false);
+        GameObject phishingScreen_Object =
+            Instantiate(phishingScreen_prefab) as GameObject;
+        GameObject gui = GameObject.Find("GUI");
+        phishingScreen_Object.transform.SetParent(gui.transform, false);
     }
 }

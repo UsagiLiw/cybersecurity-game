@@ -10,23 +10,6 @@ public class PhishingController : MonoBehaviour
 
     public string[] web_QuestDetail;
 
-    public enum AtkTypes
-    {
-        Email = 0,
-        Web = 1
-    }
-
-    public class PhishingSave
-    {
-        public int dayLeft;
-
-        public AtkTypes atkType;
-
-        public Target questTarget;
-
-        public int dictIndex;
-    }
-
     public void TriggerSelf()
     {
         int mailIndex = EmailManager.SendPhishingMail();
@@ -64,7 +47,7 @@ public class PhishingController : MonoBehaviour
                 dictIndex = index
             };
         Debug
-            .Log("Phishing triggered, Target: " + NPC + " dictIndex: " + index);
+            .Log("Phishing EMAIL triggered, Target: " + NPC + " dictIndex: " + index);
         return JsonUtility.ToJson(phishingSave);
     }
 
@@ -73,15 +56,37 @@ public class PhishingController : MonoBehaviour
         string questDetail =
             web_QuestDetail[Random.Range(0, web_QuestDetail.Length - 1)];
         NPCcontroller.TriggerNPCquest(NPC, Scenario.Phishing, questDetail);
-        int index = 0;
+        int index = Random.Range(0,3);
         phishingSave =
             new PhishingSave {
                 dayLeft = 4,
-                atkType = AtkTypes.Email,
+                atkType = AtkTypes.Web,
                 questTarget = NPC,
                 dictIndex = index
             };
-        Debug.Log("Phishing triggered, Target: " + NPC + " dictIndex: ");
+        Debug.Log("Phishing WEB triggered, Target: " + NPC + " dictIndex: " + index);
         return JsonUtility.ToJson(phishingSave);
     }
+
+    public static PhishingSave GetPhishingDetail()
+    {
+        return phishingSave;
+    }
+}
+
+public enum AtkTypes
+{
+    Email = 0,
+    Web = 1
+}
+
+public class PhishingSave
+{
+    public int dayLeft;
+
+    public AtkTypes atkType;
+
+    public Target questTarget;
+
+    public int dictIndex;
 }
