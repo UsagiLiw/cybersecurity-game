@@ -26,6 +26,7 @@ public class ShopHomeController : MonoBehaviour
     public void BuyButtonClicked(int index)
     {
         shopManager.BuyItem(index);
+        UpdateBalance();
     }
 
     private void UpdateBalance()

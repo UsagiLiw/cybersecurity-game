@@ -25,6 +25,14 @@ public class ComputerManager : MonoBehaviour
     {
         activeComputer = computers[index];
     }
+
+    public void ActivateAntivirus()
+    {
+        foreach(Computer computer in computers)
+        {
+            computer.haveAntivirus = true;
+        }
+    }
 }
 
 [Serializable]
@@ -38,5 +46,6 @@ public class Computer
     [Range(0, 400)] public float driveE;
     public List<int> software;
     public List<int> malware;
+    public bool haveAntivirus;
     public bool isInfected;
 }

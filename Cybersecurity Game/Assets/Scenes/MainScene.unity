@@ -4321,6 +4321,7 @@ MonoBehaviour:
     driveE: 296
     software: 
     malware: 0100000002000000
+    haveAntivirus: 0
     isInfected: 1
   - ram: 0
     cpu: 0
@@ -4330,6 +4331,7 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
+    haveAntivirus: 0
     isInfected: 0
   - ram: 0
     cpu: 0
@@ -4339,6 +4341,7 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
+    haveAntivirus: 0
     isInfected: 0
   - ram: 0
     cpu: 0
@@ -4348,6 +4351,7 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
+    haveAntivirus: 0
     isInfected: 0
   - ram: 0
     cpu: 0
@@ -4357,6 +4361,7 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
+    haveAntivirus: 0
     isInfected: 0
 --- !u!114 &342761648
 MonoBehaviour:
@@ -4370,6 +4375,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49c21595d7be64428eb1eb674e4e05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items:
+  - name: Cloud Storage
+    isPurchased: 0
+    price: 5
+  - name: Antivirus Software
+    isPurchased: 0
+    price: 5
+  - name: Training Course
+    isPurchased: 0
+    price: 5
+  - name: OS Update
+    isPurchased: 0
+    price: 5
 --- !u!1 &421703799
 GameObject:
   m_ObjectHideFlags: 0
