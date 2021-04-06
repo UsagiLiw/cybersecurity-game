@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCRequest : MonoBehaviour
 {
@@ -12,13 +13,15 @@ public class NPCRequest : MonoBehaviour
 
     public GameObject NPC4_manClown;
 
-    private void OnEnable()
-    {
-    }
+    public GameObject detailField;
 
-    public void EnableNPC(Target target_NPC)
+    public void EnableNPC()
     {
-        switch (target_NPC)
+        Scenario currentScenario;
+        Target currentTarget;
+        string requestDetail;
+        (currentScenario,currentTarget,requestDetail) = NPCcontroller.GetRequestDetail();
+        switch (currentTarget)
         {
             case Target.CEO:
                 NPC1_businessMan.SetActive(true);
@@ -39,5 +42,16 @@ public class NPCRequest : MonoBehaviour
                 Debug.Log("Warning - target not an exisitng NPC");
                 break;
         }
+
+        Text detail = detailField.transform.GetComponent<Text>();
+        detail.text = requestDetail;
+    }
+
+    public void ClickContinue()
+    {
+        GameObject gameManager = GameObject.FindWithTag("GameManager");
+        NPCcontroller npcController = gameManager.GetComponent<NPCcontroller>();
+        npcController.CreateNPCScreen();
+        Destroy(this.gameObject);
     }
 }

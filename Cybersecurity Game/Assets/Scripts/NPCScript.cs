@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class NPCScript : MonoBehaviour
@@ -33,6 +34,7 @@ public class NPCScript : MonoBehaviour
         outline.enabled = false;
         markerIniPos = questMarker.transform.position;
         QuestDeactive();
+        NPCcontroller.NewNPCScenario += QuestActive;
         if (NPCcontroller.CheckTargetActive(self))
         {
             selfActive = true;
@@ -40,9 +42,14 @@ public class NPCScript : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        NPCcontroller.NewNPCScenario -= QuestActive;
+    }
+
     private void Update()
     {
-        StartCoroutine(DelayCheckStatus(2f));
+        // StartCoroutine(DelayCheckStatus(2f));
         if (selfActive)
         {
             markerTempPos = markerIniPos;
@@ -52,18 +59,18 @@ public class NPCScript : MonoBehaviour
         }
     }
 
-    private IEnumerator DelayCheckStatus(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        if (NPCcontroller.CheckTargetActive(self))
-        {
-            QuestActive();
-        }
-        else
-        {
-            QuestDeactive();
-        }
-    }
+    // private IEnumerator DelayCheckStatus(float seconds)
+    // {
+    //     yield return new WaitForSeconds(seconds);
+    //     if (NPCcontroller.CheckTargetActive(self))
+    //     {
+    //         QuestActive();
+    //     }
+    //     else
+    //     {
+    //         QuestDeactive();
+    //     }
+    // }
 
     private void OnMouseOver()
     {
@@ -85,13 +92,14 @@ public class NPCScript : MonoBehaviour
     {
         questMarker.SetActive(false);
         selfActive = false;
+        outline.enabled = false;
     }
 
     private void OnMouseDown()
     {
         if (selfActive)
         {
-            Debug.Log("Go to quest");
+            QuestDeactive();
             DisplayRequestScreen();
         }
     }
@@ -102,15 +110,6 @@ public class NPCScript : MonoBehaviour
             Instantiate(requestScreen_Prefab) as GameObject;
 
         NPCRequest npcRequest = requestScreen.GetComponent<NPCRequest>();
-        npcRequest.EnableNPC(self);
-        // Text dialog =
-        //     requestScreen
-        //         .transform
-        //         .GetChild(0)
-        //         .transform
-        //         .GetChild(0)
-        //         .gameObject
-        //         .GetComponent<Text>();
-        // dialog.text = "Im a man";
+        npcRequest.EnableNPC();
     }
 }

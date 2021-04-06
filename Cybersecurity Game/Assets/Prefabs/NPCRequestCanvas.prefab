@@ -2699,6 +2699,7 @@ MonoBehaviour:
   NPC2_womanPrehistoric: {fileID: 7841820955439216190}
   NPC3_manNinja: {fileID: 9203543151395690088}
   NPC4_manClown: {fileID: 2178685670298969681}
+  detailField: {fileID: 2332292797817748821}
 --- !u!222 &5494726806805768325
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3977,7 +3978,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8857897565013689913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4784872498828561909}
+        m_MethodName: ClickContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3834834382970503140
 GameObject:
   m_ObjectHideFlags: 0

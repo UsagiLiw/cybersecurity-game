@@ -20,12 +20,23 @@ public class NPCcontroller : MonoBehaviour
 
     private static string requestDetail;
 
+    public delegate void NewNPCScenarioAction();
+
+    public static event NewNPCScenarioAction NewNPCScenario;
+
+    //Scenario Computer screen prefab  
+    public GameObject emailScreen_prefab;
+
     private void Start()
     {
         DisableAllNPC();
     }
 
-    public static void TriggerNPCquest(Target target, Scenario type, string detail)
+    public static void TriggerNPCquest(
+        Target target,
+        Scenario type,
+        string detail
+    )
     {
         scenario = type;
         currentTarget = target;
@@ -51,6 +62,10 @@ public class NPCcontroller : MonoBehaviour
             default:
                 Debug.Log("Warning - target not an exisitng NPC");
                 break;
+        }
+        if(NewNPCScenario != null)
+        {
+            NewNPCScenario.Invoke();
         }
     }
 
@@ -104,10 +119,16 @@ public class NPCcontroller : MonoBehaviour
 
         scenario = 0;
         currentTarget = 0;
+        requestDetail = null;
     }
 
-    public static string GetRequestDetail()
+    public static (Scenario, Target, string) GetRequestDetail()
     {
-        return requestDetail;
+        return (scenario, currentTarget, requestDetail);
+    }
+
+    public void CreateNPCScreen()
+    {
+        GameObject emailScreen_Object = Instantiate(emailScreen_prefab) as GameObject;
     }
 }
