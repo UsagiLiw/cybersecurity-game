@@ -4373,7 +4373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a4e2147feb004288e53c2f87f0ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emailScreen_prefab: {fileID: 7603503344962605978, guid: 3f62b71ba4d3ccf42ba9c4ba40a4a596,
+  emailScreen_prefab: {fileID: 5960264533345029235, guid: b1bf07b6bd885b94c8276dd3fe578205,
     type: 3}
 --- !u!1 &421703799
 GameObject:
@@ -7222,7 +7222,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 4391962}
   m_PlaneDistance: 20
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -10508,7 +10508,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 4391962}
   m_PlaneDistance: 20
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -17576,7 +17576,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 4391962}
   m_PlaneDistance: 20
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -35875,7 +35875,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4391962}
     - target: {fileID: 4648873822480961963, guid: 2c3799d58d653f04c8aacc6ca7c19550,
         type: 3}
       propertyPath: m_Pivot.x
