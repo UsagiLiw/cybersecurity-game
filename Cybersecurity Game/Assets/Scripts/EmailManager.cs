@@ -128,7 +128,7 @@ public class EmailManager : MonoBehaviour
     {
         if (phishing)
         {
-            return scenarioDict[index];
+            return phishingDict[index];
         }
         return emailDict[index];
     }
