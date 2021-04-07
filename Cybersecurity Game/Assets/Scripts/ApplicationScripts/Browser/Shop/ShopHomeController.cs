@@ -35,15 +35,19 @@ public class ShopHomeController : MonoBehaviour
         switch(index)
         {
             case 0:
+                Debug.Log("buy cloud");
                 cloudButton.interactable = false;
                 break;
             case 1:
+                Debug.Log("buy antivirus");
                 antivirusButton.interactable = false;
                 break;
             case 2:
+                Debug.Log("buy training");
                 trainingButton.interactable = false;
                 break;
             case 3:
+                Debug.Log("buy os update");
                 osButton.interactable = false;
                 break;
             default:

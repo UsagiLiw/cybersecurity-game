@@ -13,6 +13,7 @@ public class ShopManager : MonoBehaviour
     private void Start()
     {
         budgetManager = gameObject.GetComponent<BudgetManager>();
+        computerManager = gameObject.GetComponent<ComputerManager>();
         foreach (Item item in items)
         {
             item.isPurchased = false;
