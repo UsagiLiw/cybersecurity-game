@@ -1,0 +1,24 @@
+{
+    "Items": [{
+        "template": "phishing_ResetPassword",
+        "linkName": "Password Reset Link",
+        "isFile": false,
+        "isFatal": true,
+        "linkHover": "www.123bdoQQ.add/ResetPassword"
+    },
+    {
+        "template": "phishing_ResetPassword",
+        "linkName": "Update Info",
+        "isFile":false,
+        "isFatal":true,
+        "linkHover": "www.blizzardent.ltd/updateinfo"
+    },
+    {
+        "template": "phishing_ResetPassword",
+        "linkName": "Monthly Report",
+        "isFile":true,
+        "isFatal":true,
+        "linkHover": "Dex1215Fatality.exe"
+    }
+    ]
+}

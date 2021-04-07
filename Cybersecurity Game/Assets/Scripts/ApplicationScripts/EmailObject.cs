@@ -13,5 +13,14 @@ public class EmailObject
 
     public string content;
 
-    public string link;
+    public int link;
+}
+
+[System.Serializable]
+public class AttachmentObject
+{
+    public string linkName;
+    public bool isFile;
+    public bool isFatal;
+    public string linkHover;
 }

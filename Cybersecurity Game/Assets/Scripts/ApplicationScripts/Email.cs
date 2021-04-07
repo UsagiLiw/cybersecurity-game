@@ -157,7 +157,7 @@ public class Email : MonoBehaviour
         view_topic.text = emailDetail.topic;
         view_content.text = emailDetail.content;
 
-        if (emailDetail.link == null)
+        if (emailDetail.link != 0)
         {
             emailView.transform.Find("Attachment").gameObject.SetActive(false);
             emailView.transform.Find("Attach link").gameObject.SetActive(false);

@@ -12,11 +12,15 @@ public class EmailManager : MonoBehaviour
 
     public string phishing_file;
 
+    public string attachment_file;
+
     private static EmailObject[] emailDict;
 
     private static EmailObject[] scenarioDict;
 
     private static EmailObject[] phishingDict;
+
+    private static AttachmentObject[] attachmentDict;
 
     public static List<EmailObject> emailInbox;
 
@@ -41,11 +45,11 @@ public class EmailManager : MonoBehaviour
 
     public void SetDictionaries()
     {
-        // SetMailDictionary();
-        // SetScenarioMailDictionary();
         emailDict = SetEmailDictionary(email_file);
         scenarioDict = SetEmailDictionary(scenario_file);
-        phishingDict = SetEmailDictionary(phishing_file);
+
+        // phishingDict = SetEmailDictionary(phishing_file);
+        attachmentDict = SetAttachmentDictionary(attachment_file);
     }
 
     private EmailObject[] SetEmailDictionary(string fileName)
@@ -59,26 +63,17 @@ public class EmailManager : MonoBehaviour
         return JsonHelper.FromJson<EmailObject>(jsonString);
     }
 
-    // private void SetMailDictionary()
-    // {
-    //     string jsonString = SaveSystem.LoadDictionary("EmailTemplate.json");
-    //     if (jsonString == null)
-    //     {
-    //         Debug.Log("Error - Unable to find EmailTemplate.json");
-    //         Application.Quit();
-    //     }
-    //     emailDict = JsonHelper.FromJson<EmailObject>(jsonString);
-    // }
-    // private void SetScenarioMailDictionary()
-    // {
-    //     string jsonString = SaveSystem.LoadDictionary("ScenarioEmail.json");
-    //     if (jsonString == null)
-    //     {
-    //         Debug.Log("Error - Unable to find ScenarioEmail.json");
-    //         Application.Quit();
-    //     }
-    //     scenarioDict = JsonHelper.FromJson<EmailObject>(jsonString);
-    // }
+    private AttachmentObject[] SetAttachmentDictionary(string fileName)
+    {
+        string jsonString = SaveSystem.LoadDictionary(fileName);
+        if (jsonString == null)
+        {
+            Debug.Log("Error - Unable to find " + fileName);
+            Application.Quit();
+        }
+        return JsonHelper.FromJson<AttachmentObject>(jsonString);
+    }
+
     public void SendRandomMail()
     {
         int templateLength = emailDict.Length - 1;
@@ -112,14 +107,14 @@ public class EmailManager : MonoBehaviour
 
         emailInbox.Add(phishingDict[index]);
 
-        // scenarioInbox.Add (index);
+        scenarioInbox.Add (index);
         return index;
     }
 
     public static int GetRandomPhishingMail()
     {
-        int templateLength = phishingDict.Length - 1;
-        int index = Random.Range(0, templateLength);
+        int templateLength = scenarioDict.Length - 1;
+        int index = Random.Range(2, templateLength);
 
         return index;
     }
@@ -128,9 +123,14 @@ public class EmailManager : MonoBehaviour
     {
         if (phishing)
         {
-            return phishingDict[index];
+            return scenarioDict[index];
         }
         return emailDict[index];
+    }
+
+    public static AttachmentObject GetAttachmentFromIndex(int index)
+    {
+        return attachmentDict[index];
     }
 
     public static void ClearScenarioMails()
