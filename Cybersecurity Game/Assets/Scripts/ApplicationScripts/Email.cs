@@ -157,10 +157,41 @@ public class Email : MonoBehaviour
         view_topic.text = emailDetail.topic;
         view_content.text = emailDetail.content;
 
-        if (emailDetail.link != 0)
+        if (emailDetail.link == 0)
         {
             emailView.transform.Find("Attachment").gameObject.SetActive(false);
             emailView.transform.Find("Attach link").gameObject.SetActive(false);
+        }
+        else
+        {
+            AttachmentObject attachmentDetail =
+                EmailManager.GetAttachmentFromIndex(emailDetail.link);
+
+            if (attachmentDetail.isFile)
+            {
+                GameObject attachment =
+                    emailView.transform.GetChild(5).gameObject;
+                GameObject attachment_image =
+                    attachment.transform.GetChild(0).gameObject;
+                Text attachment_text =
+                    attachment
+                        .transform
+                        .GetChild(1)
+                        .gameObject
+                        .GetComponent<Text>();
+
+                attachment_image.SetActive(true);
+                attachment_text.text = attachmentDetail.linkName;
+                // Text attachment_text = attachment_text.transform.GetComponent<Text>();
+            }
+            else
+            {
+                GameObject attachment =
+                    emailView.transform.GetChild(6).gameObject;
+                Text attachment_text =
+                    attachment.gameObject.GetComponent<Text>();
+                attachment_text.text = attachmentDetail.linkName;
+            }
         }
     }
 }

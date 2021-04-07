@@ -4302,7 +4302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   email_file: EmailTemplate.json
   scenario_file: ScenarioEmail.json
-  phishing_file: PhishingDictionary.json
+  attachment_file: AttachmentDictionary.json
 --- !u!114 &342761647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40266,10 +40266,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5263344840988023370, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5263344841004012137, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263344841619385279, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5263344841863666426, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}

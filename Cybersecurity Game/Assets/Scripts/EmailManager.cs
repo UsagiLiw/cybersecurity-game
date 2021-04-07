@@ -10,15 +10,11 @@ public class EmailManager : MonoBehaviour
 
     public string scenario_file;
 
-    public string phishing_file;
-
     public string attachment_file;
 
     private static EmailObject[] emailDict;
 
     private static EmailObject[] scenarioDict;
-
-    private static EmailObject[] phishingDict;
 
     private static AttachmentObject[] attachmentDict;
 
@@ -47,8 +43,6 @@ public class EmailManager : MonoBehaviour
     {
         emailDict = SetEmailDictionary(email_file);
         scenarioDict = SetEmailDictionary(scenario_file);
-
-        // phishingDict = SetEmailDictionary(phishing_file);
         attachmentDict = SetAttachmentDictionary(attachment_file);
     }
 
@@ -105,7 +99,7 @@ public class EmailManager : MonoBehaviour
     {
         int index = GetRandomPhishingMail();
 
-        emailInbox.Add(phishingDict[index]);
+        emailInbox.Add(scenarioDict[index]);
 
         scenarioInbox.Add (index);
         return index;
@@ -123,7 +117,7 @@ public class EmailManager : MonoBehaviour
     {
         if (phishing)
         {
-            return scenarioDict[index];
+            return scenarioDict[index - 1];
         }
         return emailDict[index];
     }
