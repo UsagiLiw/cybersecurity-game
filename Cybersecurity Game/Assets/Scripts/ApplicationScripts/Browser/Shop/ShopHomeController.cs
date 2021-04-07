@@ -9,6 +9,11 @@ public class ShopHomeController : MonoBehaviour
 
     private ShopManager shopManager;
 
+    [SerializeField] private Button cloudButton;
+    [SerializeField] private Button antivirusButton;
+    [SerializeField] private Button trainingButton;
+    [SerializeField] private Button osButton;
+
     private void OnEnable()
     {
         UpdateBalance();
@@ -27,6 +32,24 @@ public class ShopHomeController : MonoBehaviour
     {
         shopManager.BuyItem(index);
         UpdateBalance();
+        switch(index)
+        {
+            case 0:
+                cloudButton.interactable = false;
+                break;
+            case 1:
+                antivirusButton.interactable = false;
+                break;
+            case 2:
+                trainingButton.interactable = false;
+                break;
+            case 3:
+                osButton.interactable = false;
+                break;
+            default:
+                Debug.Log("No button to disable interaction");
+                break;
+        }
     }
 
     private void UpdateBalance()

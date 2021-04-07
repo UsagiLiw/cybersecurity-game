@@ -8,7 +8,8 @@ public class ShopManager : MonoBehaviour
     private BudgetManager budgetManager;
     private ComputerManager computerManager;
 
-    [SerializeField] List<Item> items;
+    [SerializeField] private List<Item> items;
+
     private void Start()
     {
         budgetManager = gameObject.GetComponent<BudgetManager>();
@@ -16,11 +17,15 @@ public class ShopManager : MonoBehaviour
         {
             item.isPurchased = false;
         }
+        // Code for subscribe to day passed event 
     }
+
     public void BuyItem(int index)
     {
         Debug.Log("Buy item index " + index);
         items[index].isPurchased = true;
+
+        // Start count down for each item 
 
         budgetManager.ModifyBudget(-items[index].price);
         Debug.Log("Budget cut " + items[index].price);
@@ -45,6 +50,23 @@ public class ShopManager : MonoBehaviour
                 break;
         }
     }
+
+    //Subscribe to day passed event
+    private void CountDayForItem()
+    {
+        foreach(Item item in items)
+        {
+            if(item.isPurchased) 
+                item.dayPassed++;
+
+            if(item.dayPassed == 10)
+            {
+                item.dayPassed = 0;
+                // Invoke Purchase expired
+            }
+        }
+    }
+
 }
 
 [Serializable]
@@ -53,4 +75,5 @@ public class Item
     public string name;
     public bool isPurchased; 
     public int price;
+    public int dayPassed = 0;
 }
