@@ -70,4 +70,16 @@ public class Browser : MonoBehaviour
         email.SetActive(false);
         bar.SetActive(true);
     }
+
+    public void ShowHoverLink(string input)
+    {
+        linkHover.SetActive(true);
+        Text text = linkHover.GetComponent<Text>();
+        text.text = input;
+    }
+
+    public void HideHoverLink()
+    {
+        linkHover.SetActive(false);
+    }
 }

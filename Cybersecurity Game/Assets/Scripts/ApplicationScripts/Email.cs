@@ -33,7 +33,11 @@ public class Email : MonoBehaviour
 
     public GameObject emailView;
 
+    public GameObject linkHover;
+
     private List<EmailObject> emailInbox;
+
+    private static string hoverLink;
 
     public void OnEnable()
     {
@@ -160,22 +164,17 @@ public class Email : MonoBehaviour
         view_senderMail.text = emailDetail.senderMail;
         view_topic.text = emailDetail.topic;
         view_content.text = emailDetail.content;
-        Debug.Log("Email detail link: " + emailDetail.link);
-        if (emailDetail.link == 0)
-        {
-            Debug.Log("1");
-            emailView.transform.Find("Attachment").gameObject.SetActive(false);
-            emailView.transform.Find("Attach link").gameObject.SetActive(false);
-        }
-        else
+        emailView.transform.Find("Attachment").gameObject.SetActive(false);
+        emailView.transform.Find("Attach link").gameObject.SetActive(false);
+        if (emailDetail.link != 0)
         {
             AttachmentObject attachmentDetail =
                 EmailManager.GetAttachmentFromIndex(emailDetail.link);
+            hoverLink = attachmentDetail.linkHover;
+            GameObject attachment = null;
             if (attachmentDetail.isFile)
             {
-                Debug.Log("2");
-                GameObject attachment =
-                    emailView.transform.Find("Attachment").gameObject;
+                attachment = emailView.transform.Find("Attachment").gameObject;
                 attachment.SetActive(true);
                 GameObject attachment_image =
                     attachment.transform.GetChild(0).gameObject;
@@ -189,14 +188,32 @@ public class Email : MonoBehaviour
             }
             else
             {
-                Debug.Log("3");
-                GameObject attachment =
-                    emailView.transform.Find("Attach link").gameObject;
+                attachment = emailView.transform.Find("Attach link").gameObject;
                 attachment.SetActive(true);
                 Text attachment_text =
                     attachment.gameObject.GetComponent<Text>();
                 attachment_text.text = attachmentDetail.linkName;
             }
+            attachment
+                .GetComponent<Button>()
+                .AddEventListener(attachmentDetail.isFatal, AttachLinkAction);
         }
+    }
+
+    public void AttachHoverIn()
+    {
+        linkHover.SetActive(true);
+        GameObject address = linkHover.transform.GetChild(0).gameObject;
+        Text address_text = address.GetComponent<Text>();
+        address_text.text = hoverLink;
+    }
+
+    public void AttachHoverOut()
+    {
+        linkHover.SetActive(false);
+    }
+
+    public void AttachLinkAction(bool isFatal)
+    {
     }
 }

@@ -20,7 +20,10 @@ public class EmailObject
 public class AttachmentObject
 {
     public string linkName;
+
     public bool isFile;
+
     public bool isFatal;
+
     public string linkHover;
 }
