@@ -116,6 +116,10 @@ public class Email : MonoBehaviour
     private void ShowAllPlayerMails()
     {
         emailInbox = new List<EmailObject>(EmailManager.emailInbox);
+        foreach (Transform child in emailContent.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
         for (int i = emailInbox.Count - 1; i >= 0; i--)
         {
             GameObject newMail = Instantiate(mailHeader_prefab) as GameObject;
@@ -156,9 +160,10 @@ public class Email : MonoBehaviour
         view_senderMail.text = emailDetail.senderMail;
         view_topic.text = emailDetail.topic;
         view_content.text = emailDetail.content;
-
+        Debug.Log("Email detail link: " + emailDetail.link);
         if (emailDetail.link == 0)
         {
+            Debug.Log("1");
             emailView.transform.Find("Attachment").gameObject.SetActive(false);
             emailView.transform.Find("Attach link").gameObject.SetActive(false);
         }
@@ -166,11 +171,12 @@ public class Email : MonoBehaviour
         {
             AttachmentObject attachmentDetail =
                 EmailManager.GetAttachmentFromIndex(emailDetail.link);
-
             if (attachmentDetail.isFile)
             {
+                Debug.Log("2");
                 GameObject attachment =
-                    emailView.transform.GetChild(5).gameObject;
+                    emailView.transform.Find("Attachment").gameObject;
+                attachment.SetActive(true);
                 GameObject attachment_image =
                     attachment.transform.GetChild(0).gameObject;
                 Text attachment_text =
@@ -179,15 +185,14 @@ public class Email : MonoBehaviour
                         .GetChild(1)
                         .gameObject
                         .GetComponent<Text>();
-
-                attachment_image.SetActive(true);
                 attachment_text.text = attachmentDetail.linkName;
-                // Text attachment_text = attachment_text.transform.GetComponent<Text>();
             }
             else
             {
+                Debug.Log("3");
                 GameObject attachment =
-                    emailView.transform.GetChild(6).gameObject;
+                    emailView.transform.Find("Attach link").gameObject;
+                attachment.SetActive(true);
                 Text attachment_text =
                     attachment.gameObject.GetComponent<Text>();
                 attachment_text.text = attachmentDetail.linkName;
