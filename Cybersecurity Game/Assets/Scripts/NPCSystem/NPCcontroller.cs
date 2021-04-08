@@ -25,7 +25,6 @@ public class NPCcontroller : MonoBehaviour
     public static event NewNPCScenarioAction NewNPCScenario;
 
     //Scenario Computer screen prefab
-
     public GameObject phishingScreen_prefab;
 
     private void Start()
@@ -130,7 +129,6 @@ public class NPCcontroller : MonoBehaviour
 
     public void CreateNPCScreen()
     {
-        Debug.Log("Im runngin");
         GameObject phishingScreen_Object =
             Instantiate(phishingScreen_prefab) as GameObject;
         GameObject gui = GameObject.Find("GUI");
