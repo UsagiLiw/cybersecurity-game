@@ -4379,15 +4379,20 @@ MonoBehaviour:
   - name: Cloud Storage
     isPurchased: 0
     price: 5
+    dayPassed: 0
   - name: Antivirus Software
     isPurchased: 0
     price: 5
+    dayPassed: 0
   - name: Training Course
     isPurchased: 0
     price: 5
+    dayPassed: 0
   - name: OS Update
     isPurchased: 0
     price: 5
+    dayPassed: 0
+  gameManager: {fileID: 342761639}
 --- !u!1 &421703799
 GameObject:
   m_ObjectHideFlags: 0

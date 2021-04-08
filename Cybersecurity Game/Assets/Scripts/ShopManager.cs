@@ -9,6 +9,10 @@ public class ShopManager : MonoBehaviour
     private ComputerManager computerManager;
 
     [SerializeField] private List<Item> items;
+    [SerializeField] private GameManager gameManager;
+
+    public delegate void ItemExpireHandler(int itemIndex);
+    public event ItemExpireHandler ItemExpired;
 
     private void Start()
     {
@@ -18,7 +22,7 @@ public class ShopManager : MonoBehaviour
         {
             item.isPurchased = false;
         }
-        // Code for subscribe to day passed event 
+        gameManager.DayPassed += CountDayForItem;
     }
 
     public void BuyItem(int index)
@@ -55,16 +59,18 @@ public class ShopManager : MonoBehaviour
     //Subscribe to day passed event
     private void CountDayForItem()
     {
+        int i = 0;
         foreach(Item item in items)
         {
             if(item.isPurchased) 
                 item.dayPassed++;
 
-            if(item.dayPassed == 10)
+            if(item.dayPassed == 5)
             {
                 item.dayPassed = 0;
-                // Invoke Purchase expired
+                ItemExpired.Invoke(i);
             }
+            i++;
         }
     }
 

@@ -17,9 +17,10 @@ public class ShopHomeController : MonoBehaviour
     private void OnEnable()
     {
         UpdateBalance();
+        shopManager.ItemExpired += ReEnableButton;
     }
 
-    private void Start()
+    private void Awake()
     {
         shopManager = GameObject.Find("GameManager").GetComponent<ShopManager>();
         if(shopManager != null)
@@ -56,8 +57,39 @@ public class ShopHomeController : MonoBehaviour
         }
     }
 
+    private void ReEnableButton(int itemIndex)
+    {
+        switch(itemIndex)
+        {
+            case 0:
+                Debug.Log("Cloud Button reactivate");
+                cloudButton.interactable = true;
+                break;
+            case 1:
+                Debug.Log("Antivirus Button reactivate");
+                antivirusButton.interactable = true;
+                break;
+            case 2:
+                Debug.Log("Training Button reactivate");
+                trainingButton.interactable = true;
+                break;
+            case 3:
+                Debug.Log("OS Button reactivate");
+                osButton.interactable = true;
+                break;
+            default:
+                Debug.Log("Can't reactivate what button is this ---> " + itemIndex);
+                break;
+        }
+    }
+
     private void UpdateBalance()
     {
         balanceText.text = BudgetManager.currentBudget.ToString();
+    }
+
+    private void OnDisable()
+    {
+        shopManager.ItemExpired -= ReEnableButton;
     }
 }
