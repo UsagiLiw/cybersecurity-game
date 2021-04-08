@@ -40146,6 +40146,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 402222256626882821}
     m_Modifications:
+    - target: {fileID: 5263344840694718415, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 05f0feb6242f45745912d969a9b4f6dd,
+        type: 3}
     - target: {fileID: 5263344840724513540, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
       propertyPath: gameManager
