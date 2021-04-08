@@ -63,19 +63,7 @@ public class NPCScript : MonoBehaviour
             QuestActive();
         }
     }
-
-    // private IEnumerator DelayCheckStatus(float seconds)
-    // {
-    //     yield return new WaitForSeconds(seconds);
-    //     if (NPCcontroller.CheckTargetActive(self))
-    //     {
-    //         QuestActive();
-    //     }
-    //     else
-    //     {
-    //         QuestDeactive();
-    //     }
-    // }
+    
     private void OnMouseOver()
     {
         if (selfActive) outline.enabled = true;
