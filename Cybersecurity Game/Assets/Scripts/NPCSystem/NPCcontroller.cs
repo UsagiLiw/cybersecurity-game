@@ -69,6 +69,14 @@ public class NPCcontroller : MonoBehaviour
         }
     }
 
+    public static void ContinueNPCquest()
+    {
+        if (NewNPCScenario != null)
+        {
+            NewNPCScenario.Invoke();
+        }
+    }
+
     public static bool CheckTargetActive(Target target)
     {
         switch (target)

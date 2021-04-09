@@ -149,6 +149,10 @@ public class NPCPhishing : MonoBehaviour
         }
     }
 
+    private void TriggerWebScenario(int webIndex)
+    {
+    }
+
     public void HoverIn()
     {
         linkHover.SetActive(true);
@@ -162,7 +166,9 @@ public class NPCPhishing : MonoBehaviour
         linkHover.SetActive(false);
     }
 
-    private void TriggerWebScenario(int webIndex)
+    public void CloseWindow()
     {
+        NPCcontroller.ContinueNPCquest();
+        Destroy(this.gameObject);
     }
 }
