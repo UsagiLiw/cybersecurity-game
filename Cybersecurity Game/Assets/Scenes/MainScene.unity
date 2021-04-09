@@ -4128,6 +4128,7 @@ GameObject:
   - component: {fileID: 342761646}
   - component: {fileID: 342761647}
   - component: {fileID: 342761645}
+  - component: {fileID: 342761648}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4320,6 +4321,7 @@ MonoBehaviour:
     driveE: 296
     software: 
     malware: 0100000002000000
+    haveAntivirus: 0
     isInfected: 1
   - ram: 0
     cpu: 0
@@ -4329,6 +4331,7 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
+    haveAntivirus: 0
     isInfected: 0
   - ram: 0
     cpu: 0
@@ -4338,6 +4341,7 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
+    haveAntivirus: 0
     isInfected: 0
   - ram: 0
     cpu: 0
@@ -4347,6 +4351,7 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
+    haveAntivirus: 0
     isInfected: 0
   - ram: 0
     cpu: 0
@@ -4356,7 +4361,38 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
+    haveAntivirus: 0
     isInfected: 0
+--- !u!114 &342761648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342761638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49c21595d7be64428eb1eb674e4e05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - name: Cloud Storage
+    isPurchased: 0
+    price: 5
+    dayPassed: 0
+  - name: Antivirus Software
+    isPurchased: 0
+    price: 5
+    dayPassed: 0
+  - name: Training Course
+    isPurchased: 0
+    price: 5
+    dayPassed: 0
+  - name: OS Update
+    isPurchased: 0
+    price: 5
+    dayPassed: 0
+  gameManager: {fileID: 342761639}
 --- !u!1 &421703799
 GameObject:
   m_ObjectHideFlags: 0
@@ -40116,11 +40152,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 402222256626882821}
     m_Modifications:
-    - target: {fileID: 3594774686370216262, guid: 61a8c349863454540a228c7fce134d52,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EditEmailPassword
-      objectReference: {fileID: 0}
     - target: {fileID: 5263344840724513540, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
       propertyPath: gameManager
@@ -40241,30 +40272,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5485194769841318129, guid: 61a8c349863454540a228c7fce134d52,
+    - target: {fileID: 5263344841004012137, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5485194769841318129, guid: 61a8c349863454540a228c7fce134d52,
+    - target: {fileID: 5263344841713450238, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8751913484008554071, guid: 61a8c349863454540a228c7fce134d52,
+    - target: {fileID: 5263344842296112461, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8751913484008554071, guid: 61a8c349863454540a228c7fce134d52,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8751913484008554071, guid: 61a8c349863454540a228c7fce134d52,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61a8c349863454540a228c7fce134d52, type: 3}
