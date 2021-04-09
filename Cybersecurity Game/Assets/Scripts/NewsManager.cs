@@ -16,3 +16,11 @@ public class NewsManager : MonoBehaviour
         
     }
 }
+
+public class News
+{
+    public int index;
+    public string title;
+    public string contents;
+    // Some type to hold image
+}
