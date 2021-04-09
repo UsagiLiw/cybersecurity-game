@@ -20,12 +20,13 @@ public class PhishingController : MonoBehaviour
         //Both mail and web phishing
         Target NPC = (Target) index;
         int rand = Random.Range(0, 1);
+        bool isPhishing = Random.Range(0, 2) == 1 ? true : false;
         switch (rand)
         {
             case 0:
-                return TriggerEmailCase(NPC);
+                return TriggerEmailCase(NPC, isPhishing);
             case 1:
-                return TriggerEmailCase(NPC);
+                return TriggerWebCase(NPC, isPhishing);
             // return TriggerWebCase(NPC);
             default:
                 Debug.Log("WTF - random range 0 to 1 and still fail?");
@@ -33,38 +34,57 @@ public class PhishingController : MonoBehaviour
         }
     }
 
-    private string TriggerEmailCase(Target NPC)
+    private string TriggerEmailCase(Target NPC, bool isPhishing)
     {
         string questDetail =
             email_QuestDetail[Random.Range(0, email_QuestDetail.Length - 1)];
-        NPCcontroller.TriggerNPCquest(NPC, Scenario.Phishing, questDetail);
-        int index = EmailManager.GetRandomPhishingMail();
+        NPCcontroller
+            .TriggerNPCPhishingQuest(NPC,
+            Scenario.Phishing,
+            questDetail,
+            isPhishing);
+        int index = 0;
+        if (isPhishing) index = EmailManager.GetRandomPhishingMail();
+        else index = EmailManager.GetRandomNormalMail();
         phishingSave =
             new PhishingSave {
                 dayLeft = 4,
                 atkType = AtkTypes.Email,
                 questTarget = NPC,
-                dictIndex = index
+                dictIndex = index,
+                isPhishing = isPhishing
             };
         Debug
-            .Log("Phishing EMAIL triggered, Target: " + NPC + " dictIndex: " + index);
+            .Log("Phishing EMAIL triggered, Target: " +
+            NPC +
+            " dictIndex: " +
+            index);
         return JsonUtility.ToJson(phishingSave);
     }
 
-    private string TriggerWebCase(Target NPC)
+    private string TriggerWebCase(Target NPC, bool isPhishing)
     {
         string questDetail =
             web_QuestDetail[Random.Range(0, web_QuestDetail.Length - 1)];
-        NPCcontroller.TriggerNPCquest(NPC, Scenario.Phishing, questDetail);
-        int index = Random.Range(0,3);
+        NPCcontroller
+            .TriggerNPCPhishingQuest(NPC,
+            Scenario.Phishing,
+            questDetail,
+            isPhishing);
+        int index = Random.Range(1, 4);
         phishingSave =
             new PhishingSave {
                 dayLeft = 4,
                 atkType = AtkTypes.Web,
                 questTarget = NPC,
-                dictIndex = index
+                dictIndex = index,
+                isPhishing = isPhishing
             };
-        Debug.Log("Phishing WEB triggered, Target: " + NPC + " dictIndex: " + index);
+        Debug
+            .Log("Phishing WEB triggered, Target: " +
+            NPC +
+            " dictIndex: " +
+            index);
         return JsonUtility.ToJson(phishingSave);
     }
 
@@ -82,11 +102,13 @@ public enum AtkTypes
 
 public class PhishingSave
 {
-    public int dayLeft;
+    public int dayLeft; //Amount of day before the quest auto fail
 
-    public AtkTypes atkType;
+    public AtkTypes atkType; //Target web or email
 
-    public Target questTarget;
+    public Target questTarget; //NPC target
 
-    public int dictIndex;
+    public bool isPhishing; //is legit or phishing
+
+    public int dictIndex; //index to read from dictionary
 }
