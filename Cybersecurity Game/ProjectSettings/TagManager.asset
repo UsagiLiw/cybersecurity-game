@@ -8,6 +8,7 @@ TagManager:
   - Application
   - Quest_NPC
   - GameManager
+  - UIPanel
   layers:
   - Default
   - TransparentFX

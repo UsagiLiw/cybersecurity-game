@@ -4,23 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class Email_ButtonExtension
-{
-    public static void AddEventListener<T>(
-        this Button button,
-        T param,
-        Action<T> OnClick
-    )
-    {
-        button
-            .onClick
-            .AddListener(delegate ()
-            {
-                OnClick (param);
-            });
-    }
-}
-
 public class Email : MonoBehaviour
 {
     public InputField login_passwordInput;
@@ -196,7 +179,7 @@ public class Email : MonoBehaviour
             }
             attachment
                 .GetComponent<Button>()
-                .AddEventListener(attachmentDetail.isFatal, AttachLinkAction);
+                .AddEventListener(attachmentDetail.isFatal, this.AttachLinkAction);
         }
     }
 
@@ -215,7 +198,7 @@ public class Email : MonoBehaviour
 
     public void AttachLinkAction(bool isFatal)
     {
-        if(isFatal)
+        if (isFatal)
         {
             Debug.Log("You die thankyou forever");
             return;

@@ -5,20 +5,46 @@ using UnityEngine.UI;
 
 public class NPCPhishing : MonoBehaviour
 {
+    public GameObject linkHover;
+
+    public GameObject exitButton;
+
+    public GameObject bar;
+
+    public GameObject siteInfo;
+
     private PhishingSave phishingDetail;
 
-    private string hoverLink;
+    private GameObject UIPanel;
 
-    private void Start()
+    private string hoverLink_string;
+
+    private string bar_string;
+
+    private string siteInfo_string;
+
+    private void OnEnable()
     {
         Debug.Log("I am alive now");
+        UIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+        UIPanel.SetActive(false);
         foreach (Transform child in this.transform)
         {
             child.gameObject.SetActive(false);
         }
         this.transform.GetChild(6).gameObject.SetActive(true);
+        this.transform.GetChild(7).gameObject.SetActive(true);
         phishingDetail = PhishingController.GetPhishingDetail();
+        siteInfo.SetActive(false);
+        linkHover.SetActive(false);
+        bar.SetActive(false);
+        exitButton.SetActive(true);
         EnablePhishingTarget();
+    }
+
+    private void OnDisable()
+    {
+        UIPanel.SetActive(true);
     }
 
     private void EnablePhishingTarget()
@@ -37,7 +63,7 @@ public class NPCPhishing : MonoBehaviour
     private void TriggerEmailScenario(int index)
     {
         Debug.Log("Open Email fish");
-        hoverLink = null;
+        hoverLink_string = null;
         EmailObject emailContent = EmailManager.GetMailFromIndex(index, true);
         GameObject phishingEmail = this.transform.GetChild(0).gameObject;
         phishingEmail.SetActive(true);
@@ -72,13 +98,13 @@ public class NPCPhishing : MonoBehaviour
         topic.text = emailContent.topic;
         content.text = emailContent.content;
 
-        phishingEmail.transform.GetChild(7).gameObject.SetActive(false);
-        phishingEmail.transform.GetChild(8).gameObject.SetActive(false);
+        phishingEmail.transform.GetChild(5).gameObject.SetActive(false);
+        phishingEmail.transform.GetChild(6).gameObject.SetActive(false);
         if (emailContent.link >= 0)
         {
             AttachmentObject attachmentDetail =
                 EmailManager.GetAttachmentFromIndex(emailContent.link);
-            hoverLink = attachmentDetail.linkHover;
+            hoverLink_string = attachmentDetail.linkHover;
             GameObject attachment = null;
             if (attachmentDetail.isFile)
             {
@@ -104,24 +130,37 @@ public class NPCPhishing : MonoBehaviour
                     attachment.gameObject.GetComponent<Text>();
                 attachment_text.text = attachmentDetail.linkName;
             }
-            // attachment
-            //     .GetComponent<Button>()
-            //     .AddEventListener(attachmentDetail.isFatal, AttachLinkAction);
+            attachment
+                .GetComponent<Button>()
+                .AddEventListener(attachmentDetail.isFatal,
+                this.AttachLinkAction1);
         }
     }
 
-    // public void AttachHoverIn()
-    // {
-    //     linkHover.SetActive(true);
-    //     GameObject address = linkHover.transform.GetChild(0).gameObject;
-    //     Text address_text = address.GetComponent<Text>();
-    //     address_text.text = hoverLink;
-    // }
+    public void AttachLinkAction1(bool isFatal)
+    {
+        if (isFatal)
+        {
+            Debug.Log("You die thankyou forever");
+        }
+        else
+        {
+            Debug.Log("I'm safe");
+        }
+    }
 
-    // public void AttachHoverOut()
-    // {
-    //     linkHover.SetActive(false);
-    // }
+    public void HoverIn()
+    {
+        linkHover.SetActive(true);
+        GameObject address = linkHover.transform.GetChild(0).gameObject;
+        Text address_text = address.GetComponent<Text>();
+        address_text.text = hoverLink_string;
+    }
+
+    public void HoverOut()
+    {
+        linkHover.SetActive(false);
+    }
 
     private void TriggerWebScenario(int webIndex)
     {
