@@ -7,6 +7,8 @@ public class NPCPhishing : MonoBehaviour
 {
     private PhishingSave phishingDetail;
 
+    private string hoverLink;
+
     private void Start()
     {
         Debug.Log("I am alive now");
@@ -35,6 +37,7 @@ public class NPCPhishing : MonoBehaviour
     private void TriggerEmailScenario(int index)
     {
         Debug.Log("Open Email fish");
+        hoverLink = null;
         EmailObject emailContent = EmailManager.GetMailFromIndex(index, true);
         GameObject phishingEmail = this.transform.GetChild(0).gameObject;
         phishingEmail.SetActive(true);
@@ -69,11 +72,56 @@ public class NPCPhishing : MonoBehaviour
         topic.text = emailContent.topic;
         content.text = emailContent.content;
 
-        if(emailContent.link >= 0)
+        phishingEmail.transform.GetChild(7).gameObject.SetActive(false);
+        phishingEmail.transform.GetChild(8).gameObject.SetActive(false);
+        if (emailContent.link >= 0)
         {
-            
+            AttachmentObject attachmentDetail =
+                EmailManager.GetAttachmentFromIndex(emailContent.link);
+            hoverLink = attachmentDetail.linkHover;
+            GameObject attachment = null;
+            if (attachmentDetail.isFile)
+            {
+                attachment =
+                    phishingEmail.transform.Find("Attachment").gameObject;
+                attachment.SetActive(true);
+                GameObject attachment_image =
+                    attachment.transform.GetChild(0).gameObject;
+                Text attachment_text =
+                    attachment
+                        .transform
+                        .GetChild(1)
+                        .gameObject
+                        .GetComponent<Text>();
+                attachment_text.text = attachmentDetail.linkName;
+            }
+            else
+            {
+                attachment =
+                    phishingEmail.transform.Find("Attach link").gameObject;
+                attachment.SetActive(true);
+                Text attachment_text =
+                    attachment.gameObject.GetComponent<Text>();
+                attachment_text.text = attachmentDetail.linkName;
+            }
+            // attachment
+            //     .GetComponent<Button>()
+            //     .AddEventListener(attachmentDetail.isFatal, AttachLinkAction);
         }
     }
+
+    // public void AttachHoverIn()
+    // {
+    //     linkHover.SetActive(true);
+    //     GameObject address = linkHover.transform.GetChild(0).gameObject;
+    //     Text address_text = address.GetComponent<Text>();
+    //     address_text.text = hoverLink;
+    // }
+
+    // public void AttachHoverOut()
+    // {
+    //     linkHover.SetActive(false);
+    // }
 
     private void TriggerWebScenario(int webIndex)
     {

@@ -4,16 +4,16 @@
         "senderName": "Google",
         "senderMail": "no-reply@accounts.google.com",
         "topic": "Security alert for itsupporter@itcompany.com",
-        "content": "Sign-in attempt was blocked\nSomeone just try to sign in to your email account. We have blocked them, but you should change your password."
-	"link": -1 
+        "content": "Sign-in attempt was blocked\nSomeone just try to sign in to your email account. We have blocked them, but you should change your password.",
+	    "link": -1 
    },
     {
         "template": "passwordWarning_shop",
         "senderName": "eShop",
         "senderMail": "info.shopping@eshop.official.com",
         "topic": "Security alert for itsupporter@itcompany.com",
-        "content": "Did you just login through a new device?\nWe have detected that someone just try to sign in to your eShop account. We have blocked the attempt, but you should reset your password regardless."
- 	"link": -1
+        "content": "Did you just login through a new device?\nWe have detected that someone just try to sign in to your eShop account. We have blocked the attempt, but you should reset your password regardless.",
+ 	    "link": -1
     },
     {
         "template": "accountWarning_email",
@@ -78,7 +78,7 @@
         "topic": "Change in term and condition",
         "content": "Dear Customer,\nPlease find the attached update on our prices.\nThanks.",
         "link": 8
-    }
+    },
     {
         "template": "attachment_email",
         "senderName": "Pete Richmond",

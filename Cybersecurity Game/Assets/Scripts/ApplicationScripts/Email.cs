@@ -166,7 +166,7 @@ public class Email : MonoBehaviour
         view_content.text = emailDetail.content;
         emailView.transform.Find("Attachment").gameObject.SetActive(false);
         emailView.transform.Find("Attach link").gameObject.SetActive(false);
-        if (emailDetail.link != 0)
+        if (emailDetail.link >= 0)
         {
             AttachmentObject attachmentDetail =
                 EmailManager.GetAttachmentFromIndex(emailDetail.link);
@@ -215,5 +215,11 @@ public class Email : MonoBehaviour
 
     public void AttachLinkAction(bool isFatal)
     {
+        if(isFatal)
+        {
+            Debug.Log("You die thankyou forever");
+            return;
+        }
+        Debug.Log("I am safe");
     }
 }
