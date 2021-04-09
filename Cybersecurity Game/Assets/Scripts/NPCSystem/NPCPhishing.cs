@@ -68,6 +68,11 @@ public class NPCPhishing : MonoBehaviour
         senderAddress.text = emailContent.senderMail;
         topic.text = emailContent.topic;
         content.text = emailContent.content;
+
+        if(emailContent.link >= 0)
+        {
+            
+        }
     }
 
     private void TriggerWebScenario(int webIndex)
