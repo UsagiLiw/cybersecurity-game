@@ -20,7 +20,8 @@ public class NPCRequest : MonoBehaviour
         Scenario currentScenario;
         Target currentTarget;
         string requestDetail;
-        (currentScenario,currentTarget,requestDetail) = NPCcontroller.GetRequestDetail();
+        (currentScenario, currentTarget, requestDetail) =
+            NPCcontroller.GetRequestDetail();
         switch (currentTarget)
         {
             case Target.CEO:

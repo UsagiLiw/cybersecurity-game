@@ -112,12 +112,19 @@ public class EmailManager : MonoBehaviour
 
         return index;
     }
+    public static int GetRandomNormalMail()
+    {
+        int templateLength = emailDict.Length - 1;
+        int index = Random.Range(0, templateLength);
+
+        return index;
+    }
 
     public static EmailObject GetMailFromIndex(int index, bool phishing)
     {
         if (phishing)
         {
-            return scenarioDict[index - 1];
+            return scenarioDict[index];
         }
         return emailDict[index];
     }

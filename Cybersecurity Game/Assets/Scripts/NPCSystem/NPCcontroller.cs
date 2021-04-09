@@ -20,6 +20,8 @@ public class NPCcontroller : MonoBehaviour
 
     private static string requestDetail;
 
+    public static bool isPhishing;
+
     public delegate void NewNPCScenarioAction();
 
     public static event NewNPCScenarioAction NewNPCScenario;
@@ -32,16 +34,17 @@ public class NPCcontroller : MonoBehaviour
         DisableAllNPC();
     }
 
-    public static void TriggerNPCquest(
+    public static void TriggerNPCPhishingQuest(
         Target target,
         Scenario type,
-        string detail
+        string detail,
+        bool isAPhishing
     )
     {
         scenario = type;
         currentTarget = target;
         requestDetail = detail;
-
+        isPhishing = isAPhishing;
         switch (target)
         {
             case Target.CEO:

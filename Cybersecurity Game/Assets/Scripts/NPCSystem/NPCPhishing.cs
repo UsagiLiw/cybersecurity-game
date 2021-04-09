@@ -17,15 +17,20 @@ public class NPCPhishing : MonoBehaviour
 
     private GameObject UIPanel;
 
+    public WebObject[] legitWebsite;
+
+    public WebObject[] phishingWebsite;
+
     private string hoverLink_string;
 
-    private string bar_string;
+    private bool isPhishing;
 
-    private string siteInfo_string;
+    private WebObject currentWeb;
 
     private void OnEnable()
     {
         Debug.Log("I am alive now");
+        isPhishing = NPCcontroller.isPhishing;
         UIPanel = GameObject.FindGameObjectWithTag("UIPanel");
         UIPanel.SetActive(false);
         foreach (Transform child in this.transform)
@@ -64,7 +69,8 @@ public class NPCPhishing : MonoBehaviour
     {
         Debug.Log("Open Email fish");
         hoverLink_string = null;
-        EmailObject emailContent = EmailManager.GetMailFromIndex(index, true);
+        EmailObject emailContent =
+            EmailManager.GetMailFromIndex(index, isPhishing);
         GameObject phishingEmail = this.transform.GetChild(0).gameObject;
         phishingEmail.SetActive(true);
 
@@ -151,6 +157,10 @@ public class NPCPhishing : MonoBehaviour
 
     private void TriggerWebScenario(int webIndex)
     {
+        Debug.Log("Open Web fishing");
+        hoverLink_string = null;
+        GameObject phishingWeb = this.transform.GetChild(webIndex).gameObject;
+        phishingWeb.SetActive(true);
     }
 
     public void HoverIn()
@@ -172,3 +182,4 @@ public class NPCPhishing : MonoBehaviour
         Destroy(this.gameObject);
     }
 }
+
