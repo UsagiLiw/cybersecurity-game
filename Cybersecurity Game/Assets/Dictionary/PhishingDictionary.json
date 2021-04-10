@@ -86,6 +86,14 @@
         "topic": "Monthly Financial Statement",
         "content": "Hi,\n\nThe monthly financial statement is attached within the email.\nPlease review it before processing\n\nBest regards,\nPete Richmond.",
         "link": 8
+    },
+    {
+        "template": "passwordWarning_email",
+        "senderName": "Google",
+        "senderMail": "no-reply@google.support",
+        "topic": "Someone has your password",
+        "content": "Hi,\nSomeone just used your password to try sign in to your Google Account.\n\nInformation:\nSaturdat,April 10, 2021 at 1:29:43 PM GMT+07:00\nSlatina, Romania\nFirefox browser\n\nGoogle stopped this sign-in attempt. You should change your password immediately\n\nBest,\nThe Mail Team",
+        "link": 11
     }
     ]
 }
