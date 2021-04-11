@@ -25,6 +25,16 @@ public class PhishingController : MonoBehaviour
             return TriggerWebCase(NPC, isPhishing);
     }
 
+    public (bool, string) UpdateScenarioState()
+    {
+        phishingSave.dayLeft--;
+        if (phishingSave.dayLeft <= 0)
+        {
+            return (false, ScenarioFailed());
+        }
+        return (true, JsonUtility.ToJson(phishingSave));
+    }
+
     private string TriggerEmailCase(Target NPC, bool isPhishing)
     {
         string questDetail =
@@ -41,7 +51,7 @@ public class PhishingController : MonoBehaviour
             index = EmailManager.GetRandomNormalMail();
         phishingSave =
             new PhishingSave {
-                dayLeft = 4,
+                dayLeft = 3,
                 atkType = AtkTypes.Email,
                 questTarget = NPC,
                 dictIndex = index,
@@ -67,7 +77,7 @@ public class PhishingController : MonoBehaviour
         int index = Random.Range(1, 4);
         phishingSave =
             new PhishingSave {
-                dayLeft = 4,
+                dayLeft = 3,
                 atkType = AtkTypes.Web,
                 questTarget = NPC,
                 dictIndex = index,
@@ -84,6 +94,11 @@ public class PhishingController : MonoBehaviour
     public static PhishingSave GetPhishingDetail()
     {
         return phishingSave;
+    }
+
+    private string ScenarioFailed()
+    {
+        return JsonUtility.ToJson(phishingSave);
     }
 }
 

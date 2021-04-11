@@ -109,7 +109,7 @@ public class PwdAtkController : MonoBehaviour
         return (true, JsonUtility.ToJson(saveObject));
     }
 
-    public static void SetPasswordScenarioState(string detail)
+    public void SetPasswordScenarioState(string detail)
     {
         PwdAtkObject saveObject = JsonUtility.FromJson<PwdAtkObject>(detail);
         dayLeft = saveObject.dayLeft;

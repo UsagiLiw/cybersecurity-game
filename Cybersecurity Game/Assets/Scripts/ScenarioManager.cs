@@ -72,7 +72,7 @@ public class ScenarioManager : MonoBehaviour
                 break;
             case Scenario.Password:
                 underAttack = true;
-                PwdAtkController.SetPasswordScenarioState (detail);
+                pwdAtkController.SetPasswordScenarioState (detail);
                 break;
             case Scenario.Phishing:
                 underAttack = true;
@@ -101,6 +101,8 @@ public class ScenarioManager : MonoBehaviour
                 currentType = Scenario.Password;
                 break;
             case Scenario.Phishing:
+                (underAttack, detail) =
+                    phishingController.UpdateScenarioState();
                 currentType = Scenario.Phishing;
                 break;
             case Scenario.Malware:
@@ -170,7 +172,7 @@ public class ScenarioManager : MonoBehaviour
                     underAttack = false;
                     return (Scenario.None, "");
                 }
-                return (Scenario.None, phishingController.TriggerNPC(i));
+                return (Scenario.Phishing, phishingController.TriggerNPC(i));
             case Scenario.Malware:
                 return (Scenario.Malware, "");
             default:
