@@ -17,21 +17,12 @@ public class PhishingController : MonoBehaviour
 
     public string TriggerNPC(int index)
     {
-        //Both mail and web phishing
         Target NPC = (Target) index;
-        int rand = Random.Range(0, 1);
         bool isPhishing = Random.Range(0, 2) == 1 ? true : false;
-        switch (rand)
-        {
-            case 0:
-                return TriggerEmailCase(NPC, isPhishing);
-            case 1:
-                return TriggerWebCase(NPC, isPhishing);
-            // return TriggerWebCase(NPC);
-            default:
-                Debug.Log("WTF - random range 0 to 1 and still fail?");
-                return "";
-        }
+        if (Random.value > 0.5f)
+            return TriggerEmailCase(NPC, isPhishing);
+        else
+            return TriggerWebCase(NPC, isPhishing);
     }
 
     private string TriggerEmailCase(Target NPC, bool isPhishing)
@@ -44,8 +35,10 @@ public class PhishingController : MonoBehaviour
             questDetail,
             isPhishing);
         int index = 0;
-        if (isPhishing) index = EmailManager.GetRandomPhishingMail();
-        else index = EmailManager.GetRandomNormalMail();
+        if (isPhishing)
+            index = EmailManager.GetRandomPhishingMail();
+        else
+            index = EmailManager.GetRandomNormalMail();
         phishingSave =
             new PhishingSave {
                 dayLeft = 4,

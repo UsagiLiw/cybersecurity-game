@@ -9,7 +9,7 @@ public class NPCPhishing : MonoBehaviour
 
     public GameObject exitButton;
 
-    public GameObject bar;
+    public GameObject addressBar;
 
     public GameObject siteInfo;
 
@@ -37,13 +37,15 @@ public class NPCPhishing : MonoBehaviour
         {
             child.gameObject.SetActive(false);
         }
-        this.transform.GetChild(6).gameObject.SetActive(true);
-        this.transform.GetChild(7).gameObject.SetActive(true);
+        this.transform.Find("PhishingElement").gameObject.SetActive(true);
+        this.transform.Find("ReportButton").gameObject.SetActive(true);
         phishingDetail = PhishingController.GetPhishingDetail();
         siteInfo.SetActive(false);
         linkHover.SetActive(false);
-        bar.SetActive(false);
+        addressBar.SetActive(false);
         exitButton.SetActive(true);
+        hoverLink_string = null;
+        currentWeb = null;
         EnablePhishingTarget();
     }
 
@@ -68,7 +70,6 @@ public class NPCPhishing : MonoBehaviour
     private void TriggerEmailScenario(int index)
     {
         Debug.Log("Open Email fish");
-        hoverLink_string = null;
         EmailObject emailContent =
             EmailManager.GetMailFromIndex(index, isPhishing);
         GameObject phishingEmail = this.transform.GetChild(0).gameObject;
@@ -158,9 +159,38 @@ public class NPCPhishing : MonoBehaviour
     private void TriggerWebScenario(int webIndex)
     {
         Debug.Log("Open Web fishing");
-        hoverLink_string = null;
-        GameObject phishingWeb = this.transform.GetChild(webIndex).gameObject;
+        GameObject phishingWeb =
+            this.transform.GetChild(webIndex + 1).gameObject;
         phishingWeb.SetActive(true);
+        GameObject webContent = phishingWeb.transform.GetChild(0).gameObject;
+        if (isPhishing)
+        {
+            currentWeb = phishingWebsite[webIndex];
+        }
+        else
+        {
+            currentWeb = legitWebsite[webIndex];
+        }
+        hoverLink_string = currentWeb.linkHover;
+        addressBar.SetActive(true);
+        if (currentWeb.isSecure)
+        {
+            addressBar.transform.GetChild(0).gameObject.SetActive(true);
+            addressBar.transform.GetChild(1).gameObject.SetActive(false);
+        }
+        else
+        {
+            addressBar.transform.GetChild(0).gameObject.SetActive(false);
+            addressBar.transform.GetChild(1).gameObject.SetActive(true);
+        }
+        Text addressString =
+            addressBar
+                .transform
+                .GetChild(2)
+                .gameObject
+                .transform
+                .GetComponent<Text>();
+        addressString.text = currentWeb.address;
     }
 
     public void HoverIn()
@@ -181,5 +211,33 @@ public class NPCPhishing : MonoBehaviour
         NPCcontroller.ContinueNPCquest();
         Destroy(this.gameObject);
     }
-}
 
+    public void OpenSiteInfo()
+    {
+        siteInfo.SetActive(true);
+        Debug.Log("underconstruction");
+    }
+
+    public void CloseSiteInfo()
+    {
+        siteInfo.SetActive(false);
+    }
+
+    public void OpenVerification()
+    {
+        this.transform.Find("PhishingReport").gameObject.SetActive(true);
+    }
+
+    public void SubmitVerification(bool legit)
+    {
+        if(legit)
+        {
+            Debug.Log("blyat");
+        }
+        else
+        {
+            Debug.Log("vodka");
+        }
+        Destroy(this.gameObject);
+    }
+}
