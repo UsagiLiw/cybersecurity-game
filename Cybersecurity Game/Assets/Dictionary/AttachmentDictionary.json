@@ -62,5 +62,19 @@
         "isFatal":true,
         "linkHover": "bb.secdation.tp.download.22"
     }
+    {
+        "template": "10_legitL",
+        "linkName": "Upgrade your Balance",
+        "isFile":false,
+        "isFatal":false,
+        "linkHover": "https://www.balance.com/buy",
+    }
+    {
+        "template": "11_phishingL",
+        "linkName": "CHANGE PASSWORD",
+        "isFile":false,
+        "isFatal":true,
+        "linkHover": "http://myaccount.google.com-securitysettingpage.ml-security.org/signinoptions",
+    },
     ]
 }
