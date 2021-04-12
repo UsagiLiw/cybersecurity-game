@@ -62,7 +62,7 @@ public class Shop : MonoBehaviour
 
     private void CloseAllChild()
     {
-        foreach (Transform child in this.transform)
+        foreach (Transform child in transform)
         {
             child.gameObject.SetActive(false);
             Debug.Log(child);
