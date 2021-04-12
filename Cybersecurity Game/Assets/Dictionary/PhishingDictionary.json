@@ -94,6 +94,39 @@
         "topic": "Someone has your password",
         "content": "Hi,\nSomeone just used your password to try sign in to your Google Account.\n\nInformation:\nSaturdat,April 10, 2021 at 1:29:43 PM GMT+07:00\nSlatina, Romania\nFirefox browser\n\nGoogle stopped this sign-in attempt. You should change your password immediately\n\nBest,\nThe Mail Team",
         "link": 11
+    },
+    {
+        "template": "attachment_email",
+        "senderName": "Jenifer Wang",
+        "senderMail": "jennywant@itcompany.com",
+        "topic": "Jenifer Wang has shared a link to the following document",
+        "content": "Hey there. Here is the doc you asked for. Let me known if you need anything else!",
+        "link": 12
+    },
+    {
+        "template": "attachment_email",
+        "senderName": "Fax Message NoReply [admin]",
+        "senderMail": "noreply@efacks.com",
+        "topic": "You have received a 1 page fax at 4/12/21, 1:35PM",
+        "content": "",
+        "link": 13
+    },
+    {
+        "template": "attachment_email",
+        "senderName": "TK",
+        "senderMail": "tk@itcapany.com",
+        "topic": "Remember this?",
+        "content": "hey, do you remember this photo!",
+        "link": 14
+    },
+    {
+        "template": "attachment_email",
+        "senderName": "Google",
+        "senderMail": "no-reply@google.support",
+        "topic": "Goverment-backed attacker may be trying to steal your password",
+        "content": "There's a chance this is a false alarm, but we believe we detected government-backed attackers trying to steal your password. This happens to less then 0.1% of all Gmail users. To further improve your security, based on your current setting, we recommend:",
+        "link": 15
     }
     ]
+
 }
