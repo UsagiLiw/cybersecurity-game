@@ -103,6 +103,20 @@
         "isFile":false,
         "isFatal":true,
         "linkHover": "https://google.com/amp/tinyurl.com/y7u8ewlr",
+    },
+    {
+        "template": "15_LegitL",
+        "linkName": "Package Price List.pdf",
+        "isFile":false,
+        "isFatal":false,
+        "linkHover": "https://drive.google.com/file/d/5as16salmBsfkM112sWL/view?usp=sharing",
+    },
+    {
+        "template": "16_LegitL",
+        "linkName": "Certificate.pdf",
+        "isFile":false,
+        "isFatal":false,
+        "linkHover": "https://drive.google.com/file/d/5sdvsdvsctdb12sWL/view?usp=sharing",
     }
     ]
 }
