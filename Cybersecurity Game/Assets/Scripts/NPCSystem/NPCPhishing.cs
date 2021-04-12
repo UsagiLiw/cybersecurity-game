@@ -239,7 +239,7 @@ public class NPCPhishing : MonoBehaviour
 
     public void SubmitVerification(bool legit)
     {
-        PhishingController.CheckScenarioCondition(legit);
+        PhishingController.CheckScenarioCondition(!legit);
         Destroy(this.gameObject);
     }
 }

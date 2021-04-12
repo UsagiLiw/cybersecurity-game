@@ -238,11 +238,11 @@ MonoBehaviour:
   - siteName: SCPbank
     linkHover: https://www.scpbanking.co.th/account/update
     address: https://www.scpbanking.co.th/account/update/submit
-    isSecure: 1
+    isSecure: 0
   - siteName: SleepNoted
     linkHover: https://www.sleepnoted.org/login/submit
     address: https://www.sleepnoted.org/login
-    isSecure: 1
+    isSecure: 0
 --- !u!114 &5008801786104655117
 MonoBehaviour:
   m_ObjectHideFlags: 0
