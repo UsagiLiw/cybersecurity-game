@@ -54,6 +54,22 @@
         "topic": "Your balance is full",
         "content": "Hi,\n\nYour Balance is full and is no longer syncing files. New files added to your Balance won;t be accessible on your other devices and won't be backed up online.\n\nUpgrade ypur Balance today to get 1 TB (1000 GB) of space and powerful sharing features.\n\nBalance Team",
         "link": 10
+    },  
+    {
+        "template": 8,
+        "senderName": "Henri Rousseau",
+        "senderMail": "henrirous@itcompany.com",
+        "topic": "Package price list",
+        "content": "Hi,\n\nI've attached the photo package price list you requested!\n\nThanks",
+        "link": 15
+    },
+    {
+        "template": 9,
+        "senderName": "Dude",
+        "senderMail": "Dude@itcompany.com",
+        "topic": "Certificate of achievement",
+        "content": "Hi,\n\nCongratulation, you successfully completed the training for level 1. Yoou certificate is attached.\n\nregards",
+        "link": 16
     }
     ]
 }
