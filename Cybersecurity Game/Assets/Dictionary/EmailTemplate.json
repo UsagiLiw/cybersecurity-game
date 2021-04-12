@@ -4,14 +4,16 @@
         "senderName": "Johnson Driver",
         "senderMail": "johnsondriver@itcompany.com",
         "topic": "Notice to all staff member",
-        "content": "I hope this email finds you well, I want to give an announcement regarding email communication within our company. All work related email communication must be done through company distributed business email address. The company's legitimate email will always ended with '@itcompany.com'. \nKind Regards,\nJohnson Driver\nChief Executive Officer"
+        "content": "I hope this email finds you well, I want to give an announcement regarding email communication within our company. All work related email communication must be done through company distributed business email address. The company's legitimate email will always ended with '@itcompany.com'. \nKind Regards,\nJohnson Driver\nChief Executive Officer",
+        "link": -1
     },
     {
         "template": 2,
         "senderName": "Google",
         "senderMail": "no-reply@accounts.google.com",
         "topic": "Find out more about our updated Terms of Service",
-        "content": "We’re improving our Terms of Service and making them easier for you to understand. The changes will take effect soon, and they won’t impact the way that you use Google services."
+        "content": "We’re improving our Terms of Service and making them easier for you to understand. The changes will take effect soon, and they won’t impact the way that you use Google services.",
+        "link": -1
     },
     {
         "template": 3,
@@ -19,28 +21,55 @@
         "senderMail": "googagooga6@gmail.com",
         "topic": "YOLO",
         "content": "This is an auto mail Ij wmopimhoihrnoihjkmnpijknpiojhknpinweknpoijbknmpkmpeoijgwer",
-        "link": 1
+        "link": -1
     },
     {
         "template": 4,
         "senderName": "GooGee4",
         "senderMail": "googagooga8@gmail.com",
         "topic": "YOLO",
-        "content": "This is an auto mail Ij wmopimhoihrnoihjkmnpijknpiojhknpinweknpoijbknmpkmpeoijgwer"
+        "content": "This is an auto mail Ij wmopimhoihrnoihjkmnpijknpiojhknpinweknpoijbknmpkmpeoijgwer",
+        "link": -1
     },
     {
         "template": 5,
         "senderName": "SacredLamp",
         "senderMail": "sacredlamp@oui.org",
         "topic": "Bonk",
-        "content": "bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk BONK"
+        "content": "bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk BONK",
+        "link": -1
     },
     {
         "template": 6,
         "senderName": "Jenifer Wang",
         "senderMail": "jennywant@itcompany.com",
         "topic": "FLUSH THE TOILET!!!!",
-        "content": "To whoever using the toilet yesterday. Please FLUSH THE TOILET TOO. Don't left the mess for the person using the toilet after you PLEASE!!!"
+        "content": "To whoever using the toilet yesterday. Please FLUSH THE TOILET TOO. Don't left the mess for the person using the toilet after you PLEASE!!!",
+        "link": -1
+    },
+    {
+        "template": 7,
+        "senderName": "Balance",
+        "senderMail": "no-reply@balance.com",
+        "topic": "Your balance is full",
+        "content": "Hi,\n\nYour Balance is full and is no longer syncing files. New files added to your Balance won;t be accessible on your other devices and won't be backed up online.\n\nUpgrade ypur Balance today to get 1 TB (1000 GB) of space and powerful sharing features.\n\nBalance Team",
+        "link": 10
+    },  
+    {
+        "template": 8,
+        "senderName": "Henri Rousseau",
+        "senderMail": "henrirous@itcompany.com",
+        "topic": "Package price list",
+        "content": "Hi,\n\nI've attached the photo package price list you requested!\n\nThanks",
+        "link": 15
+    },
+    {
+        "template": 9,
+        "senderName": "Dude",
+        "senderMail": "Dude@itcompany.com",
+        "topic": "Certificate of achievement",
+        "content": "Hi,\n\nCongratulation, you successfully completed the training for level 1. Yoou certificate is attached.\n\nregards",
+        "link": 16
     }
     ]
 }

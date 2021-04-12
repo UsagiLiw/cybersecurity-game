@@ -1,0 +1,122 @@
+{
+    "Items": [{
+        "template": "1_phishingL",
+        "linkName": "Verify your account",
+        "isFile": false,
+        "isFatal": true,
+        "linkHover": "http://.savvepaul.add/ResetPassword"
+    },
+    {
+        "template": "2_phishingL",
+        "linkName": "Update account now",
+        "isFile":false,
+        "isFatal":true,
+        "linkHover": "http://bit.do/gns2bs"
+    },
+    {
+        "template": "3_phishingL",
+        "linkName": "Update Info",
+        "isFile":false,
+        "isFatal":true,
+        "linkHover": "uff.ggambling/sk7t35ughx2155"
+    },
+    {
+        "template": "4_phishingL",
+        "linkName": "Update Info",
+        "isFile":false,
+        "isFatal":true,
+        "linkHover": "log-in.safepal.account_activate.com/activate"
+    },
+    {
+        "template": "5_phishingL",
+        "linkName": "CANCEL REQUEST",
+        "isFile":false,
+        "isFatal":true,
+        "linkHover": "https://vgalibrarycom.solution/account_cancel"
+    },
+    {
+        "template": "6_phishingL",
+        "linkName": "Verify Account",
+        "isFile":false,
+        "isFatal":true,
+        "linkHover": "verify.office--360.com/account_verify"
+    },
+    {
+        "template": "7_phishingL",
+        "linkName": "View my transaction",
+        "isFile":true,
+        "isFatal":true,
+        "linkHover": "account.balance_transcation.com/transaction-id"
+    },
+    {
+        "template": "8_phishingA",
+        "linkName": "Price Update.zip",
+        "isFile":true,
+        "isFatal":true,
+        "linkHover": "jzb1k099sjj.navigate2zneslootrs"
+    },
+    {
+        "template": "9_phishingA",
+        "linkName": "Monthly Financial Statment.htm",
+        "isFile":true,
+        "isFatal":true,
+        "linkHover": "bb.secdation.tp.download.22"
+    },
+    {
+        "template": "10_legitL",
+        "linkName": "Upgrade your Balance",
+        "isFile":false,
+        "isFatal":false,
+        "linkHover": "https://www.balance.com/buy"
+    },
+    {
+        "template": "11_phishingL",
+        "linkName": "CHANGE PASSWORD",
+        "isFile":false,
+        "isFatal":true,
+        "linkHover": "http://myaccount.google.com-securitysettingpage.ml-security.org/signinoptions"
+    },
+    {
+        "template": "12_phishingA",
+        "linkName": "Open in Docs",
+        "isFile":true,
+        "isFatal":true,
+        "linkHover": "http://drive--google.com/jenifer.wang"
+    },
+    {
+        "template": "13_phishingA",
+        "linkName": "Click here to view this fax online",
+        "isFile":false,
+        "isFatal":true,
+        "linkHover": "http://efax.hosting.com.mailru382.co/efaxdelivery/2017Dk4h325RE3"
+    },
+    {
+        "template": "14_phishingA",
+        "linkName": "2014_Vacation Photo",
+        "isFile":false,
+        "isFatal":true,
+        "linkHover": "https://drive.google.com.download-photo.sytez.net/AONh1e0hVP"
+    },
+    {
+        "template": "15_phishingL",
+        "linkName": "Change password",
+        "isFile":false,
+        "isFatal":true,
+        "linkHover": "https://google.com/amp/tinyurl.com/y7u8ewlr"
+    },
+    {
+        "template": "15_LegitL",
+        "linkName": "Package Price List.pdf",
+        "isFile":false,
+        "isFatal":false,
+        "linkHover": "https://drive.google.com/file/d/5as16salmBsfkM112sWL/view?usp=sharing"
+    },
+    {
+        "template": "16_LegitL",
+        "linkName": "Certificate.pdf",
+        "isFile":false,
+        "isFatal":false,
+        "linkHover": "https://drive.google.com/file/d/5sdvsdvsctdb12sWL/view?usp=sharing"
+    }
+    ]
+}

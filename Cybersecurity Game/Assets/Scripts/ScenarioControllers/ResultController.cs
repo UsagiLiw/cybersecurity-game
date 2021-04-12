@@ -19,7 +19,7 @@ public class ResultController : MonoBehaviour
 
     public static void ShowSuccess(string detail, Scenario currentScenario)
     {
-         Debug.Log("IN SHOWSUCCESS: " + detail);
+        Debug.Log("IN SHOWSUCCESS: " + detail);
         Debug.Log("IN SHOWSUCCESS: " + currentScenario);
         Time.timeScale = 0f;
     }

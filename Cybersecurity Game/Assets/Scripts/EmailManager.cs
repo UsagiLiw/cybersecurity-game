@@ -6,9 +6,17 @@ using UnityEngine;
 
 public class EmailManager : MonoBehaviour
 {
+    public string email_file;
+
+    public string scenario_file;
+
+    public string attachment_file;
+
     private static EmailObject[] emailDict;
 
     private static EmailObject[] scenarioDict;
+
+    private static AttachmentObject[] attachmentDict;
 
     public static List<EmailObject> emailInbox;
 
@@ -33,30 +41,31 @@ public class EmailManager : MonoBehaviour
 
     public void SetDictionaries()
     {
-        SetMailDictionary();
-        SetScenarioMailDictionary();
+        emailDict = SetEmailDictionary(email_file);
+        scenarioDict = SetEmailDictionary(scenario_file);
+        attachmentDict = SetAttachmentDictionary(attachment_file);
     }
 
-    private void SetMailDictionary()
+    private EmailObject[] SetEmailDictionary(string fileName)
     {
-        string jsonString = SaveSystem.LoadDictionary("EmailTemplate.json");
+        string jsonString = SaveSystem.LoadDictionary(fileName);
         if (jsonString == null)
         {
-            Debug.Log("Error - Unable to find EmailTemplate.json");
+            Debug.Log("Error - Unable to find " + fileName);
             Application.Quit();
         }
-        emailDict = JsonHelper.FromJson<EmailObject>(jsonString);
+        return JsonHelper.FromJson<EmailObject>(jsonString);
     }
 
-    private void SetScenarioMailDictionary()
+    private AttachmentObject[] SetAttachmentDictionary(string fileName)
     {
-        string jsonString = SaveSystem.LoadDictionary("ScenarioEmail.json");
+        string jsonString = SaveSystem.LoadDictionary(fileName);
         if (jsonString == null)
         {
-            Debug.Log("Error - Unable to find ScenarioEmail.json");
+            Debug.Log("Error - Unable to find " + fileName);
             Application.Quit();
         }
-        scenarioDict = JsonHelper.FromJson<EmailObject>(jsonString);
+        return JsonHelper.FromJson<AttachmentObject>(jsonString);
     }
 
     public void SendRandomMail()
@@ -88,17 +97,45 @@ public class EmailManager : MonoBehaviour
 
     public static int SendPhishingMail()
     {
+        int index = GetRandomPhishingMail();
+
+        emailInbox.Add(scenarioDict[index]);
+
+        scenarioInbox.Add (index);
+        return index;
+    }
+
+    public static int GetRandomPhishingMail()
+    {
         int templateLength = scenarioDict.Length - 1;
         int index = Random.Range(2, templateLength);
 
-        emailInbox.Add(scenarioDict[index]);
-        scenarioInbox.Add (index);
+        return index;
+    }
+    public static int GetRandomNormalMail()
+    {
+        int templateLength = emailDict.Length - 1;
+        int index = Random.Range(0, templateLength);
 
         return index;
     }
 
+    public static EmailObject GetMailFromIndex(int index, bool phishing)
+    {
+        if (phishing)
+        {
+            return scenarioDict[index];
+        }
+        return emailDict[index];
+    }
+
+    public static AttachmentObject GetAttachmentFromIndex(int index)
+    {
+        return attachmentDict[index];
+    }
+
     public static void ClearScenarioMails()
     {
-        scenarioInbox = null;
+        scenarioInbox.Clear();
     }
 }

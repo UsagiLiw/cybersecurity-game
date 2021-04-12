@@ -4,63 +4,129 @@
         "senderName": "Google",
         "senderMail": "no-reply@accounts.google.com",
         "topic": "Security alert for itsupporter@itcompany.com",
-        "content": "Sign-in attempt was blocked\nSomeone just try to sign in to your email account. We have blocked them, but you should change your password."
-    },
+        "content": "Sign-in attempt was blocked\nSomeone just try to sign in to your email account. We have blocked them, but you should change your password.",
+	    "link": -1 
+   },
     {
         "template": "passwordWarning_shop",
         "senderName": "eShop",
         "senderMail": "info.shopping@eshop.official.com",
         "topic": "Security alert for itsupporter@itcompany.com",
-        "content": "Did you just login through a new device?\nWe have detected that someone just try to sign in to your eShop account. We have blocked the attempt, but you should reset your password regardless."
+        "content": "Did you just login through a new device?\nWe have detected that someone just try to sign in to your eShop account. We have blocked the attempt, but you should reset your password regardless.",
+ 	    "link": -1
     },
     {
         "template": "accountWarning_email",
         "senderName": "SafePal Support",
         "senderMail": "resolvetransport11@outlook.com",
         "topic": "Your account access has been limited",
-        "content": "Hello Dear Customer,\nrecently we have limited your account access due suspected and illegail usds. Please Check your account as soon as you can by Clicking the button below."
+        "content": "Hello Dear Customer,\nrecently we have limited your account access due suspected and illegail usds. Please Check your account as soon as you can by Clicking the button below.",
+        "link": 1
     },
     {
         "template": "paymentWarning_email",
         "senderName": "TELNET",
         "senderMail": "notification+zj4628tocfyjc@pausemassagetogether.com",
         "topic": "Payment declined",
-        "content": "Hi,\nWe attempted to authorize the Amen card you have on file but were unable to do so. We will automatically attempt to charge your card again within 28-48 hours.\nUpdate the expiry date and CVV (card verification value) for your Amen card as soon as possible so you can continue using it with your account."
+        "content": "Hi,\nWe attempted to authorize the Amen card you have on file but were unable to do so. We will automatically attempt to charge your card again within 28-48 hours.\nUpdate the expiry date and CVV (card verification value) for your Amen card as soon as possible so you can continue using it with your account.",
+        "link": 2
     },
     {
         "template": "accountWarning_email",
         "senderName": "GlobalPay",
         "senderMail": "cos_support@globalplay.com",
         "topic": "Restore your account",
-        "content": "Dear customer,\nWe regret to inform you that your account has been restricted.\nTo continue using our services please downnload the file attached to this e-mail and update your login information.\n\nGlobalPaymentsInc"
+        "content": "Dear customer,\nWe regret to inform you that your account has been restricted.\nTo continue using our services please update your login information using the link below.\n\nGlobalPaymentsInc",
+        "link": 3
     },
     {
         "template": "accountWarning_email",
         "senderName": "Service@intl.safepal.com",
         "senderMail": "service.savepaI@outlook.ocm",
         "topic": "Response required",
-        "content": "Dear customer,\nWe emailed you a little while ago to ask for your help resolving an issue with your SafePal account.\nYour account is still temporarity limited because we haven't heard from you.\nTo help us with this and to see what you can and can't do with your account until the issue is resolved, <log in> to your account and go to the resolution center.\nThank you for being a SafePal customer.\n\nSincerely\nSafepal"
+        "content": "Dear customer,\nWe emailed you a little while ago to ask for your help resolving an issue with your SafePal account.\nYour account is still temporarity limited because we haven't heard from you.\nTo help us with this and to see what you can and can't do with your account until the issue is resolved, <log in> to your account and go to the resolution center.\nThank you for being a SafePal customer.\n\nSincerely\nSafepal",
+        "link": 4
     },
     {
         "template": "accountWarning_email",
         "senderName": "VGA Library",
         "senderMail": "trust_access@VGAIlbrary.com",
         "topic": "Closing & Deleting your Account in Progress!",
-        "content": "Hello User!\nWe received your instructions to delete your account\n\nWe will process your request within 24 hours.\n\nAll features associated with your account will be lost.\n\nTo remain your account, kindly Cacnel Request to continue using our services\n\n<CANCEL REQUEST IMMEDIATELY>\n\n Thank You,\nAccount Team"
+        "content": "Hello User!\nWe received your instructions to delete your account\n\nWe will process your request within 24 hours.\n\nAll features associated with your account will be lost.\n\nTo remain your account, kindly Cancel Request to continue using our services\n Thank You,\nAccount Team",
+        "link": 5
     },
     {
         "template": "accountWarning_email",
         "senderName": "Office 360 Security Admin",
         "senderMail": "security-noreply@gminer.net",
         "topic": "Supicious Activity Detected on Your Account",
-        "content": "Hello USER\nPlease complete your account verification and re-validate account ownership security.\nTo help keep you safe, upgrade to a more secured account platform.\n\n\nTo review your recent account activity click the link\n\nThanks."
+        "content": "Hello USER\nPlease complete your account verification and re-validate account ownership security.\nTo help keep you safe, upgrade to a more secured account platform.\n\n\nTo review your recent account activity click the link\n\nThanks.",
+        "link": 6
     },
     {
         "template": "paymentWarning_email",
         "senderName": "Balance Team",
         "senderMail": "donoteplay-balance@concepts.nl",
         "topic": "Deposit Success",
-        "content": "Dear client,\nYour Balance's account has recharged 0.12911 BTC.\nIf this activity is not your own operation, please click here to see transaction. https://www.balance.com/transaction-id"
+        "content": "Dear client,\nYour Balance's account has recharged 0.12911 BTC.\nIf this activity is not your own operation, please click here to see transaction.",
+        "link": 7
+    },
+    {
+        "template": "paymentWarning_email",
+        "senderName": "SALES",
+        "senderMail": "scountreyload@outlook.com",
+        "topic": "Change in term and condition",
+        "content": "Dear Customer,\nPlease find the attached update on our prices.\nThanks.",
+        "link": 8
+    },
+    {
+        "template": "attachment_email",
+        "senderName": "Pete Richmond",
+        "senderMail": "Richmond.87413@ontheriverwoodstock.com",
+        "topic": "Monthly Financial Statement",
+        "content": "Hi,\n\nThe monthly financial statement is attached within the email.\nPlease review it before processing\n\nBest regards,\nPete Richmond.",
+        "link": 8
+    },
+    {
+        "template": "passwordWarning_email",
+        "senderName": "Google",
+        "senderMail": "no-reply@google.support",
+        "topic": "Someone has your password",
+        "content": "Hi,\nSomeone just used your password to try sign in to your Google Account.\n\nInformation:\nSaturdat,April 10, 2021 at 1:29:43 PM GMT+07:00\nSlatina, Romania\nFirefox browser\n\nGoogle stopped this sign-in attempt. You should change your password immediately\n\nBest,\nThe Mail Team",
+        "link": 11
+    },
+    {
+        "template": "attachment_email",
+        "senderName": "Jenifer Wang",
+        "senderMail": "jennywant@itcompany.com",
+        "topic": "Jenifer Wang has shared a link to the following document",
+        "content": "Hey there. Here is the doc you asked for. Let me known if you need anything else!",
+        "link": 12
+    },
+    {
+        "template": "attachment_email",
+        "senderName": "Fax Message NoReply [admin]",
+        "senderMail": "noreply@efacks.com",
+        "topic": "You have received a 1 page fax at 4/12/21, 1:35PM",
+        "content": "",
+        "link": 13
+    },
+    {
+        "template": "attachment_email",
+        "senderName": "TK",
+        "senderMail": "tk@itcapany.com",
+        "topic": "Remember this?",
+        "content": "hey, do you remember this photo!",
+        "link": 14
+    },
+    {
+        "template": "attachment_email",
+        "senderName": "Google",
+        "senderMail": "no-reply@google.support",
+        "topic": "Goverment-backed attacker may be trying to steal your password",
+        "content": "There's a chance this is a false alarm, but we believe we detected government-backed attackers trying to steal your password. This happens to less then 0.1% of all Gmail users. To further improve your security, based on your current setting, we recommend:",
+        "link": 15
     }
     ]
+
 }

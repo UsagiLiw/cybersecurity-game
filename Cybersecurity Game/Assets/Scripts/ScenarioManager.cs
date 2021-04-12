@@ -22,7 +22,7 @@ public class ScenarioManager : MonoBehaviour
     public static string jsonDetail;
 
     // public static string saveObject;
-    void Start()
+    void Awake()
     {
         if (SingletonScenarioManager != null)
         {
@@ -39,12 +39,12 @@ public class ScenarioManager : MonoBehaviour
 
     public (Scenario, string) CheckStatus()
     {
-        int index = 0;
+        Scenario index = 0;
         if (!underAttack)
         {
             index = ScenarioRandomizer();
             underAttack = true;
-            onGoingScenario = (Scenario) index;
+            onGoingScenario = index;
             return TriggerScenario(index);
         }
         else
@@ -59,6 +59,7 @@ public class ScenarioManager : MonoBehaviour
         {
             Debug.Log("Warning, On going scenario but detail is empty");
             onGoingScenario = Scenario.None;
+            underAttack = false;
         }
         else
         {
@@ -71,10 +72,11 @@ public class ScenarioManager : MonoBehaviour
                 break;
             case Scenario.Password:
                 underAttack = true;
-                PwdAtkController.SetPasswordScenarioState (detail);
+                pwdAtkController.SetPasswordScenarioState (detail);
                 break;
             case Scenario.Phishing:
                 underAttack = true;
+                phishingController.SetPhishingScenarioState (detail);
                 break;
             case Scenario.Malware:
                 underAttack = true;
@@ -100,6 +102,8 @@ public class ScenarioManager : MonoBehaviour
                 currentType = Scenario.Password;
                 break;
             case Scenario.Phishing:
+                (underAttack, detail) =
+                    phishingController.UpdateScenarioState();
                 currentType = Scenario.Phishing;
                 break;
             case Scenario.Malware:
@@ -110,26 +114,25 @@ public class ScenarioManager : MonoBehaviour
                     onGoingScenario);
         }
 
-        //sceContinue> true = scenario still on and continue, false = player failed the scenario
-        //
+        // true = scenario still on and continue, false = player failed the scenario
         if (underAttack)
         {
-            //DO SOMETHING
+            jsonDetail = detail;
             return (currentType, detail);
         }
         else
         {
-            //DO SOMETHING
+            jsonDetail = detail;
             ScenarioFailed (detail);
             return (Scenario.None, null);
         }
     }
 
-    private int ScenarioRandomizer()
+    private Scenario ScenarioRandomizer()
     {
         int i = Random.Range(0, 100);
         Debug.Log("Sc random result: " + i);
-        for (int j = 0; j < scenarioTypes.Length - 1; j++)
+        for (int j = 0; j < scenarioTypes.Length; j++)
         {
             if (
                 i >= scenarioTypes[j].minProbRange &&
@@ -140,37 +143,36 @@ public class ScenarioManager : MonoBehaviour
                     .Log("Scenario " +
                     scenarioTypes[j].scenarioType +
                     " has occur!");
-                return j + 1;
+                return scenarioTypes[j].scenario;
             }
         }
         return 0;
         // throw new InvalidOperationException("Error in ScenarioRandomizer, random process failed");
     }
 
-    private (Scenario, string) TriggerScenario(int chosenScenario)
+    private (Scenario, string) TriggerScenario(Scenario chosenScenario)
     {
         underAttack = true;
-        switch ((Scenario) chosenScenario)
+        switch (chosenScenario)
         {
             case Scenario.None:
                 Debug
                     .Log("Warning: Trigger scenario.None - Should not enter this case at all");
                 return (Scenario.None, "");
             case Scenario.Password:
-                return (
-                    Scenario.Password,
-                    pwdAtkController.CheckVulnerability()
-                );
+                jsonDetail = pwdAtkController.CheckVulnerability();
+                return (Scenario.Password, jsonDetail);
             case Scenario.Phishing:
                 int i = TargetRandomizer(true);
-                if (
-                    i == 0 //Self phishing does not need following
-                )
+
+                //Self phishing does not need following
+                if (i == 0)
                 {
                     phishingController.TriggerSelf();
+                    Debug.Log("Trigger Self Phishing");
+                    underAttack = false;
                     return (Scenario.None, "");
                 }
-
                 return (Scenario.Phishing, phishingController.TriggerNPC(i));
             case Scenario.Malware:
                 return (Scenario.Malware, "");
@@ -195,16 +197,29 @@ public class ScenarioManager : MonoBehaviour
     {
         onGoingScenario = Scenario.None;
         underAttack = false;
-        jsonDetail = null;
+        EmailManager.ClearScenarioMails();
         ResultController.ShowSuccess (result, onGoingScenario);
+        jsonDetail = null;
+        GameManager.InvokeSaveData();
+    }
+
+    public static void InvokeScenarioFailed(string result)
+    {
+        ResultController.ShowFailed (result, onGoingScenario);
+        onGoingScenario = Scenario.None;
+        underAttack = false;
+        EmailManager.ClearScenarioMails();
+        jsonDetail = null;
         GameManager.InvokeSaveData();
     }
 
     private static void ScenarioCompleted(string result)
     {
+        ResultController.ShowSuccess (result, onGoingScenario);
         onGoingScenario = Scenario.None;
         underAttack = false;
-        ResultController.ShowSuccess (result, onGoingScenario);
+        EmailManager.ClearScenarioMails();
+        jsonDetail = null;
         GameManager.InvokeSaveData();
     }
 
@@ -212,7 +227,9 @@ public class ScenarioManager : MonoBehaviour
     {
         ResultController.ShowFailed (result, onGoingScenario);
         onGoingScenario = Scenario.None;
+        EmailManager.ClearScenarioMails();
         underAttack = false;
+        jsonDetail = null;
         GameManager.InvokeSaveData();
     }
 }
@@ -221,6 +238,8 @@ public class ScenarioManager : MonoBehaviour
 public class ScenarioClass
 {
     public string scenarioType;
+
+    public Scenario scenario;
 
     public int minProbRange = 0;
 

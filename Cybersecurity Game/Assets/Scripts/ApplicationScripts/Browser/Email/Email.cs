@@ -4,23 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class Email_ButtonExtension
-{
-    public static void AddEventListener<T>(
-        this Button button,
-        T param,
-        Action<T> OnClick
-    )
-    {
-        button
-            .onClick
-            .AddListener(delegate ()
-            {
-                OnClick (param);
-            });
-    }
-}
-
 public class Email : MonoBehaviour
 {
     public InputField login_passwordInput;
@@ -33,13 +16,11 @@ public class Email : MonoBehaviour
 
     public GameObject emailView;
 
+    public GameObject linkHover;
+
     private List<EmailObject> emailInbox;
 
-    public GameObject inbox;
-    public GameObject login;
-    public GameObject register;
-    public GameObject resetPassword;
-
+    private static string hoverLink;
 
     public void OnEnable()
     {
@@ -67,6 +48,7 @@ public class Email : MonoBehaviour
             case 1:
                 //Back to Email list page
                 email.transform.Find("Inbox").gameObject.SetActive(true);
+                ShowAllPlayerMails(); //This line is under testing
                 break;
             default:
                 Debug.Log("Index number needed for action");
@@ -121,22 +103,10 @@ public class Email : MonoBehaviour
     private void ShowAllPlayerMails()
     {
         emailInbox = new List<EmailObject>(EmailManager.emailInbox);
-
-        // int i = 0;
-        // foreach (EmailObject mail in emailInbox)
-        // {
-        //     GameObject newMail = Instantiate(mailHeader_prefab) as GameObject;
-        //     newMail.name = gameObject.name + "_" + i;
-        //     newMail.transform.SetParent(emailContent.transform, false);
-        //     Text newMail_sender =
-        //         newMail.transform.GetChild(0).gameObject.GetComponent<Text>();
-        //     newMail_sender.text = mail.senderName;
-        //     Text newMail_topic =
-        //         newMail.transform.GetChild(1).gameObject.GetComponent<Text>();
-        //     newMail_topic.text = mail.topic;
-        //     newMail.GetComponent<Button>().AddEventListener(i, ViewEmail);
-        //     i++;
-        // }
+        foreach (Transform child in emailContent.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
         for (int i = emailInbox.Count - 1; i >= 0; i--)
         {
             GameObject newMail = Instantiate(mailHeader_prefab) as GameObject;
@@ -157,7 +127,7 @@ public class Email : MonoBehaviour
 
     private void ViewEmail(int i)
     {
-        EmailObject emailContent = emailInbox[i];
+        EmailObject emailDetail = emailInbox[i];
         foreach (Transform child in this.transform)
         {
             child.gameObject.SetActive(false);
@@ -173,36 +143,66 @@ public class Email : MonoBehaviour
         Text view_content =
             emailView.transform.GetChild(4).gameObject.GetComponent<Text>();
 
-        view_senderName.text = emailContent.senderName;
-        view_senderMail.text = emailContent.senderMail;
-        view_topic.text = emailContent.topic;
-        view_content.text = emailContent.content;
-
-        if (emailContent.link == null)
+        view_senderName.text = emailDetail.senderName;
+        view_senderMail.text = emailDetail.senderMail;
+        view_topic.text = emailDetail.topic;
+        view_content.text = emailDetail.content;
+        emailView.transform.Find("Attachment").gameObject.SetActive(false);
+        emailView.transform.Find("Attach link").gameObject.SetActive(false);
+        if (emailDetail.link >= 0)
         {
-            emailView.transform.Find("Attachment").gameObject.SetActive(false);
-            emailView.transform.Find("Attach link").gameObject.SetActive(false);
+            AttachmentObject attachmentDetail =
+                EmailManager.GetAttachmentFromIndex(emailDetail.link);
+            hoverLink = attachmentDetail.linkHover;
+            GameObject attachment = null;
+            if (attachmentDetail.isFile)
+            {
+                attachment = emailView.transform.Find("Attachment").gameObject;
+                attachment.SetActive(true);
+                GameObject attachment_image =
+                    attachment.transform.GetChild(0).gameObject;
+                Text attachment_text =
+                    attachment
+                        .transform
+                        .GetChild(1)
+                        .gameObject
+                        .GetComponent<Text>();
+                attachment_text.text = attachmentDetail.linkName;
+            }
+            else
+            {
+                attachment = emailView.transform.Find("Attach link").gameObject;
+                attachment.SetActive(true);
+                Text attachment_text =
+                    attachment.gameObject.GetComponent<Text>();
+                attachment_text.text = attachmentDetail.linkName;
+            }
+            attachment
+                .GetComponent<Button>()
+                .AddEventListener(attachmentDetail.isFatal, this.AttachLinkAction);
         }
     }
 
-    /* --------- Controller Section ----------*/
-    public void ResetPasswordPressed()
+    public void AttachHoverIn()
     {
-        OpenPage(resetPassword);
+        linkHover.SetActive(true);
+        GameObject address = linkHover.transform.GetChild(0).gameObject;
+        Text address_text = address.GetComponent<Text>();
+        address_text.text = hoverLink;
     }
 
-    public void OpenPage(GameObject pageObject)
+    public void AttachHoverOut()
     {
-        CloseAllChild();
-        pageObject.SetActive(true);
+        linkHover.SetActive(false);
     }
 
-    private void CloseAllChild()
+    public void AttachLinkAction(bool isFatal)
     {
-        foreach (Transform child in transform)
+        if (isFatal)
         {
-            child.gameObject.SetActive(false);
-            Debug.Log(child);
+            Debug.Log("You die thankyou forever");
+            return;
         }
+        Debug.Log("I am safe");
     }
 }

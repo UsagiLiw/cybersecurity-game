@@ -225,8 +225,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 62751339}
+  - component: {fileID: 62751340}
+  - component: {fileID: 62751341}
   m_Layer: 0
-  m_Name: Quest
+  m_Name: Quest_Employee2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,6 +250,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &62751340
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62751338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1767869, y: 4.8893127, z: 1.5008965}
+  m_Center: {x: 1.5763509, y: 1.3700991, z: 0}
+--- !u!114 &62751341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62751338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163550e6f75e1d2428a5bd5d6bf3cd9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestScreen_Prefab: {fileID: 2635238111872889808, guid: 28bc9ad4901e5574f8fa4e090aef5360,
+    type: 3}
+  self: 3
+  questMarker: {fileID: 1410940379}
+  NPCmodel: {fileID: 129793669}
 --- !u!4 &111342142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e2c5a66abd122f446b2ab31f2cf578ea,
@@ -348,6 +380,30 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 2f2101ddf236ffe458e8f92e8925f107, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a60f0bd8851e894eb3b96205d30afec, type: 3}
+--- !u!1 &129793669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5a60f0bd8851e894eb3b96205d30afec,
+    type: 3}
+  m_PrefabInstance: {fileID: 129793668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &129793670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129793669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 0, a: 1}
+  outlineWidth: 1
+  precomputeOutline: 1
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &194999898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1558,11 +1614,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestMarker
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 600fc167e18c2f4439fd8a98e5d1f0e0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 600fc167e18c2f4439fd8a98e5d1f0e0, type: 3}
 --- !u!4 &1410940378 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 600fc167e18c2f4439fd8a98e5d1f0e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1410940377}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1410940379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 600fc167e18c2f4439fd8a98e5d1f0e0,
     type: 3}
   m_PrefabInstance: {fileID: 1410940377}
   m_PrefabAsset: {fileID: 0}

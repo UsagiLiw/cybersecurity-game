@@ -28,6 +28,62 @@
         "topic": "Claim Your Tax Refund Online",
         "content": "We identified an error in the calculation of your tax from the last payment, amounting to $899.95. In order for us to return the excess payment, you need to reate a e-refund account after which the funds will be credited to your specified bank account. \nPlease click the link below to claim your refund:",
         "link": 2
+    },
+    {
+        "template": "accountWarning_email",
+        "senderName": "SafePal Support",
+        "senderMail": "resolvetransport11@outlook.com",
+        "topic": "Your account access has been limited",
+        "content": "Hello Dear Customer,\nrecently we have limited your account access due suspected and illegail usds. Please Check your account as soon as you can by Clicking the button below.",
+        "link": 1
+    },
+    {
+        "template": "paymentWarning_email",
+        "senderName": "TELNET",
+        "senderMail": "notification+zj4628tocfyjc@pausemassagetogether.com",
+        "topic": "Payment declined",
+        "content": "Hi,\nWe attempted to authorize the Amen card you have on file but were unable to do so. We will automatically attempt to charge your card again within 28-48 hours.\nUpdate the expiry date and CVV (card verification value) for your Amen card as soon as possible so you can continue using it with your account.",
+        "link": 2
+    },
+    {
+        "template": "accountWarning_email",
+        "senderName": "GlobalPay",
+        "senderMail": "cos_support@globalplay.com",
+        "topic": "Restore your account",
+        "content": "Dear customer,\nWe regret to inform you that your account has been restricted.\nTo continue using our services please downnload the file attached to this e-mail and update your login information.\n\nGlobalPaymentsInc",
+        "link": 3
+    },
+    {
+        "template": "accountWarning_email",
+        "senderName": "Service@intl.safepal.com",
+        "senderMail": "service.savepaI@outlook.ocm",
+        "topic": "Response required",
+        "content": "Dear customer,\nWe emailed you a little while ago to ask for your help resolving an issue with your SafePal account.\nYour account is still temporarity limited because we haven't heard from you.\nTo help us with this and to see what you can and can't do with your account until the issue is resolved, <log in> to your account and go to the resolution center.\nThank you for being a SafePal customer.\n\nSincerely\nSafepal",
+        "link": 1
+    },
+    {
+        "template": "accountWarning_email",
+        "senderName": "VGA Library",
+        "senderMail": "trust_access@VGAIlbrary.com",
+        "topic": "Closing & Deleting your Account in Progress!",
+        "content": "Hello User!\nWe received your instructions to delete your account\n\nWe will process your request within 24 hours.\n\nAll features associated with your account will be lost.\n\nTo remain your account, kindly Cacnel Request to continue using our services\n\n<CANCEL REQUEST IMMEDIATELY>\n\n Thank You,\nAccount Team",
+        "link": 2
+    },
+    {
+        "template": "accountWarning_email",
+        "senderName": "Office 360 Security Admin",
+        "senderMail": "security-noreply@gminer.net",
+        "topic": "Supicious Activity Detected on Your Account",
+        "content": "Hello USER\nPlease complete your account verification and re-validate account ownership security.\nTo help keep you safe, upgrade to a more secured account platform.\n\n\nTo review your recent account activity click the link\n\nThanks.",
+        "link": 3
+    },
+    {
+        "template": "paymentWarning_email",
+        "senderName": "Balance Team",
+        "senderMail": "donoteplay-balance@concepts.nl",
+        "topic": "Deposit Success",
+        "content": "Dear client,\nYour Balance's account has recharged 0.12911 BTC.\nIf this activity is not your own operation, please click here to see transaction. https://www.balance.com/transaction-id",
+        "link": 3
     }
     ]
 }
