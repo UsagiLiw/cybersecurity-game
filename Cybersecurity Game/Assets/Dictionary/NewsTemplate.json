@@ -1,37 +1,39 @@
 {
     "Items": [{
         "template": "n1",
-	      "scenario": -1,
-        "topic": "Bitcoin Hovers Around USD 60k",
-        "content": "Bitcoin price seems to be stuck below the USD 60,800 and USD 61,000 levels. BTC is currently (04:30 UTC) trading above USD 60,000, but it is facing a few hurdles. A successful close above USD 61,000 is must to start a steady increase in the coming sessions.\nBesides, most major altcoins are trading in a positive zone. ETH is trading well above USD 2,100, but it must gain pace above USD 2,180 for more upsides. XRP/USD rallied towards the USD 1.500 level and it recently corrected gains. Meanwhile, BNB is up close to 20% and it even broke the USD 550 level."
+	    "scenario": -1,
+        "topic": "Why Dodge coin is up 20%",
+        "content": "Meme cryptocurrency Dogecoin (CRYPTO: DOGE) is seeing major upwards movement in line with a rise in Bitcoin and as Tesla Inc (NASDAQ: TSLA) Elon Musk has again chimed in.\nDogecoin has seen its price rise this weekend as Bitcoin (CRYPTO: BTC) again approached all-time-high levels and Musk suggested that it would be \"going to the moon very soon\" in a recent tweet.",
+        "image": "Assets/Canvas Asset/Computer Canvas/News/1032х540_DOGEcoin_eng.png"
     },
     {
         "template": "n2",
-	      "scenario": -1,
+	    "scenario": -1,
         "topic": "Sharp increase in Thai Covid cases Monday",
-        "content": "The government on Monday recorded 194 new cases of Covid-19, with most of the increase driven by clusters in a Narathiwat jail and Bangkok bars, as the accumulated total since the start of the pandemic hit 29,321. No new deaths were reported, leaving the toll at 95.\nActive case-finding revealed 95 of the new infections, while hospitals reported 87. Twelve cases were recent arrivals from abroad."
+        "content": "The government on Monday recorded 194 new cases of Covid-19, with most of the increase driven by clusters in a Narathiwat jail and Bangkok bars, as the accumulated total since the start of the pandemic hit 29,321. No new deaths were reported, leaving the toll at 95.\nActive case-finding revealed 95 of the new infections, while hospitals reported 87. Twelve cases were recent arrivals from abroad.",
+        "image": "Assets/Resources/Sprites/Slide1.png"
     },
     {
         "template": "n3",
-	      "scenario": -1,
+	    "scenario": -1,
         "topic": "Sharp increase in Thai Covid cases Monday",
         "content": "In Africa, the situation is exacerbated by extreme weather, ranging from floods and drought, that has disrupted agricultural patterns. Further, the onset of an invasion by desert locusts in 2020 left a trail of destruction. The locust invasion has yet to be contained in most parts of the affected countries in the Horn of Africa."
     },
     {
         "template": "n4",
-	      "scenario": -1,
+	    "scenario": -1,
         "topic": "Russian tank robots will be deployed ‘soon’ amid war fears with Ukraine",
         "content": "THE Russia-Ukraine crisis could \"erupt into all-out war\" within days after the Kremlin threatened to \"end\" Kiev as military tensions were pushed to breaking point."
     },
     {
         "template": "n5",
-	      "scenario": -1,
+	    "scenario": -1,
         "topic": "‘Outdated’ Netflix documentary sparks ire",
         "content": "THAILAND: The Thai Maritime Enforcement Command Centre (Thai-MECC) yesterday (Apr 8) protested against a controversial Netflix documentary, saying it featured outdated information about Thailand’s fishing industry."
     },
     {
         "template": "s1",
-	      "scenario": 1,
+	    "scenario": 1,
         "topic": "Joker malware infects over 500,000 devices",
         "content": "More than 500,000 users have infected with Joker malware that subscribes to premium mobile services.\nResearchers found ten seemingly harmless apps in AppGallery that contained code for connecting to malicious command and control server to receive configurations and additional components."
     }
