@@ -22,6 +22,14 @@ public class Email : MonoBehaviour
 
     private static string hoverLink;
 
+    public GameObject inbox;
+
+    public GameObject login;
+
+    public GameObject register;
+
+    public GameObject resetPassword;
+
     public void OnEnable()
     {
         if (PasswordManager.password2 != null)
@@ -95,7 +103,7 @@ public class Email : MonoBehaviour
             child.gameObject.SetActive(false);
         }
 
-        GameObject.Find("Bar").SetActive(false);
+        GameObject.Find("Bar").gameObject.SetActive(false);
         gameObject.transform.Find("Inbox").gameObject.SetActive(true);
         ShowAllPlayerMails();
     }
@@ -179,7 +187,8 @@ public class Email : MonoBehaviour
             }
             attachment
                 .GetComponent<Button>()
-                .AddEventListener(attachmentDetail.isFatal, this.AttachLinkAction);
+                .AddEventListener(attachmentDetail.isFatal,
+                this.AttachLinkAction);
         }
     }
 
@@ -204,5 +213,26 @@ public class Email : MonoBehaviour
             return;
         }
         Debug.Log("I am safe");
+    }
+
+    /* --------- Controller Section ----------*/
+    public void ResetPasswordPressed()
+    {
+        OpenPage (resetPassword);
+    }
+
+    public void OpenPage(GameObject pageObject)
+    {
+        CloseAllChild();
+        pageObject.SetActive(true);
+    }
+
+    private void CloseAllChild()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+            Debug.Log (child);
+        }
     }
 }

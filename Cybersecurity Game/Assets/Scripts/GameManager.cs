@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public static string scenarioDetail;
 
     public delegate void DayPassHandler();
+
     public event DayPassHandler DayPassed;
 
     void Awake()
@@ -79,7 +80,7 @@ public class GameManager : MonoBehaviour
             emailManager.SendRandomMail();
             (scenario, scenarioDetail) = scenarioManager.CheckStatus();
             SaveData();
-            DayPassed.Invoke();
+            DayPassed?.Invoke();
         }
     }
 
