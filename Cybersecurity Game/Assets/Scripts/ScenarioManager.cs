@@ -203,6 +203,16 @@ public class ScenarioManager : MonoBehaviour
         GameManager.InvokeSaveData();
     }
 
+    public static void InvokeScenarioFailed(string result)
+    {
+        onGoingScenario = Scenario.None;
+        underAttack = false;
+        EmailManager.ClearScenarioMails();
+        ResultController.ShowFailed(result, onGoingScenario);
+        jsonDetail = null;
+        GameManager.InvokeSaveData();
+    }
+
     private static void ScenarioCompleted(string result)
     {
         onGoingScenario = Scenario.None;

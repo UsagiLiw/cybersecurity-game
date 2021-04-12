@@ -74,49 +74,49 @@
         "linkName": "CHANGE PASSWORD",
         "isFile":false,
         "isFatal":true,
-        "linkHover": "http://myaccount.google.com-securitysettingpage.ml-security.org/signinoptions",
+        "linkHover": "http://myaccount.google.com-securitysettingpage.ml-security.org/signinoptions"
     },
     {
         "template": "12_phishingA",
         "linkName": "Open in Docs",
         "isFile":true,
         "isFatal":true,
-        "linkHover": "http://drive--google.com/jenifer.wang",
+        "linkHover": "http://drive--google.com/jenifer.wang"
     },
     {
         "template": "13_phishingA",
         "linkName": "Click here to view this fax online",
         "isFile":false,
         "isFatal":true,
-        "linkHover": "http://efax.hosting.com.mailru382.co/efaxdelivery/2017Dk4h325RE3",
+        "linkHover": "http://efax.hosting.com.mailru382.co/efaxdelivery/2017Dk4h325RE3"
     },
     {
         "template": "14_phishingA",
         "linkName": "2014_Vacation Photo",
         "isFile":false,
         "isFatal":true,
-        "linkHover": "https://drive.google.com.download-photo.sytez.net/AONh1e0hVP",
+        "linkHover": "https://drive.google.com.download-photo.sytez.net/AONh1e0hVP"
     },
     {
         "template": "15_phishingL",
         "linkName": "Change password",
         "isFile":false,
         "isFatal":true,
-        "linkHover": "https://google.com/amp/tinyurl.com/y7u8ewlr",
+        "linkHover": "https://google.com/amp/tinyurl.com/y7u8ewlr"
     },
     {
         "template": "15_LegitL",
         "linkName": "Package Price List.pdf",
         "isFile":false,
         "isFatal":false,
-        "linkHover": "https://drive.google.com/file/d/5as16salmBsfkM112sWL/view?usp=sharing",
+        "linkHover": "https://drive.google.com/file/d/5as16salmBsfkM112sWL/view?usp=sharing"
     },
     {
         "template": "16_LegitL",
         "linkName": "Certificate.pdf",
         "isFile":false,
         "isFatal":false,
-        "linkHover": "https://drive.google.com/file/d/5sdvsdvsctdb12sWL/view?usp=sharing",
+        "linkHover": "https://drive.google.com/file/d/5sdvsdvsctdb12sWL/view?usp=sharing"
     }
     ]
 }

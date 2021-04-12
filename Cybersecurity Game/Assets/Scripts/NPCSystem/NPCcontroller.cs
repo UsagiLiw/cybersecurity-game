@@ -29,7 +29,7 @@ public class NPCcontroller : MonoBehaviour
     //Scenario Computer screen prefab
     public GameObject phishingScreen_prefab;
 
-    private void Start()
+    private void Awake()
     {
         DisableAllNPC();
     }

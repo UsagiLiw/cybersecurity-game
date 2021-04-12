@@ -30,7 +30,7 @@ public class PhishingController : MonoBehaviour
         phishingSave.dayLeft--;
         if (phishingSave.dayLeft <= 0)
         {
-            return (false, ScenarioFailed());
+            return (false, JsonUtility.ToJson(phishingSave));
         }
         return (true, JsonUtility.ToJson(phishingSave));
     }
@@ -48,6 +48,8 @@ public class PhishingController : MonoBehaviour
         Debug
             .Log("Continue phishing: " +
             phishingSave.atkType +
+            " Target: " +
+            phishingSave.questTarget +
             " dayLeft:" +
             phishingSave.dayLeft);
     }
@@ -113,20 +115,18 @@ public class PhishingController : MonoBehaviour
         return phishingSave;
     }
 
-    private string ScenarioFailed()
-    {
-        return JsonUtility.ToJson(phishingSave);
-    }
-
     public static void CheckScenarioCondition(bool legit)
     {
-        if(phishingSave.isPhishing == legit)
+        string saveString = JsonUtility.ToJson(phishingSave);
+        if (phishingSave.isPhishing == legit)
         {
             Debug.Log("success");
+            ScenarioManager.InvokeScenarioSuccess (saveString);
         }
         else
         {
             Debug.Log("fail");
+            ScenarioManager.InvokeScenarioFailed (saveString);
         }
     }
 }
