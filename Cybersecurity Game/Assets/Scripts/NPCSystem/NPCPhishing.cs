@@ -215,7 +215,16 @@ public class NPCPhishing : MonoBehaviour
     public void OpenSiteInfo()
     {
         siteInfo.SetActive(true);
-        Debug.Log("underconstruction");
+        if (currentWeb.isSecure)
+        {
+            siteInfo.transform.GetChild(1).gameObject.SetActive(true);
+            siteInfo.transform.GetChild(2).gameObject.SetActive(false);
+        }
+        else
+        {
+            siteInfo.transform.GetChild(1).gameObject.SetActive(false);
+            siteInfo.transform.GetChild(2).gameObject.SetActive(true);
+        }
     }
 
     public void CloseSiteInfo()
@@ -230,14 +239,7 @@ public class NPCPhishing : MonoBehaviour
 
     public void SubmitVerification(bool legit)
     {
-        if(legit)
-        {
-            Debug.Log("blyat");
-        }
-        else
-        {
-            Debug.Log("vodka");
-        }
+        PhishingController.CheckScenarioCondition(legit);
         Destroy(this.gameObject);
     }
 }

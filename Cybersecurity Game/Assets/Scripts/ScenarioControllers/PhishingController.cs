@@ -35,6 +35,23 @@ public class PhishingController : MonoBehaviour
         return (true, JsonUtility.ToJson(phishingSave));
     }
 
+    public void SetPhishingScenarioState(string detail)
+    {
+        phishingSave = JsonUtility.FromJson<PhishingSave>(detail);
+        string questDetail =
+            email_QuestDetail[Random.Range(0, email_QuestDetail.Length - 1)];
+        NPCcontroller
+            .TriggerNPCPhishingQuest(phishingSave.questTarget,
+            Scenario.Phishing,
+            questDetail,
+            phishingSave.isPhishing);
+        Debug
+            .Log("Continue phishing: " +
+            phishingSave.atkType +
+            " dayLeft:" +
+            phishingSave.dayLeft);
+    }
+
     private string TriggerEmailCase(Target NPC, bool isPhishing)
     {
         string questDetail =
@@ -99,6 +116,18 @@ public class PhishingController : MonoBehaviour
     private string ScenarioFailed()
     {
         return JsonUtility.ToJson(phishingSave);
+    }
+
+    public static void CheckScenarioCondition(bool legit)
+    {
+        if(phishingSave.isPhishing == legit)
+        {
+            Debug.Log("success");
+        }
+        else
+        {
+            Debug.Log("fail");
+        }
     }
 }
 

@@ -22,7 +22,7 @@ public class ScenarioManager : MonoBehaviour
     public static string jsonDetail;
 
     // public static string saveObject;
-    void Start()
+    void Awake()
     {
         if (SingletonScenarioManager != null)
         {
@@ -76,6 +76,7 @@ public class ScenarioManager : MonoBehaviour
                 break;
             case Scenario.Phishing:
                 underAttack = true;
+                phishingController.SetPhishingScenarioState (detail);
                 break;
             case Scenario.Malware:
                 underAttack = true;

@@ -8744,10 +8744,10 @@ MonoBehaviour:
   - scenarioType: PasswordAttack
     scenario: 1
     minProbRange: 0
-    maxProbRange: 0
+    maxProbRange: 10
   - scenarioType: Phishing
     scenario: 2
-    minProbRange: 1
+    minProbRange: 11
     maxProbRange: 100
 --- !u!4 &1163238640
 Transform:
