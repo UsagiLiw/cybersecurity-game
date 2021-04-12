@@ -1,26 +1,47 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NewsManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private static EmailObject[] newsDict;
+
+    [SerializeField] private GameManager gameManager;
+
     void Start()
     {
-        
+        gameManager.DayPassed += UpdateNews;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetDictionaries()
     {
-        
+        SetNewsDictionary();
+    }
+
+    private void SetNewsDictionary()
+    {
+        string jsonString = SaveSystem.LoadDictionary("NewsTemplate.json");
+        if (jsonString == null)
+        {
+            Debug.Log("Error - Unable to find EmailTemplate.json");
+            Application.Quit();
+        }
+        newsDict = JsonHelper.FromJson<EmailObject>(jsonString);
+    }
+
+    private void UpdateNews()
+    {
+        throw new NotImplementedException();
     }
 }
 
+[Serializable]
 public class News
 {
-    public int index;
-    public string title;
-    public string contents;
-    // Some type to hold image
+    public string template;
+    public int scenario;
+    public string topic;
+    public string content;
+
 }
