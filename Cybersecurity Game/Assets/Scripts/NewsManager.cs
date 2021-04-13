@@ -6,9 +6,10 @@ using Random = UnityEngine.Random;
 
 public class NewsManager : MonoBehaviour
 {
-    private static News[] newsDict;
+    private List<News> normalNewsDict = new List<News>();
+    private List<News> scenarioNewsDict = new List<News>();
 
-    private News[] newsArray = new News[3];
+    public News[] newsArray = new News[3];
 
     [SerializeField] private GameManager gameManager;
 
@@ -16,47 +17,57 @@ public class NewsManager : MonoBehaviour
     
     void Start()
     {
-        SetNewsDictionary();
+        News[] temp = SetNewsDictionary();
+        foreach (News news in temp)
+        {
+            if (news.scenario == -1) { normalNewsDict.Add(news); }
+            else if(news.scenario == -1) { scenarioNewsDict.Add(news); }
+        }
         gameManager.DayPassed += UpdateNews;
     }
 
     private void UpdateNews()
     {
-        for (int i = 0; i < newsArray.Length; i++)
+        Scenario scenario = ScenarioManager.onGoingScenario;
+        if (scenario == Scenario.None)
         {
-            int templateLength = newsDict.Length - 1;
-            int rIndex = Random.Range(0, templateLength);
-
-            newsArray[i] = newsDict[rIndex];
+            SetNews();
         }
-
+        else
+        {
+            SetNews((int)scenario);
+        }
     }
 
-    private void SetNews(Scenario scenarioType)
+    private void SetNews()
     {
-        for (int i = 0; i < newsArray.Length; i++)
+        for (int i = 0; i < newsArray.Length - 1; i++)
         {
-            int templateLength = newsDict.Length - 1;
-            int rIndex = Random.Range(0, templateLength);
-
-            newsArray[i] = newsDict[rIndex];
-
-            if (i == 3)
+            int rIndex = Random.Range(0, normalNewsDict.Count);
+            newsArray[i] = normalNewsDict[rIndex];
+        }
+    }
+    private void SetNews(int scenarioType)
+    {
+        for (int i = 0; i < newsArray.Length -1 ; i++)
+        {
+            int rIndex = Random.Range(0, normalNewsDict.Count);
+            newsArray[i] = normalNewsDict[rIndex];
+            if (i == 2)
             {
-                //logic !! find template that match the scenarioId
-                foreach(News news in newsDict)
+                //logic !! find template that match the scenarioType
+                foreach(News news in scenarioNewsDict)
                 {
-                    if(news.template.Equals(scenarioType))
+                    if(news.scenario.Equals(scenarioType))
                     {
                         newsArray[i] = news;
                     }
                 }
             }
         }
-
     }
 
-    private void SetNewsDictionary()
+    private News[] SetNewsDictionary()
     {
         string jsonString = SaveSystem.LoadDictionary("NewsTemplate.json");
         if (jsonString == null)
@@ -64,7 +75,7 @@ public class NewsManager : MonoBehaviour
             Debug.Log("Error - Unable to find EmailTemplate.json");
             Application.Quit();
         }
-        newsDict = JsonHelper.FromJson<News>(jsonString);
+        return JsonHelper.FromJson<News>(jsonString);
     }
 }
 
@@ -72,7 +83,7 @@ public class NewsManager : MonoBehaviour
 public class News
 {
     public string template;
-    public Scenario scenario;
+    public int scenario;
     public string topic;
     public string content;
     public string image;
