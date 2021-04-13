@@ -32,8 +32,7 @@ public class NewsManager : MonoBehaviour
 
     }
 
-    //Overload method
-    private void SetNews(string scenarioId)
+    private void SetNews(Scenario scenarioType)
     {
         for (int i = 0; i < newsArray.Length; i++)
         {
@@ -47,7 +46,7 @@ public class NewsManager : MonoBehaviour
                 //logic !! find template that match the scenarioId
                 foreach(News news in newsDict)
                 {
-                    if(news.template.Equals(scenarioId))
+                    if(news.template.Equals(scenarioType))
                     {
                         newsArray[i] = news;
                     }
@@ -73,7 +72,7 @@ public class NewsManager : MonoBehaviour
 public class News
 {
     public string template;
-    public int scenario;
+    public Scenario scenario;
     public string topic;
     public string content;
     public string image;

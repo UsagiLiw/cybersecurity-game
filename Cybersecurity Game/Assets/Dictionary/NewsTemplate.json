@@ -36,28 +36,28 @@
     },
     {
         "template": "s1",
-	    "scenario": 1,
+	      "scenario": 3,
         "topic": "Joker malware infects over 500,000 devices",
         "content": "More than 500,000 users have infected with Joker malware that subscribes to premium mobile services.\nResearchers found ten seemingly harmless apps in AppGallery that contained code for connecting to malicious command and control server to receive configurations and additional components.",
         "image": "Assets/Canvas Asset/Computer Canvas/News/jokermalware.png"
     },
     {
         "template": "s2",
-	    "scenario": 2,
+	      "scenario": 1,
         "topic": "Warehouse data for 1.3 million users leaks online",
         "content": "The leaked data of Warehouse users includes name, social media profiles, and other details. It's the recent string of data breaches.",
         "image": "Assets/Canvas Asset/Computer Canvas/News/dataleak1.png"
     },
     {
         "template": "s3",
-	    "scenario": 3,
+	      "scenario": 2,
         "topic": "Phishing attacks are becoming even more dangerous",
         "content": "Not only has the scale of phishing attacks increased over the past year, but they have also become more dangerous as cybercriminals perfect their tactics",
         "image": "Assets/Canvas Asset/Computer Canvas/News/phishing.png"
     },
     {
         "template": "s4",
-	    "scenario": 4,
+	      "scenario": 1,
         "topic": "Half a billion BabeFook userss' informaiton posted on hacking website",
         "content": "The personal information of about half a billion BabeFook users, including their phone numbers, have been posted to a website used by used by hackers. There are records for more than 32 million account in the United States, 11 million in the United Kingdom, and 6 million in India.",
         "image": "Assets/Canvas Asset/Computer Canvas/News/dataleak2.png"
