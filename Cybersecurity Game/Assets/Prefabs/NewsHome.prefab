@@ -546,6 +546,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4102009075704487316}
     m_Modifications:
+    - target: {fileID: 4061991067076844099, guid: 1bd9d6c0c3e87454081f0e7488dae6e1,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4547186707483749192, guid: 1bd9d6c0c3e87454081f0e7488dae6e1,
         type: 3}
       propertyPath: m_Pivot.x
@@ -671,6 +676,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4102009075704487316}
     m_Modifications:
+    - target: {fileID: 3136161628548009927, guid: 4e9b4e54e3949e54391c5c0f1f41fa75,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7403238818905986228, guid: 4e9b4e54e3949e54391c5c0f1f41fa75,
         type: 3}
       propertyPath: m_Name
@@ -796,6 +806,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4102009075704487316}
     m_Modifications:
+    - target: {fileID: 3136161628548009927, guid: 4e9b4e54e3949e54391c5c0f1f41fa75,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7403238818905986228, guid: 4e9b4e54e3949e54391c5c0f1f41fa75,
         type: 3}
       propertyPath: m_Name
