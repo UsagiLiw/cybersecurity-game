@@ -54,6 +54,13 @@
         "topic": "Phishing attacks are becoming even more dangerous",
         "content": "Not only has the scale of phishing attacks increased over the past year, but they have also become more dangerous as cybercriminals perfect their tactics",
         "image": "Assets/Canvas Asset/Computer Canvas/News/phishing.png"
-    }    
+    },
+    {
+        "template": "s4",
+	    "scenario": 4,
+        "topic": "Half a billion BabeFook userss' informaiton posted on hacking website",
+        "content": "The personal information of about half a billion BabeFook users, including their phone numbers, have been posted to a website used by used by hackers. There are records for more than 32 million account in the United States, 11 million in the United Kingdom, and 6 million in India.",
+        "image": "Assets/Canvas Asset/Computer Canvas/News/dataleak2.png"
+    }
     ]
 }
