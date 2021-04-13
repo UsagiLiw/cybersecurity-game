@@ -148,7 +148,8 @@ public class NPCPhishing : MonoBehaviour
     {
         if (isFatal)
         {
-            Debug.Log("You die thankyou forever");
+            Destroy(this.gameObject);
+            PhishingController.InvokeScenarioFailure(false);
         }
         else
         {

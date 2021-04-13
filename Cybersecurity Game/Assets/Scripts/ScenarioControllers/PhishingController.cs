@@ -129,6 +129,27 @@ public class PhishingController : MonoBehaviour
             ScenarioManager.InvokeScenarioFailed (saveString);
         }
     }
+
+    public static void InvokeScenarioFailure(bool isPlayer)
+    {
+        PhishingSave detail = null;
+        if (isPlayer)
+        {
+            detail =
+                new PhishingSave {
+                    dayLeft = 0,
+                    atkType = AtkTypes.Email,
+                    questTarget = Target.You,
+                    dictIndex = -1,
+                    isPhishing = true
+                };
+        }
+        else
+        {
+            detail = phishingSave;
+        }
+        ScenarioManager.InvokeScenarioFailed(JsonUtility.ToJson(detail));
+    }
 }
 
 public enum AtkTypes

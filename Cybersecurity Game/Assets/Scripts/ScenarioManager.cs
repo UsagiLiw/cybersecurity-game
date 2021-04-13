@@ -123,7 +123,7 @@ public class ScenarioManager : MonoBehaviour
         else
         {
             jsonDetail = detail;
-            ScenarioFailed (detail);
+            InvokeScenarioFailed (detail);
             return (Scenario.None, null);
         }
     }
@@ -213,6 +213,16 @@ public class ScenarioManager : MonoBehaviour
         GameManager.InvokeSaveData();
     }
 
+    public static void InvokeScenarioFailed(string result, Scenario currentSce)
+    {
+        ResultController.ShowFailed (result, currentSce);
+        onGoingScenario = Scenario.None;
+        underAttack = false;
+        EmailManager.ClearScenarioMails();
+        jsonDetail = null;
+        GameManager.InvokeSaveData();
+    }
+
     private static void ScenarioCompleted(string result)
     {
         ResultController.ShowSuccess (result, onGoingScenario);
@@ -223,15 +233,15 @@ public class ScenarioManager : MonoBehaviour
         GameManager.InvokeSaveData();
     }
 
-    private static void ScenarioFailed(string result)
-    {
-        ResultController.ShowFailed (result, onGoingScenario);
-        onGoingScenario = Scenario.None;
-        EmailManager.ClearScenarioMails();
-        underAttack = false;
-        jsonDetail = null;
-        GameManager.InvokeSaveData();
-    }
+    // private static void ScenarioFailed(string result)
+    // {
+    //     ResultController.ShowFailed (result, onGoingScenario);
+    //     onGoingScenario = Scenario.None;
+    //     EmailManager.ClearScenarioMails();
+    //     underAttack = false;
+    //     jsonDetail = null;
+    //     GameManager.InvokeSaveData();
+    // }
 }
 
 [System.Serializable]

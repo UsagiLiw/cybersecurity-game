@@ -40348,6 +40348,11 @@ PrefabInstance:
       propertyPath: resetPassword
       value: 
       objectReference: {fileID: 1864176949}
+    - target: {fileID: 3754502753927076400, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: email
+      value: 
+      objectReference: {fileID: 1286277027}
     - target: {fileID: 3768332434534058847, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
