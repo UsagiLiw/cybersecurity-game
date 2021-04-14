@@ -12,8 +12,6 @@ public class NewsManager : MonoBehaviour
     public News[] newsArray = new News[3];
 
     [SerializeField] private GameManager gameManager;
-
-
     
     void Start()
     {
