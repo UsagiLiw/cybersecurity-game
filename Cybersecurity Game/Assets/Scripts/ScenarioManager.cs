@@ -152,6 +152,7 @@ public class ScenarioManager : MonoBehaviour
 
     private (Scenario, string) TriggerScenario(Scenario chosenScenario)
     {
+        int i = 0;
         underAttack = true;
         switch (chosenScenario)
         {
@@ -163,7 +164,7 @@ public class ScenarioManager : MonoBehaviour
                 jsonDetail = pwdAtkController.CheckVulnerability();
                 return (Scenario.Password, jsonDetail);
             case Scenario.Phishing:
-                int i = TargetRandomizer(true);
+                i = TargetRandomizer(true);
 
                 //Self phishing does not need following
                 if (i == 0)
@@ -175,6 +176,8 @@ public class ScenarioManager : MonoBehaviour
                 }
                 return (Scenario.Phishing, phishingController.TriggerNPC(i));
             case Scenario.Malware:
+                i = TargetRandomizer(false);
+                Debug.Log("Trigger Malware infection");
                 return (Scenario.Malware, "");
             default:
                 throw new InvalidOperationException("Error: Unknown scenario index: " +

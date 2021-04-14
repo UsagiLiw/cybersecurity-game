@@ -30,7 +30,8 @@ public class NPCPhishing : MonoBehaviour
     private void OnEnable()
     {
         Debug.Log("I am alive now");
-        isPhishing = NPCcontroller.isPhishing;
+        // isPhishing = NPCcontroller.isPhishing;
+        isPhishing = PhishingController.phishingSave.isPhishing;
         UIPanel = GameObject.FindGameObjectWithTag("UIPanel");
         UIPanel.SetActive(false);
         foreach (Transform child in this.transform)

@@ -8726,6 +8726,7 @@ GameObject:
   - component: {fileID: 1163238642}
   - component: {fileID: 1163238641}
   - component: {fileID: 1163238643}
+  - component: {fileID: 1163238644}
   m_Layer: 0
   m_Name: ScenarioManager
   m_TagString: Untagged
@@ -8749,9 +8750,13 @@ MonoBehaviour:
   - scenarioType: PasswordAttack
     scenario: 1
     minProbRange: 0
-    maxProbRange: 10
+    maxProbRange: 1
   - scenarioType: Phishing
     scenario: 2
+    minProbRange: 2
+    maxProbRange: 10
+  - scenarioType: Malware
+    scenario: 3
     minProbRange: 11
     maxProbRange: 100
 --- !u!4 &1163238640
@@ -8814,6 +8819,29 @@ MonoBehaviour:
   - DUDJIKM:OIHJWEOKNO":IHJGN:OIMNijh;oinew;rogijokne;wogijwe;kgn;oihjgwo;in
   - j;olinwer;ghkln;oijbaseknr ;otihjaboine;rwknt;oaihuertoiwneotrknoibhjjwoekin
   - 168542165421635135216h51sr6t5h206s5tr4nh3sr2t0h65s4r1tn2sr0tn65sr411t3n2s0rt63n54srt62gh0a6e35h4s5t2er1h6sr84nrs5t1h638a5rt4hns5rt1n6sr5t4n
+--- !u!114 &1163238644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163238638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6236147f5847da64fbef36de9c2df920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virus_QuestDetail:
+  - My computer is acting weird man, it is so slow now. Should I just get a new one?
+  - sghjsrtusrtua
+  - 'SCP 1902 has breach containment, containment level: Euclid'
+  adware_QuestDetail:
+  - Fuck the police right back to the underground
+  - 1234566 probably adware
+  trojan_QuestDetail:
+  - Arcon of Goats
+  - You! YES YOU!! FIX MY COM
+  - GOD IS DEAD
 --- !u!1 &1174323943
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,10 +41,9 @@ public class PhishingController : MonoBehaviour
         string questDetail =
             email_QuestDetail[Random.Range(0, email_QuestDetail.Length - 1)];
         NPCcontroller
-            .TriggerNPCPhishingQuest(phishingSave.questTarget,
-            Scenario.Phishing,
+            .TriggerNPCQuest(phishingSave.questTarget,
             questDetail,
-            phishingSave.isPhishing);
+            Scenario.Phishing);
         Debug
             .Log("Continue phishing: " +
             phishingSave.atkType +
@@ -58,11 +57,7 @@ public class PhishingController : MonoBehaviour
     {
         string questDetail =
             email_QuestDetail[Random.Range(0, email_QuestDetail.Length - 1)];
-        NPCcontroller
-            .TriggerNPCPhishingQuest(NPC,
-            Scenario.Phishing,
-            questDetail,
-            isPhishing);
+        NPCcontroller.TriggerNPCQuest(NPC, questDetail, Scenario.Phishing);
         int index = 0;
         if (isPhishing)
             index = EmailManager.GetRandomPhishingMail();
@@ -88,11 +83,7 @@ public class PhishingController : MonoBehaviour
     {
         string questDetail =
             web_QuestDetail[Random.Range(0, web_QuestDetail.Length - 1)];
-        NPCcontroller
-            .TriggerNPCPhishingQuest(NPC,
-            Scenario.Phishing,
-            questDetail,
-            isPhishing);
+        NPCcontroller.TriggerNPCQuest(NPC, questDetail, Scenario.Phishing);
         int index = Random.Range(1, 4);
         phishingSave =
             new PhishingSave {
