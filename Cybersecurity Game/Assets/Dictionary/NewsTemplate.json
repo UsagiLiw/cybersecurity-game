@@ -121,13 +121,6 @@
     {
         "template": "malware",
 	    "scenario": 3,
-        "topic": "New wave of Ransomware attack",
-        "content": "Several Startup company across the states have been targeted in ransomware attacks in what appears to be an escalation and expansion of similar attacks previously launched on startup company and others tech company.",
-        "image": "Assets/Canvas Asset/Computer Canvas/News/dataleak2.png"
-    },
-    {
-        "template": "malware",
-	    "scenario": 3,
         "topic": "New mysterious malware infects over 500,000 devices",
         "content": "More than 500,000 users have infected with unknown malware that subscribes to premium payment services.\nResearchers found ten seemingly harmless software that contained code for connecting to malicious command and control server to receive configurations and additional components.",
         "image": "Assets/Canvas Asset/Computer Canvas/News/jokermalware.png"
@@ -144,6 +137,13 @@
 	    "scenario": 3,
         "topic": "Warning: A wave of new viruses is targeting small business",
         "content": "Many new type of malware are quickly poping up. And many are infecting small business, which are now big targets for hackers.",
+        "image": "Assets/Canvas Asset/Computer Canvas/News/dataleak2.png"
+    },
+    {
+        "template": "ransom",
+	    "scenario": 4,
+        "topic": "New wave of Ransomware attack",
+        "content": "Several Startup company across the states have been targeted in ransomware attacks in what appears to be an escalation and expansion of similar attacks previously launched on startup company and others tech company.",
         "image": "Assets/Canvas Asset/Computer Canvas/News/dataleak2.png"
     }
     ]
