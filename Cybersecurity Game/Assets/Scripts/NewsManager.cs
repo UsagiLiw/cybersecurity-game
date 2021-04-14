@@ -45,22 +45,26 @@ public class NewsManager : MonoBehaviour
             newsArray[i] = normalNewsDict[rIndex];
         }
     }
+
     private void SetNews(int scenarioType)
     {
-        for (int i = 0; i < newsArray.Length -1 ; i++)
+        for (int i = 0; i < newsArray.Length - 1 ; i++)
         {
             int rIndex = Random.Range(0, normalNewsDict.Count);
             newsArray[i] = normalNewsDict[rIndex];
             if (i == 2)
             {
+                List<News> matchedScenarios = new List<News>();
                 //logic !! find template that match the scenarioType
                 foreach(News news in scenarioNewsDict)
                 {
-                    if(news.scenario.Equals(scenarioType))
+                    if(news.scenario == scenarioType)
                     {
-                        newsArray[i] = news;
+                        matchedScenarios.Add(news);
                     }
                 }
+                int scenarioRIndex = Random.Range(0, matchedScenarios.Count - 1);
+                newsArray[i] = matchedScenarios[scenarioRIndex];
             }
         }
     }
