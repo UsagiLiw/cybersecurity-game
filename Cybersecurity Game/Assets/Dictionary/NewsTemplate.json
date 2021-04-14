@@ -141,6 +141,20 @@
     },
     {
         "template": "ransom",
+	    "scenario": 3,
+        "topic": "Another Globak Ransomware Outbreak Rapidly Spreads",
+        "content": "The new attacks follow the WanaKry ransomware outbreak that began spreading globally on May 12. Security expert say the latest attack is only a warm up.",
+        "image": "Assets/Canvas Asset/Computer Canvas/News/dataleak2.png"
+    },
+    {
+        "template": "ransom",
+	    "scenario": 3,
+        "topic": "BREAKING NEWS - New Worldwide Ransomware Outbreak",
+        "content": "A wide range of businesses have reported being hit by ransomware. The spread of the new ransomware wave poses a serious security threat to business and individuals.",
+        "image": "Assets/Canvas Asset/Computer Canvas/News/dataleak2.png"
+    },
+    {
+        "template": "ransom",
 	    "scenario": 4,
         "topic": "New wave of Ransomware attack",
         "content": "Several Startup company across the states have been targeted in ransomware attacks in what appears to be an escalation and expansion of similar attacks previously launched on startup company and others tech company.",
