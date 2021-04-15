@@ -990,7 +990,7 @@ MonoBehaviour:
   homePage: {fileID: 5263344841004012137}
   shop: {fileID: 5263344841863666426}
   email: {fileID: 5263344840630176123}
-  news: {fileID: 0}
+  news: {fileID: 3487856521261221274}
   siteInfo: {fileID: 5263344842501932397}
   linkHover: {fileID: 5263344840762186716}
   bar: {fileID: 5263344842296112461}
@@ -7255,6 +7255,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d8eab091e769fe46af130f02a0adff4, type: 3}
+--- !u!1 &3487856521261221274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2387194923153340249, guid: 0d8eab091e769fe46af130f02a0adff4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1244785858635477699}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &782362517820623888 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1989989276911337171, guid: 0d8eab091e769fe46af130f02a0adff4,
@@ -7385,15 +7391,15 @@ PrefabInstance:
       objectReference: {fileID: 5263344840724513540}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43711db7a19c78d4f81feea800d75158, type: 3}
---- !u!1 &5263344841863666426 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2440966783239188904, guid: 43711db7a19c78d4f81feea800d75158,
-    type: 3}
-  m_PrefabInstance: {fileID: 7560178610591820626}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5263344841863666427 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2440966783239188905, guid: 43711db7a19c78d4f81feea800d75158,
+    type: 3}
+  m_PrefabInstance: {fileID: 7560178610591820626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5263344841863666426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2440966783239188904, guid: 43711db7a19c78d4f81feea800d75158,
     type: 3}
   m_PrefabInstance: {fileID: 7560178610591820626}
   m_PrefabAsset: {fileID: 0}

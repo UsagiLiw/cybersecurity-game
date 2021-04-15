@@ -4406,6 +4406,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab53aae606c4a204ca11057ec4d83bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newsArray:
+  - template: 
+    scenario: 0
+    topic: 
+    content: 
+    image: 
+  - template: 
+    scenario: 0
+    topic: 
+    content: 
+    image: 
+  - template: 
+    scenario: 0
+    topic: 
+    content: 
+    image: 
   gameManager: {fileID: 342761639}
 --- !u!1 &421703799
 GameObject:
@@ -40166,6 +40182,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 402222256626882821}
     m_Modifications:
+    - target: {fileID: 3487856521261221274, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5263344840724513540, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
       propertyPath: gameManager

@@ -13,7 +13,7 @@ public class NewsManager : MonoBehaviour
 
     [SerializeField] private GameManager gameManager;
     
-    void Start()
+    void Awake()
     {
         News[] temp = SetNewsDictionary();
         foreach (News news in temp)
@@ -21,7 +21,13 @@ public class NewsManager : MonoBehaviour
             if (news.scenario == -1) { normalNewsDict.Add(news); }
             else if(news.scenario == -1) { scenarioNewsDict.Add(news); }
         }
+
         gameManager.DayPassed += UpdateNews;
+    }
+
+    void Start()
+    {
+        UpdateNews();
     }
 
     private void UpdateNews()
@@ -39,7 +45,7 @@ public class NewsManager : MonoBehaviour
 
     private void SetNews()
     {
-        for (int i = 0; i < newsArray.Length - 1; i++)
+        for (int i = 0; i < newsArray.Length; i++)
         {
             int rIndex = Random.Range(0, normalNewsDict.Count);
             newsArray[i] = normalNewsDict[rIndex];
