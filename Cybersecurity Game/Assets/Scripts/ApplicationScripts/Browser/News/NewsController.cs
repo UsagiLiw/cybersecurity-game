@@ -19,15 +19,15 @@ public class NewsController : MonoBehaviour
     }
     void OnEnable()
     {
-        UpdateNews();
+        UpdateNewsPanel();
     }
 
     void Start()
     {
-        gameManager.DayPassed += UpdateNews;
+        gameManager.DayPassed += UpdateNewsPanel;
     }
 
-    private void UpdateNews()
+    private void UpdateNewsPanel ()
     {
         News[] arNews = newsManager.newsArray;
         for(int i = 0; i < normalContents.Length; i++)

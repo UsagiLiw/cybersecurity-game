@@ -18,10 +18,16 @@ public class NewsManager : MonoBehaviour
         News[] temp = SetNewsDictionary();
         foreach (News news in temp)
         {
-            if (news.scenario == -1) { normalNewsDict.Add(news); }
-            else if(news.scenario == -1) { scenarioNewsDict.Add(news); }
+            if (news.scenario == -1) { 
+                normalNewsDict.Add(news);
+                //Debug.Log("Normal " + news.template + " " + news.scenario);
+            }
+            else if(news.scenario != -1) { 
+                scenarioNewsDict.Add(news);
+                Debug.Log("Scenario" + news.template + " " + news.scenario);
+            }
         }
-
+        
         gameManager.DayPassed += UpdateNews;
     }
 
@@ -54,7 +60,7 @@ public class NewsManager : MonoBehaviour
 
     private void SetNews(int scenarioType)
     {
-        for (int i = 0; i < newsArray.Length - 1 ; i++)
+        for (int i = 0; i < newsArray.Length ; i++)
         {
             int rIndex = Random.Range(0, normalNewsDict.Count);
             newsArray[i] = normalNewsDict[rIndex];
