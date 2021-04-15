@@ -13,6 +13,8 @@ public class ScenarioManager : MonoBehaviour
 
     private PhishingController phishingController;
 
+    private MalwareController malwareController;
+
     public ScenarioClass[] scenarioTypes;
 
     public static Scenario onGoingScenario;
@@ -35,6 +37,7 @@ public class ScenarioManager : MonoBehaviour
 
         pwdAtkController = GetComponent<PwdAtkController>();
         phishingController = GetComponent<PhishingController>();
+        malwareController = GetComponent<MalwareController>();
     }
 
     public (Scenario, string) CheckStatus()
@@ -170,15 +173,13 @@ public class ScenarioManager : MonoBehaviour
                 if (i == 0)
                 {
                     phishingController.TriggerSelf();
-                    Debug.Log("Trigger Self Phishing");
                     underAttack = false;
                     return (Scenario.None, "");
                 }
                 return (Scenario.Phishing, phishingController.TriggerNPC(i));
             case Scenario.Malware:
                 i = TargetRandomizer(false);
-                Debug.Log("Trigger Malware infection");
-                return (Scenario.Malware, "");
+                return (Scenario.Malware, malwareController.TriggerNPC(i));
             default:
                 throw new InvalidOperationException("Error: Unknown scenario index: " +
                     chosenScenario);

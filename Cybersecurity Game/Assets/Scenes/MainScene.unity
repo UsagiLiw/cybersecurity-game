@@ -3529,7 +3529,7 @@ GameObject:
   - component: {fileID: 305857905}
   m_Layer: 0
   m_Name: GUI
-  m_TagString: Untagged
+  m_TagString: GUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4316,7 +4316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   computers:
-  - ram: 0.178
+  - owner: 0
+    ram: 0.178
     cpu: 0.54
     disk: 0.757
     driveC: 128
@@ -4324,9 +4325,9 @@ MonoBehaviour:
     driveE: 296
     software: 
     malware: 0100000002000000
-    haveAntivirus: 0
     isInfected: 1
-  - ram: 0
+  - owner: 1
+    ram: 0
     cpu: 0
     disk: 0
     driveC: 0
@@ -4334,9 +4335,9 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
-    haveAntivirus: 0
     isInfected: 0
-  - ram: 0
+  - owner: 2
+    ram: 0
     cpu: 0
     disk: 0
     driveC: 0
@@ -4344,9 +4345,9 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
-    haveAntivirus: 0
     isInfected: 0
-  - ram: 0
+  - owner: 3
+    ram: 0
     cpu: 0
     disk: 0
     driveC: 0
@@ -4354,9 +4355,9 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
-    haveAntivirus: 0
     isInfected: 0
-  - ram: 0
+  - owner: 4
+    ram: 0
     cpu: 0
     disk: 0
     driveC: 0
@@ -4364,7 +4365,16 @@ MonoBehaviour:
     driveE: 0
     software: 
     malware: 
-    haveAntivirus: 0
+    isInfected: 0
+  - owner: 5
+    ram: 0
+    cpu: 0
+    disk: 0
+    driveC: 0
+    driveD: 0
+    driveE: 0
+    software: 
+    malware: 
     isInfected: 0
 --- !u!114 &342761648
 MonoBehaviour:
@@ -4379,6 +4389,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phishingScreen_prefab: {fileID: 4987546760019188277, guid: 11dbd5cd829fd9549ba1c1ba88e578f4,
+    type: 3}
+  NPCcomputer_prefab: {fileID: 7126579370894604977, guid: abad2ba8566b93c4891dcc6f4b0468bc,
     type: 3}
 --- !u!1 &421703799
 GameObject:

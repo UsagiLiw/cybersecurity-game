@@ -9,6 +9,7 @@ TagManager:
   - Quest_NPC
   - GameManager
   - UIPanel
+  - GUI
   layers:
   - Default
   - TransparentFX

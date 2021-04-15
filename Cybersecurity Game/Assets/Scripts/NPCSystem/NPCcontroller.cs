@@ -28,6 +28,8 @@ public class NPCcontroller : MonoBehaviour
     //Scenario Computer screen prefab
     public GameObject phishingScreen_prefab;
 
+    public GameObject NPCcomputer_prefab;
+
     private void Awake()
     {
         DisableAllNPC();
@@ -42,7 +44,7 @@ public class NPCcontroller : MonoBehaviour
         scenario = currentScenario;
         currentTarget = target;
         requestDetail = detail;
-        TriggerNPC(target);
+        TriggerNPC (target);
     }
 
     // public static void TriggerNPCPhishingQuest(
@@ -54,11 +56,9 @@ public class NPCcontroller : MonoBehaviour
     //     scenario = Scenario.Phishing;
     //     currentTarget = target;
     //     requestDetail = detail;
-
     //     // isPhishing = isAPhishing;
     //     TriggerNPC (target);
     // }
-
     // public static void TriggerNPCMalwareQuest(Target target, string detail)
     // {
     //     scenario = Scenario.Malware;
@@ -66,7 +66,6 @@ public class NPCcontroller : MonoBehaviour
     //     requestDetail = detail;
     //     TriggerNPC (target);
     // }
-
     private static void TriggerNPC(Target target)
     {
         switch (target)
@@ -164,9 +163,33 @@ public class NPCcontroller : MonoBehaviour
 
     public void CreateNPCScreen()
     {
+        switch (scenario)
+        {
+            case Scenario.Phishing:
+                CreatePhishingScreen();
+                break;
+            case Scenario.Malware:
+                CreateMalwareScreen();
+                break;
+            default:
+                Debug.Log("NPC screen type unspecify: " + scenario);
+                break;
+        }
+    }
+
+    private void CreatePhishingScreen()
+    {
         GameObject phishingScreen_Object =
             Instantiate(phishingScreen_prefab) as GameObject;
         GameObject gui = GameObject.Find("GUI");
         phishingScreen_Object.transform.SetParent(gui.transform, false);
+    }
+
+    private void CreateMalwareScreen()
+    {
+        Debug.Log("To create or not to create");
+        GameObject malwareScreen_Object = Instantiate(NPCcomputer_prefab) as GameObject;
+        GameObject gui = GameObject.Find("GUI");
+        malwareScreen_Object.transform.SetParent(gui.transform, false);
     }
 }
