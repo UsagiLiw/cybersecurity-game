@@ -53,9 +53,9 @@ public class ComputerManager : MonoBehaviour
     public void SystemOverload(Target target)
     {
         int index = (int) target;
-        computers[index].ram = 0.89;
-        computers[index].cpu = 0.98;
-        computers[index].disk = 0.99;
+        computers[index].ram = 0.89f;
+        computers[index].cpu = 0.98f;
+        computers[index].disk = 0.99f;
     }
 }
 
