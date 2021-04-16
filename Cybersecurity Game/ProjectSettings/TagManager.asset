@@ -10,6 +10,7 @@ TagManager:
   - GameManager
   - UIPanel
   - GUI
+  - Antivirus_Icon
   layers:
   - Default
   - TransparentFX
