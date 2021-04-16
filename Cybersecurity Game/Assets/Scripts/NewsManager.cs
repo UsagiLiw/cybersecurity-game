@@ -51,10 +51,10 @@ public class NewsManager : MonoBehaviour
 
     private void SetNews()
     {
+        List<int> randomValue = HelperUtils.UniqueRandomInt(0, normalNewsDict.Count, 3);
         for (int i = 0; i < newsArray.Length; i++)
         {
-            int rIndex = Random.Range(0, normalNewsDict.Count);
-            newsArray[i] = normalNewsDict[rIndex];
+            newsArray[i] = normalNewsDict[randomValue[i]];
         }
     }
 
@@ -63,8 +63,9 @@ public class NewsManager : MonoBehaviour
         List<int> randomValue = HelperUtils.UniqueRandomInt(0, normalNewsDict.Count, 2);
         for (int i = 0; i < newsArray.Length ; i++)
         {
+            if (i < newsArray.Length - 1)
             newsArray[i] = normalNewsDict[randomValue[i]];
-            if (i == newsArray.Length - 1)
+            else if (i == newsArray.Length - 1)
             {
                 List<News> matchedScenarios = new List<News>();
                 //logic !! find template that match the scenarioType
