@@ -16,7 +16,20 @@ public class NPCComputer : MonoBehaviour
 
     public GameObject screen6; //not actually use
 
+    private GameObject UIPanel;
+
     void OnEnable()
     {
+        UIPanel = GameObject.FindGameObjectWithTag("UIPanel");
+        UIPanel.SetActive(false);
+        foreach (Transform child in this.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
+
+    void OnDisable()
+    {
+        UIPanel.SetActive(true);
     }
 }
