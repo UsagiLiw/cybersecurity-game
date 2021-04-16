@@ -6,7 +6,7 @@ using UnityEngine;
 public class ComputerManager : MonoBehaviour
 {
     // index 0 : Player's computer
-    // index 1 - 4 : NPCs' computer
+    // index 1 - 5 : NPCs' computer
     [SerializeField]
     private Computer[] computers = new Computer[6];
 
@@ -44,11 +44,19 @@ public class ComputerManager : MonoBehaviour
 
     public void DiskOverload(Target target)
     {
-        computers[(int) target].driveC = 199;
-        computers[(int) target].driveD = 398;
-        computers[(int) target].driveE = 399;
+        int index = (int) target;
+        computers[index].driveC = 199;
+        computers[index].driveD = 398;
+        computers[index].driveE = 399;
     }
 
+    public void SystemOverload(Target target)
+    {
+        int index = (int) target;
+        computers[index].ram = 0.89;
+        computers[index].cpu = 0.98;
+        computers[index].disk = 0.99;
+    }
 }
 
 [Serializable]
