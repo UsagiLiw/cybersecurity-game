@@ -4301,9 +4301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356c0e1ccf380b544b814f0d4ac19616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  email_file: EmailTemplate.json
-  scenario_file: ScenarioEmail.json
-  attachment_file: AttachmentDictionary.json
 --- !u!114 &342761647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8787,12 +8784,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenarioTypes:
   - scenarioType: PasswordAttack
-    scenario: 0
+    scenario: 1
     minProbRange: 0
-    maxProbRange: 100
-  - scenarioType: PasswordAttack
-    scenario: 0
-    minProbRange: 0
+    maxProbRange: 20
+  - scenarioType: Phishing
+    scenario: 2
+    minProbRange: 21
     maxProbRange: 100
 --- !u!4 &1163238640
 Transform:
@@ -8844,8 +8841,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2691f3fb206b6374cbf68daaabcc6071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  email_QuestDetail: []
-  web_QuestDetail: []
+  email_QuestDetail:
+  - Email gone, help phishing noiwheg
+  - onmo;ina3;k4n09uno3knpoihgknpoih
+  - nonoijhhnmopiknolihedh
+  - nmoknop9ujbonokn
+  - ikjnokenpoijweknolihjhg
+  web_QuestDetail:
+  - ehpijsel5k poijhlmpojuh
+  - mpijlmp9ujlkmp;ojrtjhlkmp
+  - ojplpmhpreojpreothmpoirjthrth
 --- !u!1 &1174323943
 GameObject:
   m_ObjectHideFlags: 0
