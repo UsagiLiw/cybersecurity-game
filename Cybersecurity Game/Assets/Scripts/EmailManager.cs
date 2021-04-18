@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class EmailManager : MonoBehaviour
 {
-    public string email_file;
+    private readonly string email_file = "EmailTemplate.json";
 
-    public string scenario_file;
+    private readonly string scenario_file = "ScenarioEmail.json";
 
-    public string attachment_file;
+    private readonly string attachment_file = "AttachmentDictionary.json";
 
     private static EmailObject[] emailDict;
 
