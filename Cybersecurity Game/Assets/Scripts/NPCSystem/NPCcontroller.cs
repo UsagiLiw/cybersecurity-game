@@ -182,11 +182,12 @@ public class NPCcontroller : MonoBehaviour
 
     private void CreateMalwareScreen()
     {
-        Debug.Log("To create or not to create");
-        GameObject malwareScreen_Object =
-            Instantiate(NPCcomputer_prefab) as GameObject;
-        GameObject gui = GameObject.Find("GUI");
-        malwareScreen_Object.transform.SetParent(gui.transform, false);
+        // Debug.Log("To create or not to create");
+        // GameObject malwareScreen_Object =
+        //     Instantiate(NPCcomputer_prefab) as GameObject;
+        // GameObject gui = GameObject.Find("GUI");
+        // malwareScreen_Object.transform.SetParent(gui.transform, false);
+        
     }
 
     public static (Scenario, Target, string) GetRequestDetail()

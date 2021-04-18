@@ -31,6 +31,11 @@ public class NPCComputer : MonoBehaviour
 
     private GameObject software2;
 
+    //Application
+
+    // public GameObject browser;
+    // public GameObject 
+
     void OnEnable()
     {
         UIPanel = GameObject.FindGameObjectWithTag("UIPanel");

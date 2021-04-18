@@ -10,6 +10,32 @@ public class ComputerUI : MonoBehaviour
 
     public Transform software1;
 
+    //Screen
+    public GameObject PlayerScreen;
+
+    public GameObject NPCScreen;
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void StartComputer(int i)
+    {
+        Target target = (Target) i;
+        gameObject.SetActive(true);
+        uiPanel.SetActive(false);
+        if (target == Target.You)
+        {
+            PlayerScreen.SetActive(true);
+        }
+        else
+        {
+            int index = (int) target;
+            NPCScreen.transform.GetChild(index).gameObject.SetActive(true);
+        }
+    }
+
     public void CloseComputer()
     {
         CloseAllApps();
