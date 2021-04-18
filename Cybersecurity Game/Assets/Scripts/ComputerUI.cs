@@ -32,6 +32,7 @@ public class ComputerUI : MonoBehaviour
         else
         {
             int index = (int) target;
+            NPCScreen.SetActive(true);
             NPCScreen.transform.GetChild(index).gameObject.SetActive(true);
         }
     }
@@ -40,6 +41,11 @@ public class ComputerUI : MonoBehaviour
     {
         CloseAllApps();
         uiPanel.SetActive(true);
+        PlayerScreen.SetActive(false);
+        foreach(Transform child in NPCScreen.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
         gameObject.SetActive(false);
     }
 

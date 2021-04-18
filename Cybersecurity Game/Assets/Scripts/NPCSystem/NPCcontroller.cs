@@ -28,7 +28,8 @@ public class NPCcontroller : MonoBehaviour
     //Scenario Computer screen prefab
     public GameObject phishingScreen_prefab;
 
-    public GameObject NPCcomputer_prefab;
+    public ComputerUI computerUI;
+    // public GameObject NPCcomputer_prefab;
 
     private void Awake()
     {
@@ -188,6 +189,7 @@ public class NPCcontroller : MonoBehaviour
         // GameObject gui = GameObject.Find("GUI");
         // malwareScreen_Object.transform.SetParent(gui.transform, false);
         
+        computerUI.StartComputer((int) currentTarget);
     }
 
     public static (Scenario, Target, string) GetRequestDetail()
