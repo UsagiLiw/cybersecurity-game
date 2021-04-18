@@ -2746,8 +2746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phishingScreen_prefab: {fileID: 4987546760019188277, guid: 11dbd5cd829fd9549ba1c1ba88e578f4,
     type: 3}
-  NPCcomputer_prefab: {fileID: 7126579370894604977, guid: abad2ba8566b93c4891dcc6f4b0468bc,
-    type: 3}
+  computerUI: {fileID: 402222256626882938}
 --- !u!1 &421703799
 GameObject:
   m_ObjectHideFlags: 0
