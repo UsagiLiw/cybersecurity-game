@@ -4323,7 +4323,6 @@ MonoBehaviour:
     driveC: 128
     driveD: 201
     driveE: 296
-    software: 
     malware: 0100000002000000
     isInfected: 1
   - owner: 1
@@ -4333,7 +4332,6 @@ MonoBehaviour:
     driveC: 0
     driveD: 0
     driveE: 0
-    software: 
     malware: 
     isInfected: 0
   - owner: 2
@@ -4343,7 +4341,6 @@ MonoBehaviour:
     driveC: 0
     driveD: 0
     driveE: 0
-    software: 
     malware: 
     isInfected: 0
   - owner: 3
@@ -4353,7 +4350,6 @@ MonoBehaviour:
     driveC: 0
     driveD: 0
     driveE: 0
-    software: 
     malware: 
     isInfected: 0
   - owner: 4
@@ -4363,7 +4359,6 @@ MonoBehaviour:
     driveC: 0
     driveD: 0
     driveE: 0
-    software: 
     malware: 
     isInfected: 0
   - owner: 5
@@ -4373,7 +4368,6 @@ MonoBehaviour:
     driveC: 0
     driveD: 0
     driveE: 0
-    software: 
     malware: 
     isInfected: 0
 --- !u!114 &342761648
@@ -8843,6 +8837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6236147f5847da64fbef36de9c2df920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  computerManager: {fileID: 342761647}
   virus_QuestDetail:
   - My computer is acting weird man, it is so slow now. Should I just get a new one?
   - sghjsrtusrtua

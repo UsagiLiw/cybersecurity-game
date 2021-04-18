@@ -43,10 +43,11 @@ public class NPCComputer : MonoBehaviour
         GetComputerManager();
         currentCom =
             this.transform.GetChild((int) currentTarget - 1).gameObject;
+        currentCom.SetActive(true);
         taskbar = currentCom.transform.GetChild(0).gameObject;
         software1 = currentCom.transform.GetChild(1).gameObject;
         software2 = currentCom.transform.GetChild(2).gameObject;
-        currentCom.SetActive(true);
+
         if (ComputerManager.haveAntivirus)
             software1.transform.Find("Antivirus").gameObject.SetActive(true);
         else
