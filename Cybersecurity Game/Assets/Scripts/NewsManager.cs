@@ -24,7 +24,7 @@ public class NewsManager : MonoBehaviour
             }
             else if(news.scenario != -1) { 
                 scenarioNewsDict.Add(news);
-                Debug.Log("Scenario" + news.template + " " + news.scenario);
+                //Debug.Log("Scenario" + news.template + " " + news.scenario);
             }
         }
         
