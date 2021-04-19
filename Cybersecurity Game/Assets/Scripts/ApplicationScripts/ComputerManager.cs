@@ -27,6 +27,16 @@ public class ComputerManager : MonoBehaviour
         activeComputer = computers[index];
     }
 
+    public bool ActiveComIsSlow()
+    {
+        Debug.Log(activeComputer.isSlow);
+        if (activeComputer.isSlow)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void ActivateAntivirus()
     {
         haveAntivirus = true;
@@ -86,4 +96,6 @@ public class Computer
     public List<int> malware;
 
     public bool isInfected;
+
+    public bool isSlow;
 }
