@@ -6,15 +6,18 @@ using UnityEngine.UI;
 public class ExplorerController : MonoBehaviour
 {
     public Image drive1_bar;
+
     public Text drive1_text;
 
     public Image drive2_bar;
+
     public Text drive2_text;
 
     public Image drive3_bar;
+
     public Text drive3_text;
 
-    private Computer computer; 
+    private Computer computer;
 
     void Start()
     {
@@ -29,6 +32,11 @@ public class ExplorerController : MonoBehaviour
             updateDrives();
             yield return new WaitForSeconds(5f);
         }
+    }
+
+    public void CloseExplorer()
+    {
+        gameObject.SetActive(false);
     }
 
     private void updateDrives()

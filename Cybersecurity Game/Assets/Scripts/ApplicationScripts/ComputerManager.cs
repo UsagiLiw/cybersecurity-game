@@ -29,7 +29,7 @@ public class ComputerManager : MonoBehaviour
 
     public bool ActiveComIsSlow()
     {
-        Debug.Log(activeComputer.isSlow);
+        
         if (activeComputer.isSlow)
         {
             return true;

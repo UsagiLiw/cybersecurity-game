@@ -77,7 +77,7 @@ public class ComputerUI : MonoBehaviour
         }
         else
         {
-            StartCoroutine(ActiveDelay(app, 0.5f));
+            StartCoroutine(ActiveDelay(app, 0.2f));
         }
     }
 
