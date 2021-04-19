@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Random = UnityEngine.Random;
+
 public class ComputerManager : MonoBehaviour
 {
     // index 0 : Player's computer
@@ -13,6 +15,19 @@ public class ComputerManager : MonoBehaviour
     public static Computer activeComputer;
 
     public static bool haveAntivirus;
+
+    private void Start()
+    {
+        for (int i = 0; i < computers.Length; i++)
+        {
+            computers[i].ram = Random.Range(0.3f, 0.7f);
+            computers[i].cpu = Random.Range(0.2f, 0.7f);
+            computers[i].disk = Random.Range(0.3f, 0.7f);
+            computers[i].driveC = Random.Range(30, 199);
+            computers[i].driveD = Random.Range(80, 399);
+            computers[i].driveE = Random.Range(80, 399);
+        }
+    }
 
     public Computer GetComputer(int index)
     {
@@ -29,7 +44,6 @@ public class ComputerManager : MonoBehaviour
 
     public bool ActiveComIsSlow()
     {
-        
         if (activeComputer.isSlow)
         {
             return true;
@@ -45,11 +59,15 @@ public class ComputerManager : MonoBehaviour
     public void AddMalwareToCom(Target target, int malwareIndex)
     {
         computers[(int) target].malware.Add(malwareIndex);
+        computers[(int) target].isInfected = true;
+        computers[(int) target].isSlow = true;
     }
 
-    public void CleanMalwareOnCom(Target target)
+    public void PurgeMalwareOnCom(Target target)
     {
         computers[(int) target].malware.Clear();
+        computers[(int) target].isInfected = false;
+        computers[(int) target].isSlow = false;
     }
 
     public void DiskOverload(Target target)

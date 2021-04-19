@@ -19,10 +19,15 @@ public class ExplorerController : MonoBehaviour
 
     private Computer computer;
 
-    void Start()
+    private void OnEnable()
     {
         computer = ComputerManager.activeComputer;
         StartCoroutine("DriveCheck");
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     IEnumerator DriveCheck()
@@ -41,6 +46,7 @@ public class ExplorerController : MonoBehaviour
 
     private void updateDrives()
     {
+        computer = ComputerManager.activeComputer;
         drive1_bar.fillAmount = (computer.driveC / 200f);
         drive2_bar.fillAmount = (computer.driveD / 400f);
         drive3_bar.fillAmount = (computer.driveE / 400f);
