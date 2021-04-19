@@ -56,6 +56,11 @@ public class ComputerManager : MonoBehaviour
         haveAntivirus = true;
     }
 
+    public void DeActivateAntivirus()
+    {
+        haveAntivirus = false;
+    }
+
     public void AddMalwareToCom(Target target, int malwareIndex)
     {
         computers[(int) target].malware.Add(malwareIndex);
