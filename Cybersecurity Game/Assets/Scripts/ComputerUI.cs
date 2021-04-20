@@ -36,7 +36,6 @@ public class ComputerUI : MonoBehaviour
 
     private void OnDisable()
     {
-        notRespond.SetActive(false);
         StopAllCoroutines();
     }
 
@@ -71,6 +70,7 @@ public class ComputerUI : MonoBehaviour
         CloseAllApps();
         uiPanel.SetActive(true);
         PlayerScreen.SetActive(false);
+        notRespond.SetActive(false);
         foreach (Transform child in NPCScreen.transform)
         {
             child.gameObject.SetActive(false);
@@ -149,9 +149,18 @@ public class ComputerUI : MonoBehaviour
 
     private void CheckAntivirusApp()
     {
-        if (ComputerManager.haveAntivirus == true)
+        // GameObject antivirusIcon =
+        //     software1.transform.Find("Antivirus").gameObject;
+        // if (ComputerManager.haveAntivirus == true)
+        //     antivirusIcon.SetActive(true);
+        // else
+        //     antivirusIcon.SetActive(false);
+        GameObject[] antivirusIcon =
+            GameObject.FindGameObjectsWithTag("Antivirus_Icon");
+        bool isActive = ComputerManager.haveAntivirus;
+        foreach (GameObject icon in antivirusIcon)
         {
-            software1.transform.Find("Antivirus").gameObject.SetActive(true);
+            icon.SetActive (isActive);
         }
     }
 }
