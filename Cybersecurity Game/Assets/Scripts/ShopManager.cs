@@ -78,8 +78,8 @@ public class ShopManager : MonoBehaviour
 public class Item
 {
     public string name;
-    public bool isPurchased; 
     public int price;
     public int expiredDays;
+    public bool isPurchased; 
     public int dayPassed = 0;
 }
