@@ -2687,7 +2687,7 @@ MonoBehaviour:
     driveE: 296
     malware: 0100000002000000
     isInfected: 0
-    isSlow: 1
+    isSlow: 0
   - owner: 1
     ram: 0
     cpu: 0
@@ -3547,18 +3547,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b744e7228e5b874abd378a7b3445bc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &668594228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668594225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7dc510e0df54648bc8d59bc3e750f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &679805132
@@ -7974,7 +7962,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4339742650211434713, guid: 84237e846b36de149b267caecb1e3884, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 84237e846b36de149b267caecb1e3884, type: 3}
 --- !u!224 &1822974375 stripped
 RectTransform:
