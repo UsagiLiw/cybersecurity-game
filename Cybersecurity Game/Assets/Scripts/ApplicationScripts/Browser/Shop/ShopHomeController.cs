@@ -14,11 +14,10 @@ public class ShopHomeController : MonoBehaviour
     [SerializeField] private Button trainingButton;
     [SerializeField] private Button osButton;
 
-    private void OnEnable()
-    {
-        UpdateBalance();
-        shopManager.ItemExpired += ReEnableButton;
-    }
+    [SerializeField] private Text cloudPrice;
+    [SerializeField] private Text antivirusPrice;
+    [SerializeField] private Text trainingPrice;
+    [SerializeField] private Text osPrice;
 
     private void Awake()
     {
@@ -27,6 +26,20 @@ public class ShopHomeController : MonoBehaviour
         {
             Debug.Log("Found shopManager");
         } else Debug.Log("Not Found shopManager");
+    }
+
+    private void Start()
+    {
+        this.cloudPrice.text = "$ " + shopManager.items[0].price;
+        this.antivirusPrice.text = "$ " + shopManager.items[1].price;
+        this.trainingPrice.text = "$ " + shopManager.items[2].price;
+        this.osPrice.text = "$ " + shopManager.items[3].price;
+    }
+
+    private void OnEnable()
+    {
+        UpdateBalance();
+        shopManager.ItemExpired += ReEnableButton;
     }
 
     public void BuyButtonClicked(int index)
