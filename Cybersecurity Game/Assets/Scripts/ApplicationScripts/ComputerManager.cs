@@ -26,6 +26,9 @@ public class ComputerManager : MonoBehaviour
             computers[i].driveC = Random.Range(30, 199);
             computers[i].driveD = Random.Range(80, 399);
             computers[i].driveE = Random.Range(80, 399);
+            computers[i].isInfected = false;
+            computers[i].isSlow = false;
+            computers[i].isBuggy = false;
         }
     }
 
@@ -42,21 +45,12 @@ public class ComputerManager : MonoBehaviour
         activeComputer = computers[index];
     }
 
-    public bool ActiveComIsSlow()
-    {
-        if (activeComputer.isSlow)
-        {
-            return true;
-        }
-        return false;
-    }
-
     public void ActivateAntivirus()
     {
         haveAntivirus = true;
     }
 
-    public void DeActivateAntivirus()
+    public void DeactivateAntivirus()
     {
         haveAntivirus = false;
     }
@@ -65,7 +59,6 @@ public class ComputerManager : MonoBehaviour
     {
         computers[(int) target].malware.Add(malwareIndex);
         computers[(int) target].isInfected = true;
-        computers[(int) target].isSlow = true;
     }
 
     public void PurgeMalwareOnCom(Target target)
@@ -73,6 +66,7 @@ public class ComputerManager : MonoBehaviour
         computers[(int) target].malware.Clear();
         computers[(int) target].isInfected = false;
         computers[(int) target].isSlow = false;
+        computers[(int) target].isBuggy = false;
     }
 
     public void DiskOverload(Target target)
@@ -89,6 +83,21 @@ public class ComputerManager : MonoBehaviour
         computers[index].ram = 0.89f;
         computers[index].cpu = 0.98f;
         computers[index].disk = 0.99f;
+    }
+
+    public void SetComputerBehavior(Target target, bool slow, bool buggy)
+    {
+        computers[(int) target].isSlow = slow;
+        computers[(int) target].isBuggy = buggy;
+    }
+
+    public int CheckActiveComMalwareType(Target target)
+    {
+        if (activeComputer.isInfected == true)
+        {
+            return activeComputer.malware[0];
+        }
+        return -1;
     }
 }
 
@@ -121,4 +130,6 @@ public class Computer
     public bool isInfected;
 
     public bool isSlow;
+
+    public bool isBuggy;
 }
