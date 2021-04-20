@@ -41,6 +41,7 @@ public class ComputerUI : MonoBehaviour
 
     public void StartComputer(int i)
     {
+        Debug.Log("Start new computer:" + i);
         computerManager.SetActiveComputer (i);
         Target target = (Target) i;
         gameObject.SetActive(true);
@@ -53,7 +54,8 @@ public class ComputerUI : MonoBehaviour
         }
         else
         {
-            int index = (int) target;
+            int index = (int) target - 1;
+            Debug.Log("open com no.:" +  index);
             NPCScreen.SetActive(true);
             activeCom = NPCScreen.transform.GetChild(index).gameObject;
         }
@@ -149,18 +151,11 @@ public class ComputerUI : MonoBehaviour
 
     private void CheckAntivirusApp()
     {
-        // GameObject antivirusIcon =
-        //     software1.transform.Find("Antivirus").gameObject;
-        // if (ComputerManager.haveAntivirus == true)
-        //     antivirusIcon.SetActive(true);
-        // else
-        //     antivirusIcon.SetActive(false);
-        GameObject[] antivirusIcon =
-            GameObject.FindGameObjectsWithTag("Antivirus_Icon");
-        bool isActive = ComputerManager.haveAntivirus;
-        foreach (GameObject icon in antivirusIcon)
-        {
-            icon.SetActive (isActive);
-        }
+        GameObject antivirusIcon =
+            software1.transform.Find("Antivirus").gameObject;
+        if (ComputerManager.haveAntivirus == true)
+            antivirusIcon.SetActive(true);
+        else
+            antivirusIcon.SetActive(false);
     }
 }

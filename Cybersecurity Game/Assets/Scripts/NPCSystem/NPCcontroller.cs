@@ -188,7 +188,7 @@ public class NPCcontroller : MonoBehaviour
         //     Instantiate(NPCcomputer_prefab) as GameObject;
         // GameObject gui = GameObject.Find("GUI");
         // malwareScreen_Object.transform.SetParent(gui.transform, false);
-        
+        Debug.Log("Start malware screen");
         computerUI.StartComputer((int) currentTarget);
     }
 
