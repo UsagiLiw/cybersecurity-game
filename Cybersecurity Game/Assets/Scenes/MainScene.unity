@@ -2491,6 +2491,7 @@ GameObject:
   - component: {fileID: 342761647}
   - component: {fileID: 342761645}
   - component: {fileID: 342761648}
+  - component: {fileID: 342761649}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -2662,9 +2663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356c0e1ccf380b544b814f0d4ac19616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  email_file: EmailTemplate.json
-  scenario_file: ScenarioEmail.json
-  attachment_file: AttachmentDictionary.json
 --- !u!114 &342761647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2759,6 +2757,35 @@ MonoBehaviour:
   phishingScreen_prefab: {fileID: 4987546760019188277, guid: 11dbd5cd829fd9549ba1c1ba88e578f4,
     type: 3}
   computerUI: {fileID: 402222256626882938}
+--- !u!114 &342761649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342761638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab53aae606c4a204ca11057ec4d83bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newsArray:
+  - template: 
+    scenario: 0
+    topic: 
+    content: 
+    image: 
+  - template: 
+    scenario: 0
+    topic: 
+    content: 
+    image: 
+  - template: 
+    scenario: 0
+    topic: 
+    content: 
+    image: 
+  gameManager: {fileID: 342761639}
 --- !u!1 &421703799
 GameObject:
   m_ObjectHideFlags: 0
@@ -8609,12 +8636,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1838124494}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1864176949 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3047535038258371603, guid: 61a8c349863454540a228c7fce134d52,
-    type: 3}
-  m_PrefabInstance: {fileID: 5521363930282824355}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1874711339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5245169345850804506, guid: 01af178d36ea5e84e8e9317fb8843fbf,
@@ -11903,7 +11924,7 @@ PrefabInstance:
     - target: {fileID: 1779336718, guid: 61a8c349863454540a228c7fce134d52, type: 3}
       propertyPath: resetPassword
       value: 
-      objectReference: {fileID: 1864176949}
+      objectReference: {fileID: 0}
     - target: {fileID: 3754502753927076400, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
       propertyPath: email
