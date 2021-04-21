@@ -13,6 +13,10 @@ public class ComputerUI : MonoBehaviour
 
     public GameObject errorScreen;
 
+    public GameObject antivirus_prefab;
+
+    public GameObject antivirus_App;
+
     public ComputerManager computerManager;
 
     private GameObject taskBar;
@@ -20,6 +24,8 @@ public class ComputerUI : MonoBehaviour
     private GameObject software1;
 
     private GameObject software2;
+
+    private GameObject antivirusIcon;
 
     //Screen
     public GameObject PlayerScreen;
@@ -63,13 +69,15 @@ public class ComputerUI : MonoBehaviour
         taskBar = activeCom.transform.GetChild(0).gameObject;
         software1 = activeCom.transform.GetChild(1).gameObject;
         software2 = activeCom.transform.GetChild(2).gameObject;
-        // CheckAntivirusApp();
+
+        CheckAntivirusApp();
         CheckBugState();
     }
 
     public void CloseComputer()
     {
         CloseAllApps();
+        Destroy (antivirusIcon);
         uiPanel.SetActive(true);
         PlayerScreen.SetActive(false);
         notRespond.SetActive(false);
@@ -151,11 +159,14 @@ public class ComputerUI : MonoBehaviour
 
     private void CheckAntivirusApp()
     {
-        GameObject antivirusIcon =
-            software1.transform.Find("Antivirus").gameObject;
         if (ComputerManager.haveAntivirus == true)
-            antivirusIcon.SetActive(true);
-        else
-            antivirusIcon.SetActive(false);
+        {
+            antivirusIcon = Instantiate(antivirus_prefab) as GameObject;
+            antivirusIcon.transform.SetParent(software1.transform, false);
+            antivirusIcon.transform.SetAsLastSibling();
+            antivirusIcon
+                .GetComponent<Button>()
+                .AddEventListener(antivirus_App, OpenApplication);
+        }
     }
 }
