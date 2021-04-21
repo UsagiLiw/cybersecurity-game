@@ -274,7 +274,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8434840100572478058}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4157539253013568472}
+        m_MethodName: SwitchPort
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8434840100650994672
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8434840101324302539}
   - component: {fileID: 8434840101324302538}
+  - component: {fileID: 4157539253013568472}
   m_Layer: 10
   m_Name: Port
   m_TagString: Untagged
@@ -481,3 +493,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8434840101324302540}
   m_CullTransparentMesh: 0
+--- !u!114 &4157539253013568472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434840101324302540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6128750d9a795a24d9416769bd52decb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portId: 0
+  portNumber: {fileID: 8434840100650994686}
+  address: {fileID: 8434840099786915511}
+  state: {fileID: 8434840100667078479}
+  buttonText: {fileID: 8434840100151486189}

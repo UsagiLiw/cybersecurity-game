@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class PortSwitcherController : MonoBehaviour
 {
-    [SerializeField]
-    private PortPanel[] ports;
+    [SerializeField] private PortPanel[] ports;
 
     private GameObject gameManager;
     private PortsManager portManager;
@@ -38,7 +37,7 @@ public class PortSwitcherController : MonoBehaviour
     {
         for (; ; )
         {
-            UpdatePanels();
+            //UpdatePanels();
             UpdateChart();
             UpdateStatus();
             yield return new WaitForSeconds(1f);
