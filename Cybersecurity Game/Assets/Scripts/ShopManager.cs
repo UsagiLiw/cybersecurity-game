@@ -8,7 +8,7 @@ public class ShopManager : MonoBehaviour
     private BudgetManager budgetManager;
     private ComputerManager computerManager;
 
-    [SerializeField] private List<Item> items;
+    [SerializeField] public List<Item> items;
     [SerializeField] private GameManager gameManager;
 
     public delegate void ItemExpireHandler(int itemIndex);
@@ -29,8 +29,6 @@ public class ShopManager : MonoBehaviour
     {
         Debug.Log("Buy item index " + index);
         items[index].isPurchased = true;
-
-        // Start count down for each item 
 
         budgetManager.ModifyBudget(-items[index].price);
         Debug.Log("Budget cut " + items[index].price);
@@ -65,7 +63,7 @@ public class ShopManager : MonoBehaviour
             if(item.isPurchased) 
                 item.dayPassed++;
 
-            if(item.dayPassed == 5)
+            if(item.dayPassed == item.expiredDays)
             {
                 item.dayPassed = 0;
                 ItemExpired.Invoke(i);
@@ -80,7 +78,8 @@ public class ShopManager : MonoBehaviour
 public class Item
 {
     public string name;
-    public bool isPurchased; 
     public int price;
+    public int expiredDays;
+    public bool isPurchased; 
     public int dayPassed = 0;
 }
