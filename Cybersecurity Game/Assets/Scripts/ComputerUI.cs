@@ -55,7 +55,7 @@ public class ComputerUI : MonoBehaviour
         else
         {
             int index = (int) target - 1;
-            Debug.Log("open com no.:" +  index);
+            Debug.Log("open com no.:" + index);
             NPCScreen.SetActive(true);
             activeCom = NPCScreen.transform.GetChild(index).gameObject;
         }
@@ -63,7 +63,7 @@ public class ComputerUI : MonoBehaviour
         taskBar = activeCom.transform.GetChild(0).gameObject;
         software1 = activeCom.transform.GetChild(1).gameObject;
         software2 = activeCom.transform.GetChild(2).gameObject;
-        CheckAntivirusApp();
+        // CheckAntivirusApp();
         CheckBugState();
     }
 
@@ -101,18 +101,18 @@ public class ComputerUI : MonoBehaviour
         }
         else
         {
-            StartCoroutine(ActiveDelay(app, 0.2f));
+            StartCoroutine(ActiveDelay(app, 0.1f));
         }
     }
 
     IEnumerator ActiveDelay(GameObject app, float time)
     {
+        app.SetActive(true);
+        app.transform.SetAsLastSibling();
         notRespond.SetActive(true);
         notRespond.transform.SetAsLastSibling();
         yield return new WaitForSeconds(time);
         notRespond.SetActive(false);
-        app.SetActive(true);
-        app.transform.SetAsLastSibling();
     }
 
     private void CheckBugState()
