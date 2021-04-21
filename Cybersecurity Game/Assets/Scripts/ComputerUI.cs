@@ -15,6 +15,8 @@ public class ComputerUI : MonoBehaviour
 
     public GameObject antivirus_prefab;
 
+    public GameObject advertise_prefab;
+
     public GameObject antivirus_App;
 
     public ComputerManager computerManager;
@@ -71,7 +73,7 @@ public class ComputerUI : MonoBehaviour
         software2 = activeCom.transform.GetChild(2).gameObject;
 
         CheckAntivirusApp();
-        CheckBugState();
+        CheckMaliciousState();
     }
 
     public void CloseComputer()
@@ -123,11 +125,23 @@ public class ComputerUI : MonoBehaviour
         notRespond.SetActive(false);
     }
 
-    private void CheckBugState()
+    private void CheckMaliciousState()
     {
         if (ComputerManager.activeComputer.isBuggy == true)
         {
             StartCoroutine(ShowBugScreen());
+        }
+        int malwareType = computerManager.CheckActiveComMalwareType();
+        switch (malwareType)
+        {
+            case (int) MalwareType.Adware:
+                Debug.Log("Show ad on desktop");
+                break;
+            case (int) MalwareType.Trojan:
+                Debug.Log("Create icon on desktop");
+                break;
+            default:
+                break;
         }
     }
 
@@ -167,6 +181,14 @@ public class ComputerUI : MonoBehaviour
             antivirusIcon
                 .GetComponent<Button>()
                 .AddEventListener(antivirus_App, OpenApplication);
+        }
+    }
+
+    IEnumerator ShowAdsScreen()
+    {
+        for(;;)
+        {
+
         }
     }
 }

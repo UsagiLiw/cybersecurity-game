@@ -92,7 +92,7 @@ public class ComputerManager : MonoBehaviour
         computers[(int) target].isBuggy = buggy;
     }
 
-    public int CheckActiveComMalwareType(Target target)
+    public int CheckActiveComMalwareType()
     {
         if (activeComputer.isInfected == true)
         {
