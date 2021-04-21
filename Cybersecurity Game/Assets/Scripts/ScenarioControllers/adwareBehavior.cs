@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class adwareBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+    private static string adPics_path = "";
+    private void OnEnable() {
         
     }
 }
