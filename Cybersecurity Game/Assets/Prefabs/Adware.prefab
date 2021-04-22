@@ -500,7 +500,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1292336815271140633}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1192061786804160462}
+        m_MethodName: SelfDestruct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6516015071338176034
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +629,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 376874946871273346}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1192061786804160462}
+        m_MethodName: SelfDestruct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7189826668699047601
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +699,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6934710fdae4ef4183745fe0a303078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  desktopAds:
+  - adsHeader: Hot Girl in YOUR Area
+    adsDetail: 
+    adsFile: ad01
+  - adsHeader: Best Ads of The Decade!!!
+    adsDetail: 
+    adsFile: ad02
+  - adsHeader: You Won't Believe This!
+    adsDetail: 
+    adsFile: ad03
+  - adsHeader: Best Nut, Coconut
+    adsDetail: 
+    adsFile: ad04
+  - adsHeader: Buy a Hat for Your Pug
+    adsDetail: 
+    adsFile: ad05
+  - adsHeader: Let's Do Coke!!!
+    adsDetail: 
+    adsFile: ad06
+  - adsHeader: Are Your Phone Safe?
+    adsDetail: 
+    adsFile: ad07
+  - adsHeader: No More Ads, Buy Our Premium
+    adsDetail: 
+    adsFile: ad08
+  - adsHeader: They Want Your Data
+    adsDetail: 
+    adsFile: ad09
+  - adsHeader: Premium Music, Buy Premium
+    adsDetail: 
+    adsFile: ad10
+  - adsHeader: You Won't Believe What It's For!!!
+    adsDetail: 
+    adsFile: ad11
+  - adsHeader: Are You Sick of Ads?
+    adsDetail: Buy our Ads-Free anti advertisement program today!!!
+    adsFile: 
+  - adsHeader: 'Hot Single Girls In Your Area '
+    adsDetail: Don't miss out on a chance of your life time to date a girl of your
+      dream.
+    adsFile: 
+  - adsHeader: YOU WIN!!!!!!
+    adsDetail: Congratulation, you have won a $10M dollars lottery. Just visit the
+      web www.gogolottery.gov.cn to claim your prize
+    adsFile: 
+  - adsHeader: Bonk!
+    adsDetail: If you see this message, resend it to 10 of your friends or suffer
+      the wrath of the Dodge!!!!
+    adsFile: 
+  notiBox: {fileID: 7895222506971230970}
+  notiImage: {fileID: 5058070727333969063}
 --- !u!1 &7895222506971230970
 GameObject:
   m_ObjectHideFlags: 0
