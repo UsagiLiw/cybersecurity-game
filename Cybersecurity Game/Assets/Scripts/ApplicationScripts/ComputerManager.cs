@@ -86,13 +86,19 @@ public class ComputerManager : MonoBehaviour
         computers[index].disk = 0.99f;
     }
 
-    public void SetComputerBehavior(Target target, bool slow, bool buggy)
+    public void SetComputerBehavior(
+        Target target,
+        bool slow,
+        bool buggy,
+        bool ads
+    )
     {
         computers[(int) target].isSlow = slow;
         computers[(int) target].isBuggy = buggy;
+        computers[(int) target].isAds = ads;
     }
 
-    public int CheckActiveComMalwareType()
+    public int CheckActiveComMalwareIndex()
     {
         if (activeComputer.isInfected == true)
         {
@@ -133,4 +139,6 @@ public class Computer
     public bool isSlow;
 
     public bool isBuggy;
+
+    public bool isAds;
 }

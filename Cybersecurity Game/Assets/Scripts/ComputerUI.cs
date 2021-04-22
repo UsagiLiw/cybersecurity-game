@@ -126,23 +126,14 @@ public class ComputerUI : MonoBehaviour
 
     private void CheckMaliciousState()
     {
-        if (ComputerManager.activeComputer.isBuggy == true)
+        Computer currentCom = ComputerManager.activeComputer;
+        if (currentCom.isBuggy == true)
         {
             StartCoroutine(ShowBugScreen());
         }
-        int malwareType = computerManager.CheckActiveComMalwareType();
-        Debug.Log(malwareType);
-        switch (malwareType)
+        if (currentCom.isAds == true)
         {
-            case (int) MalwareType.Adware:
-                Debug.Log("Show ads on desktop");
-                StartCoroutine(ShowAdsScreen());
-                break;
-            case (int) MalwareType.Trojan:
-                Debug.Log("Create icon on desktop");
-                break;
-            default:
-                break;
+            StartCoroutine(ShowAdsScreen());
         }
     }
 
