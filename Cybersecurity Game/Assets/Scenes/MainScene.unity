@@ -10309,7 +10309,8 @@ MonoBehaviour:
   errorScreen: {fileID: 1078270577}
   antivirus_prefab: {fileID: 3893341956378313393, guid: 45484844cf97ffd448156c5df28e4ba0,
     type: 3}
-  advertise_prefab: {fileID: 0}
+  advertise_prefab: {fileID: 7189826668699047601, guid: 9480f14c0442a2f4d8e1c3417b115873,
+    type: 3}
   antivirus_App: {fileID: 402222256345465157}
   computerManager: {fileID: 342761647}
   PlayerScreen: {fileID: 402222255554498908}
