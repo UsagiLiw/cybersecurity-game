@@ -15,6 +15,11 @@ public class PortsManager : MonoBehaviour
         ports[index].state = (PortState) state;
     }
 
+    public void SetPortState(int index, PortState state)
+    {
+        ports[index].state = state;
+    }
+
     public int GetPortSize()
     {
         return ports.Length;
