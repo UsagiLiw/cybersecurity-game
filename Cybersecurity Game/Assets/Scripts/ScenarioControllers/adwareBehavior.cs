@@ -17,7 +17,7 @@ public class adwareBehavior : MonoBehaviour
 
     private void OnEnable()
     {
-        int index = Random.Range(0, desktopAds.Length);
+        int index = Random.Range(0, desktopAds.Length - 1);
 
         notiBox.SetActive(false);
         notiImage.SetActive(false);
@@ -30,6 +30,11 @@ public class adwareBehavior : MonoBehaviour
         {
             ShowNotiImage(desktopAds[index]);
         }
+    }
+
+    private void OnDisable()
+    {
+        Destroy(this.gameObject);
     }
 
     private void ShowNotiBox(DesktopAdsClass currentAds)
@@ -47,9 +52,11 @@ public class adwareBehavior : MonoBehaviour
         notiImage.SetActive(true);
 
         Text topic = notiImage.transform.GetChild(1).gameObject.transform.GetComponent<Text>();
-        Image content = notiBox.transform.GetChild(2).gameObject.transform.GetComponent<Image>();
+        Image content = notiImage.transform.GetChild(2).gameObject.transform.GetComponent<Image>();
         topic.text = currentAds.adsHeader;
-        content.sprite = Resources.Load<Sprite>(adsImage_Path + currentAds.adsFile);
+        Debug.Log(adsImage_Path+currentAds.adsFile);
+        var adsImage = Resources.Load<Sprite>(adsImage_Path + currentAds.adsFile);
+        content.sprite = adsImage;
     }
 
     public void SelfDestruct()

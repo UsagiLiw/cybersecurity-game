@@ -63,7 +63,6 @@ public class ComputerUI : MonoBehaviour
         else
         {
             int index = (int) target - 1;
-            Debug.Log("open com no.:" + index);
             NPCScreen.SetActive(true);
             activeCom = NPCScreen.transform.GetChild(index).gameObject;
         }
@@ -132,10 +131,12 @@ public class ComputerUI : MonoBehaviour
             StartCoroutine(ShowBugScreen());
         }
         int malwareType = computerManager.CheckActiveComMalwareType();
+        Debug.Log(malwareType);
         switch (malwareType)
         {
             case (int) MalwareType.Adware:
-                Debug.Log("Show ad on desktop");
+                Debug.Log("Show ads on desktop");
+                StartCoroutine(ShowAdsScreen());
                 break;
             case (int) MalwareType.Trojan:
                 Debug.Log("Create icon on desktop");
@@ -186,9 +187,15 @@ public class ComputerUI : MonoBehaviour
 
     IEnumerator ShowAdsScreen()
     {
-        for(;;)
+        for (; ; )
         {
+            float time = Random.Range(12f, 30f);
 
+            GameObject ads = Instantiate(advertise_prefab) as GameObject;
+            ads.transform.SetParent(this.transform, false);
+            ads.transform.SetAsLastSibling();
+
+            yield return new WaitForSeconds(time);
         }
     }
 }
