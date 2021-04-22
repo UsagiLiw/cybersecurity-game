@@ -4131,6 +4131,7 @@ GameObject:
   - component: {fileID: 342761648}
   - component: {fileID: 342761649}
   - component: {fileID: 342761650}
+  - component: {fileID: 342761651}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4442,6 +4443,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phishingScreen_prefab: {fileID: 4987546760019188277, guid: 11dbd5cd829fd9549ba1c1ba88e578f4,
     type: 3}
+--- !u!114 &342761651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342761638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12af2cd0b95ca1a43be9fbf24e551338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notificationList: []
 --- !u!1 &421703799
 GameObject:
   m_ObjectHideFlags: 0
