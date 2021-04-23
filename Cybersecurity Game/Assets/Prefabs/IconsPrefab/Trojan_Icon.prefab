@@ -64,7 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6b17e81d2abbddd47a1954319cb1e547, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -151,7 +151,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Antivirus
+  m_Text: Trojan
 --- !u!1 &3893341956378313393
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,8 +164,9 @@ GameObject:
   - component: {fileID: 3893341956378313397}
   - component: {fileID: 3893341956378313396}
   - component: {fileID: 3893341956378313399}
+  - component: {fileID: 5848704885059396773}
   m_Layer: 10
-  m_Name: Antivirus_Icon
+  m_Name: Trojan_Icon
   m_TagString: DesktopIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -272,14 +273,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OpenApplication
-        m_Mode: 2
+      - m_Target: {fileID: 5848704885059396773}
+        m_MethodName: InstantFailure
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Antivirus
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5848704885059396773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893341956378313393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d328a09a107be7c4c8ad5e79e0c6d33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconList:
+  - name: '%/dJ9o187ewf87//@&%'
+    image: {fileID: 21300000, guid: 05f0feb6242f45745912d969a9b4f6dd, type: 3}
+  - name: FinalReport.exe
+    image: {fileID: 21300000, guid: 0f85d5bd9febe2041a521ade28ef318d, type: 3}
+  - name: SharkS0ft
+    image: {fileID: 21300000, guid: 2fcfa5159dda2aa43881d3c947f0c6ea, type: 3}
+  - name: Antivirus
+    image: {fileID: 21300000, guid: ce4d2ac88519a204c8835eece8755ed0, type: 3}
+  - name: 18+.zip
+    image: {fileID: 21300000, guid: e418bce2ac4f0624592a0ae1cd9f6f76, type: 3}

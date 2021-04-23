@@ -90,12 +90,14 @@ public class ComputerManager : MonoBehaviour
         Target target,
         bool slow,
         bool buggy,
-        bool ads
+        bool ads,
+        bool trojan
     )
     {
         computers[(int) target].isSlow = slow;
         computers[(int) target].isBuggy = buggy;
         computers[(int) target].isAds = ads;
+        computers[(int) target].isTrojan = trojan;
     }
 
     public int CheckActiveComMalwareIndex()
@@ -103,6 +105,18 @@ public class ComputerManager : MonoBehaviour
         if (activeComputer.isInfected == true)
         {
             return activeComputer.malware[0];
+        }
+        return -1;
+    }
+
+    public int CheckActiveComMalwareType()
+    {
+        if (activeComputer.isInfected == true)
+        {
+            MalwareType malware =
+                MalwareManager
+                    .GetMalwareTypeFromIndex(activeComputer.malware[0]);
+            return (int) malware;
         }
         return -1;
     }
@@ -141,4 +155,6 @@ public class Computer
     public bool isBuggy;
 
     public bool isAds;
+
+    public bool isTrojan;
 }

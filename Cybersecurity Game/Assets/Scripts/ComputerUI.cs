@@ -17,6 +17,8 @@ public class ComputerUI : MonoBehaviour
 
     public GameObject advertise_prefab;
 
+    public GameObject trojan_prefab;
+
     public GameObject antivirus_App;
 
     public ComputerManager computerManager;
@@ -126,14 +128,31 @@ public class ComputerUI : MonoBehaviour
 
     private void CheckMaliciousState()
     {
-        Computer currentCom = ComputerManager.activeComputer;
-        if (currentCom.isBuggy == true)
+        // Computer currentCom = ComputerManager.activeComputer;
+        // if (currentCom.isBuggy == true)
+        // {
+        //     StartCoroutine(ShowBugScreen());
+        // }
+        // if (currentCom.isAds == true)
+        // {
+        //     StartCoroutine(ShowAdsScreen());
+        // }
+        int malware = computerManager.CheckActiveComMalwareType();
+        if (malware < 0) return;
+        switch (malware)
         {
-            StartCoroutine(ShowBugScreen());
-        }
-        if (currentCom.isAds == true)
-        {
-            StartCoroutine(ShowAdsScreen());
+            case (int) MalwareType.Trojan:
+                ShowTrojanIcon();
+                StartCoroutine(ShowBugScreen());
+                break;
+            case (int) MalwareType.Virus:
+                StartCoroutine(ShowBugScreen());
+                break;
+            case (int) MalwareType.Adware:
+                StartCoroutine(ShowAdsScreen());
+                break;
+            default:
+                break;
         }
     }
 
@@ -188,5 +207,12 @@ public class ComputerUI : MonoBehaviour
 
             yield return new WaitForSeconds(time);
         }
+    }
+
+    private void ShowTrojanIcon()
+    {
+        GameObject trojan = Instantiate(trojan_prefab) as GameObject;
+        trojan.transform.SetParent(software1.transform, false);
+        trojan.transform.SetAsLastSibling();
     }
 }
