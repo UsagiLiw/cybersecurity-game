@@ -43,7 +43,14 @@ public class ComputerManager : MonoBehaviour
      */
     public void SetActiveComputer(int index)
     {
+        Debug.Log("active com :" + index);
         activeComputer = computers[index];
+        Debug
+            .Log(activeComputer.isInfected +
+            "" +
+            activeComputer.isSlow +
+            "" +
+            activeComputer.isBuggy);
     }
 
     public void ActivateAntivirus()
@@ -68,6 +75,14 @@ public class ComputerManager : MonoBehaviour
         computers[(int) target].isInfected = false;
         computers[(int) target].isSlow = false;
         computers[(int) target].isBuggy = false;
+    }
+
+    public void PurgeMalwareOnActiveCom()
+    {
+        activeComputer.malware.Clear();
+        activeComputer.isInfected = false;
+        activeComputer.isSlow = false;
+        activeComputer.isBuggy = false;
     }
 
     public void DiskOverload(Target target)

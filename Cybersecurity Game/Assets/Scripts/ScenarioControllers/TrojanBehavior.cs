@@ -25,6 +25,8 @@ public class TrojanBehavior : MonoBehaviour
     public void InstantFailure()
     {
         Debug.Log("You failed");
+        MalwareController malwareController = GameObject.Find("ScenarioManager").GetComponent<MalwareController>();
+        malwareController.InvokeScenarioFailure();
     }
 
 }

@@ -71,6 +71,7 @@ public class Browser : MonoBehaviour
 
     public void GoHome()
     {
+        address.text = "";
         homePage.SetActive(true);
         shop.SetActive(false);
         news.SetActive(false);

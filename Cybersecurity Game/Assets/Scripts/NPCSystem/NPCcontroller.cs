@@ -155,6 +155,8 @@ public class NPCcontroller : MonoBehaviour
         scenario = 0;
         currentTarget = 0;
         requestDetail = null;
+
+        ContinueNPCquest();
     }
 
     public void CreateNPCScreen()

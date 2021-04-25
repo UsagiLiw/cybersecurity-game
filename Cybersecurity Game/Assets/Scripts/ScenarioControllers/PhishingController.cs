@@ -109,6 +109,7 @@ public class PhishingController : MonoBehaviour
     public static void CheckScenarioCondition(bool legit)
     {
         string saveString = JsonUtility.ToJson(phishingSave);
+        NPCcontroller.DisableAllNPC();
         if (phishingSave.isPhishing == legit)
         {
             Debug.Log("success");

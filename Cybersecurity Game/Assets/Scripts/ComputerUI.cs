@@ -79,6 +79,7 @@ public class ComputerUI : MonoBehaviour
 
     public void CloseComputer()
     {
+        NPCcontroller.ContinueNPCquest();
         CloseAllApps();
         Destroy (antivirusIcon);
         uiPanel.SetActive(true);
@@ -128,15 +129,6 @@ public class ComputerUI : MonoBehaviour
 
     private void CheckMaliciousState()
     {
-        // Computer currentCom = ComputerManager.activeComputer;
-        // if (currentCom.isBuggy == true)
-        // {
-        //     StartCoroutine(ShowBugScreen());
-        // }
-        // if (currentCom.isAds == true)
-        // {
-        //     StartCoroutine(ShowAdsScreen());
-        // }
         int malware = computerManager.CheckActiveComMalwareType();
         if (malware < 0) return;
         switch (malware)
@@ -211,6 +203,7 @@ public class ComputerUI : MonoBehaviour
 
     private void ShowTrojanIcon()
     {
+        Debug.Log("Show trojan ");
         GameObject trojan = Instantiate(trojan_prefab) as GameObject;
         trojan.transform.SetParent(software1.transform, false);
         trojan.transform.SetAsLastSibling();

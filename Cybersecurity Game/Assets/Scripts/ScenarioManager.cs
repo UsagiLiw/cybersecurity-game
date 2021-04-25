@@ -83,6 +83,7 @@ public class ScenarioManager : MonoBehaviour
                 break;
             case Scenario.Malware:
                 underAttack = true;
+                malwareController.SetMalwareScenarioState (detail);
                 break;
             default:
                 throw new InvalidOperationException("Error: Unknown scenario index: " +
@@ -110,6 +111,7 @@ public class ScenarioManager : MonoBehaviour
                 currentType = Scenario.Phishing;
                 break;
             case Scenario.Malware:
+                (underAttack, detail) = malwareController.UpdateScenarioState();
                 currentType = Scenario.Malware;
                 break;
             default:
@@ -227,15 +229,15 @@ public class ScenarioManager : MonoBehaviour
         GameManager.InvokeSaveData();
     }
 
-    private static void ScenarioCompleted(string result)
-    {
-        ResultController.ShowSuccess (result, onGoingScenario);
-        onGoingScenario = Scenario.None;
-        underAttack = false;
-        EmailManager.ClearScenarioMails();
-        jsonDetail = null;
-        GameManager.InvokeSaveData();
-    }
+    // private static void ScenarioCompleted(string result)
+    // {
+    //     ResultController.ShowSuccess (result, onGoingScenario);
+    //     onGoingScenario = Scenario.None;
+    //     underAttack = false;
+    //     EmailManager.ClearScenarioMails();
+    //     jsonDetail = null;
+    //     GameManager.InvokeSaveData();
+    // }
 
     // private static void ScenarioFailed(string result)
     // {
