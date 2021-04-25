@@ -16,7 +16,7 @@ public class ComputerManager : MonoBehaviour
 
     public static bool haveAntivirus;
 
-    private void Start()
+    private void Awake()
     {
         for (int i = 0; i < computers.Length; i++)
         {
