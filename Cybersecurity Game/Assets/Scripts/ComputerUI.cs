@@ -81,9 +81,11 @@ public class ComputerUI : MonoBehaviour
 
     public void UpdateComState()
     {
-        Debug.Log("Update state");
         StopAllCoroutines();
         notRespond.SetActive(false);
+        
+        
+
         CheckMaliciousState();
     }
 
@@ -217,5 +219,10 @@ public class ComputerUI : MonoBehaviour
         GameObject trojan = Instantiate(trojan_prefab) as GameObject;
         trojan.transform.SetParent(software1.transform, false);
         trojan.transform.SetAsLastSibling();
+    }
+
+    IEnumerator WaitForSeconds(float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 }

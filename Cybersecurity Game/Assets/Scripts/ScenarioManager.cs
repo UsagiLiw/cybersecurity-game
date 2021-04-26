@@ -201,6 +201,7 @@ public class ScenarioManager : MonoBehaviour
 
     public static void InvokeScenarioSuccess(string result)
     {
+        NPCcontroller.DisableAllNPC();
         onGoingScenario = Scenario.None;
         underAttack = false;
         EmailManager.ClearScenarioMails();
@@ -211,6 +212,7 @@ public class ScenarioManager : MonoBehaviour
 
     public static void InvokeScenarioFailed(string result)
     {
+        NPCcontroller.DisableAllNPC();
         ResultController.ShowFailed (result, onGoingScenario);
         onGoingScenario = Scenario.None;
         underAttack = false;
@@ -221,6 +223,7 @@ public class ScenarioManager : MonoBehaviour
 
     public static void InvokeScenarioFailed(string result, Scenario currentSce)
     {
+        NPCcontroller.DisableAllNPC();
         ResultController.ShowFailed (result, currentSce);
         onGoingScenario = Scenario.None;
         underAttack = false;
@@ -228,26 +231,6 @@ public class ScenarioManager : MonoBehaviour
         jsonDetail = null;
         GameManager.InvokeSaveData();
     }
-
-    // private static void ScenarioCompleted(string result)
-    // {
-    //     ResultController.ShowSuccess (result, onGoingScenario);
-    //     onGoingScenario = Scenario.None;
-    //     underAttack = false;
-    //     EmailManager.ClearScenarioMails();
-    //     jsonDetail = null;
-    //     GameManager.InvokeSaveData();
-    // }
-
-    // private static void ScenarioFailed(string result)
-    // {
-    //     ResultController.ShowFailed (result, onGoingScenario);
-    //     onGoingScenario = Scenario.None;
-    //     EmailManager.ClearScenarioMails();
-    //     underAttack = false;
-    //     jsonDetail = null;
-    //     GameManager.InvokeSaveData();
-    // }
 }
 
 [System.Serializable]

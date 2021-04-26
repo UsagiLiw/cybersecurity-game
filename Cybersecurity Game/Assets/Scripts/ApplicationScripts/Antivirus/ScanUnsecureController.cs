@@ -70,9 +70,4 @@ public class ScanUnsecureController : MonoBehaviour
         }
         instantiatedThreats.Clear();
     }
-
-    IEnumerator ComIsClean()
-    {
-
-    }
 }
