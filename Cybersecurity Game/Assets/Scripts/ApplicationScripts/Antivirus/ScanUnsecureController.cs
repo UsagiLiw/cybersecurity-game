@@ -52,6 +52,7 @@ public class ScanUnsecureController : MonoBehaviour
     {
         ClearSummary();
         List<int> malwareList = ComputerManager.activeComputer.malware;
+        Debug.Log("malware amt:"+malwareList.Count);
         foreach (int malware in malwareList)
         {
             Text newThreat = Instantiate(threatDetail) as Text;
