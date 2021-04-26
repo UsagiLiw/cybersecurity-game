@@ -45,7 +45,6 @@ public class ScanUnsecureController : MonoBehaviour
         Debug.Log("Clean finished");
         ClearSummary();
         antivirus.OpenSecurePage();
-        ComIsClean();
     }
 
     private void UpdateSummary()
@@ -72,7 +71,7 @@ public class ScanUnsecureController : MonoBehaviour
         instantiatedThreats.Clear();
     }
 
-    private void ComIsClean()
+    IEnumerator ComIsClean()
     {
 
     }

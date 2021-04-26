@@ -47,6 +47,7 @@ public class ComputerUI : MonoBehaviour
     private void OnDisable()
     {
         StopAllCoroutines();
+        ComputerManager.NewActiveComAction -= UpdateComState;
     }
 
     public void StartComputer(int i)
@@ -74,6 +75,15 @@ public class ComputerUI : MonoBehaviour
         software2 = activeCom.transform.GetChild(2).gameObject;
 
         CheckAntivirusApp();
+        CheckMaliciousState();
+        ComputerManager.NewActiveComAction += UpdateComState;
+    }
+
+    public void UpdateComState()
+    {
+        Debug.Log("Update state");
+        StopAllCoroutines();
+        notRespond.SetActive(false);
         CheckMaliciousState();
     }
 
