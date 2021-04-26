@@ -16,6 +16,11 @@ public class ComputerManager : MonoBehaviour
 
     public static bool haveAntivirus;
 
+    //Announcing change in activeCom
+    public delegate void ActiveComAction();
+
+    public static event ActiveComAction NewActiveComAction;
+
     private void Awake()
     {
         for (int i = 0; i < computers.Length; i++)
@@ -45,12 +50,6 @@ public class ComputerManager : MonoBehaviour
     {
         Debug.Log("active com :" + index);
         activeComputer = computers[index];
-        Debug
-            .Log(activeComputer.isInfected +
-            "" +
-            activeComputer.isSlow +
-            "" +
-            activeComputer.isBuggy);
     }
 
     public void ActivateAntivirus()
@@ -67,6 +66,7 @@ public class ComputerManager : MonoBehaviour
     {
         computers[(int) target].malware.Add(malwareIndex);
         computers[(int) target].isInfected = true;
+        ChangeOnActiveCom (target);
     }
 
     public void PurgeMalwareOnCom(Target target)
@@ -75,14 +75,16 @@ public class ComputerManager : MonoBehaviour
         computers[(int) target].isInfected = false;
         computers[(int) target].isSlow = false;
         computers[(int) target].isBuggy = false;
+        ChangeOnActiveCom (target);
     }
 
-    public void PurgeMalwareOnActiveCom()
+    public static void PurgeMalwareOnActiveCom()
     {
         activeComputer.malware.Clear();
         activeComputer.isInfected = false;
         activeComputer.isSlow = false;
         activeComputer.isBuggy = false;
+        if (NewActiveComAction != null) NewActiveComAction.Invoke();
     }
 
     public void DiskOverload(Target target)
@@ -91,6 +93,7 @@ public class ComputerManager : MonoBehaviour
         computers[index].driveC = 199;
         computers[index].driveD = 398;
         computers[index].driveE = 399;
+        ChangeOnActiveCom (target);
     }
 
     public void SystemOverload(Target target)
@@ -99,12 +102,14 @@ public class ComputerManager : MonoBehaviour
         computers[index].ram = 0.89f;
         computers[index].cpu = 0.98f;
         computers[index].disk = 0.99f;
+        ChangeOnActiveCom (target);
     }
 
     public void SetComputerBehavior(Target target, bool slow, bool buggy)
     {
         computers[(int) target].isSlow = slow;
         computers[(int) target].isBuggy = buggy;
+        ChangeOnActiveCom (target);
     }
 
     public int CheckActiveComMalwareIndex()
@@ -126,6 +131,17 @@ public class ComputerManager : MonoBehaviour
             return (int) malware;
         }
         return -1;
+    }
+
+    private void ChangeOnActiveCom(Target target)
+    {
+        if (activeComputer == null) return;
+
+        if ((int) target == (int) activeComputer.owner)
+        {
+            activeComputer = computers[(int) target];
+            if (NewActiveComAction != null) NewActiveComAction.Invoke();
+        }
     }
 }
 

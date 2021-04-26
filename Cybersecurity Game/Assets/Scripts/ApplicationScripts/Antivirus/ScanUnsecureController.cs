@@ -41,7 +41,7 @@ public class ScanUnsecureController : MonoBehaviour
             cleanBar.fillAmount = timer / cleanTime;
             yield return null;
         }
-        ComputerManager.activeComputer.malware.Clear();
+        ComputerManager.PurgeMalwareOnActiveCom();
         Debug.Log("Clean finished");
         ClearSummary();
         antivirus.OpenSecurePage();
