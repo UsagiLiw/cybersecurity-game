@@ -50,5 +50,6 @@ public enum MalwareType
     Virus = 0,
     Adware = 1,
     Trojan = 2,
-    Ransom = 3
+    Ransom = 3,
+    None = -1
 }
