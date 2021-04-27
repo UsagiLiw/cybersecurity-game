@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9042137307318140938}
   - component: {fileID: 4019867380412959805}
+  - component: {fileID: 3492179879529383606}
   m_Layer: 5
   m_Name: Notification Log
   m_TagString: Untagged
@@ -64,6 +65,19 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &3492179879529383606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968250546632521761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab1a84ea07e636419172dc432446ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notificationPanels: []
 --- !u!1 &1878557718245633212
 GameObject:
   m_ObjectHideFlags: 0

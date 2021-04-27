@@ -8,13 +8,17 @@ public class NotificationPanel : MonoBehaviour
     [SerializeField] private Text sender;
     [SerializeField] private Text detail;
 
-    public Text Sender { get => sender; set => sender = value; }
-    public Text Detail { get => detail; set => detail = value; }
+    public void SetContent(Notification content)
+    {
+        sender.text = content.sender;
+        detail.text = content.detail;
+    }
 
     void Start()
     {
         
     }
+
 
     // Update is called once per frame
     void Update()

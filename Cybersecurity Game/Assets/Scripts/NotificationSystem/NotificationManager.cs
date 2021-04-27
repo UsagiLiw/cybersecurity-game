@@ -6,6 +6,11 @@ using UnityEngine;
 public class NotificationManager : MonoBehaviour
 {
     public List<Notification> notificationList = new List<Notification>();
+
+    public delegate void NotificationHandler(Notification notification);
+    public static event NotificationHandler NewNotification;
+
+
     void Start()
     {
         
@@ -18,6 +23,7 @@ public class NotificationManager : MonoBehaviour
             notificationList.RemoveAt(0);
         }
         notificationList.Add(notification);
+        NewNotification.Invoke(notification);
     }
 }
 
@@ -25,13 +31,11 @@ public class NotificationManager : MonoBehaviour
 public class Notification
 {
     public string sender;
-    public string room;
-    public string content;
+    public string detail;
 
-    public Notification(string sender, string room, string content)
+    public Notification(string sender, string detail)
     {
         this.sender = sender;
-        this.room = room;
-        this.content = content;
+        this.detail = detail;
     }
 }
