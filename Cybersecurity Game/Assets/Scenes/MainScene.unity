@@ -2786,6 +2786,18 @@ MonoBehaviour:
     content: 
     image: 
   gameManager: {fileID: 342761639}
+--- !u!1 &418061428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1744832259025602711, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1019666952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &418061429 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1019666952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &421703799
 GameObject:
   m_ObjectHideFlags: 0
@@ -6241,6 +6253,130 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016209290}
   m_CullTransparentMesh: 0
+--- !u!1001 &1019666952
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 402222256626882821}
+    m_Modifications:
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602711, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_Name
+      value: ReportMalware
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744832259025602711, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5adaad379ab4630459cca9f6da8f4e0d, type: 3}
 --- !u!1 &1049788805 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5263344840762186716, guid: 61a8c349863454540a228c7fce134d52,
@@ -11254,6 +11390,7 @@ RectTransform:
   - {fileID: 1147299794}
   - {fileID: 1838124495}
   - {fileID: 1078270578}
+  - {fileID: 418061429}
   m_Father: {fileID: 305857904}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11364,6 +11501,7 @@ MonoBehaviour:
   trojan_prefab: {fileID: 3893341956378313393, guid: 9e406caedde404a4389a61d605a0ddbd,
     type: 3}
   antivirus_App: {fileID: 402222256345465157}
+  malwareReportPage: {fileID: 418061428}
   computerManager: {fileID: 342761647}
   PlayerScreen: {fileID: 402222255554498908}
   NPCScreen: {fileID: 1210724843}

@@ -21,6 +21,8 @@ public class ComputerUI : MonoBehaviour
 
     public GameObject antivirus_App;
 
+    public GameObject malwareReportPage;
+
     public ComputerManager computerManager;
 
     private GameObject taskBar;
@@ -52,7 +54,7 @@ public class ComputerUI : MonoBehaviour
 
     public void StartComputer(int i)
     {
-        Debug.Log("Start new computer:" + i);
+        malwareReportPage.SetActive(true);
         computerManager.SetActiveComputer (i);
         Target target = (Target) i;
         gameObject.SetActive(true);
