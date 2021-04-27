@@ -15,10 +15,12 @@ public class TrojanBehavior : MonoBehaviour
         
         name.text = iconList[index].name;
         image.sprite = iconList[index].image;
+        ComputerManager.NewActiveComAction += IsAlive;
     }
 
     void OnDisable()
     {
+        ComputerManager.NewActiveComAction -= IsAlive;
         Destroy(this.gameObject);
     }
 
@@ -29,6 +31,11 @@ public class TrojanBehavior : MonoBehaviour
         malwareController.InvokeScenarioFailure();
     }
 
+    private void IsAlive()
+    {
+        if(!ComputerManager.activeComputer.isInfected)
+            this.gameObject.SetActive(false);
+    }
 }
 
 [System.Serializable]

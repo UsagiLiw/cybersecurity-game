@@ -55,7 +55,7 @@ public class ScanUnsecureController : MonoBehaviour
         foreach (int malware in malwareList)
         {
             Text newThreat = Instantiate(threatDetail) as Text;
-            newThreat.text = MalwareManager.malwareDict[malware - 1].name + " - " + MalwareManager.malwareDict[malware - 1].detail;
+            newThreat.text = MalwareManager.malwareDict[malware].name + " - " + MalwareManager.malwareDict[malware].detail;
             newThreat.transform.SetParent(box.transform, false);
             instantiatedThreats.Add(newThreat);
             Debug.Log("Threat Detail show" + malware);

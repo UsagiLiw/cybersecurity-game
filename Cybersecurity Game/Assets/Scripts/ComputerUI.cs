@@ -84,7 +84,10 @@ public class ComputerUI : MonoBehaviour
         StopAllCoroutines();
         notRespond.SetActive(false);
         
-        
+        if(ScenarioManager.onGoingScenario == Scenario.Malware)
+        {
+            Debug.Log("bruh");
+        }
 
         CheckMaliciousState();
     }
