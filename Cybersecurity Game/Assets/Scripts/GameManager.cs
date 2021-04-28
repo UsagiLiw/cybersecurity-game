@@ -159,7 +159,6 @@ public class GameManager : MonoBehaviour
         else
         {
             throw new InvalidOperationException("Couldn't load save data, Program terminated");
-            //DO SOMETHING!
         }
     }
 

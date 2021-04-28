@@ -234,9 +234,4 @@ public class ComputerUI : MonoBehaviour
         trojan.transform.SetParent(software1.transform, false);
         trojan.transform.SetAsLastSibling();
     }
-
-    IEnumerator WaitForSeconds(float time)
-    {
-        yield return new WaitForSeconds(time);
-    }
 }
