@@ -50,12 +50,16 @@ public class ComputerUI : MonoBehaviour
     {
         StopAllCoroutines();
         ComputerManager.NewActiveComAction -= UpdateComState;
+        ScenarioManager.ScenarioEnded -= CloseComputer;
     }
 
     public void StartComputer(int i)
     {
-        malwareReportPage.SetActive(true);
         computerManager.SetActiveComputer (i);
+        if (ComputerManager.activeComputer.isInfected)
+            malwareReportPage.SetActive(true);
+        else
+            malwareReportPage.SetActive(false);
         Target target = (Target) i;
         gameObject.SetActive(true);
         uiPanel.SetActive(false);
@@ -79,14 +83,19 @@ public class ComputerUI : MonoBehaviour
         CheckAntivirusApp();
         CheckMaliciousState();
         ComputerManager.NewActiveComAction += UpdateComState;
+        ScenarioManager.ScenarioEnded += CloseComputer;
     }
 
     public void UpdateComState()
     {
+        if (ComputerManager.activeComputer.isInfected)
+            malwareReportPage.SetActive(true);
+        else
+            malwareReportPage.SetActive(false);
         StopAllCoroutines();
         notRespond.SetActive(false);
-        
-        if(ScenarioManager.onGoingScenario == Scenario.Malware)
+
+        if (ScenarioManager.onGoingScenario == Scenario.Malware)
         {
             Debug.Log("bruh");
         }

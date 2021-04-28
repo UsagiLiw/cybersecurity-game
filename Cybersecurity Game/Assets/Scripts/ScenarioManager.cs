@@ -23,6 +23,11 @@ public class ScenarioManager : MonoBehaviour
 
     public static string jsonDetail;
 
+    //Delegate method to announce the end of scenario
+    public delegate void ScenarioAction();
+
+    public static event ScenarioAction ScenarioEnded;
+
     // public static string saveObject;
     void Awake()
     {
@@ -207,6 +212,7 @@ public class ScenarioManager : MonoBehaviour
         EmailManager.ClearScenarioMails();
         ResultController.ShowSuccess (result, onGoingScenario);
         jsonDetail = null;
+        InvokeScenarioEnded();
         GameManager.InvokeSaveData();
     }
 
@@ -218,6 +224,7 @@ public class ScenarioManager : MonoBehaviour
         underAttack = false;
         EmailManager.ClearScenarioMails();
         jsonDetail = null;
+        InvokeScenarioEnded();
         GameManager.InvokeSaveData();
     }
 
@@ -229,7 +236,16 @@ public class ScenarioManager : MonoBehaviour
         underAttack = false;
         EmailManager.ClearScenarioMails();
         jsonDetail = null;
+        InvokeScenarioEnded();
         GameManager.InvokeSaveData();
+    }
+
+    private static void InvokeScenarioEnded()
+    {
+        if(ScenarioEnded != null)
+        {
+            ScenarioEnded.Invoke();
+        }
     }
 }
 

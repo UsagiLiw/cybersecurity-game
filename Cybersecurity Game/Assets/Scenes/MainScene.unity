@@ -6260,6 +6260,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 402222256626882821}
     m_Modifications:
+    - target: {fileID: 396048371774172200, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: malwareController
+      value: 
+      objectReference: {fileID: 1163238644}
     - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
         type: 3}
       propertyPath: m_Pivot.x
