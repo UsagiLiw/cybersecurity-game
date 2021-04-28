@@ -6,20 +6,28 @@ using UnityEngine.UI;
 public class ExplorerController : MonoBehaviour
 {
     public Image drive1_bar;
+
     public Text drive1_text;
 
     public Image drive2_bar;
+
     public Text drive2_text;
 
     public Image drive3_bar;
+
     public Text drive3_text;
 
-    private Computer computer; 
+    private Computer computer;
 
-    void Start()
+    private void OnEnable()
     {
         computer = ComputerManager.activeComputer;
         StartCoroutine("DriveCheck");
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     IEnumerator DriveCheck()
@@ -31,8 +39,14 @@ public class ExplorerController : MonoBehaviour
         }
     }
 
+    public void CloseExplorer()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void updateDrives()
     {
+        computer = ComputerManager.activeComputer;
         drive1_bar.fillAmount = (computer.driveC / 200f);
         drive2_bar.fillAmount = (computer.driveD / 400f);
         drive3_bar.fillAmount = (computer.driveE / 400f);

@@ -19,10 +19,15 @@ public class Browser : MonoBehaviour
 
     public GameObject bar;
 
-    public GameObject gameManager;
+    public Text address;
+
+    private static string shopAddress = "www.anaconda.com";
+    private static string emailAddress = "www.coldmail.com";
+    private static string newsAddress = "www.newestnews.com";
 
     private void OnEnable()
     {
+        address.text = "";
         homePage.SetActive(true);
         bar.SetActive(true);
         shop.SetActive(false);
@@ -34,12 +39,12 @@ public class Browser : MonoBehaviour
 
     public void CloseBrowser()
     {
-        // GameObject.Find("Browser").SetActive(false);
         gameObject.SetActive(false);
     }
 
     public void OpenShopLogin()
     {
+        address.text = shopAddress;
         homePage.SetActive(false);
         email.SetActive(false);
         news.SetActive(false);
@@ -49,6 +54,7 @@ public class Browser : MonoBehaviour
 
     public void OpenEmail()
     {
+        address.text = emailAddress;
         homePage.SetActive(false);
         shop.SetActive(false);
         news.SetActive(false);
@@ -58,16 +64,23 @@ public class Browser : MonoBehaviour
 
     public void OpenNews()
     {
+        address.text = newsAddress;
         homePage.SetActive(false);
         news.SetActive(true);
     }
 
     public void GoHome()
     {
+        address.text = "";
         homePage.SetActive(true);
         shop.SetActive(false);
         news.SetActive(false);
         email.SetActive(false);
         bar.SetActive(true);
+    }
+
+    public void ShowSiteInfo()
+    {
+        siteInfo.SetActive(true);
     }
 }

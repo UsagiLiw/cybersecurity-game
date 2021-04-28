@@ -20,8 +20,7 @@ public class NPCcontroller : MonoBehaviour
 
     private static string requestDetail;
 
-    public static bool isPhishing;
-
+    //Announcing quest change
     public delegate void NewNPCScenarioAction();
 
     public static event NewNPCScenarioAction NewNPCScenario;
@@ -29,22 +28,28 @@ public class NPCcontroller : MonoBehaviour
     //Scenario Computer screen prefab
     public GameObject phishingScreen_prefab;
 
+    public ComputerUI computerUI;
+    // public GameObject NPCcomputer_prefab;
+
     private void Awake()
     {
         DisableAllNPC();
     }
 
-    public static void TriggerNPCPhishingQuest(
+    public static void TriggerNPCQuest(
         Target target,
-        Scenario type,
         string detail,
-        bool isAPhishing
+        Scenario currentScenario
     )
     {
-        scenario = type;
+        scenario = currentScenario;
         currentTarget = target;
         requestDetail = detail;
-        isPhishing = isAPhishing;
+        TriggerNPC (target);
+    }
+
+    private static void TriggerNPC(Target target)
+    {
         switch (target)
         {
             case Target.CEO:
@@ -131,6 +136,38 @@ public class NPCcontroller : MonoBehaviour
         scenario = 0;
         currentTarget = 0;
         requestDetail = null;
+
+        ContinueNPCquest();
+    }
+
+    public void CreateNPCScreen()
+    {
+        switch (scenario)
+        {
+            case Scenario.Phishing:
+                CreatePhishingScreen();
+                break;
+            case Scenario.Malware:
+                CreateMalwareScreen();
+                break;
+            default:
+                Debug.Log("NPC screen type unspecify: " + scenario);
+                break;
+        }
+    }
+
+    private void CreatePhishingScreen()
+    {
+        GameObject phishingScreen_Object =
+            Instantiate(phishingScreen_prefab) as GameObject;
+        GameObject gui = GameObject.Find("GUI");
+        phishingScreen_Object.transform.SetParent(gui.transform, false);
+    }
+
+    private void CreateMalwareScreen()
+    {
+        Debug.Log("Start malware screen");
+        computerUI.StartComputer((int) currentTarget);
     }
 
     public static (Scenario, Target, string) GetRequestDetail()
@@ -138,11 +175,8 @@ public class NPCcontroller : MonoBehaviour
         return (scenario, currentTarget, requestDetail);
     }
 
-    public void CreateNPCScreen()
+    public static Target GetRequestTarget()
     {
-        GameObject phishingScreen_Object =
-            Instantiate(phishingScreen_prefab) as GameObject;
-        GameObject gui = GameObject.Find("GUI");
-        phishingScreen_Object.transform.SetParent(gui.transform, false);
+        return currentTarget;
     }
 }

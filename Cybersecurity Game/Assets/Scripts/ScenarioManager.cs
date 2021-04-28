@@ -13,6 +13,8 @@ public class ScenarioManager : MonoBehaviour
 
     private PhishingController phishingController;
 
+    private MalwareController malwareController;
+
     public ScenarioClass[] scenarioTypes;
 
     public static Scenario onGoingScenario;
@@ -20,6 +22,11 @@ public class ScenarioManager : MonoBehaviour
     public static bool underAttack;
 
     public static string jsonDetail;
+
+    //Delegate method to announce the end of scenario
+    public delegate void ScenarioAction();
+
+    public static event ScenarioAction ScenarioEnded;
 
     // public static string saveObject;
     void Awake()
@@ -35,6 +42,7 @@ public class ScenarioManager : MonoBehaviour
 
         pwdAtkController = GetComponent<PwdAtkController>();
         phishingController = GetComponent<PhishingController>();
+        malwareController = GetComponent<MalwareController>();
     }
 
     public (Scenario, string) CheckStatus()
@@ -80,6 +88,7 @@ public class ScenarioManager : MonoBehaviour
                 break;
             case Scenario.Malware:
                 underAttack = true;
+                malwareController.SetMalwareScenarioState (detail);
                 break;
             default:
                 throw new InvalidOperationException("Error: Unknown scenario index: " +
@@ -107,6 +116,7 @@ public class ScenarioManager : MonoBehaviour
                 currentType = Scenario.Phishing;
                 break;
             case Scenario.Malware:
+                (underAttack, detail) = malwareController.UpdateScenarioState();
                 currentType = Scenario.Malware;
                 break;
             default:
@@ -123,7 +133,7 @@ public class ScenarioManager : MonoBehaviour
         else
         {
             jsonDetail = detail;
-            ScenarioFailed (detail);
+            InvokeScenarioFailed (detail);
             return (Scenario.None, null);
         }
     }
@@ -152,6 +162,7 @@ public class ScenarioManager : MonoBehaviour
 
     private (Scenario, string) TriggerScenario(Scenario chosenScenario)
     {
+        int i = 0;
         underAttack = true;
         switch (chosenScenario)
         {
@@ -163,19 +174,19 @@ public class ScenarioManager : MonoBehaviour
                 jsonDetail = pwdAtkController.CheckVulnerability();
                 return (Scenario.Password, jsonDetail);
             case Scenario.Phishing:
-                int i = TargetRandomizer(true);
+                i = TargetRandomizer(true);
 
                 //Self phishing does not need following
                 if (i == 0)
                 {
                     phishingController.TriggerSelf();
-                    Debug.Log("Trigger Self Phishing");
                     underAttack = false;
                     return (Scenario.None, "");
                 }
                 return (Scenario.Phishing, phishingController.TriggerNPC(i));
             case Scenario.Malware:
-                return (Scenario.Malware, "");
+                i = TargetRandomizer(false);
+                return (Scenario.Malware, malwareController.TriggerNPC(i));
             default:
                 throw new InvalidOperationException("Error: Unknown scenario index: " +
                     chosenScenario);
@@ -195,42 +206,46 @@ public class ScenarioManager : MonoBehaviour
 
     public static void InvokeScenarioSuccess(string result)
     {
+        NPCcontroller.DisableAllNPC();
         onGoingScenario = Scenario.None;
         underAttack = false;
         EmailManager.ClearScenarioMails();
         ResultController.ShowSuccess (result, onGoingScenario);
         jsonDetail = null;
+        InvokeScenarioEnded();
         GameManager.InvokeSaveData();
     }
 
     public static void InvokeScenarioFailed(string result)
     {
+        NPCcontroller.DisableAllNPC();
         ResultController.ShowFailed (result, onGoingScenario);
         onGoingScenario = Scenario.None;
         underAttack = false;
         EmailManager.ClearScenarioMails();
         jsonDetail = null;
+        InvokeScenarioEnded();
         GameManager.InvokeSaveData();
     }
 
-    private static void ScenarioCompleted(string result)
+    public static void InvokeScenarioFailed(string result, Scenario currentSce)
     {
-        ResultController.ShowSuccess (result, onGoingScenario);
+        NPCcontroller.DisableAllNPC();
+        ResultController.ShowFailed (result, currentSce);
         onGoingScenario = Scenario.None;
         underAttack = false;
         EmailManager.ClearScenarioMails();
         jsonDetail = null;
+        InvokeScenarioEnded();
         GameManager.InvokeSaveData();
     }
 
-    private static void ScenarioFailed(string result)
+    private static void InvokeScenarioEnded()
     {
-        ResultController.ShowFailed (result, onGoingScenario);
-        onGoingScenario = Scenario.None;
-        EmailManager.ClearScenarioMails();
-        underAttack = false;
-        jsonDetail = null;
-        GameManager.InvokeSaveData();
+        if(ScenarioEnded != null)
+        {
+            ScenarioEnded.Invoke();
+        }
     }
 }
 

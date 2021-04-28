@@ -38,11 +38,6 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         SaveSystem.Init();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
         if (SingletonGameManager != null)
         {
             // There is another GameManager already existed
@@ -50,7 +45,11 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+    }
 
+    // Start is called before the first frame update
+    void Start()
+    {
         SingletonGameManager = this; // I am the singleton
         GameObject.DontDestroyOnLoad(this.gameObject); // Don't kil me
 
@@ -160,7 +159,6 @@ public class GameManager : MonoBehaviour
         else
         {
             throw new InvalidOperationException("Couldn't load save data, Program terminated");
-            //DO SOMETHING!
         }
     }
 

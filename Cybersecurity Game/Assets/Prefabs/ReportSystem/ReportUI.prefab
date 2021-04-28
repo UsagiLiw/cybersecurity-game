@@ -155,6 +155,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MalwareReport
       objectReference: {fileID: 0}
+    - target: {fileID: 1065898369501097524, guid: 0a17406ed2e32004bb881d5052e2a51f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a17406ed2e32004bb881d5052e2a51f, type: 3}
 --- !u!224 &1744832258618642303 stripped
@@ -404,6 +409,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PhishingReport
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842048878135707722, guid: 0fd1961e32688ed4db08736112a4cf7e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fd1961e32688ed4db08736112a4cf7e, type: 3}

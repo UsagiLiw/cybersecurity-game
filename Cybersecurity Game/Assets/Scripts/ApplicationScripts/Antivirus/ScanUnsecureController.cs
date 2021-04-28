@@ -41,7 +41,7 @@ public class ScanUnsecureController : MonoBehaviour
             cleanBar.fillAmount = timer / cleanTime;
             yield return null;
         }
-        ComputerManager.activeComputer.malware.Clear();
+        ComputerManager.PurgeMalwareOnActiveCom();
         Debug.Log("Clean finished");
         ClearSummary();
         antivirus.OpenSecurePage();
@@ -51,10 +51,11 @@ public class ScanUnsecureController : MonoBehaviour
     {
         ClearSummary();
         List<int> malwareList = ComputerManager.activeComputer.malware;
+        Debug.Log("malware amt:"+malwareList.Count);
         foreach (int malware in malwareList)
         {
             Text newThreat = Instantiate(threatDetail) as Text;
-            newThreat.text = MalwareManager.malwareDict[malware - 1].name + " - " + MalwareManager.malwareDict[malware - 1].detail;
+            newThreat.text = MalwareManager.malwareDict[malware].name + " - " + MalwareManager.malwareDict[malware].detail;
             newThreat.transform.SetParent(box.transform, false);
             instantiatedThreats.Add(newThreat);
             Debug.Log("Threat Detail show" + malware);

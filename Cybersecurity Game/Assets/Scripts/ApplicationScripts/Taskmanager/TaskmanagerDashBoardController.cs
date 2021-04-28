@@ -6,24 +6,29 @@ using UnityEngine.UI;
 public class TaskmanagerDashBoardController : MonoBehaviour
 {
     public Image cpuUsageBar;
+
     public Image ramUsageBar;
+
     public Image diskUsageBar;
 
     public Text cpuUsageText;
+
     public Text ramUsageText;
+
     public Text diskUsageText;
 
     private Computer computer;
 
-    private void Awake()
-    {
-        computer = ComputerManager.activeComputer;
-    }
-
     // Update is called once per frame
     void OnEnable()
     {
+        computer = ComputerManager.activeComputer;
         StartCoroutine(DoUpdate());
+    }
+
+    void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     IEnumerator DoUpdate()
@@ -31,13 +36,13 @@ public class TaskmanagerDashBoardController : MonoBehaviour
         for (; ; )
         {
             UpdatePerformance();
-            Debug.Log("Updating Dash Board");
             yield return new WaitForSeconds(1f);
         }
     }
 
     private void UpdatePerformance()
     {
+        computer = ComputerManager.activeComputer;
         cpuUsageBar.fillAmount = computer.cpu;
         ramUsageBar.fillAmount = computer.ram;
         diskUsageBar.fillAmount = computer.disk;
