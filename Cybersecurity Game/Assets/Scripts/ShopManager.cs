@@ -6,12 +6,17 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     private BudgetManager budgetManager;
+
     private ComputerManager computerManager;
 
-    [SerializeField] public List<Item> items;
-    [SerializeField] private GameManager gameManager;
+    [SerializeField]
+    public List<Item> items;
+
+    [SerializeField]
+    private GameManager gameManager;
 
     public delegate void ItemExpireHandler(int itemIndex);
+
     public event ItemExpireHandler ItemExpired;
 
     private void Start()
@@ -33,7 +38,7 @@ public class ShopManager : MonoBehaviour
         budgetManager.ModifyBudget(-items[index].price);
         Debug.Log("Budget cut " + items[index].price);
 
-        switch(index)
+        switch (index)
         {
             case 0:
                 Debug.Log("Buy Cloud Storage");
@@ -58,28 +63,30 @@ public class ShopManager : MonoBehaviour
     private void CountDayForItem()
     {
         int i = 0;
-        foreach(Item item in items)
+        foreach (Item item in items)
         {
-            if(item.isPurchased) 
-                item.dayPassed++;
+            if (item.isPurchased) item.dayPassed++;
 
-            if(item.dayPassed == item.expiredDays)
+            if (item.dayPassed == item.expiredDays)
             {
                 item.dayPassed = 0;
-                ItemExpired.Invoke(i);
+                if (ItemExpired != null) ItemExpired.Invoke(i);
             }
             i++;
         }
     }
-
 }
 
 [Serializable]
 public class Item
 {
     public string name;
+
     public int price;
+
     public int expiredDays;
-    public bool isPurchased; 
+
+    public bool isPurchased;
+
     public int dayPassed = 0;
 }

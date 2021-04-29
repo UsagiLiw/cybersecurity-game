@@ -35,7 +35,6 @@ public class ComputerManager : MonoBehaviour
             computers[i].isSlow = false;
             computers[i].isBuggy = false;
         }
-        haveAntivirus = true;
     }
 
     public Computer GetComputer(int index)
