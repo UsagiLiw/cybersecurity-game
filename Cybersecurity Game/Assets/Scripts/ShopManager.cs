@@ -59,6 +59,21 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    public (string, string, string, string) SendSaveData()
+    {
+        string[] saveArr = new string[4];
+        for (int i = 0; i < 4; i++)
+        {
+            Item temp =
+                new Item {
+                    isPurchased = items[i].isPurchased,
+                    dayPassed = items[i].dayPassed
+                };
+            saveArr[i] = JsonUtility.ToJson(temp);
+        }
+        return (saveArr[0], saveArr[1], saveArr[2], saveArr[3]);
+    }
+
     //Subscribe to day passed event
     private void CountDayForItem()
     {

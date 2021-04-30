@@ -91,6 +91,11 @@ public class GameManager : MonoBehaviour
         int[] currentSceMails = EmailManager.scenarioInbox.ToArray();
         string currentPassword1 = PasswordManager.password1;
         string currentPassword2 = PasswordManager.password2;
+        string
+            cloud,
+            antivirus,
+            course,
+            os;
 
         SaveObject saveObject =
             new SaveObject {
@@ -105,7 +110,7 @@ public class GameManager : MonoBehaviour
                 scenario = scenario,
                 scenarioDetail = scenarioDetail
             };
-        string json = JsonUtility.ToJson(saveObject);
+        string json = JsonUtility.ToJson(saveObject, true);
         SaveSystem.Save (json);
     }
 
@@ -133,7 +138,7 @@ public class GameManager : MonoBehaviour
                 scenario = scenario,
                 scenarioDetail = scenarioDetail
             };
-        string json = JsonUtility.ToJson(saveObject);
+        string json = JsonUtility.ToJson(saveObject, true);
         SaveSystem.Save (json);
     }
 
