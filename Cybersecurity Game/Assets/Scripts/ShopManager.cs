@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
+    public static ShopManager Instance { get; private set; }
+
     private BudgetManager budgetManager;
 
     private ComputerManager computerManager;
@@ -18,6 +20,18 @@ public class ShopManager : MonoBehaviour
     public delegate void ItemExpireHandler(int itemIndex);
 
     public event ItemExpireHandler ItemExpired;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy (gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -57,21 +71,29 @@ public class ShopManager : MonoBehaviour
                 Debug.Log("Dafuq did you buy?");
                 break;
         }
+        GameManager.InvokeSaveData();
     }
 
-    public (string, string, string, string) SendSaveData()
+    public string[] SendSaveData()
     {
         string[] saveArr = new string[4];
         for (int i = 0; i < 4; i++)
         {
-            Item temp =
-                new Item {
-                    isPurchased = items[i].isPurchased,
-                    dayPassed = items[i].dayPassed
-                };
+            Item temp = items[i];
             saveArr[i] = JsonUtility.ToJson(temp);
         }
-        return (saveArr[0], saveArr[1], saveArr[2], saveArr[3]);
+        return saveArr;
+    }
+
+    public void LoadItemData(string[] itemArr)
+    {
+        if (itemArr.Length != items.Count) return;
+        for (int i = 0; i < itemArr.Length; i++)
+        {
+            Item temp = JsonUtility.FromJson<Item>(itemArr[i]);
+            items[i].isPurchased = temp.isPurchased;
+            items[i].dayPassed = temp.dayPassed;
+        }
     }
 
     //Subscribe to day passed event

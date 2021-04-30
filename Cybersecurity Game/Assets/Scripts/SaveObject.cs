@@ -11,7 +11,7 @@ public class SaveObject
 
     public int reputation;
 
-    public int[] purchase;
+    public string[] purchases;
 
     public string password1;
 

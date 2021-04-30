@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class ScenarioManager : MonoBehaviour
 {
-    static ScenarioManager SingletonScenarioManager;
+    public static ScenarioManager Instance { get; private set; }
 
     private PwdAtkController pwdAtkController;
 
@@ -31,14 +31,15 @@ public class ScenarioManager : MonoBehaviour
     // public static string saveObject;
     void Awake()
     {
-        if (SingletonScenarioManager != null)
+        if (Instance == null)
         {
-            Destroy(this.gameObject);
-            return;
+            Instance = this;
+            GameObject.DontDestroyOnLoad(this.gameObject); // Don't kil me
         }
-
-        SingletonScenarioManager = this; // I am the singleton
-        GameObject.DontDestroyOnLoad(this.gameObject); // Don't kil me
+        else
+        {
+            Destroy (gameObject);
+        }
 
         pwdAtkController = GetComponent<PwdAtkController>();
         phishingController = GetComponent<PhishingController>();
@@ -242,7 +243,7 @@ public class ScenarioManager : MonoBehaviour
 
     private static void InvokeScenarioEnded()
     {
-        if(ScenarioEnded != null)
+        if (ScenarioEnded != null)
         {
             ScenarioEnded.Invoke();
         }

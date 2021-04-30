@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
 {
     static GameManager SingletonGameManager; // Singleton Class
 
-    public ScenarioManager TheScenarioManager;
-
     private ReputationManager reputationManager;
 
     private BudgetManager budgetManager;
@@ -19,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     private EmailManager emailManager;
 
-    private ScenarioManager scenarioManager;
+    private ShopManager shopManager;
 
     public static float dayTime = 10f; //Time for 1 day in game (seconds)
 
@@ -57,7 +55,6 @@ public class GameManager : MonoBehaviour
         budgetManager = GetComponent<BudgetManager>();
         passwordManager = GetComponent<PasswordManager>();
         emailManager = GetComponent<EmailManager>();
-        scenarioManager = TheScenarioManager.GetComponent<ScenarioManager>();
 
         currentTimer = 0;
         days = 0;
@@ -77,7 +74,7 @@ public class GameManager : MonoBehaviour
             // Debug.Log(days + " days have passed");
             currentTimer = 0;
             emailManager.SendRandomMail();
-            (scenario, scenarioDetail) = scenarioManager.CheckStatus();
+            (scenario, scenarioDetail) = ScenarioManager.Instance.CheckStatus();
             SaveData();
             DayPassed?.Invoke();
         }
@@ -91,18 +88,14 @@ public class GameManager : MonoBehaviour
         int[] currentSceMails = EmailManager.scenarioInbox.ToArray();
         string currentPassword1 = PasswordManager.password1;
         string currentPassword2 = PasswordManager.password2;
-        string
-            cloud,
-            antivirus,
-            course,
-            os;
+        string[] purchaseArr = ShopManager.Instance.SendSaveData();
 
         SaveObject saveObject =
             new SaveObject {
                 day = days,
                 budget = currentBudget,
                 reputation = currentReputation,
-                purchase = new int[] { 1, 2, 4 },
+                purchases = purchaseArr,
                 password1 = currentPassword1,
                 password2 = currentPassword2,
                 email = currentInbox,
@@ -124,13 +117,14 @@ public class GameManager : MonoBehaviour
         string currentPassword2 = PasswordManager.password2;
         scenario = ScenarioManager.onGoingScenario;
         scenarioDetail = ScenarioManager.jsonDetail;
+        string[] purchaseArr = ShopManager.Instance.SendSaveData();
 
         SaveObject saveObject =
             new SaveObject {
                 day = days,
                 budget = currentBudget,
                 reputation = currentReputation,
-                purchase = new int[] { 1, 2, 4 },
+                purchases = purchaseArr,
                 password1 = currentPassword1,
                 password2 = currentPassword2,
                 email = currentInbox,
@@ -157,7 +151,8 @@ public class GameManager : MonoBehaviour
                 .SetAllPasswords(saveObject.password1, saveObject.password2);
             emailManager
                 .SetPlayerInbox(saveObject.email, saveObject.scenarioMail);
-            scenarioManager
+            ScenarioManager
+                .Instance
                 .SetScenarioState(saveObject.scenario,
                 saveObject.scenarioDetail);
         }
