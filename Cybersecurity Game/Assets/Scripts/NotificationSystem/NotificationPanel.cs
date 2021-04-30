@@ -13,16 +13,4 @@ public class NotificationPanel : MonoBehaviour
         sender.text = content.sender;
         detail.text = content.detail;
     }
-
-    void Start()
-    {
-        
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

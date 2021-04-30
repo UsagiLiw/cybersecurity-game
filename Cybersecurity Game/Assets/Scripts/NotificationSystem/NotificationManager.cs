@@ -5,25 +5,12 @@ using UnityEngine;
 
 public class NotificationManager : MonoBehaviour
 {
-    public List<Notification> notificationList = new List<Notification>();
-
     public delegate void NotificationHandler(Notification notification);
     public static event NotificationHandler NewNotification;
 
-
-    void Start()
+    public static void SetNewNotification(Notification notification)
     {
-        
-    }
-
-    public void SetNewNotification(Notification notification)
-    {
-        if(notificationList.Count >= 3)
-        {
-            notificationList.RemoveAt(0);
-        }
-        notificationList.Add(notification);
-        NewNotification.Invoke(notification);
+        NewNotification?.Invoke(notification);
     }
 }
 
