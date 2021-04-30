@@ -151,6 +151,7 @@ public class GameManager : MonoBehaviour
                 .SetAllPasswords(saveObject.password1, saveObject.password2);
             emailManager
                 .SetPlayerInbox(saveObject.email, saveObject.scenarioMail);
+            ShopManager.Instance.LoadItemData(saveObject.purchases);
             ScenarioManager
                 .Instance
                 .SetScenarioState(saveObject.scenario,

@@ -87,7 +87,11 @@ public class ShopManager : MonoBehaviour
 
     public void LoadItemData(string[] itemArr)
     {
-        if (itemArr.Length != items.Count) return;
+        if (itemArr.Length != items.Count)
+        {
+            Debug.Log("Error: item size not match");
+            return;
+        }
         for (int i = 0; i < itemArr.Length; i++)
         {
             Item temp = JsonUtility.FromJson<Item>(itemArr[i]);
