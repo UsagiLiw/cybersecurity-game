@@ -5,12 +5,12 @@
     "reputation": 50,
     "purchases": [
         "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
-        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":0}",
+        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
     ],
-    "password1": "",
-    "password2": "",
+    "password1": "NewPassword",
+    "password2": "NewEmail",
     "email": [
         5,
         0,
