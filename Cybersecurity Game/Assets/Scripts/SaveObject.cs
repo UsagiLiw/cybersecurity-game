@@ -31,7 +31,8 @@ public enum Scenario
     None = 0,
     Password = 1,
     Phishing = 2,
-    Malware = 3
+    Malware = 3,
+    Ransom = 4
 }
 
 public enum Target
@@ -44,3 +45,11 @@ public enum Target
     IT = 5
 }
 
+public enum MalwareType
+{
+    Virus = 0,
+    Adware = 1,
+    Trojan = 2,
+    Ransom = 3,
+    None = -1
+}

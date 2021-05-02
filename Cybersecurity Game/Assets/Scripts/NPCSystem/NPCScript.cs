@@ -45,7 +45,6 @@ public class NPCScript : MonoBehaviour
 
     private void Update()
     {
-        // StartCoroutine(DelayCheckStatus(2f));
         if (selfActive)
         {
             markerTempPos = markerIniPos;
@@ -62,8 +61,13 @@ public class NPCScript : MonoBehaviour
             selfActive = true;
             QuestActive();
         }
+        else
+        {
+            selfActive = false;
+            QuestDeactive();
+        }
     }
-    
+
     private void OnMouseOver()
     {
         if (selfActive) outline.enabled = true;

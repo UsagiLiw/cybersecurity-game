@@ -209,8 +209,7 @@ public class Email : MonoBehaviour
     {
         if (isFatal)
         {
-            Debug.Log("You die thankyou forever");
-            return;
+            PhishingController.InvokeScenarioFailure(true);
         }
         Debug.Log("I am safe");
     }

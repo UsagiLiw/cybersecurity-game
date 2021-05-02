@@ -9,6 +9,8 @@ TagManager:
   - Quest_NPC
   - GameManager
   - UIPanel
+  - GUI
+  - Antivirus_Icon
   layers:
   - Default
   - TransparentFX

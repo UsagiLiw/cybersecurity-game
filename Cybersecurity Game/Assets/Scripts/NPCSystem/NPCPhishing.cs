@@ -29,8 +29,7 @@ public class NPCPhishing : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("I am alive now");
-        isPhishing = NPCcontroller.isPhishing;
+        isPhishing = PhishingController.phishingSave.isPhishing;
         UIPanel = GameObject.FindGameObjectWithTag("UIPanel");
         UIPanel.SetActive(false);
         foreach (Transform child in this.transform)
@@ -148,7 +147,8 @@ public class NPCPhishing : MonoBehaviour
     {
         if (isFatal)
         {
-            Debug.Log("You die thankyou forever");
+            Destroy(this.gameObject);
+            PhishingController.InvokeScenarioFailure(false);
         }
         else
         {
