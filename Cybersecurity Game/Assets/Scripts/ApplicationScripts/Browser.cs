@@ -39,11 +39,11 @@ public class Browser : MonoBehaviour
         news.SetActive(false);
         siteInfo.SetActive(false);
         linkHover.SetActive(false);
-        // int malwareType = ComputerManager.Instance.CheckActiveComMalwareType;
-        // if (malware == (int) MalwareType.Adware)
-        //     ads.SetActive(true);
-        // else
-        //     ads.SetActive(false);
+        int malwareType = ComputerManager.Instance.CheckActiveComMalwareType();
+        if (malwareType == (int) MalwareType.Adware)
+            ads.SetActive(true);
+        else
+            ads.SetActive(false);
     }
 
     public void CloseBrowser()
@@ -53,6 +53,7 @@ public class Browser : MonoBehaviour
 
     public void OpenShopLogin()
     {
+        ads.SetActive(false);
         address.text = shopAddress;
         homePage.SetActive(false);
         email.SetActive(false);
@@ -63,6 +64,7 @@ public class Browser : MonoBehaviour
 
     public void OpenEmail()
     {
+        ads.SetActive(false);
         address.text = emailAddress;
         homePage.SetActive(false);
         shop.SetActive(false);
@@ -73,6 +75,7 @@ public class Browser : MonoBehaviour
 
     public void OpenNews()
     {
+        ads.SetActive(false);
         address.text = newsAddress;
         homePage.SetActive(false);
         news.SetActive(true);
@@ -86,6 +89,11 @@ public class Browser : MonoBehaviour
         news.SetActive(false);
         email.SetActive(false);
         bar.SetActive(true);
+        int malwareType = ComputerManager.Instance.CheckActiveComMalwareType();
+        if (malwareType == (int) MalwareType.Adware)
+            ads.SetActive(true);
+        else
+            ads.SetActive(false);
     }
 
     public void ShowSiteInfo()
