@@ -1,6 +1,6 @@
 {
     "saveid": 0,
-    "day": 1241,
+    "day": 1242,
     "budget": 176050,
     "reputation": 50,
     "purchases": [
@@ -12,7 +12,6 @@
     "password1": "@Cyber321123456",
     "password2": "FuckYou123",
     "email": [
-        5,
         6,
         3,
         3,
@@ -31,9 +30,10 @@
         7,
         0,
         5,
-        2
+        2,
+        0
     ],
     "scenarioMail": [],
     "scenario": 3,
-    "scenarioDetail": "{\"dayLeft\":2,\"questTarget\":1,\"malwareName\":\"Appearch\",\"malwareType\":1,\"dictIndex\":15}"
+    "scenarioDetail": "{\"dayLeft\":1,\"questTarget\":1,\"malwareName\":\"Appearch\",\"malwareType\":1,\"dictIndex\":15}"
 }
