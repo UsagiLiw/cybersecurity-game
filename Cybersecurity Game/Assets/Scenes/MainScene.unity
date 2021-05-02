@@ -2512,7 +2512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a835f76852e02714bbcc7f70efbbfb7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TheScenarioManager: {fileID: 1163238639}
 --- !u!4 &342761640
 Transform:
   m_ObjectHideFlags: 0
@@ -3040,6 +3039,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447089729}
   m_CullTransparentMesh: 0
+--- !u!1 &479718328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3594774687228591459, guid: 61a8c349863454540a228c7fce134d52,
+    type: 3}
+  m_PrefabInstance: {fileID: 5521363930282824355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &495322181
 GameObject:
   m_ObjectHideFlags: 0
@@ -13155,7 +13160,7 @@ PrefabInstance:
     - target: {fileID: 1779336718, guid: 61a8c349863454540a228c7fce134d52, type: 3}
       propertyPath: resetPassword
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 479718328}
     - target: {fileID: 3754502753927076400, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
       propertyPath: email
