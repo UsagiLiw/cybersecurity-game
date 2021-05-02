@@ -19,10 +19,14 @@ public class Browser : MonoBehaviour
 
     public GameObject bar;
 
+    public GameObject ads;
+
     public Text address;
 
     private static string shopAddress = "www.anaconda.com";
+
     private static string emailAddress = "www.coldmail.com";
+
     private static string newsAddress = "www.newestnews.com";
 
     private void OnEnable()
@@ -35,6 +39,11 @@ public class Browser : MonoBehaviour
         news.SetActive(false);
         siteInfo.SetActive(false);
         linkHover.SetActive(false);
+        // int malwareType = ComputerManager.Instance.CheckActiveComMalwareType;
+        // if (malware == (int) MalwareType.Adware)
+        //     ads.SetActive(true);
+        // else
+        //     ads.SetActive(false);
     }
 
     public void CloseBrowser()

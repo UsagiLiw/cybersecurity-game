@@ -7,6 +7,8 @@ using Random = UnityEngine.Random;
 
 public class ComputerManager : MonoBehaviour
 {
+    public static ComputerManager Instance { get; private set; }
+
     // index 0 : Player's computer
     // index 1 - 5 : NPCs' computer
     [SerializeField]
@@ -23,6 +25,15 @@ public class ComputerManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy (gameObject);
+        }
+
         for (int i = 0; i < computers.Length; i++)
         {
             computers[i].ram = Random.Range(0.3f, 0.7f);
