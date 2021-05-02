@@ -9,8 +9,8 @@
         "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
     ],
-    "password1": "@Cyber321123456",
-    "password2": "FuckYou123",
+    "password1": "",
+    "password2": "",
     "email": [
         5,
         0,

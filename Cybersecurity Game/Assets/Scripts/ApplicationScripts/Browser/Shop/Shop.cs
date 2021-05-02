@@ -21,7 +21,7 @@ public class Shop : MonoBehaviour
 
     public void OnEnable()
     {
-        if (PasswordManager.password1 != null)
+        if (!string.IsNullOrEmpty(PasswordManager.password1))
         {
             // OpenPage (login);
             OpenShopLogin();
@@ -30,7 +30,7 @@ public class Shop : MonoBehaviour
         else
         {
             Debug.Log("To shop register page");
-            RegisterShop();
+            OpenPage (register);
         }
     }
 
@@ -64,9 +64,10 @@ public class Shop : MonoBehaviour
         }
     }
 
-    private void RegisterShop()
+    public void RegisterShopAccount()
     {
-        OpenPage (register);
+        PasswordManager.EditPassword(1, regis_passwordInput.text);
+        OpenShopLogin();
     }
 
     /* --------- Controller Section ----------*/

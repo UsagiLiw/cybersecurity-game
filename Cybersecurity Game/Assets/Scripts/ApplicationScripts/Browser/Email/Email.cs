@@ -34,13 +34,13 @@ public class Email : MonoBehaviour
 
     public void OnEnable()
     {
-        if (PasswordManager.password2 != null)
+        if (!string.IsNullOrEmpty(PasswordManager.password2))
         {
             OpenEmailLogin();
         }
         else
         {
-            Debug.Log("to register page");
+            OpenEmailRegister();
         }
     }
 
@@ -95,8 +95,24 @@ public class Email : MonoBehaviour
         {
             child.gameObject.SetActive(false);
         }
-        gameObject.transform.Find("Login").gameObject.SetActive(true);
+        login.SetActive(true);
         if (!rememberPwd) login_passwordInput.text = "";
+    }
+
+    private void OpenEmailRegister()
+    {
+        foreach (Transform child in this.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+        register.SetActive(true);
+    }
+
+    public void RegisterEmailAccount()
+    {
+        PasswordManager.EditPassword(2, regis_passwordInput.text);
+        EmailManager.ClearPlayerInbox();
+        OpenEmailLogin();
     }
 
     private void OpenEmail()

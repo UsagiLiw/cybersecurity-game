@@ -9879,6 +9879,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1838124494}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1874675371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5263344841508010616, guid: 61a8c349863454540a228c7fce134d52,
+    type: 3}
+  m_PrefabInstance: {fileID: 5521363930282824355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1874711339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5245169345850804506, guid: 01af178d36ea5e84e8e9317fb8843fbf,
@@ -13173,6 +13185,10 @@ PrefabInstance:
       propertyPath: resetPassword
       value: 
       objectReference: {fileID: 479718328}
+    - target: {fileID: 2017254475, guid: 61a8c349863454540a228c7fce134d52, type: 3}
+      propertyPath: regis_passwordInput
+      value: 
+      objectReference: {fileID: 1874675371}
     - target: {fileID: 3214687494080294883, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -13379,6 +13395,36 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5263344841732653879, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263344841732653879, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263344841732653879, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1286277027}
+    - target: {fileID: 5263344841732653879, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263344841732653879, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RegisterEmailAccount
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263344841732653879, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5263344841863666426, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
       propertyPath: m_IsActive
@@ -13388,6 +13434,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263344842666491121, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263344842666491121, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263344842666491121, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 52053025}
+    - target: {fileID: 5263344842666491121, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263344842666491121, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RegisterShopAccount
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263344842666491121, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6257513098013415137, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}

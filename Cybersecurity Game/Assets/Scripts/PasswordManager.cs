@@ -36,6 +36,7 @@ public class PasswordManager : MonoBehaviour
                 Debug.Log("Error - Try to edit non-existing password");
                 break;
         }
+        GameManager.InvokeSaveData();
     }
 
     public void SetAllPasswords(string pwd1, string pwd2)

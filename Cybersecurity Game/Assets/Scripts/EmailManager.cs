@@ -138,4 +138,10 @@ public class EmailManager : MonoBehaviour
     {
         scenarioInbox.Clear();
     }
+
+    public static void ClearPlayerInbox()
+    {
+        scenarioInbox.Clear();
+        indexInbox.Clear();
+    }
 }
