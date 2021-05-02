@@ -534,6 +534,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41456133}
   m_CullTransparentMesh: 0
+--- !u!114 &52053025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2017254475, guid: 61a8c349863454540a228c7fce134d52,
+    type: 3}
+  m_PrefabInstance: {fileID: 5521363930282824355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c52ed9b916308149a69e68147fa53b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &56353257
 GameObject:
   m_ObjectHideFlags: 0
@@ -13161,6 +13173,36 @@ PrefabInstance:
       propertyPath: resetPassword
       value: 
       objectReference: {fileID: 479718328}
+    - target: {fileID: 3214687494080294883, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3214687494080294883, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3214687494080294883, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 52053025}
+    - target: {fileID: 3214687494080294883, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3214687494080294883, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RememberPassword
+      objectReference: {fileID: 0}
+    - target: {fileID: 3214687494080294883, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3754502753927076400, guid: 61a8c349863454540a228c7fce134d52,
         type: 3}
       propertyPath: email
@@ -13346,6 +13388,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257513098013415137, guid: 61a8c349863454540a228c7fce134d52,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RememberPassword
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61a8c349863454540a228c7fce134d52, type: 3}

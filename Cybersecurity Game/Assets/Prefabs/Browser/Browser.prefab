@@ -7586,6 +7586,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9060641825905601903, guid: cf313f61729d2cc45aa0e5301de9ff4b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060641825905601903, guid: cf313f61729d2cc45aa0e5301de9ff4b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060641825905601903, guid: cf313f61729d2cc45aa0e5301de9ff4b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1779336718}
+    - target: {fileID: 9060641825905601903, guid: cf313f61729d2cc45aa0e5301de9ff4b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060641825905601903, guid: cf313f61729d2cc45aa0e5301de9ff4b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RemeberPassword
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060641825905601903, guid: cf313f61729d2cc45aa0e5301de9ff4b,
+        type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf313f61729d2cc45aa0e5301de9ff4b, type: 3}
 --- !u!224 &8390283852836158768 stripped

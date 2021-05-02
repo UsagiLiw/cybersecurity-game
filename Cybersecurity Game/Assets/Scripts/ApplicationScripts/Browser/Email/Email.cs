@@ -22,6 +22,8 @@ public class Email : MonoBehaviour
 
     private static string hoverLink;
 
+    private static bool rememberPwd = false;
+
     public GameObject inbox;
 
     public GameObject login;
@@ -94,6 +96,7 @@ public class Email : MonoBehaviour
             child.gameObject.SetActive(false);
         }
         gameObject.transform.Find("Login").gameObject.SetActive(true);
+        if (!rememberPwd) login_passwordInput.text = "";
     }
 
     private void OpenEmail()
@@ -233,5 +236,10 @@ public class Email : MonoBehaviour
             child.gameObject.SetActive(false);
             Debug.Log (child);
         }
+    }
+
+    public void RememberPassword(bool value)
+    {
+        rememberPwd = value;
     }
 }

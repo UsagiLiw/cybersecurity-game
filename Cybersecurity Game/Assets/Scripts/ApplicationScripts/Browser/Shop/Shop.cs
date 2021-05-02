@@ -6,18 +6,25 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     public InputField login_passwordInput;
+
     public InputField regis_passwordInput;
 
     public GameObject home;
+
     public GameObject login;
+
     public GameObject register;
+
     public GameObject resetPassword;
+
+    private static bool rememberPwd = false;
 
     public void OnEnable()
     {
         if (PasswordManager.password1 != null)
         {
-            OpenPage(login);
+            // OpenPage (login);
+            OpenShopLogin();
             Debug.Log("to shop login page");
         }
         else
@@ -27,15 +34,28 @@ public class Shop : MonoBehaviour
         }
     }
 
+    public void OpenShopLogin()
+    {
+        CloseAllChild();
+        login.SetActive(true);
+        if (!rememberPwd) login_passwordInput.text = "";
+    }
+
     public void VerifyShopLogin()
     {
-        GameObject incorrectPasswordText = gameObject.transform.Find("Login").transform.Find("IncorrectText").gameObject;
+        GameObject incorrectPasswordText =
+            gameObject
+                .transform
+                .Find("Login")
+                .transform
+                .Find("IncorrectText")
+                .gameObject;
 
         if (login_passwordInput.text.Equals(PasswordManager.password1))
         {
             Debug.Log("Correct Password!");
             incorrectPasswordText.SetActive(false);
-            OpenPage(home);
+            OpenPage (home);
         }
         else
         {
@@ -43,15 +63,16 @@ public class Shop : MonoBehaviour
             incorrectPasswordText.SetActive(true);
         }
     }
+
     private void RegisterShop()
     {
-        OpenPage(register);
+        OpenPage (register);
     }
 
     /* --------- Controller Section ----------*/
     public void ResetPasswordPressed()
     {
-        OpenPage(resetPassword);
+        OpenPage (resetPassword);
     }
 
     public void OpenPage(GameObject pageObject)
@@ -65,8 +86,13 @@ public class Shop : MonoBehaviour
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(false);
-            Debug.Log(child);
+            Debug.Log (child);
         }
+    }
+
+    public void RememberPassword(bool value)
+    {
+        rememberPwd = value;
     }
     // private void OpenShop()
     // {
