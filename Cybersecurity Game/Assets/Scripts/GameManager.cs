@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     private ShopManager shopManager;
 
-    public static float dayTime = 120f; //Time for 1 day in game (seconds)
+    public static float dayTime = 10f; //Time for 1 day in game (seconds)
 
     public static float currentTimer;
 
@@ -84,8 +84,8 @@ public class GameManager : MonoBehaviour
     {
         int currentBudget = BudgetManager.currentBudget;
         int currentReputation = ReputationManager.currentReputation;
-        int[] currentInbox = EmailManager.indexInbox.ToArray();
-        int[] currentSceMails = EmailManager.scenarioInbox.ToArray();
+        (int[] currentInbox, int[] currentSceMails) = EmailManager.ReturnInboxIndex();
+        (bool[] readMail, bool[] readSce) = EmailManager.ReturnInboxRead();
         string currentPassword1 = PasswordManager.password1;
         string currentPassword2 = PasswordManager.password2;
         string[] purchaseArr = ShopManager.Instance.SendSaveData();
@@ -100,6 +100,8 @@ public class GameManager : MonoBehaviour
                 password2 = currentPassword2,
                 email = currentInbox,
                 scenarioMail = currentSceMails,
+                readEmail = readMail,
+                readSmail = readSce,
                 scenario = scenario,
                 scenarioDetail = scenarioDetail
             };
@@ -111,8 +113,8 @@ public class GameManager : MonoBehaviour
     {
         int currentBudget = BudgetManager.currentBudget;
         int currentReputation = ReputationManager.currentReputation;
-        int[] currentInbox = EmailManager.indexInbox.ToArray();
-        int[] currentSceMails = EmailManager.scenarioInbox.ToArray();
+        (int[] currentInbox, int[] currentSceMails) = EmailManager.ReturnInboxIndex();
+        (bool[] readMail, bool[] readSce) = EmailManager.ReturnInboxRead();
         string currentPassword1 = PasswordManager.password1;
         string currentPassword2 = PasswordManager.password2;
         scenario = ScenarioManager.onGoingScenario;
@@ -129,6 +131,8 @@ public class GameManager : MonoBehaviour
                 password2 = currentPassword2,
                 email = currentInbox,
                 scenarioMail = currentSceMails,
+                readEmail = readMail,
+                readSmail = readSce,
                 scenario = scenario,
                 scenarioDetail = scenarioDetail
             };
@@ -150,7 +154,10 @@ public class GameManager : MonoBehaviour
             passwordManager
                 .SetAllPasswords(saveObject.password1, saveObject.password2);
             emailManager
-                .SetPlayerInbox(saveObject.email, saveObject.scenarioMail);
+                .SetPlayerInbox(saveObject.email,
+                saveObject.scenarioMail,
+                saveObject.readEmail,
+                saveObject.readSmail);
             ShopManager.Instance.LoadItemData(saveObject.purchases);
             ScenarioManager
                 .Instance

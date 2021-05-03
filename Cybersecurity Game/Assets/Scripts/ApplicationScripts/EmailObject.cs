@@ -14,6 +14,12 @@ public class EmailObject
     public string content;
 
     public int link;
+
+    public bool read = false;
+
+    public bool scenario; //false = normal mail, true = scenario mail
+
+    public int index;
 }
 
 [System.Serializable]

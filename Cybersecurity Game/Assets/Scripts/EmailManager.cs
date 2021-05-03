@@ -20,22 +20,36 @@ public class EmailManager : MonoBehaviour
 
     public static List<EmailObject> emailInbox;
 
-    public static List<int> indexInbox;
+    // public static List<int> indexInbox;
+    // public static List<int> scenarioInbox;
+    public static List<bool> indexInbox_Read;
 
-    public static List<int> scenarioInbox;
+    public static List<bool> scenarioInbox_Read;
 
-    public void SetPlayerInbox(int[] mailIndex, int[] scenarioIndex)
+    public void SetPlayerInbox(
+        int[] mailIndex,
+        int[] scenarioIndex,
+        bool[] read1,
+        bool[] read2
+    )
     {
-        indexInbox = mailIndex.OfType<int>().ToList();
-        scenarioInbox = scenarioIndex.OfType<int>().ToList();
+        indexInbox_Read = read1.OfType<bool>().ToList();
+        scenarioInbox_Read = read2.OfType<bool>().ToList();
+
+        int i = 0;
         emailInbox = new List<EmailObject>();
         foreach (int index in mailIndex)
         {
             emailInbox.Add(emailDict[index]);
+            emailInbox[i].read = indexInbox_Read[i];
+            i++;
         }
+        int j = 0;
         foreach (int index in scenarioIndex)
         {
             emailInbox.Add(scenarioDict[index]);
+            emailInbox[i].read = scenarioInbox_Read[j];
+            j++;
         }
     }
 
@@ -68,17 +82,47 @@ public class EmailManager : MonoBehaviour
         return JsonHelper.FromJson<AttachmentObject>(jsonString);
     }
 
+    public static (int[], int[]) ReturnInboxIndex()
+    {
+        List<int> email1 = new List<int>();
+        List<int> email2 = new List<int>();
+
+        foreach (EmailObject o in emailInbox)
+        {
+            if (!o.scenario)
+                email1.Add(o.index);
+            else
+                email2.Add(o.index);
+        }
+        return (email1.ToArray(), email2.ToArray());
+    }
+
+    public static (bool[], bool[]) ReturnInboxRead()
+    {
+        List<bool> read1 = new List<bool>();
+        List<bool> read2 = new List<bool>();
+
+        foreach (EmailObject o in emailInbox)
+        {
+            if (!o.scenario)
+                read1.Add(o.read);
+            else
+                read2.Add(o.read);
+        }
+        return (read1.ToArray(), read2.ToArray());
+    }
+
     public void SendRandomMail()
     {
         int templateLength = emailDict.Length - 1;
         int index = Random.Range(0, templateLength);
 
         emailInbox.Add(emailDict[index]);
-        indexInbox.Add (index);
 
-        if (indexInbox.Count > 20)
+        // indexInbox.Add (index);
+        if (emailInbox.Count > 20)
         {
-            indexInbox.RemoveAt(0);
+            // indexInbox.RemoveAt(0);
             emailInbox.RemoveAt(0);
         }
     }
@@ -92,7 +136,8 @@ public class EmailManager : MonoBehaviour
             return;
         }
         emailInbox.Add(scenarioDict[index]);
-        scenarioInbox.Add (index);
+
+        // scenarioInbox.Add (index);
     }
 
     public static int SendPhishingMail()
@@ -101,7 +146,7 @@ public class EmailManager : MonoBehaviour
 
         emailInbox.Add(scenarioDict[index]);
 
-        scenarioInbox.Add (index);
+        // scenarioInbox.Add (index);
         return index;
     }
 
@@ -112,6 +157,7 @@ public class EmailManager : MonoBehaviour
 
         return index;
     }
+
     public static int GetRandomNormalMail()
     {
         int templateLength = emailDict.Length - 1;
@@ -136,12 +182,24 @@ public class EmailManager : MonoBehaviour
 
     public static void ClearScenarioMails()
     {
-        scenarioInbox.Clear();
+        for (int i = emailInbox.Count() - 1; i >= 0; i--)
+        {
+            if (emailInbox[i].scenario) emailInbox.RemoveAt(i);
+        }
     }
 
     public static void ClearPlayerInbox()
     {
-        scenarioInbox.Clear();
-        indexInbox.Clear();
+        emailInbox.Clear();
+    }
+
+    public static void DeleteEmailInbox(int i)
+    {
+        // EmailObject toDelete = emailInbox[i];
+        // if (!indexInbox.Remove(toDelete))
+        // {
+        //     scenarioInbox.Remove (toDelete);
+        //     Debug.Log("Remove from scenarioInbox");
+        // }
     }
 }

@@ -21,6 +21,10 @@ public class SaveObject
 
     public int[] scenarioMail;
 
+    public bool[] readEmail;
+
+    public bool[] readSmail;
+
     public Scenario scenario;
 
     public string scenarioDetail;

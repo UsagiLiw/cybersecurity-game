@@ -149,7 +149,18 @@ public class Email : MonoBehaviour
             newMail_topic.text = emailInbox[i].topic;
 
             newMail.GetComponent<Button>().AddEventListener(i, ViewEmail);
+            newMail
+                .transform
+                .GetChild(3)
+                .GetComponent<Button>()
+                .AddEventListener(i, DeleteMail);
         }
+    }
+
+    private void DeleteMail(int i)
+    {
+        // EmailManager.DeleteEmailInbox (i);
+        // ShowAllPlayerMails();
     }
 
     private void ViewEmail(int i)
