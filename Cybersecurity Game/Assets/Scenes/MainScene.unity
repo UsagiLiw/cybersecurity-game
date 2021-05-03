@@ -6024,15 +6024,15 @@ MonoBehaviour:
   - scenarioType: PasswordAttack
     scenario: 1
     minProbRange: 0
-    maxProbRange: 5
+    maxProbRange: 90
   - scenarioType: Phishing
     scenario: 2
-    minProbRange: 6
+    minProbRange: 91
     maxProbRange: 92
   - scenarioType: Malware
     scenario: 3
     minProbRange: 93
-    maxProbRange: 94
+    maxProbRange: 100
 --- !u!4 &1163238640
 Transform:
   m_ObjectHideFlags: 0

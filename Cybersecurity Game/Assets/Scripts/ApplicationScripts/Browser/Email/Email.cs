@@ -159,6 +159,7 @@ public class Email : MonoBehaviour
 
     private void DeleteMail(int i)
     {
+        Debug.Log(emailInbox[i].topic);
         EmailManager.DeleteEmailInbox (i);
         ShowAllPlayerMails();
     }
