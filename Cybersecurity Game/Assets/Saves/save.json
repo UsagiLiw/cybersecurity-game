@@ -1,6 +1,6 @@
 {
     "saveid": 0,
-    "day": 1239,
+    "day": 1241,
     "budget": 175600,
     "reputation": 50,
     "purchases": [
@@ -12,23 +12,17 @@
     "password1": "NewPassword",
     "password2": "NewEmail",
     "email": [
-        5,
-        4,
-        8,
-        8,
-        3,
-        7
+        6,
+        9,
+        0
     ],
     "scenarioMail": [],
     "readEmail": [
         false,
         false,
-        false,
-        false,
-        false,
         false
     ],
     "readSmail": [],
-    "scenario": 0,
-    "scenarioDetail": ""
+    "scenario": 2,
+    "scenarioDetail": "{\"dayLeft\":2,\"atkType\":0,\"questTarget\":4,\"isPhishing\":false,\"dictIndex\":0}"
 }

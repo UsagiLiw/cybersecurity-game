@@ -159,8 +159,8 @@ public class Email : MonoBehaviour
 
     private void DeleteMail(int i)
     {
-        // EmailManager.DeleteEmailInbox (i);
-        // ShowAllPlayerMails();
+        EmailManager.DeleteEmailInbox (i);
+        ShowAllPlayerMails();
     }
 
     private void ViewEmail(int i)

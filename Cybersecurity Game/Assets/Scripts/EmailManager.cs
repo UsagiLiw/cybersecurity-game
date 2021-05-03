@@ -136,17 +136,12 @@ public class EmailManager : MonoBehaviour
             return;
         }
         emailInbox.Add(scenarioDict[index]);
-
-        // scenarioInbox.Add (index);
     }
 
     public static int SendPhishingMail()
     {
         int index = GetRandomPhishingMail();
-
         emailInbox.Add(scenarioDict[index]);
-
-        // scenarioInbox.Add (index);
         return index;
     }
 
@@ -154,7 +149,6 @@ public class EmailManager : MonoBehaviour
     {
         int templateLength = scenarioDict.Length - 1;
         int index = Random.Range(2, templateLength);
-
         return index;
     }
 
@@ -162,16 +156,13 @@ public class EmailManager : MonoBehaviour
     {
         int templateLength = emailDict.Length - 1;
         int index = Random.Range(0, templateLength);
-
         return index;
     }
 
     public static EmailObject GetMailFromIndex(int index, bool phishing)
     {
-        if (phishing)
-        {
-            return scenarioDict[index];
-        }
+        if (phishing) return scenarioDict[index];
+
         return emailDict[index];
     }
 
@@ -195,11 +186,7 @@ public class EmailManager : MonoBehaviour
 
     public static void DeleteEmailInbox(int i)
     {
-        // EmailObject toDelete = emailInbox[i];
-        // if (!indexInbox.Remove(toDelete))
-        // {
-        //     scenarioInbox.Remove (toDelete);
-        //     Debug.Log("Remove from scenarioInbox");
-        // }
+        emailInbox.RemoveAt (i);
+        GameManager.InvokeSaveData();
     }
 }
