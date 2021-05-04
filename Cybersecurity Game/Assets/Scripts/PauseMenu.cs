@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
 
     public GameObject gameUI;
+
+    public Text shopPassword;
+
+    public Text emailPassword;
 
     // Update is called once per frame
     public void GamePause()
@@ -34,20 +39,18 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        shopPassword.text = PasswordManager.password1;
+        emailPassword.text = PasswordManager.password2;
         pauseMenuUI.SetActive(true);
         gameUI.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true;
-        Debug.Log("Game Pause");
-    }
-
-    void LoadOptions()
-    {
-        Debug.Log("Load Option Menu.....");
     }
 
     void QuitGame()
     {
         Debug.Log("Quitting Game......");
+        GameManager.InvokeSaveData();
+        Application.Quit();
     }
 }

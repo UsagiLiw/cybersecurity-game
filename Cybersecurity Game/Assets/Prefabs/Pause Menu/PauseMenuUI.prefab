@@ -77,7 +77,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Password
+  m_Text: Password Reminder
 --- !u!1 &1630088439758832334
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +610,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 4648873821525932123}
   gameUI: {fileID: 0}
+  shopPassword: {fileID: 1979572091493586071}
+  emailPassword: {fileID: 3109211673115307242}
 --- !u!1 &4648873822529540052
 GameObject:
   m_ObjectHideFlags: 0
