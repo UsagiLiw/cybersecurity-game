@@ -187,8 +187,12 @@ public class EmailManager : MonoBehaviour
 
     public static void DeleteEmailInbox(int i)
     {
-        Debug.Log(emailInbox[i].topic);
         emailInbox.RemoveAt (i);
         GameManager.InvokeSaveData();
+    }
+
+    public static void MarkAsRead(int i)
+    {
+        emailInbox[i].read = true;
     }
 }

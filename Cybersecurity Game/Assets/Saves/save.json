@@ -1,6 +1,6 @@
 {
     "saveid": 0,
-    "day": 1252,
+    "day": 1262,
     "budget": 175600,
     "reputation": 50,
     "purchases": [
@@ -13,20 +13,26 @@
     "password2": "NewEmail",
     "email": [
         2,
-        6,
-        6,
+        3,
         0,
+        1,
+        6,
+        4
+    ],
+    "scenarioMail": [
         0
     ],
-    "scenarioMail": [],
     "readEmail": [
+        true,
+        true,
+        true,
         false,
-        false,
-        false,
-        false,
+        true,
         false
     ],
-    "readSmail": [],
+    "readSmail": [
+        false
+    ],
     "scenario": 1,
     "scenarioDetail": "{\"dayLeft\":1,\"target\":2,\"complexity\":2}"
 }

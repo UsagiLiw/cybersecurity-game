@@ -148,16 +148,22 @@ public class Email : MonoBehaviour
                 newMail.transform.GetChild(1).gameObject.GetComponent<Text>();
             newMail_topic.text = emailInbox[i].topic;
 
+            GameObject status = newMail.transform.GetChild(2).gameObject;
+            if (emailInbox[i].read)
+                status.transform.GetChild(0).gameObject.SetActive(true);
+            else
+                status.transform.GetChild(1).gameObject.SetActive(true);
+
             newMail.GetComponent<Button>().AddEventListener(i, ViewEmail);
             newMail
                 .transform
                 .GetChild(3)
                 .GetComponent<Button>()
-                .AddEventListener(i, DeleteMail);
+                .AddEventListener(i, DeleteEmail);
         }
     }
 
-    private void DeleteMail(int i)
+    private void DeleteEmail(int i)
     {
         Debug.Log(emailInbox[i].topic);
         EmailManager.DeleteEmailInbox (i);
@@ -167,6 +173,7 @@ public class Email : MonoBehaviour
     private void ViewEmail(int i)
     {
         EmailObject emailDetail = emailInbox[i];
+        EmailManager.MarkAsRead(i);
         foreach (Transform child in this.transform)
         {
             child.gameObject.SetActive(false);
