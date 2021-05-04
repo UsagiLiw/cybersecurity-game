@@ -1,6 +1,6 @@
 {
     "saveid": 0,
-    "day": 1263,
+    "day": 1268,
     "budget": 175600,
     "reputation": 50,
     "purchases": [
@@ -18,7 +18,12 @@
         1,
         6,
         4,
-        6
+        6,
+        4,
+        5,
+        3,
+        0,
+        2
     ],
     "scenarioMail": [],
     "readEmail": [
@@ -28,6 +33,11 @@
         true,
         true,
         false,
+        true,
+        false,
+        false,
+        true,
+        true,
         true
     ],
     "readSmail": [],
