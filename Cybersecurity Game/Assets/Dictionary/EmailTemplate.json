@@ -21,20 +21,20 @@
     },
     {
         "template": 3,
-        "senderName": "GooGee3",
-        "senderMail": "googagooga6@gmail.com",
-        "topic": "YOLO",
-        "content": "This is an auto mail Ij wmopimhoihrnoihjkmnpijknpiojhknpinweknpoijbknmpkmpeoijgwer",
+        "senderName": "Joey Hamilton",
+        "senderMail": "joeyham@gmail.com",
+        "topic": "Wanna hangout?",
+        "content": "Yo! friend. I heard you got time this weekend wanna hangout to the usual place? We got all the old crew from the day back. Just call me back if you gonna join in.\n\n See ya!",
         "link": -1,
         "scenario": false,
         "index": 2
     },
     {
         "template": 4,
-        "senderName": "GooGee4",
-        "senderMail": "googagooga8@gmail.com",
-        "topic": "YOLO",
-        "content": "This is an auto mail Ij wmopimhoihrnoihjkmnpijknpiojhknpinweknpoijbknmpkmpeoijgwer",
+        "senderName": "Christ McMiller",
+        "senderMail": "mcchrist@itcompany.com",
+        "topic": "About the training course",
+        "content": "Hey, this your friend from the IT department. Have you heard that we got an approval to conduct a cybersecurity training course for other employees. With this, they might fall victim to those malware and scam email less often. \n\n You can start it by going to the shop the option will be right there. Note that the training effect will last for 20 days and it cost our budget for 3500$.",
         "link": -1,
         "scenario": false,
         "index": 3
@@ -43,8 +43,8 @@
         "template": 5,
         "senderName": "SacredLamp",
         "senderMail": "sacredlamp@oui.org",
-        "topic": "Bonk",
-        "content": "bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk bonk BONK",
+        "topic": "Join the Sacred Lamp",
+        "content": "Brothers and sisters, \n\nWe are the cult of Sacred Lamp and we would like to invite you to our sacred lamp ceremony. We believe that you will want to have a look at our ceremony with an open-minded. Maybe if you are interested you might join us and devote to the sacred lamp.\n\n We give free cookies if you join us. May the lamp bless you.",
         "link": -1,
         "scenario": false,
         "index": 4
@@ -88,6 +88,26 @@
         "link": 16,
         "scenario": false,
         "index": 8
+    },
+    {
+        "template": 10,
+        "senderName": "Johnson Driver",
+        "senderMail": "johnsondriver@itcompany.com",
+        "topic": "About the antivirus",
+        "content": "To IT Department,\n\n I have finished the deal for the antivirus software. You can activate it in the shop menu and everyone in our company will have antivirus in their computer.\n\n Also note that it last for 7 days for each activation.",
+        "link": -1,
+        "scenario": false,
+        "index": 9
+    },
+    {
+        "template": 11,
+        "senderName": "Macrosoft",
+        "senderMail": "no-reply@macrosoft.com",
+        "topic": "Regarding about the Operating System version",
+        "content": "Dear our customers,\n\nMacrosoft has always work to improve our product and we would like to inform you that our product will have an update in every month. To avoid exploitation of invulnerability in older version of our product, please consider update our operating system regularly.\n\nThank you\nMacrosoft Teams",
+        "link": -1,
+        "scenario": false,
+        "index": 10
     }
     ]
 }
