@@ -6076,6 +6076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f976518946894a4cac79d88daf3e162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  result_Prefab: {fileID: 0}
 --- !u!114 &1163238643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6116,7 +6117,7 @@ MonoBehaviour:
   - sghjsrtusrtua
   - 'SCP 1902 has breach containment, containment level: Euclid'
   adware_QuestDetail:
-  - Fuck the police right back to the underground
+  - Change it bruh
   - 1234566 probably adware
   trojan_QuestDetail:
   - Arcon of Goats

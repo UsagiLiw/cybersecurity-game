@@ -19,32 +19,6 @@ public class PwdAtkController : MonoBehaviour
 
     private static string emailPassword;
 
-    public class PwdAtkObject
-    {
-        public int dayLeft;
-
-        public Accounts target;
-
-        public PasswordScore complexity;
-    }
-
-    public enum PasswordScore
-    {
-        Blank = 0,
-        VeryWeak = 1,
-        Weak = 2,
-        Medium = 3,
-        Strong = 4,
-        VeryStrong = 5
-    }
-
-    public enum Accounts
-    {
-        all = 0,
-        shop = 1,
-        email = 2
-    }
-
     public string CheckVulnerability()
     {
         shopPassword = PasswordManager.password1;
@@ -115,6 +89,7 @@ public class PwdAtkController : MonoBehaviour
         dayLeft = saveObject.dayLeft;
         target = saveObject.target;
         complexity = saveObject.complexity;
+        PasswordManager.PasswordHasChanged += ScenarioSuccess;
     }
 
     //Return false when forcing scenario fail, return true to start scenario
@@ -202,7 +177,7 @@ public class PwdAtkController : MonoBehaviour
                 complexity = complexity
             };
         string saveString = JsonUtility.ToJson(saveObject);
-        ScenarioManager.InvokeScenarioSuccess(saveString);
+        ScenarioManager.InvokeScenarioSuccess (saveString);
     }
 
     private bool CheckSuccessCondition()
@@ -263,4 +238,30 @@ public class PwdAtkController : MonoBehaviour
 
         return (PasswordScore) score;
     }
+}
+
+public class PwdAtkObject
+{
+    public int dayLeft;
+
+    public Accounts target;
+
+    public PasswordScore complexity;
+}
+
+public enum PasswordScore
+{
+    Blank = 0,
+    VeryWeak = 1,
+    Weak = 2,
+    Medium = 3,
+    Strong = 4,
+    VeryStrong = 5
+}
+
+public enum Accounts
+{
+    all = 0,
+    shop = 1,
+    email = 2
 }

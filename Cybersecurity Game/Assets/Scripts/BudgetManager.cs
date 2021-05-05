@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class BudgetManager : MonoBehaviour
 {
+    public static BudgetManager Instance { get; private set; }
+
     public static int currentBudget;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     public bool ModifyBudget(int amount)
     {

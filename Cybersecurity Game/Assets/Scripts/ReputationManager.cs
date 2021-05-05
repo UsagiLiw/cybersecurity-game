@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class ReputationManager : MonoBehaviour
 {
+    public static ReputationManager Instance { get; private set; }
+
     public static int currentReputation;
 
-    public void ModifyReputation(int amt)
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+    public int ModifyReputation(int amt)
     {
         currentReputation += amt;
         if (currentReputation > 100)
         {
             currentReputation = 100;
-            Debug.Log("Reputation exceed 100. Set back to 100.");
         }
         if (currentReputation <= 0)
         {
             currentReputation = 0;
             Debug.Log("Reputation depleted, you lost");
         }
+        return currentReputation;
     }
 
     public void SetCurrentRep(int rep)
