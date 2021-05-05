@@ -1,6 +1,6 @@
 {
     "saveid": 0,
-    "day": 1268,
+    "day": 1269,
     "budget": 175600,
     "reputation": 50,
     "purchases": [
@@ -23,6 +23,7 @@
         5,
         3,
         0,
+        2,
         2
     ],
     "scenarioMail": [],
@@ -38,9 +39,10 @@
         false,
         true,
         true,
+        true,
         true
     ],
     "readSmail": [],
-    "scenario": 0,
-    "scenarioDetail": ""
+    "scenario": 3,
+    "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":2,\"malwareName\":\"Babylon Search\",\"malwareType\":1,\"dictIndex\":19}"
 }

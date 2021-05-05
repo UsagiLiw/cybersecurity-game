@@ -13,6 +13,8 @@ public class adwareBehavior : MonoBehaviour
 
     public GameObject notiImage;
 
+    public GameObject notiMiddle;
+
     private static string adsImage_Path = "AdsDesktop/";
 
     private void OnEnable()
@@ -21,6 +23,7 @@ public class adwareBehavior : MonoBehaviour
 
         notiBox.SetActive(false);
         notiImage.SetActive(false);
+        notiMiddle.SetActive(false);
 
         if (string.IsNullOrEmpty(desktopAds[index].adsFile))
         {
@@ -28,7 +31,10 @@ public class adwareBehavior : MonoBehaviour
         }
         else
         {
-            ShowNotiImage(desktopAds[index]);
+            if (Random.value > 0.5f)
+                ShowNotiImage(desktopAds[index]);
+            else
+                ShowBigImage(desktopAds[index]);
         }
     }
 
@@ -41,8 +47,20 @@ public class adwareBehavior : MonoBehaviour
     {
         notiBox.SetActive(true);
 
-        Text topic = notiBox.transform.GetChild(1).gameObject.transform.GetComponent<Text>();
-        Text content = notiBox.transform.GetChild(2).gameObject.transform.GetComponent<Text>();
+        Text topic =
+            notiBox
+                .transform
+                .GetChild(1)
+                .gameObject
+                .transform
+                .GetComponent<Text>();
+        Text content =
+            notiBox
+                .transform
+                .GetChild(2)
+                .gameObject
+                .transform
+                .GetComponent<Text>();
         topic.text = currentAds.adsHeader;
         content.text = currentAds.adsDetail;
     }
@@ -51,11 +69,38 @@ public class adwareBehavior : MonoBehaviour
     {
         notiImage.SetActive(true);
 
-        Text topic = notiImage.transform.GetChild(1).gameObject.transform.GetComponent<Text>();
-        Image content = notiImage.transform.GetChild(2).gameObject.transform.GetComponent<Image>();
+        Text topic =
+            notiImage
+                .transform
+                .GetChild(1)
+                .gameObject
+                .transform
+                .GetComponent<Text>();
+        Image content =
+            notiImage
+                .transform
+                .GetChild(2)
+                .gameObject
+                .transform
+                .GetComponent<Image>();
         topic.text = currentAds.adsHeader;
-        Debug.Log(adsImage_Path+currentAds.adsFile);
-        var adsImage = Resources.Load<Sprite>(adsImage_Path + currentAds.adsFile);
+        var adsImage =
+            Resources.Load<Sprite>(adsImage_Path + currentAds.adsFile);
+        content.sprite = adsImage;
+    }
+
+    private void ShowBigImage(DesktopAdsClass currentAds)
+    {
+        notiMiddle.SetActive(true);
+        Image content =
+            notiMiddle
+                .transform
+                .GetChild(1)
+                .gameObject
+                .transform
+                .GetComponent<Image>();
+        var adsImage =
+            Resources.Load<Sprite>(adsImage_Path + currentAds.adsFile);
         content.sprite = adsImage;
     }
 
