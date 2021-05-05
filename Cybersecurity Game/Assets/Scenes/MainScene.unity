@@ -5480,6 +5480,11 @@ PrefabInstance:
       propertyPath: malwareController
       value: 
       objectReference: {fileID: 1163238644}
+    - target: {fileID: 1744832258618642296, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5568,7 +5573,7 @@ PrefabInstance:
     - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -7.275958e-12
       objectReference: {fileID: 0}
     - target: {fileID: 1744832259025602710, guid: 5adaad379ab4630459cca9f6da8f4e0d,
         type: 3}

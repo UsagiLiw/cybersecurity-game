@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5159378243031847440}
   - component: {fileID: 8708885192570832927}
   m_Layer: 5
-  m_Name: Adware Noti
+  m_Name: Adware_Noti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,6 +1030,7 @@ MonoBehaviour:
     adsFile: 
   notiBox: {fileID: 7895222506971230970}
   notiImage: {fileID: 5058070727333969063}
+  notiMiddle: {fileID: 499310551311386607}
 --- !u!1 &7895222506971230970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7168913958707795174}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: AdwareNoti_BigImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
