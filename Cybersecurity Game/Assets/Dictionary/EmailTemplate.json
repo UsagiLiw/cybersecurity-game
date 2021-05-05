@@ -108,6 +108,56 @@
         "link": -1,
         "scenario": false,
         "index": 10
+    },
+    {
+        "template": 12,
+        "senderName": "The guy with space suit",
+        "senderMail": "spacesuit@gmail.com",
+        "topic": "Space suit",
+        "content": "To whoever receive this email,\n\nI know what you're wondering. \"What's in the space suit?\"\n I could tell you, but then I'd have to knock you.\n\n Hehe, I'm only mocking about, relax. As for what's in the space suit, it's best you don't ask.",
+        "link": -1,
+        "scenario": false,
+        "index": 11
+    },
+    {
+        "template": 13,
+        "senderName": "Johnson Driver",
+        "senderMail": "johnsondriver@itcompany.com",
+        "topic": "itcompany COVID-19 Awareness",
+        "content": "Notice to all staff member,\n\nAs the Covid-19 prevention and safety awareness is On-going, We urge all staff to to stay safe and follow the company safety procedure. We will get through this together.\n\nKind Regards,\nJohnson Driver\nChief Executive Officer",
+        "link": -1,
+        "scenario": false,
+        "index": 12
+    },
+    {
+        "template": 14,
+        "senderName": "Jane Corner",
+        "senderMail": "jancecorner@itcompany.com",
+        "topic": "Monthly staff meeting",
+        "content": "Hello team,\n\nHereby, I would like to inform you that our monthly staff meeting will be held on October 31 in Kiwi Building. \n\nMake sure to be prepared and updated on your departments' subjects.  Should you have any questions please feel free to contract me at anytime.\n\nHave a nice day!\n\nBest regards,\nJane Corner",
+        "link": -1,
+        "scenario": false,
+        "index": 13
+    },
+    {
+        "template": 15,
+        "senderName": "Jane Corner",
+        "senderMail": "jancecorner@itcompany.com",
+        "topic": "Project meeting",
+        "content": "Dear All,\nWe are writing to invite you to a project meeting on February 16 between 12-16 at Eureka F021.\nWe are to discuss about the progress of every team and evaluate the size of the budget. Andy Rux will give his opinions about the models we design with Kate and decide which design we will work in the future. We will also design what we should do next and the time of the next meeting.\n\nEvery team should be ready to demonstrate their progress and ideas.\n\nBe kind to confirm your attendance.\n\nYour sincerely\nJane Corner",
+        "link": -1,
+        "scenario": false,
+        "index": 14
+    },
+    {
+        "template": 16,
+        "senderName": "Emma Swan",
+        "senderMail": "emmaswan@itcompany.com",
+        "topic": "Facilities Update",
+        "content": "To all staff,\n\nI'm writing to inform you that, over the next few weeks, our kitchen area will be under construction as we re-model.\n\nAs our company continues to grow, we feel it necessary to provide more communal dining space, and we are grateful to our facilities team for their hard work in making that happen.\n\nIf you have questions or concerns regarding the re-model,feel free to contract me anytime. In the mean time, we are sorry for the inconvenience.\n\nThank you for your cooperation\n",
+        "link": -1,
+        "scenario": false,
+        "index": 15
     }
     ]
 }
