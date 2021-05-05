@@ -5629,6 +5629,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   result_Prefab: {fileID: 0}
+  passwordTip_Success: []
+  passwordTip_Fail: []
+  phishingTip_Success: []
+  phishingTip_Fail: []
+  malwareTip_Success: []
+  malwareTip_Fail: []
+  failMultiplier: 0
+  password_Rep: 0
+  phishing_Rep: 0
+  malware_Rep: 0
 --- !u!114 &1163238643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5642,11 +5652,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   email_QuestDetail:
-  - aer+h6aer3h265f1hae20rh654fn2asreth6a54erh2a1erh65a1erh2ae1rh65f4an2ae1r6tg8a4erh21aer6n54aerty2g1a6n54srt2h1a6e58jn4srgt52jn1a6rt58h4a6er5h1a6e5rh16ae5r1h6a5er1h65a1rh65aer1h65ae1rh65ae1rh6a5e1rh6ae5r1h6ae5rh1
-  - Halp me
-  - Dude did I just got scam?
-  - Is this fishing?
-  - 'Fish Finger tasty '
+  - Hey, could you take a look? I got an email and I'm not sure it is safe or not.
+  - Help me! This weird looking email, it scares me.
+  - Uhhh. Did I just got a scam mail ?
+  - Is this what they call fishing mail? fishing? Phishing!
+  - Could you take a look? My sense is telling me, this email is not safe.
   web_QuestDetail:
   - DUDJIKM:OIHJWEOKNO":IHJGN:OIMNijh;oinew;rogijokne;wogijwe;kgn;oihjgwo;in
   - j;olinwer;ghkln;oijbaseknr ;otihjaboine;rwknt;oaihuertoiwneotrknoibhjjwoekin
@@ -10876,7 +10886,7 @@ PrefabInstance:
     - target: {fileID: 4648873822480961963, guid: 2c3799d58d653f04c8aacc6ca7c19550,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4648873822480961963, guid: 2c3799d58d653f04c8aacc6ca7c19550,
         type: 3}
