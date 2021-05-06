@@ -44,34 +44,41 @@ public class ShopManager : MonoBehaviour
         gameManager.DayPassed += CountDayForItem;
     }
 
-    public void BuyItem(int index)
+    public bool BuyItem(int index)
     {
         Debug.Log("Buy item index " + index);
         items[index].isPurchased = true;
 
-        budgetManager.ModifyBudget(-items[index].price);
-        Debug.Log("Budget cut " + items[index].price);
-
-        switch (index)
+        // If true : Continue process , If false : skip
+        if (budgetManager.ModifyBudget(-items[index].price))
         {
-            case 0:
-                Debug.Log("Buy Cloud Storage");
-                break;
-            case 1:
-                computerManager.ActivateAntivirus();
-                Debug.Log("Buy Antivirus");
-                break;
-            case 2:
-                Debug.Log("Buy Training Course");
-                break;
-            case 3:
-                Debug.Log("Buy OS Update");
-                break;
-            default:
-                Debug.Log("Dafuq did you buy?");
-                break;
+            Debug.Log("Budget cut " + items[index].price);
+            switch (index)
+            {
+                case 0:
+                    Debug.Log("Buy Cloud Storage");
+                    break;
+                case 1:
+                    computerManager.ActivateAntivirus();
+                    Debug.Log("Buy Antivirus");
+                    break;
+                case 2:
+                    Debug.Log("Buy Training Course");
+                    break;
+                case 3:
+                    Debug.Log("Buy OS Update");
+                    break;
+                default:
+                    Debug.Log("Dafuq did you buy?");
+                    break;
+            }
+            GameManager.InvokeSaveData();
+            return true;
         }
-        GameManager.InvokeSaveData();
+        else
+        { 
+            return false; 
+        }
     }
 
     public string[] SendSaveData()
