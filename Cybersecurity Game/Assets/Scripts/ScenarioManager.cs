@@ -196,7 +196,7 @@ public class ScenarioManager : MonoBehaviour
 
     private int TargetRandomizer(bool self)
     {
-        int targetCount = System.Enum.GetValues(typeof (Target)).Length - 1;
+        int targetCount = System.Enum.GetValues(typeof (Target)).Length;
         int i = 0;
         if (!self)
         {
@@ -211,7 +211,7 @@ public class ScenarioManager : MonoBehaviour
         onGoingScenario = Scenario.None;
         underAttack = false;
         EmailManager.ClearScenarioMails();
-        ResultController.ShowSuccess (result, onGoingScenario);
+        ResultController.Instance.ShowSuccess (result, onGoingScenario);
         jsonDetail = null;
         InvokeScenarioEnded();
         GameManager.InvokeSaveData();
@@ -220,7 +220,7 @@ public class ScenarioManager : MonoBehaviour
     public static void InvokeScenarioFailed(string result)
     {
         NPCcontroller.DisableAllNPC();
-        ResultController.ShowFailed (result, onGoingScenario);
+        ResultController.Instance.ShowFailed (result, onGoingScenario);
         onGoingScenario = Scenario.None;
         underAttack = false;
         EmailManager.ClearScenarioMails();
@@ -232,7 +232,7 @@ public class ScenarioManager : MonoBehaviour
     public static void InvokeScenarioFailed(string result, Scenario currentSce)
     {
         NPCcontroller.DisableAllNPC();
-        ResultController.ShowFailed (result, currentSce);
+        ResultController.Instance.ShowFailed (result, currentSce);
         onGoingScenario = Scenario.None;
         underAttack = false;
         EmailManager.ClearScenarioMails();
