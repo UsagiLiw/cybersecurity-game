@@ -221,7 +221,6 @@ public class ComputerUI : MonoBehaviour
 
             GameObject ads = Instantiate(advertise_prefab) as GameObject;
             ads.transform.SetParent(this.transform, false);
-            ads.transform.SetAsFirstSibling();
 
             yield return new WaitForSeconds(time);
         }

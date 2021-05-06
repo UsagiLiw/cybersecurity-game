@@ -201,7 +201,11 @@ public class ResultController : MonoBehaviour
     private void GenerateResultScreen(string detailString, int repTotal)
     {
         string resultString =
-            "Your current Reputation: " + repTotal + " Budget: " + 10 + "/day";
+            "Your current Reputation: " +
+            repTotal +
+            " Budget: " +
+            BudgetManager.currentBudget +
+            "/day";
 
         Debug.Log (detailString);
         Debug.Log (resultString);
