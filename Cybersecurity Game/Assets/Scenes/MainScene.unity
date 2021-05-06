@@ -5658,9 +5658,9 @@ MonoBehaviour:
   - Is this what they call fishing mail? fishing? Phishing!
   - Could you take a look? My sense is telling me, this email is not safe.
   web_QuestDetail:
-  - DUDJIKM:OIHJWEOKNO":IHJGN:OIMNijh;oinew;rogijokne;wogijwe;kgn;oihjgwo;in
-  - j;olinwer;ghkln;oijbaseknr ;otihjaboine;rwknt;oaihuertoiwneotrknoibhjjwoekin
-  - 168542165421635135216h51sr6t5h206s5tr4nh3sr2t0h65s4r1tn2sr0tn65sr411t3n2s0rt63n54srt62gh0a6e35h4s5t2er1h6sr84nrs5t1h638a5rt4hns5rt1n6sr5t4n
+  - Aye! This website looks pretty suspicious. Should I proceed?
+  - I'm not sure if it safe or not. Take a look at this site.
+  - I heard some news about this. This is that scam website right?
 --- !u!114 &1163238644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5676,15 +5676,15 @@ MonoBehaviour:
   computerManager: {fileID: 342761647}
   virus_QuestDetail:
   - My computer is acting weird man, it is so slow now. Should I just get a new one?
-  - sghjsrtusrtua
-  - 'SCP 1902 has breach containment, containment level: Euclid'
+  - There is some errors show up. Could you look at my PC?
+  - Oh my god! My computer broke! What should I do now!?
   adware_QuestDetail:
-  - Change it bruh
-  - 1234566 probably adware
+  - There are something appear on my computer! Do something!
+  - Why are there an ads on my screen, Is it infected?
   trojan_QuestDetail:
-  - Arcon of Goats
-  - You! YES YOU!! FIX MY COM
-  - GOD IS DEAD
+  - I don't remember install this program. What is this?
+  - My computer is so slow. What happened? Did you guys messed up my PC?
+  - There are some weird errors appear on my screen. Take a look and fix it.
 --- !u!1 &1174323943
 GameObject:
   m_ObjectHideFlags: 0
