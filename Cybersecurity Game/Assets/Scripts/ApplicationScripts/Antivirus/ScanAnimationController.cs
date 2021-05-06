@@ -14,11 +14,8 @@ public class ScanAnimationController : MonoBehaviour
 
     private float timer = 0;
 
-    private Computer computer;
-
     void Start()
     {
-        computer = ComputerManager.activeComputer;
         homeScreen = GetComponent<Antivirus>().homeScreen;
         scanSecure = GetComponent<Antivirus>().scanSecure;
         scanUnsecure = GetComponent<Antivirus>().scanUnsecure;
@@ -51,12 +48,12 @@ public class ScanAnimationController : MonoBehaviour
     private void ShowScanResult()
     {
         homeScreen.SetActive(false);
-        if(computer.isInfected == false)
+        if(ComputerManager.activeComputer.isInfected == false)
         {
             scanUnsecure.SetActive(false);
             scanSecure.SetActive(true);
         }
-        else if(computer.isInfected == true)
+        else if(ComputerManager.activeComputer.isInfected == true)
         {
             scanSecure.SetActive(false);
             scanUnsecure.SetActive(true);

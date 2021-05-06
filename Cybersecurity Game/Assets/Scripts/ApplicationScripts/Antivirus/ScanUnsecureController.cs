@@ -18,18 +18,20 @@ public class ScanUnsecureController : MonoBehaviour
 
     private void OnEnable()
     {
+        cleanBar.fillAmount = 0;
         UpdateSummary();
     }
 
     private void OnDisable()
     {
         ClearSummary();
+        StopCoroutine("CleanAnimation");
     }
 
     public void CleanButtonPressed()
     {
         Debug.Log("Clean button pressed");
-        StartCoroutine(CleanAnimation());
+        StartCoroutine("CleanAnimation");
     }
 
     IEnumerator CleanAnimation()
