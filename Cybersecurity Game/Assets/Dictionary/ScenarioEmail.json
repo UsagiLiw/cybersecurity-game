@@ -5,6 +5,7 @@
         "senderMail": "no-reply@accounts.google.com",
         "topic": "Security alert for itsupporter@itcompany.com",
         "content": "Sign-in attempt was blocked\nSomeone just try to sign in to your email account. We have blocked them, but you should change your password.",
+        "link": -1,
         "scenario": true,
         "index": 0
     },
@@ -14,6 +15,7 @@
         "senderMail": "info.shopping@eshop.official.com",
         "topic": "Security alert for itsupporter@itcompany.com",
         "content": "Did you just login through a new device?\nWe have detected that someone just try to sign in to your eShop account. We have blocked the attempt, but you should reset your password regardless.",
+        "link": -1,
         "scenario": true,
         "index": 1
     },

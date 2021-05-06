@@ -1,7 +1,7 @@
 {
     "saveid": 0,
-    "day": 1269,
-    "budget": 175600,
+    "day": 1271,
+    "budget": 175700,
     "reputation": 50,
     "purchases": [
         "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
@@ -20,11 +20,12 @@
         4,
         6,
         4,
-        5,
         3,
         0,
         2,
-        2
+        2,
+        10,
+        0
     ],
     "scenarioMail": [],
     "readEmail": [
@@ -33,16 +34,17 @@
         true,
         true,
         true,
-        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
         true,
         false,
-        false,
-        true,
-        true,
-        true,
         true
     ],
     "readSmail": [],
-    "scenario": 3,
-    "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":2,\"malwareName\":\"Babylon Search\",\"malwareType\":1,\"dictIndex\":19}"
+    "scenario": 2,
+    "scenarioDetail": "{\"dayLeft\":3,\"atkType\":0,\"questTarget\":5,\"isPhishing\":true,\"dictIndex\":8}"
 }

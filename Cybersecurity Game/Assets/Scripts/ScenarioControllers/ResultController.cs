@@ -59,6 +59,7 @@ public class ResultController : MonoBehaviour
                 PhishingScenario(detail, true);
                 break;
             case Scenario.Malware:
+                MalwareScenario(detail, true);
                 break;
             case Scenario.Ransom:
                 break;
@@ -81,6 +82,7 @@ public class ResultController : MonoBehaviour
                 PhishingScenario(detail, false);
                 break;
             case Scenario.Malware:
+                MalwareScenario(detail, false);
                 break;
             case Scenario.Ransom:
                 break;

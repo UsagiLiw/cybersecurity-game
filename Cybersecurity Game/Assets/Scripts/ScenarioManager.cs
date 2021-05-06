@@ -208,10 +208,10 @@ public class ScenarioManager : MonoBehaviour
     public static void InvokeScenarioSuccess(string result)
     {
         NPCcontroller.DisableAllNPC();
+        ResultController.Instance.ShowSuccess (result, onGoingScenario);
         onGoingScenario = Scenario.None;
         underAttack = false;
         EmailManager.ClearScenarioMails();
-        ResultController.Instance.ShowSuccess (result, onGoingScenario);
         jsonDetail = null;
         InvokeScenarioEnded();
         GameManager.InvokeSaveData();
