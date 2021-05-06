@@ -5031,6 +5031,11 @@ PrefabInstance:
       propertyPath: malwareController
       value: 
       objectReference: {fileID: 1163238644}
+    - target: {fileID: 1744832257759857626, guid: 5adaad379ab4630459cca9f6da8f4e0d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1744832258618642296, guid: 5adaad379ab4630459cca9f6da8f4e0d,
         type: 3}
       propertyPath: m_IsActive
@@ -10857,6 +10862,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 305857904}
     m_Modifications:
+    - target: {fileID: 4260654429007394690, guid: 2c3799d58d653f04c8aacc6ca7c19550,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Email Password :'
+      objectReference: {fileID: 0}
     - target: {fileID: 4648873821525932123, guid: 2c3799d58d653f04c8aacc6ca7c19550,
         type: 3}
       propertyPath: m_IsActive
