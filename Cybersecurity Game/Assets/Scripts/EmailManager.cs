@@ -115,7 +115,7 @@ public class EmailManager : MonoBehaviour
 
     public void SendRandomMail()
     {
-        int templateLength = emailDict.Length - 1;
+        int templateLength = emailDict.Length;
         int index = Random.Range(0, templateLength);
 
         emailInbox.Add(emailDict[index]);
@@ -130,7 +130,6 @@ public class EmailManager : MonoBehaviour
 
     public static void SendScenarioMail(int index)
     {
-        Debug.Log("SendSceMail: " + index);
         if (index > scenarioDict.Length - 1 || index < 0)
         {
             Debug.Log("Error, Send scenario mail index out of range");
@@ -148,14 +147,14 @@ public class EmailManager : MonoBehaviour
 
     public static int GetRandomPhishingMail()
     {
-        int templateLength = scenarioDict.Length - 1;
+        int templateLength = scenarioDict.Length;
         int index = Random.Range(2, templateLength);
         return index;
     }
 
     public static int GetRandomNormalMail()
     {
-        int templateLength = emailDict.Length - 1;
+        int templateLength = emailDict.Length;
         int index = Random.Range(0, templateLength);
         return index;
     }
