@@ -1,16 +1,16 @@
 {
     "saveid": 0,
-    "day": 1269,
-    "budget": 175600,
+    "day": 1275,
+    "budget": 173650,
     "reputation": 50,
     "purchases": [
         "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
-        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
+        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":3}",
         "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
     ],
     "password1": "NewPassword",
-    "password2": "NewEmail",
+    "password2": "NewEmail12",
     "email": [
         2,
         3,
@@ -20,11 +20,16 @@
         4,
         6,
         4,
-        5,
         3,
         0,
         2,
-        2
+        2,
+        13,
+        10,
+        10,
+        13,
+        12,
+        3
     ],
     "scenarioMail": [],
     "readEmail": [
@@ -33,16 +38,21 @@
         true,
         true,
         true,
-        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
         true,
         false,
-        false,
-        true,
-        true,
-        true,
         true
     ],
     "readSmail": [],
-    "scenario": 3,
-    "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":2,\"malwareName\":\"Babylon Search\",\"malwareType\":1,\"dictIndex\":19}"
+    "scenario": 0,
+    "scenarioDetail": ""
 }

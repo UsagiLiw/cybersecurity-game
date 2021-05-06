@@ -8,13 +8,18 @@ public class Antivirus : MonoBehaviour
     public GameObject scanSecure;
     public GameObject scanUnsecure;
 
+    public void OnEnable()
+    {
+        SetBackToHome();
+    }
+
     public void CloseAntivirus()
     {
-        setbackToHome();
+        SetBackToHome();
         gameObject.SetActive(false);
     }
 
-    private void setbackToHome()
+    private void SetBackToHome()
     {
         homeScreen.SetActive(true);
         scanSecure.SetActive(false);
