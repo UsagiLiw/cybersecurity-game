@@ -16,9 +16,9 @@ public class ReputationManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public int ModifyReputation(int amt)
+    public int ModifyReputation(int amt, float multiplier)
     {
-        currentReputation += amt;
+        currentReputation += (int)(amt * multiplier);
         if (currentReputation > 100)
         {
             currentReputation = 100;
