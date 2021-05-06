@@ -10,8 +10,6 @@ public class NewsManager : MonoBehaviour
     private List<News> scenarioNewsDict = new List<News>();
 
     public News[] newsArray = new News[3];
-
-    [SerializeField] private GameManager gameManager;
     
     void Awake()
     {
@@ -28,7 +26,7 @@ public class NewsManager : MonoBehaviour
             }
         }
         
-        gameManager.DayPassed += UpdateNews;
+        GameManager.DayPassed += UpdateNews;
     }
 
     void Start()

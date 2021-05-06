@@ -14,9 +14,6 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     public List<Item> items;
 
-    [SerializeField]
-    private GameManager gameManager;
-
     public delegate void ItemExpireHandler(int itemIndex);
 
     public event ItemExpireHandler ItemExpired;
@@ -41,7 +38,7 @@ public class ShopManager : MonoBehaviour
         {
             item.isPurchased = false;
         }
-        gameManager.DayPassed += CountDayForItem;
+        GameManager.DayPassed += CountDayForItem;
     }
 
     public bool BuyItem(int index)

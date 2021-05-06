@@ -8,6 +8,10 @@ public class ReputationManager : MonoBehaviour
 
     public static int currentReputation;
 
+    public delegate void ReputationAction();
+
+    public static event ReputationAction ReputationChanged;
+
     private void Awake()
     {
         if (Instance == null)
@@ -28,6 +32,7 @@ public class ReputationManager : MonoBehaviour
             currentReputation = 0;
             Debug.Log("Reputation depleted, you lost");
         }
+        ReputationChanged?.Invoke();
         return currentReputation;
     }
 

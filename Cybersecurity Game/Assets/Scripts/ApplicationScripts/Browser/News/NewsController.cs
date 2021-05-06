@@ -10,12 +10,10 @@ public class NewsController : MonoBehaviour
     [SerializeField] private NewsObject scenarioContent;
 
     private NewsManager newsManager;
-    private GameManager gameManager;
 
     private void Awake()
     {
         newsManager = GameObject.Find("GameManager").GetComponent<NewsManager>();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     void OnEnable()
     {
@@ -24,7 +22,7 @@ public class NewsController : MonoBehaviour
 
     void Start()
     {
-        gameManager.DayPassed += UpdateNewsPanel;
+        GameManager.DayPassed += UpdateNewsPanel;
     }
 
     private void UpdateNewsPanel ()

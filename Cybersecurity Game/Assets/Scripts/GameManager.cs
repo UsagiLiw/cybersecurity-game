@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public delegate void DayPassHandler();
 
-    public event DayPassHandler DayPassed;
+    public static event DayPassHandler DayPassed;
 
     void Awake()
     {

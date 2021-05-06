@@ -8,12 +8,31 @@ public class BudgetManager : MonoBehaviour
 
     public static int currentBudget;
 
+    public static int income;
+
+    public int[] incomePerDay;
+
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        GameManager.DayPassed += NewDayHasCome;
+    }
+
+    private void CheckIncome()
+    {
+        int rep = ReputationManager.currentReputation;
+    }
+
+    private void NewDayHasCome()
+    {
+        currentBudget += income;
     }
 
     public bool ModifyBudget(int amount)
@@ -35,7 +54,7 @@ public class BudgetManager : MonoBehaviour
     {
         if (amount < 0)
         {
-            Debug.Log("Budget value cannot goes below 0");
+            currentBudget = 0;
             return false;
         }
         currentBudget = amount;
