@@ -5633,9 +5633,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   result_Prefab: {fileID: 0}
-  passwordTip: []
-  phishingTip_Email: []
-  phishingTip_Web: []
+  passwordTip:
+  - Change your password regularly
+  - Don't use real word
+  - Make sure to use different passwords for each of your accounts
+  - Try including number and letters in your password
+  - Symbols and uppercase make your password stronger
+  - Never use your personal information in your password
+  - Do not reuse passwords
+  - Random generate passwords are the best
+  - Avoid common words
+  - Always logout when finish using your account
+  - 10 characters minimum
+  - Break up common words with random characters
+  - Don't capitalize the first letter, random it somewhere else
+  - "One Password for Everything (Don\u2019t Do It)"
+  - "Don\u2019t Save Your Passwords in Your Browser"
+  - '"kitty" is a bad password, "1Ki77y" is a good password'
+  phishingTip_Email:
+  - Legit companies never ask for your password
+  - Legit companies know how you are
+  - Try notice the way they call you
+  - Greeting style should be concern
+  - Is sender name relate with the sender email?
+  - Scam usually come with the bad news
+  - Look before you click, try hover the link
+  - Legit companies know how to spell, and their grammar is good
+  - The content of the email will show the way
+  - Phishing email usually look real
+  - Hover mouse at the link or attachment, that the answer
+  phishingTip_Web:
+  - Pay attention at the address bar
+  - Website with "https://" is mostly secure
+  - Padlock status can show you the site information
+  - Look at the spelling
+  - Red is not a good sign
+  - Yagoo.com is legit, Yag00.com is a scam, be aware
   malwareTip_Virus: []
   malwareTip_Trojan: []
   malwareTip_Adware: []
