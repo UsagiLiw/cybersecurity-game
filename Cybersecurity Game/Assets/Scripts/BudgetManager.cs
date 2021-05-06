@@ -23,11 +23,26 @@ public class BudgetManager : MonoBehaviour
     private void Start()
     {
         GameManager.DayPassed += NewDayHasCome;
+        ReputationManager.ReputationChanged += CheckIncome;
+        CheckIncome();
     }
 
     private void CheckIncome()
     {
-        int rep = ReputationManager.currentReputation;
+        int value = ReputationManager.currentReputation;
+        if (value >= 0 && value < 25)
+            income = incomePerDay[0];
+        else if (value >= 25 && value < 50)
+            income = incomePerDay[1];
+        else if (value >= 50 && value < 75)
+            income = incomePerDay[2];
+        else if (value >= 75 && value <= 100)
+            income = incomePerDay[3];
+        else
+        {
+            Debug.Log("Error - Something went wrong with rep value");
+            income = incomePerDay[0];
+        }
     }
 
     private void NewDayHasCome()

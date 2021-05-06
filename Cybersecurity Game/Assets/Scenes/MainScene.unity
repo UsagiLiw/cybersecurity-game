@@ -1730,6 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51de855602194154a9aba0a44ee29c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  incomePerDay: 320000004b000000640000007d000000
 --- !u!114 &342761643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1965,7 +1966,6 @@ MonoBehaviour:
     topic: 
     content: 
     image: 
-  gameManager: {fileID: 342761639}
 --- !u!114 &342761650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1999,7 +1999,6 @@ MonoBehaviour:
     expiredDays: 30
     isPurchased: 0
     dayPassed: 0
-  gameManager: {fileID: 342761639}
 --- !u!114 &342761651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5629,12 +5628,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   result_Prefab: {fileID: 0}
-  passwordTip_Success: []
-  passwordTip_Fail: []
-  phishingTip_Success: []
-  phishingTip_Fail: []
-  malwareTip_Success: []
-  malwareTip_Fail: []
+  passwordTip: []
+  phishingTip_Email: []
+  phishingTip_Web: []
+  malwareTip_Virus: []
+  malwareTip_Trojan: []
+  malwareTip_Adware: []
   failMultiplier: 0
   password_Rep: 0
   phishing_Rep: 0
