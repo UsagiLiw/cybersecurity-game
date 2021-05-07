@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5661537932332549799}
   - component: {fileID: 4316013520140461965}
   m_Layer: 5
-  m_Name: Tips
+  m_Name: Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 1599367062307172044}
   - component: {fileID: 4446239546306992620}
   m_Layer: 5
-  m_Name: Tips
+  m_Name: Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 5629181089269577119}
   - component: {fileID: 276989839766831460}
   m_Layer: 5
-  m_Name: Content
+  m_Name: Tips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -503,7 +503,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1837318240368096502}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4090752869974958741}
+        m_MethodName: ClickContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4836707476877687914
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3098779936367475383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -732,7 +743,7 @@ GameObject:
   - component: {fileID: 2255283188827252316}
   - component: {fileID: 6958599830471729128}
   m_Layer: 5
-  m_Name: Content
+  m_Name: Tips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1000,6 +1011,7 @@ GameObject:
   - component: {fileID: 6053636934200755761}
   - component: {fileID: 5391818446072795516}
   - component: {fileID: 100346752942442436}
+  - component: {fileID: 4090752869974958741}
   m_Layer: 5
   m_Name: ScenarioEndUI
   m_TagString: Untagged
@@ -1067,3 +1079,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4090752869974958741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8222971781164627324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b36541d9f9360419ce60567687ad4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  success: {fileID: 5584631229270498817}
+  tips_S: {fileID: 276989839766831460}
+  result_S: {fileID: 4446239546306992620}
+  fail: {fileID: 7812645077079908291}
+  tips_F: {fileID: 6958599830471729128}
+  result_F: {fileID: 4316013520140461965}
