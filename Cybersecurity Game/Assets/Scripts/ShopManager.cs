@@ -9,8 +9,6 @@ public class ShopManager : MonoBehaviour
 
     private BudgetManager budgetManager;
 
-    private ComputerManager computerManager;
-
     [SerializeField]
     public List<Item> items;
 
@@ -33,7 +31,6 @@ public class ShopManager : MonoBehaviour
     private void Start()
     {
         budgetManager = gameObject.GetComponent<BudgetManager>();
-        computerManager = gameObject.GetComponent<ComputerManager>();
         foreach (Item item in items)
         {
             item.isPurchased = false;
@@ -51,28 +48,28 @@ public class ShopManager : MonoBehaviour
             switch (index)
             {
                 case 0:
-                    Debug.Log("Buy Cloud Storage");
+                    // Debug.Log("Buy Cloud Storage");
                     break;
                 case 1:
-                    computerManager.ActivateAntivirus();
-                    Debug.Log("Buy Antivirus");
+                    ComputerManager.Instance.ActivateAntivirus();
+                    // Debug.Log("Buy Antivirus");
                     break;
                 case 2:
-                    Debug.Log("Buy Training Course");
+                    // Debug.Log("Buy Training Course");
                     break;
                 case 3:
-                    Debug.Log("Buy OS Update");
+                    // Debug.Log("Buy OS Update");
                     break;
                 default:
-                    Debug.Log("Dafuq did you buy?");
+                    // Debug.Log("Dafuq did you buy?");
                     break;
             }
             GameManager.InvokeSaveData();
             return true;
         }
         else
-        { 
-            return false; 
+        {
+            return false;
         }
     }
 
@@ -98,6 +95,23 @@ public class ShopManager : MonoBehaviour
             Item temp = JsonUtility.FromJson<Item>(itemArr[i]);
             items[i].isPurchased = temp.isPurchased;
             items[i].dayPassed = temp.dayPassed;
+            if (temp.isPurchased)
+            {
+                switch (i)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        ComputerManager.Instance.ActivateAntivirus();
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 
@@ -112,6 +126,21 @@ public class ShopManager : MonoBehaviour
             if (item.dayPassed == item.expiredDays)
             {
                 item.dayPassed = 0;
+                switch (i)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        Debug.Log("Antivirus Expired");
+                        ComputerManager.Instance.DeactivateAntivirus();
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        break;
+                }
                 if (ItemExpired != null) ItemExpired.Invoke(i);
             }
             i++;
