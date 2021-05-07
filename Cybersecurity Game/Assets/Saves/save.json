@@ -1,7 +1,7 @@
 {
     "saveid": 0,
-    "day": 0,
-    "budget": 3150,
+    "day": 1,
+    "budget": 2200,
     "reputation": 30,
     "purchases": [
         "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
@@ -11,9 +11,13 @@
     ],
     "password1": "ShopPasswrod",
     "password2": "",
-    "email": [],
+    "email": [
+        15
+    ],
     "scenarioMail": [],
-    "readEmail": [],
+    "readEmail": [
+        false
+    ],
     "readSmail": [],
     "scenario": 0,
     "scenarioDetail": ""

@@ -50,6 +50,7 @@ public class ShopHomeController : MonoBehaviour
     private void OnEnable()
     {
         UpdateBalance();
+        CheckPurchase();
         shopManager.ItemExpired += ReEnableButton;
     }
 
@@ -101,6 +102,17 @@ public class ShopHomeController : MonoBehaviour
                     itemIndex);
                 break;
         }
+    }
+
+    private void CheckPurchase()
+    {
+        cloudButton.interactable = !shopManager.CheckItemPurchase(0);
+
+        antivirusButton.interactable = !shopManager.CheckItemPurchase(1);
+
+        trainingButton.interactable = !shopManager.CheckItemPurchase(2);
+
+        osButton.interactable = !shopManager.CheckItemPurchase(3);
     }
 
     private void UpdateBalance()

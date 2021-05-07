@@ -31,10 +31,10 @@ public class ShopManager : MonoBehaviour
     private void Start()
     {
         budgetManager = gameObject.GetComponent<BudgetManager>();
-        foreach (Item item in items)
-        {
-            item.isPurchased = false;
-        }
+        // foreach (Item item in items)
+        // {
+        //     item.isPurchased = false;
+        // }
         GameManager.DayPassed += CountDayForItem;
     }
 
@@ -52,6 +52,7 @@ public class ShopManager : MonoBehaviour
                     break;
                 case 1:
                     ComputerManager.Instance.ActivateAntivirus();
+
                     // Debug.Log("Buy Antivirus");
                     break;
                 case 2:
@@ -93,6 +94,7 @@ public class ShopManager : MonoBehaviour
         for (int i = 0; i < itemArr.Length; i++)
         {
             Item temp = JsonUtility.FromJson<Item>(itemArr[i]);
+            Debug.Log(temp.isPurchased);
             items[i].isPurchased = temp.isPurchased;
             items[i].dayPassed = temp.dayPassed;
             if (temp.isPurchased)
@@ -145,6 +147,13 @@ public class ShopManager : MonoBehaviour
             }
             i++;
         }
+    }
+
+    public bool CheckItemPurchase(int i)
+    {
+        if (i >= 0 && i < 4) return items[i].isPurchased;
+
+        return false;
     }
 }
 
