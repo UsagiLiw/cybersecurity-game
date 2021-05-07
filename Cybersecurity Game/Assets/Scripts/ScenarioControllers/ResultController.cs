@@ -40,8 +40,6 @@ public class ResultController : MonoBehaviour
 
     public void ShowSuccess(string detail, Scenario currentScenario)
     {
-        Debug.Log("IN SHOWSUCCESS: " + detail);
-        Debug.Log("IN SHOWSUCCESS: " + currentScenario);
         Time.timeScale = 0f;
         switch (currentScenario)
         {
@@ -63,8 +61,6 @@ public class ResultController : MonoBehaviour
 
     public void ShowFailed(string detail, Scenario currentScenario)
     {
-        Debug.Log("IN SHOWFAILED: " + detail);
-        Debug.Log("IN SHOWFAILED: " + currentScenario);
         Time.timeScale = 0f;
         switch (currentScenario)
         {

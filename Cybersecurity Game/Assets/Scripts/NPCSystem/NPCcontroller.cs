@@ -20,6 +20,18 @@ public class NPCcontroller : MonoBehaviour
 
     private static string requestDetail;
 
+    //Notification String
+    public static string ceo_quote = "I require your attention.";
+
+    public static string section1_quote = "I need your help!";
+
+    public static string section2_quote = "Can you come take a look?";
+
+    public static string
+        meeting_quote = "Please reporting in as soon as possible.";
+
+    public static string it_quote = "Hey, I need your feedback.";
+
     //Announcing quest change
     public delegate void NewNPCScenarioAction();
 
@@ -29,8 +41,8 @@ public class NPCcontroller : MonoBehaviour
     public GameObject phishingScreen_prefab;
 
     public ComputerUI computerUI;
-    // public GameObject NPCcomputer_prefab;
 
+    // public GameObject NPCcomputer_prefab;
     private void Awake()
     {
         DisableAllNPC();
@@ -54,18 +66,32 @@ public class NPCcontroller : MonoBehaviour
         {
             case Target.CEO:
                 NPC_CEO = true;
+                NotificationManager
+                    .SetNewNotification(new Notification("CEO Room",
+                        ceo_quote));
                 break;
             case Target.Employee1:
                 NPC_Employee1 = true;
+                NotificationManager
+                    .SetNewNotification(new Notification("Section1",
+                        section1_quote));
                 break;
             case Target.Employee2:
                 NPC_Employee2 = true;
+                NotificationManager
+                    .SetNewNotification(new Notification("Section2",
+                        section2_quote));
                 break;
             case Target.Meeting:
                 NPC_Meeting = true;
+                NotificationManager
+                    .SetNewNotification(new Notification("Meeting Room",
+                        meeting_quote));
                 break;
             case Target.IT:
                 NPC_IT = true;
+                NotificationManager
+                    .SetNewNotification(new Notification("IT Room", it_quote));
                 break;
             default:
                 Debug.Log("Warning - target not an exisitng NPC");

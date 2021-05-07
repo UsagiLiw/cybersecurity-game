@@ -1,6 +1,6 @@
 {
     "saveid": 0,
-    "day": 1276,
+    "day": 1277,
     "budget": 175925,
     "reputation": 53,
     "purchases": [
@@ -30,7 +30,8 @@
         6,
         10,
         0,
-        3
+        3,
+        5
     ],
     "scenarioMail": [],
     "readEmail": [
@@ -52,9 +53,10 @@
         true,
         false,
         true,
-        true
+        true,
+        false
     ],
     "readSmail": [],
-    "scenario": 0,
-    "scenarioDetail": ""
+    "scenario": 3,
+    "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":4,\"malwareName\":\"Panda\",\"malwareType\":2,\"dictIndex\":3}"
 }

@@ -38,7 +38,6 @@ public class EmailManager : MonoBehaviour
 
         int i = 0;
         emailInbox = new List<EmailObject>();
-        Debug.Log(mailIndex.Length);
         foreach (int index in mailIndex)
         {
             emailInbox.Add(emailDict[index]);
@@ -126,7 +125,6 @@ public class EmailManager : MonoBehaviour
             // indexInbox.RemoveAt(0);
             emailInbox.RemoveAt(0);
         }
-        NotificationManager.SetNewNotification(new Notification("Email", "You have new email!"));
     }
 
     public static void SendScenarioMail(int index)

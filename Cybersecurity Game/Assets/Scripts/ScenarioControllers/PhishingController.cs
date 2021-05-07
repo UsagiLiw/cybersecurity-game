@@ -44,13 +44,6 @@ public class PhishingController : MonoBehaviour
             .TriggerNPCQuest(phishingSave.questTarget,
             questDetail,
             Scenario.Phishing);
-        Debug
-            .Log("Continue phishing: " +
-            phishingSave.atkType +
-            " Target: " +
-            phishingSave.questTarget +
-            " dayLeft:" +
-            phishingSave.dayLeft);
     }
 
     private string TriggerEmailCase(Target NPC, bool isPhishing)
@@ -71,11 +64,6 @@ public class PhishingController : MonoBehaviour
                 dictIndex = index,
                 isPhishing = isPhishing
             };
-        Debug
-            .Log("Phishing EMAIL triggered, Target: " +
-            NPC +
-            " dictIndex: " +
-            index);
         return JsonUtility.ToJson(phishingSave);
     }
 
@@ -93,11 +81,6 @@ public class PhishingController : MonoBehaviour
                 dictIndex = index,
                 isPhishing = isPhishing
             };
-        Debug
-            .Log("Phishing WEB triggered, Target: " +
-            NPC +
-            " dictIndex: " +
-            index);
         return JsonUtility.ToJson(phishingSave);
     }
 
@@ -112,12 +95,10 @@ public class PhishingController : MonoBehaviour
         NPCcontroller.DisableAllNPC();
         if (phishingSave.isPhishing == legit)
         {
-            Debug.Log("success");
             ScenarioManager.InvokeScenarioSuccess (saveString);
         }
         else
         {
-            Debug.Log("fail");
             ScenarioManager.InvokeScenarioFailed (saveString);
         }
     }

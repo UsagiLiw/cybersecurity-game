@@ -142,7 +142,6 @@ public class ScenarioManager : MonoBehaviour
     private Scenario ScenarioRandomizer()
     {
         int i = Random.Range(0, 100);
-        Debug.Log("Sc random result: " + i);
         for (int j = 0; j < scenarioTypes.Length; j++)
         {
             if (
@@ -150,10 +149,6 @@ public class ScenarioManager : MonoBehaviour
                 i <= scenarioTypes[j].maxProbRange
             )
             {
-                Debug
-                    .Log("Scenario " +
-                    scenarioTypes[j].scenarioType +
-                    " has occur!");
                 return scenarioTypes[j].scenario;
             }
         }
