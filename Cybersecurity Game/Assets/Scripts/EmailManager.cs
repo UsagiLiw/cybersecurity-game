@@ -135,7 +135,6 @@ public class EmailManager : MonoBehaviour
             return;
         }
         emailInbox.Add(scenarioDict[index]);
-        NotificationManager.SetNewNotification(new Notification("Email", "You have new email!"));
     }
 
     public static int SendPhishingMail()

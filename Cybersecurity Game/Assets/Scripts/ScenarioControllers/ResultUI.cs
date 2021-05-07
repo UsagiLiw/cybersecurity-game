@@ -26,6 +26,7 @@ public class ResultUI : MonoBehaviour
     private void OnDisable()
     {
         Time.timeScale = 1f;
+        GUIManager.Instance.SetActiveStatus(true, true);
         Destroy(this.gameObject);
     }
 

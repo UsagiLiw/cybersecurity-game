@@ -90,6 +90,9 @@ public class PwdAtkController : MonoBehaviour
         target = saveObject.target;
         complexity = saveObject.complexity;
         PasswordManager.PasswordHasChanged += ScenarioSuccess;
+        NotificationManager
+            .SetNewNotification(new Notification("Email",
+                "Did you just try to login?"));
     }
 
     //Return false when forcing scenario fail, return true to start scenario
@@ -119,13 +122,6 @@ public class PwdAtkController : MonoBehaviour
     {
         dayLeft = time;
         target = account;
-        Debug
-            .Log("Scenario Password Attack - Day left:" +
-            dayLeft +
-            " Security level: " +
-            complexity +
-            " Target: " +
-            target);
         switch (account)
         {
             case Accounts.all:
@@ -145,6 +141,9 @@ public class PwdAtkController : MonoBehaviour
                 target = target,
                 complexity = complexity
             };
+        NotificationManager
+            .SetNewNotification(new Notification("Email",
+                "Did you just try to login?"));
         return JsonUtility.ToJson(saveObject);
     }
 
@@ -162,10 +161,8 @@ public class PwdAtkController : MonoBehaviour
 
     private void ScenarioSuccess()
     {
-        Debug.Log("Password Scenario Success");
         if (!CheckSuccessCondition())
         {
-            Debug.Log("Condition not fulfill");
             return;
         }
 

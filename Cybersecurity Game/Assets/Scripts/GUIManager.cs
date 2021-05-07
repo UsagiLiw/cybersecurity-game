@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class GUIManager : MonoBehaviour
 {
-    private static GUIManager instance;
+    public static GUIManager Instance { get; private set; }
+
+    public GameObject timeBar;
+
+    public GameObject uiPanel;
+
     void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
         else
             Destroy(this.gameObject);
+    }
+
+    public void SetActiveStatus(bool time, bool panel)
+    {
+        timeBar.SetActive (time);
+        uiPanel.SetActive (panel);
     }
 }

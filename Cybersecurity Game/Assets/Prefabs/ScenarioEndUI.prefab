@@ -504,7 +504,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3731173191452594584}
         m_MethodName: ClickContinue
         m_Mode: 1
         m_Arguments:

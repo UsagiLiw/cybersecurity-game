@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
 
     public static event DayPassHandler DayPassed;
 
+    public GameObject endGame_Prefab;
+
     void Awake()
     {
         SaveSystem.Init();
@@ -70,8 +72,6 @@ public class GameManager : MonoBehaviour
         if (currentTimer >= dayTime)
         {
             days++;
-
-            // Debug.Log(days + " days have passed");
             currentTimer = 0;
             emailManager.SendRandomMail();
             (scenario, scenarioDetail) = ScenarioManager.Instance.CheckStatus();

@@ -40,7 +40,6 @@ public class ResultController : MonoBehaviour
 
     public void ShowSuccess(string detail, Scenario currentScenario)
     {
-        Time.timeScale = 0f;
         switch (currentScenario)
         {
             case Scenario.Password:
@@ -61,7 +60,6 @@ public class ResultController : MonoBehaviour
 
     public void ShowFailed(string detail, Scenario currentScenario)
     {
-        Time.timeScale = 0f;
         switch (currentScenario)
         {
             case Scenario.Password:
@@ -209,5 +207,7 @@ public class ResultController : MonoBehaviour
         ResultUI script = resultUI.transform.GetComponent<ResultUI>();
         script.SetResult (status, detailString, resultString);
         resultUI.transform.SetParent (GUI);
+        Time.timeScale = 0f;
+        GUIManager.Instance.SetActiveStatus(false, false);
     }
 }

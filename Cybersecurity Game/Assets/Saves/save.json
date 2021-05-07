@@ -1,8 +1,8 @@
 {
     "saveid": 0,
-    "day": 1277,
-    "budget": 175925,
-    "reputation": 53,
+    "day": 2,
+    "budget": 500,
+    "reputation": 25,
     "purchases": [
         "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
@@ -12,8 +12,6 @@
     "password1": "NewPassword",
     "password2": "NewEmail",
     "email": [
-        2,
-        3,
         0,
         1,
         6,
@@ -31,9 +29,13 @@
         10,
         0,
         3,
-        5
+        5,
+        3,
+        13
     ],
-    "scenarioMail": [],
+    "scenarioMail": [
+        0
+    ],
     "readEmail": [
         true,
         true,
@@ -45,18 +47,20 @@
         true,
         true,
         true,
-        true,
-        true,
         false,
         true,
         true,
         true,
         false,
         true,
+        true,
+        false,
         true,
         false
     ],
-    "readSmail": [],
-    "scenario": 3,
-    "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":4,\"malwareName\":\"Panda\",\"malwareType\":2,\"dictIndex\":3}"
+    "readSmail": [
+        false
+    ],
+    "scenario": 1,
+    "scenarioDetail": "{\"dayLeft\":1,\"target\":2,\"complexity\":2}"
 }

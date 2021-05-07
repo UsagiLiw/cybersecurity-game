@@ -1652,6 +1652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a654c30ed49e72243a82c433563d9618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBar: {fileID: 1904374346}
+  uiPanel: {fileID: 1112035450}
 --- !u!1 &342761638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,6 +1694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a835f76852e02714bbcc7f70efbbfb7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endGame_Prefab: {fileID: 7027895145715811331, guid: 384d364332a988846a35b33c8a4baab6,
+    type: 3}
 --- !u!4 &342761640
 Transform:
   m_ObjectHideFlags: 0
@@ -1935,11 +1939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7a4e2147feb004288e53c2f87f0ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ceo_quote: I require your attention.
-  section1_quote: I need your help!
-  section2_quote: Can you come take a look?
-  meeting_quote: Please reporting in as soon as possible.
-  it_quote: Hey, I need your feedback.
   phishingScreen_prefab: {fileID: 4987546760019188277, guid: 11dbd5cd829fd9549ba1c1ba88e578f4,
     type: 3}
   computerUI: {fileID: 402222256626882938}

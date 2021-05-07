@@ -58,7 +58,6 @@ public class ComputerManager : MonoBehaviour
      */
     public void SetActiveComputer(int index)
     {
-        Debug.Log("active com :" + index);
         activeComputer = computers[index];
     }
 
