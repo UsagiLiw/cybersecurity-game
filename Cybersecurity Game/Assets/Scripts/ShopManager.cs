@@ -43,13 +43,11 @@ public class ShopManager : MonoBehaviour
 
     public bool BuyItem(int index)
     {
-        Debug.Log("Buy item index " + index);
         items[index].isPurchased = true;
 
         // If true : Continue process , If false : skip
         if (budgetManager.ModifyBudget(-items[index].price))
         {
-            Debug.Log("Budget cut " + items[index].price);
             switch (index)
             {
                 case 0:
@@ -93,7 +91,6 @@ public class ShopManager : MonoBehaviour
     {
         if (itemArr.Length != items.Count)
         {
-            Debug.Log("Error: item size not match");
             return;
         }
         for (int i = 0; i < itemArr.Length; i++)
