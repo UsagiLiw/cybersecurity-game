@@ -21,6 +21,7 @@ public class NotificationPanelsController : MonoBehaviour
         }
         GameObject _notification = Instantiate(notificationPrefab) as GameObject;
         _notification.transform.SetParent(this.gameObject.transform, false);
+        _notification.transform.SetAsFirstSibling();
         NotificationPanel notificationPanel = _notification.gameObject.GetComponentInChildren<NotificationPanel>();
         notificationPanel.SetContent(notification);
         notificationPanels.Add(_notification);

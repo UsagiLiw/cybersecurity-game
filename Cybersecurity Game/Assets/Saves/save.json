@@ -1,8 +1,8 @@
 {
     "saveid": 0,
-    "day": 2,
-    "budget": 500,
-    "reputation": 25,
+    "day": 8,
+    "budget": 650,
+    "reputation": 54,
     "purchases": [
         "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
@@ -10,57 +10,25 @@
         "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
     ],
     "password1": "NewPassword",
-    "password2": "NewEmail",
+    "password2": "@NewEmail",
     "email": [
-        0,
         1,
-        6,
         4,
-        6,
-        4,
-        3,
-        0,
-        2,
-        2,
-        10,
-        0,
-        6,
-        6,
-        10,
-        0,
-        3,
-        5,
-        3,
-        13
+        12,
+        13,
+        1,
+        4
     ],
-    "scenarioMail": [
-        0
-    ],
+    "scenarioMail": [],
     "readEmail": [
         true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
         false,
-        true,
-        true,
-        true,
         false,
-        true,
-        true,
         false,
         true,
         false
     ],
-    "readSmail": [
-        false
-    ],
-    "scenario": 1,
-    "scenarioDetail": "{\"dayLeft\":1,\"target\":2,\"complexity\":2}"
+    "readSmail": [],
+    "scenario": 3,
+    "scenarioDetail": "{\"dayLeft\":3,\"questTarget\":2,\"malwareName\":\"Redyms\",\"malwareType\":0,\"dictIndex\":0}"
 }
