@@ -105,6 +105,7 @@ public class ResultController : MonoBehaviour
                     .ModifyReputation(-password_Rep, failMultiplier);
         }
         string detailString =
+            "Tip: " +
             tip +
             "\nAttack target: " +
             account +
@@ -143,7 +144,8 @@ public class ResultController : MonoBehaviour
                     .Instance
                     .ModifyReputation(-phishing_Rep, failMultiplier);
         }
-        string detailString = tip + " \nThe target is a " + save.isPhishing;
+        string detailString =
+            "Tip: " + tip + " \nThe target is a " + save.isPhishing;
         GenerateResultScreen (success, detailString, repTotal);
     }
 
@@ -185,6 +187,7 @@ public class ResultController : MonoBehaviour
                     .ModifyReputation(malware_Rep, failMultiplier);
         }
         string detailString =
+            "Tip: " +
             tip +
             "\nMalware name: " +
             save.malwareName +
@@ -205,9 +208,6 @@ public class ResultController : MonoBehaviour
             "\t\tBudget: " +
             BudgetManager.income +
             "/day";
-
-        Debug.Log (detailString);
-        Debug.Log (resultString);
 
         GameObject resultUI = Instantiate(result_Prefab) as GameObject;
         ResultUI script = resultUI.transform.GetComponent<ResultUI>();
