@@ -8,6 +8,8 @@ public class ResultController : MonoBehaviour
 
     public GameObject result_Prefab;
 
+    public Transform GUI;
+
     public string[] passwordTip;
 
     public string[] phishingTip_Email;
@@ -34,15 +36,6 @@ public class ResultController : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Time.timeScale = 1f;
-            Debug.Log("Resume Game");
-        }
     }
 
     public void ShowSuccess(string detail, Scenario currentScenario)
@@ -115,10 +108,10 @@ public class ResultController : MonoBehaviour
             tip +
             "\nAttack target: " +
             account +
-            "\tYour password strength: " +
+            "\t\tYour password strength: " +
             score;
 
-        GenerateResultScreen (detailString, repTotal);
+        GenerateResultScreen (success, detailString, repTotal);
     }
 
     private void PhishingScenario(string str, bool success)
@@ -151,7 +144,7 @@ public class ResultController : MonoBehaviour
                     .ModifyReputation(-phishing_Rep, failMultiplier);
         }
         string detailString = tip + " \nThe target is a " + save.isPhishing;
-        GenerateResultScreen (detailString, repTotal);
+        GenerateResultScreen (success, detailString, repTotal);
     }
 
     private void MalwareScenario(string str, bool success)
@@ -195,24 +188,30 @@ public class ResultController : MonoBehaviour
             tip +
             "\nMalware name: " +
             save.malwareName +
-            "\tMalware type: " +
+            "\t\tMalware type: " +
             type;
-        GenerateResultScreen (detailString, repTotal);
+        GenerateResultScreen (success, detailString, repTotal);
     }
 
-    private void GenerateResultScreen(string detailString, int repTotal)
+    private void GenerateResultScreen(
+        bool status,
+        string detailString,
+        int repTotal
+    )
     {
         string resultString =
             "Your current Reputation: " +
             repTotal +
-            " Budget: " +
-            BudgetManager.currentBudget +
+            "\t\tBudget: " +
+            BudgetManager.income +
             "/day";
 
         Debug.Log (detailString);
         Debug.Log (resultString);
 
         GameObject resultUI = Instantiate(result_Prefab) as GameObject;
-        
+        ResultUI script = resultUI.transform.GetComponent<ResultUI>();
+        script.SetResult (status, detailString, resultString);
+        resultUI.transform.SetParent (GUI);
     }
 }

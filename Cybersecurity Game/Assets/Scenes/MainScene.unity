@@ -5585,15 +5585,15 @@ MonoBehaviour:
   - scenarioType: PasswordAttack
     scenario: 1
     minProbRange: 0
-    maxProbRange: 7
+    maxProbRange: 30
   - scenarioType: Phishing
     scenario: 2
-    minProbRange: 8
-    maxProbRange: 9
+    minProbRange: 31
+    maxProbRange: 60
   - scenarioType: Malware
     scenario: 3
-    minProbRange: 10
-    maxProbRange: 100
+    minProbRange: 61
+    maxProbRange: 99
 --- !u!4 &1163238640
 Transform:
   m_ObjectHideFlags: 0
@@ -5632,7 +5632,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f976518946894a4cac79d88daf3e162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  result_Prefab: {fileID: 0}
+  result_Prefab: {fileID: 4836707476877687914, guid: aed3a07618f12f34084e3f00e95c7d26,
+    type: 3}
+  GUI: {fileID: 305857904}
   passwordTip:
   - Change your password regularly
   - Don't use real word
@@ -5669,13 +5671,19 @@ MonoBehaviour:
   - Look at the spelling
   - Red is not a good sign
   - Yagoo.com is legit, Yag00.com is a scam, be aware
-  malwareTip_Virus: []
-  malwareTip_Trojan: []
-  malwareTip_Adware: []
-  failMultiplier: 0
-  password_Rep: 0
-  phishing_Rep: 0
-  malware_Rep: 0
+  malwareTip_Virus:
+  - bruh
+  - bruh
+  malwareTip_Trojan:
+  - bruh
+  - bruh
+  malwareTip_Adware:
+  - bruh
+  - bruh
+  failMultiplier: 1.2
+  password_Rep: 5
+  phishing_Rep: 10
+  malware_Rep: 15
 --- !u!114 &1163238643
 MonoBehaviour:
   m_ObjectHideFlags: 0
