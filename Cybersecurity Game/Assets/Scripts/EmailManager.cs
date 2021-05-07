@@ -126,6 +126,7 @@ public class EmailManager : MonoBehaviour
             // indexInbox.RemoveAt(0);
             emailInbox.RemoveAt(0);
         }
+        NotificationManager.SetNewNotification(new Notification("Email", "You have new email!"));
     }
 
     public static void SendScenarioMail(int index)
@@ -136,12 +137,14 @@ public class EmailManager : MonoBehaviour
             return;
         }
         emailInbox.Add(scenarioDict[index]);
+        NotificationManager.SetNewNotification(new Notification("Email", "You have new email!"));
     }
 
     public static int SendPhishingMail()
     {
         int index = GetRandomPhishingMail();
         emailInbox.Add(scenarioDict[index]);
+        NotificationManager.SetNewNotification(new Notification("Email", "You have new email!"));
         return index;
     }
 
