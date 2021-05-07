@@ -211,5 +211,8 @@ public class ResultController : MonoBehaviour
 
         Debug.Log (detailString);
         Debug.Log (resultString);
+
+        GameObject resultUI = Instantiate(result_Prefab) as GameObject;
+        
     }
 }

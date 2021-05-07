@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6721290279831506126}
   - component: {fileID: 4524793368749618793}
   m_Layer: 5
-  m_Name: Content
+  m_Name: Tips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 3065248052928705481}
   - component: {fileID: 6220264276340743586}
   m_Layer: 5
-  m_Name: Tips
+  m_Name: Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 3154926537705662135}
   - component: {fileID: 7751074999239289814}
   m_Layer: 5
-  m_Name: Tips
+  m_Name: Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -581,7 +581,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1542909844741033422}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7111955570185927944}
+        m_MethodName: ClickContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7823654586159353189
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +682,7 @@ GameObject:
   - component: {fileID: 7823654586194524221}
   - component: {fileID: 7823654586194524211}
   - component: {fileID: 7823654586194524220}
+  - component: {fileID: 7111955570185927944}
   m_Layer: 5
   m_Name: ScenarioEndUI
   m_TagString: Untagged
@@ -738,6 +750,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7111955570185927944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7823654586194524222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b36541d9f9360419ce60567687ad4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  success: {fileID: 7823654587890579465}
+  tips_S: {fileID: 1025538197159653690}
+  result_S: {fileID: 7751074999239289814}
+  fail: {fileID: 8083375890991134536}
+  tips_F: {fileID: 4524793368749618793}
+  result_F: {fileID: 6220264276340743586}
 --- !u!1 &7823654587890579465
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +858,7 @@ GameObject:
   - component: {fileID: 5856843468619894256}
   - component: {fileID: 1025538197159653690}
   m_Layer: 5
-  m_Name: Content
+  m_Name: Tips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
