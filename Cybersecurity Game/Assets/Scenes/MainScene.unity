@@ -5672,14 +5672,30 @@ MonoBehaviour:
   - Red is not a good sign
   - Yagoo.com is legit, Yag00.com is a scam, be aware
   malwareTip_Virus:
-  - bruh
-  - bruh
+  - Run antivirus regularly
+  - Have you ever notice some changes in your computer?
+  - Computer act slowler than usual
+  - Not responding is not a good sign
+  - Is your antivirus still there?
+  - Computer might slow down a bit
+  - Icon might change the way it not supposed to be
+  - Try check what is running in the background
+  - 100% CPU process is not an act of god
+  - If something isn't right, it means something bad happen.
+  - Error popup keep appearing
   malwareTip_Trojan:
-  - bruh
-  - bruh
+  - Strange software appear on desktop
+  - Check the internet traffic, isn't it strange?
+  - Unuseable application or software
+  - Sometimes, your computer may works on its own
+  - Think before you click
+  - Run antivirus regularly
   malwareTip_Adware:
-  - bruh
-  - bruh
+  - Advertisement show up in place they shouldn't be
+  - Your web browser's homepage has changed
+  - Maybe you should check your file explorer
+  - Web browser is extrememly slow
+  - Run antivirus regularly
   failMultiplier: 1.2
   password_Rep: 5
   phishing_Rep: 10
