@@ -1,16 +1,16 @@
 {
     "saveid": 0,
-    "day": 12,
+    "day": 16,
     "budget": 750,
-    "reputation": 100,
+    "reputation": 83,
     "purchases": [
-        "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
-        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
+        "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":3}",
+        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":3}",
         "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
     ],
     "password1": "ShopPassword",
-    "password2": "NewPassword",
+    "password2": "SuperNew1@2",
     "email": [
         1,
         4,
@@ -23,7 +23,10 @@
         2,
         2,
         3,
-        14
+        14,
+        15,
+        8,
+        5
     ],
     "scenarioMail": [],
     "readEmail": [
@@ -33,10 +36,13 @@
         false,
         false,
         false,
+        true,
         false,
         false,
         false,
         false,
+        false,
+        true,
         false,
         false
     ],

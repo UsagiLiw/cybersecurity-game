@@ -21,7 +21,6 @@ public class PasswordManager : MonoBehaviour
                 if (PasswordHasChanged != null)
                 {
                     PasswordHasChanged.Invoke();
-                    Debug.Log("Changed shop password");
                 }
                 break;
             case 2:
@@ -29,7 +28,6 @@ public class PasswordManager : MonoBehaviour
                 if (PasswordHasChanged != null)
                 {
                     PasswordHasChanged.Invoke();
-                    Debug.Log("Changed email password");
                 }
                 break;
             default:

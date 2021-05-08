@@ -114,7 +114,7 @@ public class ResultController : MonoBehaviour
         PhishingSave save = JsonUtility.FromJson<PhishingSave>(str);
         AtkTypes atkType = save.atkType;
         string tip = "";
-        string isPhishing = save.isPhishing ? "Legit" : "Phishing";
+        string isPhishing = save.isPhishing ? "Phishing" : "Legit";
         int repTotal;
         switch (atkType)
         {
@@ -139,8 +139,7 @@ public class ResultController : MonoBehaviour
                     .Instance
                     .ModifyReputation(-phishing_Rep, failMultiplier);
         }
-        string detailString =
-            "Tip: " + tip + " \nThe target is " + isPhishing;
+        string detailString = "Tip: " + tip + " \nThe target is " + isPhishing;
         GenerateResultScreen (success, detailString, repTotal);
     }
 
