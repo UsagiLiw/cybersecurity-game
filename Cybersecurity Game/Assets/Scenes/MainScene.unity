@@ -5637,10 +5637,10 @@ MonoBehaviour:
   - scenarioType: Phishing
     scenario: 2
     minProbRange: 31
-    maxProbRange: 60
+    maxProbRange: 70
   - scenarioType: Malware
     scenario: 3
-    minProbRange: 61
+    minProbRange: 71
     maxProbRange: 99
 --- !u!4 &1163238640
 Transform:
@@ -5744,7 +5744,7 @@ MonoBehaviour:
   - Maybe you should check your file explorer
   - Web browser is extrememly slow
   - Run antivirus regularly
-  failMultiplier: 1.2
+  failMultiplier: 1.5
   password_Rep: 5
   phishing_Rep: 10
   malware_Rep: 15
