@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+
+        FindObjectOfType<AudioManager>().Play("bgm_gameplay");
     }
 
     // Start is called before the first frame update

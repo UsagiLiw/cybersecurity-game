@@ -1,14 +1,25 @@
 {
     "saveid": 0,
-    "day": 0,
-    "budget": 50,
-    "reputation": 30,
-    "purchases": [],
-    "password1": "",
-    "password2": "",
-    "email": [],
+    "day": 8,
+    "budget": 725,
+    "reputation": 81,
+    "purchases": [
+        "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
+        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
+        "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
+        "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
+    ],
+    "password1": "654321",
+    "password2": "Mcgyver!9",
+    "email": [
+        3,
+        11
+    ],
     "scenarioMail": [],
-    "readEmail": [],
+    "readEmail": [
+        true,
+        true
+    ],
     "readSmail": [],
     "scenario": 0,
     "scenarioDetail": ""
