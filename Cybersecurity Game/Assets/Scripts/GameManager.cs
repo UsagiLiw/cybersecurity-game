@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
 
         emailManager.SetDictionaries();
         LoadData();
+        SceneManager.LoadScene("ITRoom");
     }
 
     // Update is called once per frame
