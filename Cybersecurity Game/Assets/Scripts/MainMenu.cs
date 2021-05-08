@@ -5,14 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject continue_Button;
+
     private void Awake()
     {
         SaveSystem.Init();
     }
 
+    private void Start()
+    {
+        string saveString = SaveSystem.Load();
+        if (saveString == null) continue_Button.SetActive(false);
+    }
+
     public void NewGame()
     {
-        Debug.Log("Start new game");
         SaveObject saveObject =
             new SaveObject { day = 0, budget = 50, reputation = 30 };
         string json = JsonUtility.ToJson(saveObject, true);
@@ -22,14 +29,12 @@ public class MainMenu : MonoBehaviour
 
     public void ContinueGame()
     {
-        Debug.Log("Continue game");
         string saveString = SaveSystem.Load();
         if (saveString != null) SceneManager.LoadScene("MainScene");
     }
 
     public void QuitGame()
     {
-        Debug.Log("QUIT!");
         Application.Quit();
     }
 }

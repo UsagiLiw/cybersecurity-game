@@ -33,8 +33,6 @@ public class GameManager : MonoBehaviour
 
     public static event DayPassHandler DayPassed;
 
-    public GameObject endGame_Prefab;
-
     void Awake()
     {
         if (SingletonGameManager != null)
@@ -177,5 +175,17 @@ public class GameManager : MonoBehaviour
     private void SetCurrentTime(float time)
     {
         currentTimer = time;
+    }
+
+    public static void BackToMainMenu(bool save)
+    {
+        if(save) InvokeSaveData();
+
+        var objects = GameObject.FindObjectsOfType(typeof(GameObject));
+        foreach(GameObject o in objects)
+        {
+            Destroy(o.gameObject);
+        }
+        SceneManager.LoadScene("Menu");
     }
 }

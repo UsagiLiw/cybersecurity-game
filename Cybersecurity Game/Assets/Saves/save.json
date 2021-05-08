@@ -1,23 +1,14 @@
 {
     "saveid": 0,
-    "day": 1,
-    "budget": 2200,
+    "day": 0,
+    "budget": 50,
     "reputation": 30,
-    "purchases": [
-        "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
-        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":0}",
-        "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
-        "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
-    ],
-    "password1": "ShopPasswrod",
+    "purchases": [],
+    "password1": "",
     "password2": "",
-    "email": [
-        15
-    ],
+    "email": [],
     "scenarioMail": [],
-    "readEmail": [
-        false
-    ],
+    "readEmail": [],
     "readSmail": [],
     "scenario": 0,
     "scenarioDetail": ""
