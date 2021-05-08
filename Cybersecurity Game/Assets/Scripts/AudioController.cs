@@ -6,6 +6,7 @@ public class AudioController : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         AM = FindObjectOfType<AudioManager>();
     }
 
