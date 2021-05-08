@@ -25,6 +25,8 @@ public class NotificationPanelsController : MonoBehaviour
         NotificationPanel notificationPanel = _notification.gameObject.GetComponentInChildren<NotificationPanel>();
         notificationPanel.SetContent(notification);
         notificationPanels.Add(_notification);
+
+        FindObjectOfType<AudioManager>().Play("sfx_notification");
     }
 
     private void OnDisable()
