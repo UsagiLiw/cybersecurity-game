@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     private ShopManager shopManager;
 
-    public static float dayTime = 120f; //Time for 1 day in game (seconds)
+    public static float dayTime = 60f; //Time for 1 day in game (seconds)
 
     public static float currentTimer;
 

@@ -89,11 +89,11 @@ public class PhishingController : MonoBehaviour
         return phishingSave;
     }
 
-    public static void CheckScenarioCondition(bool legit)
+    public static void CheckScenarioCondition(bool isPhishing)
     {
         string saveString = JsonUtility.ToJson(phishingSave);
         NPCcontroller.DisableAllNPC();
-        if (phishingSave.isPhishing == legit)
+        if (phishingSave.isPhishing == isPhishing)
         {
             ScenarioManager.InvokeScenarioSuccess (saveString);
         }
