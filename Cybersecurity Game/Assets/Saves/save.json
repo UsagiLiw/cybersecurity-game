@@ -1,6 +1,6 @@
 {
     "saveid": 0,
-    "day": 16,
+    "day": 17,
     "budget": 750,
     "reputation": 83,
     "purchases": [
@@ -26,7 +26,8 @@
         14,
         15,
         8,
-        5
+        5,
+        11
     ],
     "scenarioMail": [],
     "readEmail": [
@@ -44,9 +45,10 @@
         false,
         true,
         false,
+        false,
         false
     ],
     "readSmail": [],
-    "scenario": 0,
-    "scenarioDetail": ""
+    "scenario": 3,
+    "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":1,\"malwareName\":\"Appearch\",\"malwareType\":1,\"dictIndex\":15}"
 }

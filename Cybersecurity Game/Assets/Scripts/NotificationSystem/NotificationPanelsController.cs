@@ -10,6 +10,13 @@ public class NotificationPanelsController : MonoBehaviour
     private void OnEnable()
     {
         NotificationManager.NewNotification += InstantiateNotification;
+
+        ClearInstance();
+        foreach(Notification n in NotificationManager.notifications)
+        {
+
+            InstantiateNotification(n);
+        }
     }
 
     private void InstantiateNotification(Notification notification)
@@ -25,8 +32,14 @@ public class NotificationPanelsController : MonoBehaviour
         NotificationPanel notificationPanel = _notification.gameObject.GetComponentInChildren<NotificationPanel>();
         notificationPanel.SetContent(notification);
         notificationPanels.Add(_notification);
+    }
 
-        FindObjectOfType<AudioManager>().Play("sfx_notification");
+    private void ClearInstance()
+    {
+        foreach (GameObject go in notificationPanels)
+        {
+            Destroy(go);
+        }
     }
 
     private void OnDisable()

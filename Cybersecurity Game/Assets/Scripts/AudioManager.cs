@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        //Persist through the game 
+        //Persist throughout the game 
         DontDestroyOnLoad(gameObject);
 
         // Initialize sounds in array to create Audio Source components
