@@ -1,18 +1,23 @@
 {
     "saveid": 0,
+<<<<<<< Updated upstream
     "day": 17,
     "budget": 750,
     "reputation": 83,
+=======
+    "day": 21,
+    "budget": 1000,
+    "reputation": 91,
+>>>>>>> Stashed changes
     "purchases": [
-        "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":3}",
-        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":3}",
+        "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":5}",
+        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":5}",
         "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
     ],
     "password1": "ShopPassword",
     "password2": "SuperNew1@2",
     "email": [
-        1,
         4,
         9,
         13,
@@ -27,11 +32,20 @@
         15,
         8,
         5,
+<<<<<<< Updated upstream
         11
+=======
+        0,
+        13,
+        7,
+        5,
+        14
     ],
-    "scenarioMail": [],
+    "scenarioMail": [
+        4
+>>>>>>> Stashed changes
+    ],
     "readEmail": [
-        true,
         false,
         false,
         false,
@@ -46,9 +60,23 @@
         true,
         false,
         false,
+<<<<<<< Updated upstream
         false
     ],
     "readSmail": [],
     "scenario": 3,
     "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":1,\"malwareName\":\"Appearch\",\"malwareType\":1,\"dictIndex\":15}"
+=======
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    "readSmail": [
+        false
+    ],
+    "scenario": 3,
+    "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":3,\"malwareName\":\"Emotet\",\"malwareType\":2,\"dictIndex\":5}"
+>>>>>>> Stashed changes
 }
