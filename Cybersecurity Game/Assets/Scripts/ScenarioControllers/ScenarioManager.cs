@@ -202,37 +202,37 @@ public class ScenarioManager : MonoBehaviour
 
     public static void InvokeScenarioSuccess(string result)
     {
+        InvokeScenarioEnded();
         NPCcontroller.DisableAllNPC();
         ResultController.Instance.ShowSuccess (result, onGoingScenario);
         onGoingScenario = Scenario.None;
         underAttack = false;
         EmailManager.ClearScenarioMails();
         jsonDetail = null;
-        InvokeScenarioEnded();
         GameManager.InvokeSaveData();
     }
 
     public static void InvokeScenarioFailed(string result)
     {
+        InvokeScenarioEnded();
         NPCcontroller.DisableAllNPC();
         ResultController.Instance.ShowFailed (result, onGoingScenario);
         onGoingScenario = Scenario.None;
         underAttack = false;
         EmailManager.ClearScenarioMails();
         jsonDetail = null;
-        InvokeScenarioEnded();
         GameManager.InvokeSaveData();
     }
 
     public static void InvokeScenarioFailed(string result, Scenario currentSce)
     {
+        InvokeScenarioEnded();
         NPCcontroller.DisableAllNPC();
         ResultController.Instance.ShowFailed (result, currentSce);
         onGoingScenario = Scenario.None;
         underAttack = false;
         EmailManager.ClearScenarioMails();
         jsonDetail = null;
-        InvokeScenarioEnded();
         GameManager.InvokeSaveData();
     }
 

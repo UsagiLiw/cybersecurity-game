@@ -23,13 +23,10 @@ public class Shop : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(PasswordManager.password1))
         {
-            // OpenPage (login);
             OpenShopLogin();
-            Debug.Log("to shop login page");
         }
         else
         {
-            Debug.Log("To shop register page");
             OpenPage (register);
         }
     }
@@ -53,13 +50,11 @@ public class Shop : MonoBehaviour
 
         if (login_passwordInput.text.Equals(PasswordManager.password1))
         {
-            Debug.Log("Correct Password!");
             incorrectPasswordText.SetActive(false);
             OpenPage (home);
         }
         else
         {
-            Debug.Log("Wrong Password!");
             incorrectPasswordText.SetActive(true);
         }
     }
@@ -87,7 +82,6 @@ public class Shop : MonoBehaviour
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(false);
-            Debug.Log (child);
         }
     }
 
@@ -95,19 +89,4 @@ public class Shop : MonoBehaviour
     {
         rememberPwd = value;
     }
-    // private void OpenShop()
-    // {
-    //     string stringInput = "bruh";
-
-    //     homePage.SetActive(false);
-    //     if (passwordManager.CheckPassword(1, stringInput))
-    //     {
-    //         shop.SetActive(true);
-    //     }
-    //     else
-    //     {
-    //         Debug.Log("Wrong password");
-    //         //do something here
-    //     }
-    // }
 }

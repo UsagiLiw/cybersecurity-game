@@ -21,6 +21,7 @@ public class ResultUI : MonoBehaviour
     {
         success.SetActive(false);
         fail.SetActive(false);
+        GUIManager.Instance.SetActiveStatus(false, false);
     }
 
     private void OnDisable()

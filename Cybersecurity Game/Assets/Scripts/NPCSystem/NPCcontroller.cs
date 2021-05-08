@@ -192,7 +192,6 @@ public class NPCcontroller : MonoBehaviour
 
     private void CreateMalwareScreen()
     {
-        Debug.Log("Start malware screen");
         computerUI.StartComputer((int) currentTarget);
     }
 

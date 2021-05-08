@@ -33,11 +33,8 @@ public class GameManager : MonoBehaviour
 
     public static event DayPassHandler DayPassed;
 
-    public GameObject endGame_Prefab;
-
     void Awake()
     {
-        SaveSystem.Init();
         if (SingletonGameManager != null)
         {
             // There is another GameManager already existed
@@ -63,6 +60,7 @@ public class GameManager : MonoBehaviour
 
         emailManager.SetDictionaries();
         LoadData();
+        SceneManager.LoadScene("ITRoom");
     }
 
     // Update is called once per frame
@@ -178,5 +176,17 @@ public class GameManager : MonoBehaviour
     private void SetCurrentTime(float time)
     {
         currentTimer = time;
+    }
+
+    public static void BackToMainMenu(bool save)
+    {
+        if(save) InvokeSaveData();
+
+        var objects = GameObject.FindObjectsOfType(typeof(GameObject));
+        foreach(GameObject o in objects)
+        {
+            Destroy(o.gameObject);
+        }
+        SceneManager.LoadScene("Menu");
     }
 }

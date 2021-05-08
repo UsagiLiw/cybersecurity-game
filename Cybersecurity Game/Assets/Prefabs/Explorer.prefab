@@ -118,7 +118,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4339742650211434713}
+      - m_Target: {fileID: 0}
         m_MethodName: CloseExplorer
         m_Mode: 1
         m_Arguments:
@@ -365,7 +365,6 @@ GameObject:
   - component: {fileID: 6295657028176249298}
   - component: {fileID: 8683623505286007211}
   - component: {fileID: 6442126031222124561}
-  - component: {fileID: 4339742650211434713}
   - component: {fileID: 8305132642212277457}
   m_Layer: 5
   m_Name: Explorer
@@ -434,18 +433,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4339742650211434713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8318824064968803358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7dc510e0df54648bc8d59bc3e750f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8305132642212277457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,7 +451,6 @@ MonoBehaviour:
   drive2_text: {fileID: 7319154780862719213}
   drive3_bar: {fileID: 1897644621926969382}
   drive3_text: {fileID: 4686719253786576313}
-  computerID: 0
 --- !u!1001 &3328078902073299575
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,6 +19,12 @@ public class PwdAtkController : MonoBehaviour
 
     private static string emailPassword;
 
+    private void Start()
+    {
+        shopPassword = PasswordManager.password1;
+        emailPassword = PasswordManager.password2;
+    }
+
     public string CheckVulnerability()
     {
         shopPassword = PasswordManager.password1;

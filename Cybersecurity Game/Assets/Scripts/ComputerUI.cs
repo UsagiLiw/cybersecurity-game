@@ -94,12 +94,6 @@ public class ComputerUI : MonoBehaviour
             malwareReportPage.SetActive(false);
         StopAllCoroutines();
         notRespond.SetActive(false);
-
-        if (ScenarioManager.onGoingScenario == Scenario.Malware)
-        {
-            Debug.Log("bruh");
-        }
-
         CheckMaliciousState();
     }
 
@@ -134,7 +128,6 @@ public class ComputerUI : MonoBehaviour
     {
         if (ComputerManager.activeComputer.isSlow == true)
         {
-            Debug.Log("Com is slow");
             StartCoroutine(ActiveDelay(app, 3));
         }
         else
@@ -187,7 +180,6 @@ public class ComputerUI : MonoBehaviour
                 .GetComponent<Text>();
         for (; ; )
         {
-            Debug.Log("new bug screen");
             float time = Random.Range(12f, 30f);
             int quoteIndex = Random.Range(0, bugQuote.Length);
             yield return new WaitForSeconds(time);
@@ -228,7 +220,6 @@ public class ComputerUI : MonoBehaviour
 
     private void ShowTrojanIcon()
     {
-        Debug.Log("Show trojan ");
         GameObject trojan = Instantiate(trojan_prefab) as GameObject;
         trojan.transform.SetParent(software1.transform, false);
         trojan.transform.SetAsLastSibling();

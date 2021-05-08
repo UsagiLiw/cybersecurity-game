@@ -385,7 +385,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Task Success
+  m_Text: Task Failed
 --- !u!1 &3731812639397121423
 GameObject:
   m_ObjectHideFlags: 0

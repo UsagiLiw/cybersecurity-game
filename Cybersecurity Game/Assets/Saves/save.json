@@ -1,66 +1,15 @@
 {
     "saveid": 0,
-    "day": 2,
-    "budget": 500,
-    "reputation": 25,
-    "purchases": [
-        "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
-        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
-        "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
-        "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
-    ],
-    "password1": "NewPassword",
-    "password2": "NewEmail",
-    "email": [
-        0,
-        1,
-        6,
-        4,
-        6,
-        4,
-        3,
-        0,
-        2,
-        2,
-        10,
-        0,
-        6,
-        6,
-        10,
-        0,
-        3,
-        5,
-        3,
-        13
-    ],
-    "scenarioMail": [
-        0
-    ],
-    "readEmail": [
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        false,
-        true,
-        true,
-        true,
-        false,
-        true,
-        true,
-        false,
-        true,
-        false
-    ],
-    "readSmail": [
-        false
-    ],
-    "scenario": 1,
-    "scenarioDetail": "{\"dayLeft\":1,\"target\":2,\"complexity\":2}"
+    "day": 0,
+    "budget": 50,
+    "reputation": 30,
+    "purchases": [],
+    "password1": "",
+    "password2": "",
+    "email": [],
+    "scenarioMail": [],
+    "readEmail": [],
+    "readSmail": [],
+    "scenario": 0,
+    "scenarioDetail": ""
 }

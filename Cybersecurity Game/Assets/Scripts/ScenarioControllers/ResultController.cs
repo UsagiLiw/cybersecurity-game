@@ -206,8 +206,7 @@ public class ResultController : MonoBehaviour
         GameObject resultUI = Instantiate(result_Prefab) as GameObject;
         ResultUI script = resultUI.transform.GetComponent<ResultUI>();
         script.SetResult (status, detailString, resultString);
-        resultUI.transform.SetParent (GUI);
+        resultUI.transform.SetParent (GUI,false);
         Time.timeScale = 0f;
-        GUIManager.Instance.SetActiveStatus(false, false);
     }
 }
