@@ -5457,6 +5457,36 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5700127932976841873, guid: 01af178d36ea5e84e8e9317fb8843fbf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700127932976841873, guid: 01af178d36ea5e84e8e9317fb8843fbf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700127932976841873, guid: 01af178d36ea5e84e8e9317fb8843fbf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1874711340}
+    - target: {fileID: 5700127932976841873, guid: 01af178d36ea5e84e8e9317fb8843fbf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700127932976841873, guid: 01af178d36ea5e84e8e9317fb8843fbf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DeactivateMySelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700127932976841873, guid: 01af178d36ea5e84e8e9317fb8843fbf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7479514719928508613, guid: 01af178d36ea5e84e8e9317fb8843fbf,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -8134,6 +8164,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1147299793}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1874711340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874711339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9663597245d884e86054ed926c79c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1904374346
 GameObject:
   m_ObjectHideFlags: 0
