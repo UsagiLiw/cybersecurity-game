@@ -1,82 +1,28 @@
 {
     "saveid": 0,
-<<<<<<< Updated upstream
-    "day": 17,
+    "day": 18,
     "budget": 750,
     "reputation": 83,
-=======
-    "day": 21,
-    "budget": 1000,
-    "reputation": 91,
->>>>>>> Stashed changes
     "purchases": [
-        "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":5}",
-        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":5}",
+        "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
+        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
     ],
     "password1": "ShopPassword",
     "password2": "SuperNew1@2",
     "email": [
-        4,
-        9,
-        13,
-        6,
-        3,
-        15,
-        4,
-        2,
-        2,
-        3,
-        14,
-        15,
-        8,
-        5,
-<<<<<<< Updated upstream
-        11
-=======
-        0,
-        13,
-        7,
-        5,
-        14
+        9
     ],
     "scenarioMail": [
-        4
->>>>>>> Stashed changes
+        0
     ],
     "readEmail": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        true,
-        false,
-        false,
-        false,
-        false,
-        false,
-        true,
-        false,
-        false,
-<<<<<<< Updated upstream
-        false
-    ],
-    "readSmail": [],
-    "scenario": 3,
-    "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":1,\"malwareName\":\"Appearch\",\"malwareType\":1,\"dictIndex\":15}"
-=======
-        false,
-        false,
-        false,
-        false,
         false
     ],
     "readSmail": [
         false
     ],
-    "scenario": 3,
-    "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":3,\"malwareName\":\"Emotet\",\"malwareType\":2,\"dictIndex\":5}"
->>>>>>> Stashed changes
+    "scenario": 1,
+    "scenarioDetail": "{\"dayLeft\":1,\"target\":2,\"complexity\":3}"
 }
