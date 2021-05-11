@@ -19,6 +19,8 @@ public class ScenarioManager : MonoBehaviour
 
     public static Scenario onGoingScenario;
 
+    public static Scenario upcomingScenario;
+
     public static bool underAttack;
 
     public static string jsonDetail;
@@ -51,7 +53,12 @@ public class ScenarioManager : MonoBehaviour
         Scenario index = 0;
         if (!underAttack)
         {
-            index = ScenarioRandomizer();
+            if (upcomingScenario != Scenario.None)
+                index = upcomingScenario;
+            else
+                index = ScenarioRandomizer();
+
+            upcomingScenario = ScenarioRandomizer();
             underAttack = true;
             onGoingScenario = index;
             return TriggerScenario(index);
@@ -62,8 +69,13 @@ public class ScenarioManager : MonoBehaviour
         }
     }
 
-    public void SetScenarioState(Scenario currentScenario, string detail)
+    public void SetScenarioState(
+        Scenario currentScenario,
+        Scenario upcomingSce,
+        string detail
+    )
     {
+        upcomingScenario = upcomingSce;
         if (currentScenario != Scenario.None && String.IsNullOrEmpty(detail))
         {
             Debug.Log("Warning, On going scenario but detail is empty");
@@ -88,6 +100,10 @@ public class ScenarioManager : MonoBehaviour
                 phishingController.SetPhishingScenarioState (detail);
                 break;
             case Scenario.Malware:
+                underAttack = true;
+                malwareController.SetMalwareScenarioState (detail);
+                break;
+            case Scenario.Ransom:
                 underAttack = true;
                 malwareController.SetMalwareScenarioState (detail);
                 break;
@@ -153,7 +169,6 @@ public class ScenarioManager : MonoBehaviour
             }
         }
         return 0;
-        // throw new InvalidOperationException("Error in ScenarioRandomizer, random process failed");
     }
 
     private (Scenario, string) TriggerScenario(Scenario chosenScenario)

@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
         string currentPassword1 = PasswordManager.password1;
         string currentPassword2 = PasswordManager.password2;
         string[] purchaseArr = ShopManager.Instance.SendSaveData();
-
+        Scenario upcoming = ScenarioManager.upcomingScenario;
         SaveObject saveObject =
             new SaveObject {
                 day = days,
@@ -103,7 +103,8 @@ public class GameManager : MonoBehaviour
                 readEmail = readMail,
                 readSmail = readSce,
                 scenario = scenario,
-                scenarioDetail = scenarioDetail
+                scenarioDetail = scenarioDetail,
+                upcomingSce = upcoming
             };
         string json = JsonUtility.ToJson(saveObject, true);
         SaveSystem.Save (json);
@@ -120,7 +121,7 @@ public class GameManager : MonoBehaviour
         scenario = ScenarioManager.onGoingScenario;
         scenarioDetail = ScenarioManager.jsonDetail;
         string[] purchaseArr = ShopManager.Instance.SendSaveData();
-
+        Scenario upcoming = ScenarioManager.upcomingScenario;
         SaveObject saveObject =
             new SaveObject {
                 day = days,
@@ -134,7 +135,8 @@ public class GameManager : MonoBehaviour
                 readEmail = readMail,
                 readSmail = readSce,
                 scenario = scenario,
-                scenarioDetail = scenarioDetail
+                scenarioDetail = scenarioDetail,
+                upcomingSce = upcoming
             };
         string json = JsonUtility.ToJson(saveObject, true);
         SaveSystem.Save (json);
@@ -162,6 +164,7 @@ public class GameManager : MonoBehaviour
             ScenarioManager
                 .Instance
                 .SetScenarioState(saveObject.scenario,
+                saveObject.upcomingSce,
                 saveObject.scenarioDetail);
         }
         else
