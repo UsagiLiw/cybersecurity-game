@@ -1,30 +1,25 @@
 {
     "saveid": 0,
-    "day": 21,
-    "budget": 550,
-    "reputation": 86,
+    "day": 1,
+    "budget": 50,
+    "reputation": 30,
     "purchases": [
         "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
-        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":1}",
+        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
     ],
-    "password1": "ShopPassword",
-    "password2": "SuperNew1@2",
+    "password1": "",
+    "password2": "",
     "email": [
-        9,
-        13,
-        9,
-        2
+        1
     ],
     "scenarioMail": [],
     "readEmail": [
-        false,
-        false,
-        false,
         false
     ],
     "readSmail": [],
-    "scenario": 3,
-    "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":2,\"malwareName\":\"DeskAd\",\"malwareType\":1,\"dictIndex\":18}"
+    "scenario": 2,
+    "scenarioDetail": "{\"dayLeft\":3,\"atkType\":1,\"questTarget\":5,\"isPhishing\":true,\"dictIndex\":1}",
+    "upcomingSce": 1
 }

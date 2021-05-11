@@ -19,6 +19,8 @@ public class NotificationManager : MonoBehaviour
         notifications.Add(notification);
         NewNotification?.Invoke(notification);
         FindObjectOfType<AudioManager>().Play("sfx_notification");
+        Debug.Log("New notification added : " + notification.sender + " " + notification.detail);
+        Debug.Log("Current noti list size: " + notifications.Count);
     }
 }
 

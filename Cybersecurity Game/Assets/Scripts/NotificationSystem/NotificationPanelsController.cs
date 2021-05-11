@@ -9,22 +9,21 @@ public class NotificationPanelsController : MonoBehaviour
 
     private void OnEnable()
     {
-        NotificationManager.NewNotification += InstantiateNotification;
-
-        ClearInstance();
-        foreach(Notification n in NotificationManager.notifications)
+        foreach (Notification n in NotificationManager.notifications)
         {
-
             InstantiateNotification(n);
         }
+
+        NotificationManager.NewNotification += InstantiateNotification;
+
     }
 
     private void InstantiateNotification(Notification notification)
     {
         if(notificationPanels.Count >= 3)
         {
-            notificationPanels.RemoveAt(0);
-            Destroy(this.gameObject.transform.GetChild(0).gameObject);
+            notificationPanels.RemoveAt(notificationPanels.Count - 1) ;
+            Destroy(this.gameObject.transform.GetChild(2).gameObject);
         }
         GameObject _notification = Instantiate(notificationPrefab) as GameObject;
         _notification.transform.SetParent(this.gameObject.transform, false);
@@ -32,18 +31,23 @@ public class NotificationPanelsController : MonoBehaviour
         NotificationPanel notificationPanel = _notification.gameObject.GetComponentInChildren<NotificationPanel>();
         notificationPanel.SetContent(notification);
         notificationPanels.Add(_notification);
+
+        Debug.Log("Noti panel instantiated : " + notification.sender + notification.detail);
+        Debug.Log("noti panel list size : " + notificationPanels.Count);
     }
 
     private void ClearInstance()
     {
-        foreach (GameObject go in notificationPanels)
+        foreach (Transform child in this.transform)
         {
-            Destroy(go);
+            GameObject.Destroy(child.gameObject);
         }
+        notificationPanels.Clear();
     }
 
     private void OnDisable()
     {
+        ClearInstance();
         NotificationManager.NewNotification -= InstantiateNotification;
     }
 }
