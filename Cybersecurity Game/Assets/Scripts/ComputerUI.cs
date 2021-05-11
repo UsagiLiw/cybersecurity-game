@@ -188,6 +188,7 @@ public class ComputerUI : MonoBehaviour
                 errorScreen.SetActive(true);
                 errorText.text = bugQuote[quoteIndex];
                 errorScreen.transform.SetAsLastSibling();
+                FindObjectOfType<AudioManager>().Play("sfx_error");
             }
         }
     }

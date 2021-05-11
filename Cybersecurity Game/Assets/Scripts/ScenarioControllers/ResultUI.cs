@@ -39,12 +39,14 @@ public class ResultUI : MonoBehaviour
             success.SetActive(true);
             tips_S.text = tips;
             result_S.text = result;
+            FindObjectOfType<AudioManager>().Play("sfx_success");
         }
         else
         {
             fail.SetActive(true);
             tips_F.text = tips;
             result_F.text = result;
+            FindObjectOfType<AudioManager>().Play("sfx_fail");
         }
     }
 

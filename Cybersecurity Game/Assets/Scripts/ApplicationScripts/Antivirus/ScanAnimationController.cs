@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class ScanAnimationController : MonoBehaviour
 {
     public Image scanBar;
+
     public float scanTime;
 
     private GameObject homeScreen;
+
     private GameObject scanSecure;
+
     private GameObject scanUnsecure;
 
     private float timer = 0;
@@ -28,7 +31,6 @@ public class ScanAnimationController : MonoBehaviour
 
     public void ScanButtonPressed()
     {
-        Debug.Log("Scan button pressed");
         StartCoroutine(ScanAnimation());
     }
 
@@ -38,22 +40,21 @@ public class ScanAnimationController : MonoBehaviour
         while (timer < scanTime)
         {
             timer += Time.deltaTime;
-            scanBar.fillAmount = timer/scanTime;
+            scanBar.fillAmount = timer / scanTime;
             yield return null;
         }
-        Debug.Log("Scan finished");
         ShowScanResult();
     }
 
     private void ShowScanResult()
     {
         homeScreen.SetActive(false);
-        if(ComputerManager.activeComputer.isInfected == false)
+        if (ComputerManager.activeComputer.isInfected == false)
         {
             scanUnsecure.SetActive(false);
             scanSecure.SetActive(true);
         }
-        else if(ComputerManager.activeComputer.isInfected == true)
+        else if (ComputerManager.activeComputer.isInfected == true)
         {
             scanSecure.SetActive(false);
             scanUnsecure.SetActive(true);

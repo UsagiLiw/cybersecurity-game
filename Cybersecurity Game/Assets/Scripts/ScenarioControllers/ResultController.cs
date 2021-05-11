@@ -114,6 +114,7 @@ public class ResultController : MonoBehaviour
         PhishingSave save = JsonUtility.FromJson<PhishingSave>(str);
         AtkTypes atkType = save.atkType;
         string tip = "";
+        string isPhishing = save.isPhishing ? "Phishing" : "Legit";
         int repTotal;
         switch (atkType)
         {
@@ -138,8 +139,7 @@ public class ResultController : MonoBehaviour
                     .Instance
                     .ModifyReputation(-phishing_Rep, failMultiplier);
         }
-        string detailString =
-            "Tip: " + tip + " \nThe target is a " + save.isPhishing;
+        string detailString = "Tip: " + tip + " \nThe target is " + isPhishing;
         GenerateResultScreen (success, detailString, repTotal);
     }
 
@@ -178,7 +178,7 @@ public class ResultController : MonoBehaviour
             repTotal =
                 ReputationManager
                     .Instance
-                    .ModifyReputation(malware_Rep, failMultiplier);
+                    .ModifyReputation(-malware_Rep, failMultiplier);
         }
         string detailString =
             "Tip: " +
@@ -206,7 +206,8 @@ public class ResultController : MonoBehaviour
         GameObject resultUI = Instantiate(result_Prefab) as GameObject;
         ResultUI script = resultUI.transform.GetComponent<ResultUI>();
         script.SetResult (status, detailString, resultString);
-        resultUI.transform.SetParent (GUI,false);
+        resultUI.transform.SetParent(GUI, false);
+        resultUI.transform.SetAsLastSibling();
         Time.timeScale = 0f;
     }
 }

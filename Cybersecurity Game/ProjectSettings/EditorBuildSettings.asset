@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 398522f1b6fb3c842ae70126f43d2d71
   - enabled: 1
-    path: Assets/Scenes/CEO.unity
-    guid: 5e8e23009b60f734aa000db66d66000f
-  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: cab0f3fe7ea481049bc54a1d7e65aa7d
+  - enabled: 1
+    path: Assets/Scenes/CEO.unity
+    guid: 5e8e23009b60f734aa000db66d66000f
   - enabled: 1
     path: Assets/Scenes/Employee1.unity
     guid: 2ff468f82443fcf4d893540c2dd09d74
@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PauseMenu.unity
     guid: 978fe6ff95e1fd949a337c5f28b1d678
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PCScene.unity
     guid: a97672bd60670ff4fbff2a8c122d4f82
   m_configObjects: {}

@@ -78,13 +78,11 @@ public class Email : MonoBehaviour
 
         if (login_passwordInput.text.Equals(PasswordManager.password2))
         {
-            Debug.Log("correct password");
             incorrectPasswordText.SetActive(false);
             OpenEmail();
         }
         else
         {
-            Debug.Log("Wrong password");
             incorrectPasswordText.SetActive(true);
         }
     }
@@ -165,7 +163,6 @@ public class Email : MonoBehaviour
 
     private void DeleteEmail(int i)
     {
-        Debug.Log(emailInbox[i].topic);
         EmailManager.DeleteEmailInbox (i);
         ShowAllPlayerMails();
     }
@@ -249,7 +246,6 @@ public class Email : MonoBehaviour
         {
             PhishingController.InvokeScenarioFailure(true);
         }
-        Debug.Log("I am safe");
     }
 
     /* --------- Controller Section ----------*/
@@ -269,7 +265,6 @@ public class Email : MonoBehaviour
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(false);
-            Debug.Log (child);
         }
     }
 

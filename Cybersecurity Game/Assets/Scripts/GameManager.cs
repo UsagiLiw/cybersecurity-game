@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     private ShopManager shopManager;
 
-    public static float dayTime = 120f; //Time for 1 day in game (seconds)
+    public static float dayTime = 60f; //Time for 1 day in game (seconds)
 
     public static float currentTimer;
 
@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+
+        FindObjectOfType<AudioManager>().Play("bgm_gameplay");
     }
 
     // Start is called before the first frame update

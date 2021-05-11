@@ -15,8 +15,6 @@ public class NPCPhishing : MonoBehaviour
 
     private PhishingSave phishingDetail;
 
-    private GameObject UIPanel;
-
     public WebObject[] legitWebsite;
 
     public WebObject[] phishingWebsite;
@@ -30,8 +28,7 @@ public class NPCPhishing : MonoBehaviour
     private void OnEnable()
     {
         isPhishing = PhishingController.phishingSave.isPhishing;
-        UIPanel = GameObject.FindGameObjectWithTag("UIPanel");
-        UIPanel.SetActive(false);
+        GUIManager.Instance.SetActiveStatus(true, false);
         foreach (Transform child in this.transform)
         {
             child.gameObject.SetActive(false);
@@ -46,11 +43,6 @@ public class NPCPhishing : MonoBehaviour
         hoverLink_string = null;
         currentWeb = null;
         EnablePhishingTarget();
-    }
-
-    private void OnDisable()
-    {
-        UIPanel.SetActive(true);
     }
 
     private void EnablePhishingTarget()
@@ -148,11 +140,8 @@ public class NPCPhishing : MonoBehaviour
         if (isFatal)
         {
             Destroy(this.gameObject);
+            GUIManager.Instance.SetActiveStatus(true, true);
             PhishingController.InvokeScenarioFailure(false);
-        }
-        else
-        {
-            Debug.Log("I'm safe");
         }
     }
 
@@ -209,6 +198,7 @@ public class NPCPhishing : MonoBehaviour
     public void CloseWindow()
     {
         NPCcontroller.ContinueNPCquest();
+        GUIManager.Instance.SetActiveStatus(true, true);
         Destroy(this.gameObject);
     }
 
@@ -239,6 +229,7 @@ public class NPCPhishing : MonoBehaviour
 
     public void SubmitVerification(bool legit)
     {
+        GUIManager.Instance.SetActiveStatus(true, true);
         PhishingController.CheckScenarioCondition(!legit);
         Destroy(this.gameObject);
     }

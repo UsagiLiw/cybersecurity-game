@@ -94,7 +94,6 @@ public class ShopManager : MonoBehaviour
         for (int i = 0; i < itemArr.Length; i++)
         {
             Item temp = JsonUtility.FromJson<Item>(itemArr[i]);
-            Debug.Log(temp.isPurchased);
             items[i].isPurchased = temp.isPurchased;
             items[i].dayPassed = temp.dayPassed;
             if (temp.isPurchased)
@@ -133,7 +132,6 @@ public class ShopManager : MonoBehaviour
                     case 0:
                         break;
                     case 1:
-                        Debug.Log("Antivirus Expired");
                         ComputerManager.Instance.DeactivateAntivirus();
                         break;
                     case 2:
