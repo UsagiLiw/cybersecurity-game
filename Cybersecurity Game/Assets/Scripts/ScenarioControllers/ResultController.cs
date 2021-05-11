@@ -203,7 +203,7 @@ public class ResultController : MonoBehaviour
         if (success)
         {
             repTotal =
-                ReputationManager.Instance.ModifyReputation(ransom_Rep, 1);
+                ReputationManager.Instance.ModifyReputation(malware_Rep, 1);
         }
         else
         {

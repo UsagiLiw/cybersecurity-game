@@ -5811,12 +5811,16 @@ MonoBehaviour:
   - Maybe you should check your file explorer
   - Web browser is extrememly slow
   - Run antivirus regularly
-  malwareTip_Ransom: []
+  malwareTip_Ransom:
+  - Keep your program up to date can help avoid ransomware.
+  - Paying the ransom does not always guaranteed that you would get your data back.
+  - Having data back-up can help reduce the damage from ransom attack
+  - Factory reset might be the only way to completely remove ransomware.
   failMultiplier: 1.5
   password_Rep: 5
   phishing_Rep: 10
   malware_Rep: 15
-  ransom_Rep: 0
+  ransom_Rep: 35
 --- !u!114 &1163238643
 MonoBehaviour:
   m_ObjectHideFlags: 0
