@@ -17,6 +17,10 @@ public class ResultUI : MonoBehaviour
 
     public Text result_F;
 
+    public GameObject endGame_Prefab;
+
+    private bool GameOver = false;
+
     private void OnEnable()
     {
         success.SetActive(false);
@@ -26,12 +30,16 @@ public class ResultUI : MonoBehaviour
 
     private void OnDisable()
     {
-        Time.timeScale = 1f;
         GUIManager.Instance.SetActiveStatus(true, true);
         Destroy(this.gameObject);
     }
 
-    public void SetResult(bool status, string tips, string result)
+    public void SetResult(
+        bool status,
+        string tips,
+        string result,
+        bool gameOver
+    )
     {
         //Status: true->success, false->fail
         if (status)
@@ -48,10 +56,22 @@ public class ResultUI : MonoBehaviour
             result_F.text = result;
             FindObjectOfType<AudioManager>().Play("sfx_fail");
         }
+        GameOver = gameOver;
     }
 
     public void ClickContinue()
     {
-        this.gameObject.SetActive(false);
+        Time.timeScale = 1f;
+        if (GameOver == true)
+            TriggerGameOver();
+        else
+            this.gameObject.SetActive(false);
+    }
+
+    public void TriggerGameOver()
+    {
+        GameObject gameOver = Instantiate(endGame_Prefab) as GameObject;
+        gameOver.transform.SetParent(GameObject.Find("GUI").transform);
+        gameOver.transform.SetAsLastSibling();
     }
 }

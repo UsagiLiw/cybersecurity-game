@@ -117,7 +117,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2692101565860227568}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2384988681744019932}
+        m_MethodName: ActivateChoice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &379425310832307839
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +385,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Pay for ransom
 
-    ( Cost $100,000 )'
+    ( Cost $100,000 - You have $XXXXX )'
 --- !u!1 &2465784585813420275
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +504,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8848420045166003890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2384988681744019932}
+        m_MethodName: Choose
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2646103202573066894
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +673,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Factory reset
+  m_Text: 'Factory reset
+
+    (-35 Rep Score)'
 --- !u!1 &3968431034508084880
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +794,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4358422585192793020}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2384988681744019932}
+        m_MethodName: Choose
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4572097712676083668
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +883,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restore data from backup
+  m_Text: 'Restore data from backup
+
+    (Require cloud storage)'
 --- !u!1 &5076521715433460758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1042,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5453802388808106615}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2384988681744019932}
+        m_MethodName: Choose
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7242700189484872481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,6 +1149,7 @@ GameObject:
   - component: {fileID: 2517955257009649907}
   - component: {fileID: 7943326534129427084}
   - component: {fileID: 2265442992735354843}
+  - component: {fileID: 2384988681744019932}
   m_Layer: 5
   m_Name: Ransom
   m_TagString: Untagged
@@ -1189,6 +1238,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2384988681744019932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683700370490351722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7635f2330b30f43a328779d16f8c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backup_button: {fileID: 6865790337122777352}
+  pay_button: {fileID: 7317823124186699108}
+  pay_text: {fileID: 0}
 --- !u!1 &8026128258005541703
 GameObject:
   m_ObjectHideFlags: 0

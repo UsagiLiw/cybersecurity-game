@@ -19,6 +19,8 @@ public class ComputerUI : MonoBehaviour
 
     public GameObject trojan_prefab;
 
+    public GameObject ransom_prefab;
+
     public GameObject antivirus_App;
 
     public GameObject malwareReportPage;
@@ -148,6 +150,11 @@ public class ComputerUI : MonoBehaviour
 
     private void CheckMaliciousState()
     {
+        if (ComputerManager.activeComputer.isRansom)
+        {
+            CreateRansomScreen();
+            return;
+        }
         int malware = computerManager.CheckActiveComMalwareType();
         if (malware < 0) return;
         switch (malware)
@@ -165,6 +172,13 @@ public class ComputerUI : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    private void CreateRansomScreen()
+    {
+        GameObject ransomware = Instantiate(ransom_prefab) as GameObject;
+        ransomware.transform.SetParent(this.transform, false);
+        ransomware.transform.SetAsLastSibling();
     }
 
     IEnumerator ShowBugScreen()
