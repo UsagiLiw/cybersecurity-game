@@ -2,7 +2,7 @@
     "saveid": 0,
     "day": 21,
     "budget": 550,
-    "reputation": 86,
+    "reputation": 100,
     "purchases": [
         "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":1}",
@@ -25,6 +25,7 @@
         false
     ],
     "readSmail": [],
-    "scenario": 3,
-    "scenarioDetail": "{\"dayLeft\":4,\"questTarget\":2,\"malwareName\":\"DeskAd\",\"malwareType\":1,\"dictIndex\":18}"
+    "scenario": 0,
+    "scenarioDetail": "",
+    "upcomingSce": 0
 }

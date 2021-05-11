@@ -35,12 +35,14 @@ public class NPCScript : MonoBehaviour
         markerIniPos = questMarker.transform.position;
         QuestDeactive();
         NPCcontroller.NewNPCScenario += CheckSelfIsActive;
+        ComputerUI.TurnOn += SetInteractable;
         CheckSelfIsActive();
     }
 
     private void OnDisable()
     {
         NPCcontroller.NewNPCScenario -= CheckSelfIsActive;
+        ComputerUI.TurnOn -= SetInteractable;
     }
 
     private void Update()
@@ -95,7 +97,6 @@ public class NPCScript : MonoBehaviour
     {
         if (selfActive)
         {
-            QuestDeactive();
             DisplayRequestScreen();
         }
     }
@@ -108,5 +109,13 @@ public class NPCScript : MonoBehaviour
         NPCRequest npcRequest = requestScreen.GetComponent<NPCRequest>();
         npcRequest.EnableNPC();
         QuestDeactive();
+    }
+
+    private void SetInteractable(bool ans)
+    {
+        if (ans)
+            QuestDeactive();
+        else
+            QuestActive();
     }
 }

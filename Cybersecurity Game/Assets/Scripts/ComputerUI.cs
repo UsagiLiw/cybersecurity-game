@@ -43,6 +43,11 @@ public class ComputerUI : MonoBehaviour
     //Quotes use for showing error message
     public string[] bugQuote;
 
+    //Declare opening/close compute screen
+    public delegate void TurnOnComputer(bool turnOn);
+     
+    public static event TurnOnComputer TurnOn;
+
     private void Start()
     {
         gameObject.SetActive(false);
@@ -58,6 +63,7 @@ public class ComputerUI : MonoBehaviour
     public void StartComputer(int i)
     {
         computerManager.SetActiveComputer (i);
+        TurnOn?.Invoke(true);
         if (ComputerManager.activeComputer.isInfected)
             malwareReportPage.SetActive(true);
         else
@@ -101,6 +107,7 @@ public class ComputerUI : MonoBehaviour
 
     public void CloseComputer()
     {
+        TurnOn?.Invoke(false);
         NPCcontroller.ContinueNPCquest();
         CloseAllApps();
         Destroy (antivirusIcon);
