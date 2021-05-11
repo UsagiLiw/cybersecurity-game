@@ -26,13 +26,9 @@ public class ComputerManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
-        {
             Instance = this;
-        }
         else
-        {
-            Destroy (gameObject);
-        }
+            Destroy(gameObject);
 
         for (int i = 0; i < computers.Length; i++)
         {
@@ -45,6 +41,7 @@ public class ComputerManager : MonoBehaviour
             computers[i].isInfected = false;
             computers[i].isSlow = false;
             computers[i].isBuggy = false;
+            computers[i].isRansom = false;
         }
     }
 
@@ -84,6 +81,7 @@ public class ComputerManager : MonoBehaviour
         computers[(int) target].isInfected = false;
         computers[(int) target].isSlow = false;
         computers[(int) target].isBuggy = false;
+        computers[(int) target].isRansom = false;
         ChangeOnActiveCom (target);
     }
 
@@ -93,6 +91,7 @@ public class ComputerManager : MonoBehaviour
         activeComputer.isInfected = false;
         activeComputer.isSlow = false;
         activeComputer.isBuggy = false;
+        activeComputer.isRansom = false;
         if (NewActiveComAction != null) NewActiveComAction.Invoke();
     }
 
@@ -118,6 +117,12 @@ public class ComputerManager : MonoBehaviour
     {
         computers[(int) target].isSlow = slow;
         computers[(int) target].isBuggy = buggy;
+        ChangeOnActiveCom (target);
+    }
+
+    public void SetComputerLockDown(Target target, bool lockDown)
+    {
+        computers[(int) target].isRansom = lockDown;
         ChangeOnActiveCom (target);
     }
 
@@ -185,4 +190,6 @@ public class Computer
     public bool isSlow;
 
     public bool isBuggy;
+
+    public bool isRansom;
 }

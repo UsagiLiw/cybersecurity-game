@@ -28,6 +28,8 @@ public class SaveObject
     public Scenario scenario;
 
     public string scenarioDetail;
+
+    public Scenario upcomingSce;
 }
 
 public enum Scenario

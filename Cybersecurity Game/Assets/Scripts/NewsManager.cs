@@ -36,7 +36,7 @@ public class NewsManager : MonoBehaviour
 
     private void UpdateNews()
     {
-        Scenario scenario = ScenarioManager.onGoingScenario;
+        Scenario scenario = ScenarioManager.upcomingScenario;
         if (scenario == Scenario.None)
         {
             SetNews();
