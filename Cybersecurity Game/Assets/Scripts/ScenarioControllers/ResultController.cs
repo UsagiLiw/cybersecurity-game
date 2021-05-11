@@ -22,6 +22,8 @@ public class ResultController : MonoBehaviour
 
     public string[] malwareTip_Adware;
 
+    public string[] malwareTip_Ransom;
+
     public float failMultiplier;
 
     public int password_Rep;
@@ -29,6 +31,8 @@ public class ResultController : MonoBehaviour
     public int phishing_Rep;
 
     public int malware_Rep;
+
+    public int ransom_Rep;
 
     private void Awake()
     {
@@ -190,6 +194,38 @@ public class ResultController : MonoBehaviour
         GenerateResultScreen (success, detailString, repTotal);
     }
 
+    private void RansomScenario(string str, bool success)
+    {
+        MalwareSave save = JsonUtility.FromJson<MalwareSave>(str);
+        string tip =
+            malwareTip_Ransom[Random.Range(0, malwareTip_Ransom.Length)];
+        int repTotal;
+        if (success)
+        {
+            repTotal =
+                ReputationManager.Instance.ModifyReputation(malware_Rep, 1);
+        }
+        else
+        {
+            if (save.dictIndex == 1)
+                repTotal =
+                    ReputationManager
+                        .Instance
+                        .ModifyReputation(-malware_Rep, 1);
+            else
+                repTotal =
+                    ReputationManager.Instance.ModifyReputation(-ransom_Rep, 1);
+        }
+        string detailString =
+            "Tip: " +
+            tip +
+            "\nMalware name: " +
+            save.malwareName +
+            "\t\tMalware type: " +
+            save.malwareType;
+        GenerateResultScreen (success, detailString, repTotal);
+    }
+
     private void GenerateResultScreen(
         bool status,
         string detailString,
@@ -202,10 +238,11 @@ public class ResultController : MonoBehaviour
             "\t\tBudget: " +
             BudgetManager.income +
             "/day";
-
+        bool gameOver = false;
+        if (repTotal <= 0) gameOver = true;
         GameObject resultUI = Instantiate(result_Prefab) as GameObject;
         ResultUI script = resultUI.transform.GetComponent<ResultUI>();
-        script.SetResult (status, detailString, resultString);
+        script.SetResult (status, detailString, resultString, gameOver);
         resultUI.transform.SetParent(GUI, false);
         resultUI.transform.SetAsLastSibling();
         Time.timeScale = 0f;

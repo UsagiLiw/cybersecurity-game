@@ -1753,8 +1753,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f774af6e75933da42a9f0ad95283a77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endGame_Prefab: {fileID: 7027895145715811331, guid: 384d364332a988846a35b33c8a4baab6,
-    type: 3}
 --- !u!114 &342761642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1905,6 +1903,7 @@ MonoBehaviour:
     isInfected: 0
     isSlow: 0
     isBuggy: 0
+    isRansom: 0
   - owner: 1
     ram: 0
     cpu: 0
@@ -1916,6 +1915,7 @@ MonoBehaviour:
     isInfected: 0
     isSlow: 0
     isBuggy: 0
+    isRansom: 0
   - owner: 2
     ram: 0
     cpu: 0
@@ -1927,6 +1927,7 @@ MonoBehaviour:
     isInfected: 0
     isSlow: 0
     isBuggy: 0
+    isRansom: 0
   - owner: 3
     ram: 0
     cpu: 0
@@ -1938,6 +1939,7 @@ MonoBehaviour:
     isInfected: 0
     isSlow: 0
     isBuggy: 0
+    isRansom: 0
   - owner: 4
     ram: 0
     cpu: 0
@@ -1949,6 +1951,7 @@ MonoBehaviour:
     isInfected: 0
     isSlow: 0
     isBuggy: 0
+    isRansom: 0
   - owner: 5
     ram: 0
     cpu: 0
@@ -1960,6 +1963,7 @@ MonoBehaviour:
     isInfected: 0
     isSlow: 0
     isBuggy: 0
+    isRansom: 0
 --- !u!114 &342761648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5692,14 +5696,18 @@ MonoBehaviour:
   - scenarioType: PasswordAttack
     scenario: 1
     minProbRange: 0
-    maxProbRange: 30
+    maxProbRange: 20
   - scenarioType: Phishing
     scenario: 2
-    minProbRange: 31
-    maxProbRange: 70
+    minProbRange: 21
+    maxProbRange: 60
   - scenarioType: Malware
     scenario: 3
-    minProbRange: 71
+    minProbRange: 61
+    maxProbRange: 90
+  - scenarioType: Ransom
+    scenario: 4
+    minProbRange: 91
     maxProbRange: 99
 --- !u!4 &1163238640
 Transform:
@@ -5803,10 +5811,16 @@ MonoBehaviour:
   - Maybe you should check your file explorer
   - Web browser is extrememly slow
   - Run antivirus regularly
+  malwareTip_Ransom:
+  - Keep your program up to date can help avoid ransomware.
+  - Paying the ransom does not always guaranteed that you would get your data back.
+  - Having data back-up can help reduce the damage from ransom attack
+  - Factory reset might be the only way to completely remove ransomware.
   failMultiplier: 1.5
   password_Rep: 5
   phishing_Rep: 10
   malware_Rep: 15
+  ransom_Rep: 35
 --- !u!114 &1163238643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5853,6 +5867,7 @@ MonoBehaviour:
   - I don't remember install this program. What is this?
   - My computer is so slow. What happened? Did you guys messed up my PC?
   - There are some weird errors appear on my screen. Take a look and fix it.
+  ransom_QuestDetail: []
 --- !u!1 &1174323943
 GameObject:
   m_ObjectHideFlags: 0
@@ -9725,6 +9740,7 @@ MonoBehaviour:
     type: 3}
   trojan_prefab: {fileID: 3893341956378313393, guid: 9e406caedde404a4389a61d605a0ddbd,
     type: 3}
+  ransom_prefab: {fileID: 0}
   antivirus_App: {fileID: 402222256345465157}
   malwareReportPage: {fileID: 418061428}
   computerManager: {fileID: 342761647}

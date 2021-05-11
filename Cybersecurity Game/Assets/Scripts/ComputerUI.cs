@@ -19,6 +19,8 @@ public class ComputerUI : MonoBehaviour
 
     public GameObject trojan_prefab;
 
+    public GameObject ransom_prefab;
+
     public GameObject antivirus_App;
 
     public GameObject malwareReportPage;
@@ -41,6 +43,11 @@ public class ComputerUI : MonoBehaviour
     //Quotes use for showing error message
     public string[] bugQuote;
 
+    //Declare opening/close compute screen
+    public delegate void TurnOnComputer(bool turnOn);
+     
+    public static event TurnOnComputer TurnOn;
+
     private void Start()
     {
         gameObject.SetActive(false);
@@ -56,6 +63,7 @@ public class ComputerUI : MonoBehaviour
     public void StartComputer(int i)
     {
         computerManager.SetActiveComputer (i);
+        TurnOn?.Invoke(true);
         if (ComputerManager.activeComputer.isInfected)
             malwareReportPage.SetActive(true);
         else
@@ -99,6 +107,7 @@ public class ComputerUI : MonoBehaviour
 
     public void CloseComputer()
     {
+        TurnOn?.Invoke(false);
         NPCcontroller.ContinueNPCquest();
         CloseAllApps();
         Destroy (antivirusIcon);
@@ -148,6 +157,11 @@ public class ComputerUI : MonoBehaviour
 
     private void CheckMaliciousState()
     {
+        if (ComputerManager.activeComputer.isRansom)
+        {
+            CreateRansomScreen();
+            return;
+        }
         int malware = computerManager.CheckActiveComMalwareType();
         if (malware < 0) return;
         switch (malware)
@@ -165,6 +179,13 @@ public class ComputerUI : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    private void CreateRansomScreen()
+    {
+        GameObject ransomware = Instantiate(ransom_prefab) as GameObject;
+        ransomware.transform.SetParent(this.transform, false);
+        ransomware.transform.SetAsLastSibling();
     }
 
     IEnumerator ShowBugScreen()

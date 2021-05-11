@@ -136,6 +136,10 @@ public class ScenarioManager : MonoBehaviour
                 (underAttack, detail) = malwareController.UpdateScenarioState();
                 currentType = Scenario.Malware;
                 break;
+            case Scenario.Ransom:
+                (underAttack, detail) = malwareController.UpdateScenarioState();
+                currentType = Scenario.Ransom;
+                break;
             default:
                 throw new InvalidOperationException("Error: Unknown scenario index: " +
                     onGoingScenario);
@@ -198,6 +202,9 @@ public class ScenarioManager : MonoBehaviour
             case Scenario.Malware:
                 i = TargetRandomizer(false);
                 return (Scenario.Malware, malwareController.TriggerNPC(i));
+            case Scenario.Ransom:
+                i = TargetRandomizer(true);
+                return (Scenario.Ransom, malwareController.TriggerRansom(i));
             default:
                 throw new InvalidOperationException("Error: Unknown scenario index: " +
                     chosenScenario);

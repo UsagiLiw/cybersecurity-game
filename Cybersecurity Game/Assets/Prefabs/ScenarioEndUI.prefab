@@ -633,6 +633,8 @@ MonoBehaviour:
   fail: {fileID: 7812645077079908291}
   tips_F: {fileID: 6958599830471729128}
   result_F: {fileID: 4316013520140461965}
+  endGame_Prefab: {fileID: 7027895145715811331, guid: 384d364332a988846a35b33c8a4baab6,
+    type: 3}
 --- !u!1 &4992251227365157230
 GameObject:
   m_ObjectHideFlags: 0

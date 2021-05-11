@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameOverUI : MonoBehaviour
 {
-    private float Duration = 2.5f;
+    private float Duration = 1.5f;
 
     private void OnEnable()
     {
@@ -27,7 +27,6 @@ public class GameOverUI : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        Debug.Log("back to main menu");
         GameManager.BackToMainMenu(false);
         Destroy(this.gameObject);
     }
