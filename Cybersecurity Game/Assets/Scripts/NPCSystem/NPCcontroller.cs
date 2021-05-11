@@ -174,7 +174,10 @@ public class NPCcontroller : MonoBehaviour
                 CreatePhishingScreen();
                 break;
             case Scenario.Malware:
-                CreateMalwareScreen();
+                computerUI.StartComputer((int) currentTarget);
+                break;
+            case Scenario.Ransom:
+                computerUI.StartComputer((int) currentTarget);
                 break;
             default:
                 Debug.Log("NPC screen type unspecify: " + scenario);
@@ -188,11 +191,6 @@ public class NPCcontroller : MonoBehaviour
             Instantiate(phishingScreen_prefab) as GameObject;
         GameObject gui = GameObject.Find("GUI");
         phishingScreen_Object.transform.SetParent(gui.transform, false);
-    }
-
-    private void CreateMalwareScreen()
-    {
-        computerUI.StartComputer((int) currentTarget);
     }
 
     public static (Scenario, Target, string) GetRequestDetail()

@@ -1,11 +1,11 @@
 {
     "saveid": 0,
-    "day": 26,
-    "budget": 1175,
-    "reputation": 100,
+    "day": 37,
+    "budget": 162500,
+    "reputation": 0,
     "purchases": [
         "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
-        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":6}",
+        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":5}",
         "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
     ],
@@ -20,7 +20,16 @@
         7,
         15,
         7,
-        9
+        9,
+        3,
+        5,
+        0,
+        8,
+        7,
+        3,
+        10,
+        0,
+        8
     ],
     "scenarioMail": [],
     "readEmail": [
@@ -32,10 +41,19 @@
         false,
         false,
         false,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        true,
+        false,
+        true,
         false
     ],
     "readSmail": [],
     "scenario": 0,
     "scenarioDetail": "",
-    "upcomingSce": 3
+    "upcomingSce": 4
 }

@@ -21,6 +21,7 @@ public class ransomBehavior : MonoBehaviour
     private void OnDisable()
     {
         GameManager.DayPassed -= UpdateOptions;
+        Destroy(this.gameObject);
     }
 
     public void ActivateChoice()

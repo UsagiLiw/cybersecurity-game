@@ -4,30 +4,33 @@ using UnityEngine;
 
 public class GameOverUI : MonoBehaviour
 {
-    private float Duration = 1.5f;
+    private float Duration = 2.5f;
 
     private void OnEnable()
     {
         var canvGroup = GetComponent<CanvasGroup>();
-        StartCoroutine(DoFade(canvGroup));
+        canvGroup.alpha = 0;
+        StartCoroutine(DoFade(canvGroup, 0f, 1f));
     }
 
-    private IEnumerator DoFade(CanvasGroup canvGroup)
+    private IEnumerator DoFade(CanvasGroup canvGroup, float start, float end)
     {
         float counter = 0f;
-        canvGroup.alpha = 0;
+        GUIManager.Instance.SetActiveStatus(false, false);
         while (counter < Duration)
         {
             counter += Time.deltaTime;
-            canvGroup.alpha = Mathf.Lerp(0, 1, counter / Duration);
+            canvGroup.alpha = Mathf.Lerp(start, end, counter / Duration);
 
             yield return null;
         }
+        Time.timeScale = 0f;
     }
 
     public void BackToMainMenu()
     {
         GameManager.BackToMainMenu(false);
         Destroy(this.gameObject);
+        Time.timeScale = 1f;
     }
 }

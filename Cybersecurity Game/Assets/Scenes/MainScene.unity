@@ -5867,7 +5867,15 @@ MonoBehaviour:
   - I don't remember install this program. What is this?
   - My computer is so slow. What happened? Did you guys messed up my PC?
   - There are some weird errors appear on my screen. Take a look and fix it.
-  ransom_QuestDetail: []
+  ransom_QuestDetail:
+  - 'This is really bad. I saw it in the news but I never thought it would ever happen
+    to me! My computer! I can''t use it at all, everything is locked down! '
+  - Help!!!! I've made a mistake and load something that I really should not! Now
+    my screen shows a pop-up saying I need to pay money to unlock it and I can't
+    do anything else at all!!!!
+  - You have to do something!!! My computer got attacked by a ransomware!!!! I can't
+    do anything!!!! I have a lot of important works in my computer and I can't just
+    say the dog eat it either!!!
 --- !u!1 &1174323943
 GameObject:
   m_ObjectHideFlags: 0
@@ -9740,7 +9748,8 @@ MonoBehaviour:
     type: 3}
   trojan_prefab: {fileID: 3893341956378313393, guid: 9e406caedde404a4389a61d605a0ddbd,
     type: 3}
-  ransom_prefab: {fileID: 0}
+  ransom_prefab: {fileID: 7683700370490351722, guid: d97b7125db535e140af9490399f882a8,
+    type: 3}
   antivirus_App: {fileID: 402222256345465157}
   malwareReportPage: {fileID: 418061428}
   computerManager: {fileID: 342761647}

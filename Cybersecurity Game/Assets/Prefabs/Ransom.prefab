@@ -486,7 +486,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9622642, g: 0.22241013, b: 0.26172575, a: 1}
     m_PressedColor: {r: 0.7264151, g: 0.07195621, b: 0.108315215, a: 1}
     m_SelectedColor: {r: 0.8117647, g: 0.23529412, b: 0.26666668, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -776,7 +776,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9622642, g: 0.22241013, b: 0.26172575, a: 1}
     m_PressedColor: {r: 0.7264151, g: 0.07195621, b: 0.108315215, a: 1}
     m_SelectedColor: {r: 0.8117647, g: 0.23529412, b: 0.26666668, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1024,7 +1024,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9622642, g: 0.22241013, b: 0.26172575, a: 1}
     m_PressedColor: {r: 0.7264151, g: 0.07195621, b: 0.108315215, a: 1}
     m_SelectedColor: {r: 0.8117647, g: 0.23529412, b: 0.26666668, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backup_button: {fileID: 6865790337122777352}
   pay_button: {fileID: 7317823124186699108}
-  pay_text: {fileID: 0}
+  pay_text: {fileID: 5528365649198404776}
 --- !u!1 &8026128258005541703
 GameObject:
   m_ObjectHideFlags: 0

@@ -159,6 +159,7 @@ public class ComputerUI : MonoBehaviour
     {
         if (ComputerManager.activeComputer.isRansom)
         {
+            malwareReportPage.SetActive(false);
             CreateRansomScreen();
             return;
         }
@@ -184,7 +185,7 @@ public class ComputerUI : MonoBehaviour
     private void CreateRansomScreen()
     {
         GameObject ransomware = Instantiate(ransom_prefab) as GameObject;
-        ransomware.transform.SetParent(this.transform, false);
+        ransomware.transform.SetParent(this.transform, true);
         ransomware.transform.SetAsLastSibling();
     }
 

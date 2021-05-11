@@ -70,6 +70,7 @@ public class ResultUI : MonoBehaviour
 
     public void TriggerGameOver()
     {
+        this.gameObject.SetActive(false);
         GameObject gameOver = Instantiate(endGame_Prefab) as GameObject;
         gameOver.transform.SetParent(GameObject.Find("GUI").transform);
         gameOver.transform.SetAsLastSibling();

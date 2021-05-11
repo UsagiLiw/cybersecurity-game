@@ -41,9 +41,9 @@ public class InputController : MonoBehaviour
             }
         }
 
-         if (Input.GetKeyDown(KeyCode.N))
-         {
-             NotificationManager.SetNewNotification(new Notification("CEO", "Maybe my computer got infected. Could you take a look?"));
-         }
+        //  if (Input.GetKeyDown(KeyCode.N))
+        //  {
+        //      NotificationManager.SetNewNotification(new Notification("CEO", "Maybe my computer got infected. Could you take a look?"));
+        //  }
     }
 }

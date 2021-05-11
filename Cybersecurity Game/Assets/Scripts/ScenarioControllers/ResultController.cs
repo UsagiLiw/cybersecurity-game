@@ -56,6 +56,7 @@ public class ResultController : MonoBehaviour
                 MalwareScenario(detail, true);
                 break;
             case Scenario.Ransom:
+                RansomScenario(detail, true);
                 break;
             default:
                 break;
@@ -76,6 +77,7 @@ public class ResultController : MonoBehaviour
                 MalwareScenario(detail, false);
                 break;
             case Scenario.Ransom:
+                RansomScenario(detail, false);
                 break;
             default:
                 break;
