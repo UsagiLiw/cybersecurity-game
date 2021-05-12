@@ -31,6 +31,7 @@ public class ShopManager : MonoBehaviour
     private void Start()
     {
         budgetManager = gameObject.GetComponent<BudgetManager>();
+
         // foreach (Item item in items)
         // {
         //     item.isPurchased = false;
@@ -127,11 +128,18 @@ public class ShopManager : MonoBehaviour
             if (item.dayPassed == item.expiredDays)
             {
                 item.dayPassed = 0;
+                item.isPurchased = false;
                 switch (i)
                 {
                     case 0:
+                        NotificationManager
+                            .SetNewNotification(new Notification("eShop",
+                                "Your cloud storage service is expired, please renew your subscription to continued your service."));
                         break;
                     case 1:
+                        NotificationManager
+                            .SetNewNotification(new Notification("eShop",
+                                "Your antivirus service is expired, please renew your subscription to continued your service."));
                         ComputerManager.Instance.DeactivateAntivirus();
                         break;
                     case 2:

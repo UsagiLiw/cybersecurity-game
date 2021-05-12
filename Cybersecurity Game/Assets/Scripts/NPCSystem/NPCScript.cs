@@ -14,6 +14,8 @@ public class NPCScript : MonoBehaviour
 
     private bool selfActive;
 
+    private bool computerActive;
+
     public GameObject questMarker;
 
     public GameObject NPCmodel;
@@ -58,7 +60,7 @@ public class NPCScript : MonoBehaviour
 
     private void CheckSelfIsActive()
     {
-        if (NPCcontroller.CheckTargetActive(self))
+        if (NPCcontroller.CheckTargetActive(self) && !computerActive)
         {
             selfActive = true;
             QuestActive();
@@ -113,6 +115,7 @@ public class NPCScript : MonoBehaviour
 
     private void SetInteractable(bool ans)
     {
+        computerActive = ans;
         if (ans)
             QuestDeactive();
         else

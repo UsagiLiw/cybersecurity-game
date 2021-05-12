@@ -75,8 +75,8 @@ public class GameManager : MonoBehaviour
             currentTimer = 0;
             emailManager.SendRandomMail();
             (scenario, scenarioDetail) = ScenarioManager.Instance.CheckStatus();
-            SaveData();
             DayPassed?.Invoke();
+            SaveData();
         }
     }
 

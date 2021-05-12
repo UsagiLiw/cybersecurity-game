@@ -41,6 +41,10 @@ public class PasswordManager : MonoBehaviour
     {
         password1 = pwd1;
         password2 = pwd2;
+        if(string.IsNullOrEmpty(password1) || string.IsNullOrEmpty(password2))
+        {
+            NotificationManager.SetNewNotification(new Notification("You", "Don't forget to set an account for Email and Shop in browser!"));
+        }
     }
 
     public bool CheckPassword(int num, string pwd)

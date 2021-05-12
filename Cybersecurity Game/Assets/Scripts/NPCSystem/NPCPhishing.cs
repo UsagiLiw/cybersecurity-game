@@ -147,14 +147,12 @@ public class NPCPhishing : MonoBehaviour
 
     private void TriggerWebScenario(int webIndex)
     {
-        Debug.Log("Open Web fishing");
-        GameObject phishingWeb =
-            this.transform.GetChild(webIndex + 1).gameObject;
+        GameObject phishingWeb = this.transform.GetChild(webIndex).gameObject;
         phishingWeb.SetActive(true);
         GameObject webContent = phishingWeb.transform.GetChild(0).gameObject;
         if (isPhishing)
         {
-            currentWeb = phishingWebsite[webIndex];
+            currentWeb = phishingWebsite[webIndex - 1];
         }
         else
         {

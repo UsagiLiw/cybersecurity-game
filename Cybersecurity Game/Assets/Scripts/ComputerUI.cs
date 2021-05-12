@@ -45,7 +45,7 @@ public class ComputerUI : MonoBehaviour
 
     //Declare opening/close compute screen
     public delegate void TurnOnComputer(bool turnOn);
-     
+
     public static event TurnOnComputer TurnOn;
 
     private void Start()
@@ -172,6 +172,7 @@ public class ComputerUI : MonoBehaviour
                 StartCoroutine(ShowBugScreen());
                 break;
             case (int) MalwareType.Virus:
+                if (Random.value < 0.5f) Destroy(antivirusIcon);
                 StartCoroutine(ShowBugScreen());
                 break;
             case (int) MalwareType.Adware:
