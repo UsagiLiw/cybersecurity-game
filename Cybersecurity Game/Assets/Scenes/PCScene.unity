@@ -89420,6 +89420,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7027895145715811331, guid: 384d364332a988846a35b33c8a4baab6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 384d364332a988846a35b33c8a4baab6, type: 3}
 --- !u!114 &505086779872240781
@@ -89860,7 +89865,27 @@ PrefabInstance:
     - target: {fileID: 1744832259025602711, guid: b295512c78de785438dbaa97999338b8,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307194158565094084, guid: b295512c78de785438dbaa97999338b8,
+        type: 3}
+      propertyPath: m_ScrollSensitivity
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127699145278137885, guid: b295512c78de785438dbaa97999338b8,
+        type: 3}
+      propertyPath: m_ScrollSensitivity
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127699145583435951, guid: b295512c78de785438dbaa97999338b8,
+        type: 3}
+      propertyPath: m_Value
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690069680073793450, guid: b295512c78de785438dbaa97999338b8,
+        type: 3}
+      propertyPath: m_ScrollSensitivity
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b295512c78de785438dbaa97999338b8, type: 3}
@@ -91330,7 +91355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &5633138876452419762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101312,7 +101337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 52}
+  m_AnchoredPosition: {x: 0, y: 52}
   m_SizeDelta: {x: 1300, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8188212437623492215
