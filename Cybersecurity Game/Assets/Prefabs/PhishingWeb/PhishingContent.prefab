@@ -228,20 +228,20 @@ MonoBehaviour:
     isSecure: 1
   phishingWebsite:
   - siteName: NotSafePal
-    linkHover: https://www.safepal.com/Login/VerifyLogin
-    address: https://www.safepal.com/Login
+    linkHover: http://safepal.app.nz/account-Login
+    address: http://luv32.net/account-j25/4jurtx2
     isSecure: 0
   - siteName: Lazada
     linkHover: https://www.lazada.com/payment/cardinfo/submit
     address: https://www.lazada.com/payment/cardinfo
     isSecure: 1
   - siteName: SCPbank
-    linkHover: https://www.scpbanking.co.th/account/update
-    address: https://www.scpbanking.co.th/account/update/submit
+    linkHover: http://www.scpbanklng.co.th/account/update
+    address: http://network.access2suraharn255/verify-account/navigate/localhost
     isSecure: 0
   - siteName: SleepNoted
-    linkHover: https://www.sleepnoted.org/login/submit
-    address: https://www.sleepnoted.org/login
+    linkHover: https://akmlfa125asvan.anckamca/acnjkvoasc
+    address: as1f65v6f4vmka9f65
     isSecure: 0
 --- !u!114 &5008801786104655117
 MonoBehaviour:
