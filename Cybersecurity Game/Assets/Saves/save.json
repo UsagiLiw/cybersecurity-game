@@ -2,7 +2,7 @@
     "saveid": 0,
     "day": 44,
     "budget": 1350,
-    "reputation": 98,
+    "reputation": 88,
     "purchases": [
         "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
@@ -47,7 +47,7 @@
         false
     ],
     "readSmail": [],
-    "scenario": 0,
-    "scenarioDetail": "",
+    "scenario": 2,
+    "scenarioDetail": "{\"dayLeft\":3,\"atkType\":1,\"questTarget\":1,\"isPhishing\":false,\"dictIndex\":4}",
     "upcomingSce": 2
 }
