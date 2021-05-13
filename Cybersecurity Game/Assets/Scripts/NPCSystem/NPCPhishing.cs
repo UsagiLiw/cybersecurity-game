@@ -156,7 +156,7 @@ public class NPCPhishing : MonoBehaviour
         }
         else
         {
-            currentWeb = legitWebsite[webIndex];
+            currentWeb = legitWebsite[webIndex - 1];
         }
         hoverLink_string = currentWeb.linkHover;
         addressBar.SetActive(true);
