@@ -1,63 +1,41 @@
 {
     "saveid": 0,
-    "day": 28,
+    "day": 36,
     "budget": 475,
-    "reputation": 61,
+    "reputation": 100,
     "purchases": [
-        "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":0}",
-        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":5}",
-        "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":true,\"dayPassed\":0}",
-        "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":true,\"dayPassed\":0}"
+        "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
+        "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":true,\"dayPassed\":1}",
+        "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
+        "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":false,\"dayPassed\":0}"
     ],
-    "password1": "NewPassword",
-    "password2": "NewPassword",
+    "password1": "qwer",
+    "password2": "78uiyt!",
     "email": [
-        15,
-        15,
-        12,
-        11,
-        9,
-        13,
         8,
-        6,
-        9,
-        12,
-        8,
-        10,
-        0,
-        9,
-        11,
         5,
-        13,
-        4,
-        8,
-        10
+        7,
+        12,
+        3,
+        14,
+        13
     ],
-    "scenarioMail": [],
+    "scenarioMail": [
+        3
+    ],
     "readEmail": [
         false,
-        false,
-        false,
-        true,
-        true,
         true,
         true,
         false,
-        true,
         false,
-        true,
         false,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
+        true
+    ],
+    "readSmail": [
         false
     ],
-    "readSmail": [],
     "scenario": 0,
     "scenarioDetail": "",
-    "upcomingSce": 1
+    "upcomingSce": 2
 }
