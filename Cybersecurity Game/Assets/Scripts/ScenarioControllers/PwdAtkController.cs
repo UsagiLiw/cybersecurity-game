@@ -35,6 +35,14 @@ public class PwdAtkController : MonoBehaviour
         PasswordScore shopScore = CheckStrength(shopPassword);
         PasswordScore emailScore = CheckStrength(emailPassword);
 
+        if (
+            (shopScore == PasswordScore.VeryStrong) &&
+            (emailScore == PasswordScore.VeryStrong)
+        )
+        {
+            return null; //Both account has strong password reduce occurence chance.
+        }
+
         //If both account use same password, attack both
         if (shopPassword.Equals(emailPassword))
         {
@@ -180,6 +188,7 @@ public class PwdAtkController : MonoBehaviour
                 complexity = complexity
             };
         string saveString = JsonUtility.ToJson(saveObject);
+        
         ScenarioManager.InvokeScenarioSuccess (saveString);
     }
 
@@ -240,6 +249,21 @@ public class PwdAtkController : MonoBehaviour
         ) score++;
 
         return (PasswordScore) score;
+    }
+
+    public static bool CheckReduceChance()
+    {
+        PasswordScore shopScore = CheckStrength(shopPassword);
+        PasswordScore emailScore = CheckStrength(emailPassword);
+
+        if (
+            (shopScore == PasswordScore.VeryStrong) &&
+            (emailScore == PasswordScore.VeryStrong)
+        )
+        {
+            return true;
+        }
+        return false;
     }
 }
 

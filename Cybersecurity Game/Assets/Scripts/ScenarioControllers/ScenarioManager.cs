@@ -161,7 +161,13 @@ public class ScenarioManager : MonoBehaviour
 
     private Scenario ScenarioRandomizer()
     {
-        int i = Random.Range(0, 100);
+        int max = 100;
+        int min = 0;
+
+        if (GameManager.days <= 15) max = 92;
+        if (PwdAtkController.CheckReduceChance() == true) min = 10;
+
+        int i = Random.Range(min, max);
         for (int j = 0; j < scenarioTypes.Length; j++)
         {
             if (

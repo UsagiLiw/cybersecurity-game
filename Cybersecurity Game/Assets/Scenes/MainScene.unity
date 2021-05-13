@@ -5696,10 +5696,10 @@ MonoBehaviour:
   - scenarioType: PasswordAttack
     scenario: 1
     minProbRange: 0
-    maxProbRange: 20
+    maxProbRange: 15
   - scenarioType: Phishing
     scenario: 2
-    minProbRange: 21
+    minProbRange: 16
     maxProbRange: 60
   - scenarioType: Malware
     scenario: 3
