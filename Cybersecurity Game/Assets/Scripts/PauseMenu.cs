@@ -48,8 +48,8 @@ public class PauseMenu : MonoBehaviour
 
     void QuitGame()
     {
-        Debug.Log("Quitting Game......");
-        GameManager.InvokeSaveData();
-        Application.Quit();
+        GameManager.BackToMainMenu(true);
+        Destroy(this.gameObject);
+        Time.timeScale = 1f;
     }
 }

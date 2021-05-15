@@ -41,11 +41,10 @@ public class ShopManager : MonoBehaviour
 
     public bool BuyItem(int index)
     {
-        items[index].isPurchased = true;
-
         // If true : Continue process , If false : skip
         if (budgetManager.ModifyBudget(-items[index].price))
         {
+            items[index].isPurchased = true;
             switch (index)
             {
                 case 0:

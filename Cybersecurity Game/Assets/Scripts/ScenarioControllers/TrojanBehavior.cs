@@ -9,7 +9,7 @@ public class TrojanBehavior : MonoBehaviour
 
     void Start()
     {
-        int index = Random.Range(0, iconList.Length - 1);
+        int index = Random.Range(0, iconList.Length);
         Image image = gameObject.transform.GetChild(0).gameObject.transform.GetComponent<Image>();
         Text name = gameObject.transform.GetChild(1).gameObject.transform.GetComponent<Text>();
         

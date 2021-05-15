@@ -232,8 +232,8 @@ MonoBehaviour:
     address: http://luv32.net/account-j25/4jurtx2
     isSecure: 0
   - siteName: Lazada
-    linkHover: https://www.lazada.com/payment/cardinfo/submit
-    address: https://www.lazada.com/payment/cardinfo
+    linkHover: https://www.lasada.com/payment/cardinfo/submit
+    address: https://www.lasada.com/payment/cardinfo
     isSecure: 1
   - siteName: SCPbank
     linkHover: http://www.scpbanklng.co.th/account/update
