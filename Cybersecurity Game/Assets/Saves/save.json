@@ -1,13 +1,13 @@
 {
     "saveid": 0,
-    "day": 44,
-    "budget": 1350,
-    "reputation": 88,
+    "day": 48,
+    "budget": 1825,
+    "reputation": 71,
     "purchases": [
         "{\"name\":\"Cloud Storage\",\"price\":500,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
         "{\"name\":\"Antivirus Software\",\"price\":450,\"expiredDays\":7,\"isPurchased\":false,\"dayPassed\":0}",
-        "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":true,\"dayPassed\":16}",
-        "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":true,\"dayPassed\":16}"
+        "{\"name\":\"Training Course\",\"price\":3500,\"expiredDays\":20,\"isPurchased\":false,\"dayPassed\":0}",
+        "{\"name\":\"OS Update\",\"price\":250,\"expiredDays\":30,\"isPurchased\":true,\"dayPassed\":20}"
     ],
     "password1": "12345@3210000",
     "password2": "1@2CompnayMail",
@@ -26,7 +26,11 @@
         6,
         12,
         0,
-        5
+        5,
+        11,
+        5,
+        2,
+        3
     ],
     "scenarioMail": [],
     "readEmail": [
@@ -44,10 +48,14 @@
         false,
         false,
         false,
+        false,
+        true,
+        false,
+        false,
         false
     ],
     "readSmail": [],
-    "scenario": 2,
-    "scenarioDetail": "{\"dayLeft\":3,\"atkType\":1,\"questTarget\":1,\"isPhishing\":false,\"dictIndex\":4}",
+    "scenario": 0,
+    "scenarioDetail": "",
     "upcomingSce": 2
 }

@@ -13,6 +13,8 @@ public class NPCPhishing : MonoBehaviour
 
     public GameObject siteInfo;
 
+    public GameObject phishingReport;
+
     private PhishingSave phishingDetail;
 
     public WebObject[] legitWebsite;
@@ -222,7 +224,10 @@ public class NPCPhishing : MonoBehaviour
 
     public void OpenVerification()
     {
-        this.transform.Find("PhishingReport").gameObject.SetActive(true);
+        if(!phishingReport.activeSelf)
+            phishingReport.SetActive(true);
+        else
+            phishingReport.SetActive(false);
     }
 
     public void SubmitVerification(bool legit)

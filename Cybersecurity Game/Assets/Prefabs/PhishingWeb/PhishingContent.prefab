@@ -209,6 +209,7 @@ MonoBehaviour:
   exitButton: {fileID: 7763802655963517723}
   addressBar: {fileID: 907945611137008568}
   siteInfo: {fileID: 3761846422319669458}
+  phishingReport: {fileID: 7140804385367634292}
   legitWebsite:
   - siteName: SafePal
     linkHover: https://www.safepal.com/Login/VerifyLogin
@@ -784,15 +785,26 @@ PrefabInstance:
     - target: {fileID: 4842048878135707722, guid: 0fd1961e32688ed4db08736112a4cf7e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4842048878506824173, guid: 0fd1961e32688ed4db08736112a4cf7e,
         type: 3}
       propertyPath: m_Text
-      value: Is This A Phishing?
+      value: Is This Legit?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842048878506824175, guid: 0fd1961e32688ed4db08736112a4cf7e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fd1961e32688ed4db08736112a4cf7e, type: 3}
+--- !u!1 &7140804385367634292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4842048878135707722, guid: 0fd1961e32688ed4db08736112a4cf7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2318036651789007166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7140804385367634295 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4842048878135707721, guid: 0fd1961e32688ed4db08736112a4cf7e,
